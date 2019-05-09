@@ -4,41 +4,7 @@
             "outputFile": "/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-be/values-be.xml",
             "map": [
                 {
-                    "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5ac257706a5ecb1907663c978188cbb6/res/values-be/values-be.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "50",
-                        "startColumns": "4",
-                        "startOffsets": "5836",
-                        "endColumns": "100",
-                        "endOffsets": "5932"
-                    }
-                },
-                {
-                    "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/89e4f1c80add85ed6e30e4be4829bd29/res/values-be/values-be.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,225,328,444,530,638,756,835,913,1005,1099,1195,1289,1385,1479,1575,1670,1762,1854,1937,2043,2149,2247,2355,2460,2565,2734,2834",
-                        "endColumns": "119,102,115,85,107,117,78,77,91,93,95,93,95,93,95,94,91,91,82,105,105,97,107,104,104,168,99,80",
-                        "endOffsets": "220,323,439,525,633,751,830,908,1000,1094,1190,1284,1380,1474,1570,1665,1757,1849,1932,2038,2144,2242,2350,2455,2560,2729,2829,2910"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,49",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,225,328,444,530,638,756,835,913,1005,1099,1195,1289,1385,1479,1575,1670,1762,1854,1937,2043,2149,2247,2355,2460,2565,2734,5755",
-                        "endColumns": "119,102,115,85,107,117,78,77,91,93,95,93,95,93,95,94,91,91,82,105,105,97,107,104,104,168,99,80",
-                        "endOffsets": "220,323,439,525,633,751,830,908,1000,1094,1190,1284,1380,1474,1570,1665,1757,1849,1932,2038,2144,2242,2350,2455,2560,2729,2829,5831"
-                    }
-                },
-                {
-                    "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5d956c89fbcb4eb851602e27f753df3e/res/values-be/values.xml",
+                    "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5ba3d346d49990246682d102c8c1a878/res/values-be/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -55,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/6278e418887379bf6ce5542767f52d2c/res/values-be/values.xml",
+                    "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1a641fe0c43e44fa9b34af419857ea01/res/values-be/values-be.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "50",
+                        "startColumns": "4",
+                        "startOffsets": "5836",
+                        "endColumns": "100",
+                        "endOffsets": "5932"
+                    }
+                },
+                {
+                    "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/43b0a25989139ee54c660beac407da7f/res/values-be/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -72,7 +55,24 @@
                     }
                 },
                 {
-                    "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/f964d99b2fef7bb083d2b9b22a35cc69/res/values-be/values.xml",
+                    "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/a1006a6d048eb31774de78b3aa64cc29/res/values-be/values-be.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,225,328,444,530,638,756,835,913,1005,1099,1195,1289,1385,1479,1575,1670,1762,1854,1937,2043,2149,2247,2355,2460,2565,2734,2834",
+                        "endColumns": "119,102,115,85,107,117,78,77,91,93,95,93,95,93,95,94,91,91,82,105,105,97,107,104,104,168,99,80",
+                        "endOffsets": "220,323,439,525,633,751,830,908,1000,1094,1190,1284,1380,1474,1570,1665,1757,1849,1932,2038,2144,2242,2350,2455,2560,2729,2829,2910"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,49",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,225,328,444,530,638,756,835,913,1005,1099,1195,1289,1385,1479,1575,1670,1762,1854,1937,2043,2149,2247,2355,2460,2565,2734,5755",
+                        "endColumns": "119,102,115,85,107,117,78,77,91,93,95,93,95,93,95,94,91,91,82,105,105,97,107,104,104,168,99,80",
+                        "endOffsets": "220,323,439,525,633,751,830,908,1000,1094,1190,1284,1380,1474,1570,1665,1757,1849,1932,2038,2144,2242,2350,2455,2560,2729,2829,5831"
+                    }
+                },
+                {
+                    "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/6a114f49dc8da3277212341983638a3d/res/values-be/values.xml",
                     "from": {
                         "startLines": "4,5",
                         "startColumns": "0,0",
