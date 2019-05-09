@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/MIPUNG/Desktop/BabPle/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ml/values-ml.xml",
+            "outputFile": "/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ml/values-ml.xml",
             "map": [
                 {
                     "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5d956c89fbcb4eb851602e27f753df3e/res/values-ml/values.xml",

@@ -1,3 +1,3 @@
-/Users/MIPUNG/Desktop/BabPle/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/rebuild_cache.dir
-/Users/MIPUNG/Desktop/BabPle/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/edit_cache.dir
-/Users/MIPUNG/Desktop/BabPle/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/native-lib.dir
+/Users/MIPUNG/Desktop/Dongsamo/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/MIPUNG/Desktop/Dongsamo/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/MIPUNG/Desktop/Dongsamo/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/native-lib.dir

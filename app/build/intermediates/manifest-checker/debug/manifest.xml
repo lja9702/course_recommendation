@@ -33,12 +33,12 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.NoActionBar" >
-        <activity android:name="com.donsamo.babple.StoreListActivity" />
+        <activity android:name="com.donsamo.Dongsamo.StoreListActivity" />
         <activity
-            android:name="com.donsamo.babple.MainActivity"
+            android:name="com.donsamo.Dongsamo.MainActivity"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="com.donsamo.babple.Splash"
+            android:name="com.donsamo.Dongsamo.Splash"
             android:theme="@style/SplashTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,13 +46,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.donsamo.babple.CourseActivity" />
-        <activity android:name="com.donsamo.babple.DecidingActivity" />
-        <activity android:name="com.donsamo.babple.AIRunningActivity" />
+        <activity android:name="com.donsamo.Dongsamo.CourseActivity" />
+        <activity android:name="com.donsamo.Dongsamo.DecidingActivity" />
+        <activity android:name="com.donsamo.Dongsamo.AIRunningActivity" />
         <activity
-            android:name="com.donsamo.babple.DirectAddActivity"
+            android:name="com.donsamo.Dongsamo.DirectAddActivity"
             android:windowSoftInputMode="adjustNothing" />
-        <activity android:name="com.donsamo.babple.StoreActivity" />
+        <activity android:name="com.donsamo.Dongsamo.StoreActivity" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
