@@ -1,0 +1,8 @@
+Executable : /Users/MIPUNG/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake
+arguments : 
+--build
+/Users/MIPUNG/Desktop/BabPle/app/.externalNativeBuild/cmake/debug/armeabi-v7a
+--target
+native-lib
+jvmArgs : 
+

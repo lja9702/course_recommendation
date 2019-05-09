@@ -1,0 +1,5 @@
+# ninja log v5
+0	1918	1557201180	CMakeFiles/native-lib.dir/native-lib.cpp.o	2210743138944c2f
+1920	1988	1557201180	/Users/MIPUNG/Desktop/BabPle/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	f19a0b5385a726a
+2	2310	1557201340	CMakeFiles/native-lib.dir/native-lib.cpp.o	2210743138944c2f
+2310	2375	1557201340	/Users/MIPUNG/Desktop/BabPle/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	f19a0b5385a726a
