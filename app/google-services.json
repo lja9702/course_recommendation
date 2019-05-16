@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:394884762076:android:752b589dfb3ef964",
         "android_client_info": {
-          "package_name": "com.donsamo.dongsamo"
+          "package_name": "com.dongsamo.dongsamo"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "394884762076-mafp8obg3m9ecu7a5eq3rkd0uudcfp8m.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.donsamo.dongsamo",
+            "package_name": "com.dongsamo.dongsamo",
             "certificate_hash": "78ec397c9a1c42f98e68d377416d3afb3aaa0265"
           }
         },

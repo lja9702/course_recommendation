@@ -4,24 +4,7 @@
             "outputFile": "/home/kongil/Dongsamo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sl/values-sl.xml",
             "map": [
                 {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/5086b0035d2efe03da9f4ac4182d1886/res/values-sl/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "198",
-                        "endOffsets": "445"
-                    },
-                    "to": {
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "4013",
-                        "endColumns": "198",
-                        "endOffsets": "4207"
-                    }
-                },
-                {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/07ba6fff3109fd76ff98733a3b182057/res/values-sl/values-sl.xml",
+                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/323a4bb239a564138c6cf715a615c39d/res/values-sl/values-sl.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,24 +21,24 @@
                     }
                 },
                 {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/5796684cb720dd6a19ce4dd9dda4a819/res/values-sl/values-sl.xml",
+                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/b80b1a4a6f6d0dfbcb7d71cb119f5333/res/values-sl/values.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "198",
+                        "endOffsets": "445"
                     },
                     "to": {
-                        "startLines": "50",
+                        "startLines": "37",
                         "startColumns": "4",
-                        "startOffsets": "5858",
-                        "endColumns": "100",
-                        "endOffsets": "5954"
+                        "startOffsets": "4013",
+                        "endColumns": "198",
+                        "endOffsets": "4207"
                     }
                 },
                 {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/17c4124d4b2f0d816273f500acc725bb/res/values-sl/values.xml",
+                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/b3c5d6cf0314b8ccd06416428c7f6522/res/values-sl/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -72,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/ac18849b8effcda592018f264ccb2d1e/res/values-sl/values.xml",
+                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/11b8903908314593435ee47086a20606/res/values-sl/values.xml",
                     "from": {
                         "startLines": "4,5",
                         "startColumns": "0,0",
@@ -86,6 +69,23 @@
                         "startOffsets": "5566,5678",
                         "endColumns": "111,96",
                         "endOffsets": "5673,5770"
+                    }
+                },
+                {
+                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/af481dd277274f76bf1c53709011ac72/res/values-sl/values-sl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "50",
+                        "startColumns": "4",
+                        "startOffsets": "5858",
+                        "endColumns": "100",
+                        "endOffsets": "5954"
                     }
                 }
             ]

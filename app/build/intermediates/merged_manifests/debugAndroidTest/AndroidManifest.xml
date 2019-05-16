@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.donsamo.dongsamo.test" >
+    package="com.dongsamo.dongsamo.test" >
 
     <uses-sdk
         android:minSdkVersion="23"
@@ -10,8 +10,8 @@
         android:name="android.support.test.runner.AndroidJUnitRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
-        android:label="Tests for com.donsamo.dongsamo"
-        android:targetPackage="com.donsamo.dongsamo" />
+        android:label="Tests for com.dongsamo.dongsamo"
+        android:targetPackage="com.dongsamo.dongsamo" />
 
     <application android:debuggable="true" >
         <uses-library android:name="android.test.runner" />

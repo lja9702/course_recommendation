@@ -1,11 +1,10 @@
-package com.donsamo.dongsamo;
+package com.dongsamo.dongsamo;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.donsamo.dongsamo.firebase_control.Store;
 import com.google.firebase.database.DataSnapshot;
@@ -13,8 +12,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 public class PostActivity extends AppCompatActivity {
 

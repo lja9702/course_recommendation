@@ -1,4 +1,4 @@
-package com.donsamo.dongsamo;
+package com.dongsamo.dongsamo;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -53,6 +53,21 @@ public class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecycler
                 Toast.makeText(mContext.getApplicationContext(), ""+mData.get(i).getName()+"으로 결정!", Toast.LENGTH_LONG).show();
             }
         });
+
+        myViewHoler.card_heart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mData.get(i).isIs_heart()) {
+                    mData.get(i).setIs_heart(false);
+                    myViewHoler.card_heart.setImageResource(R.drawable.false_heart);
+                }
+                else {
+                    mData.get(i).setIs_heart(true);
+                    myViewHoler.card_heart.setImageResource(R.drawable.true_heart);
+                }
+            }
+        });
+
     }
 
     @Override

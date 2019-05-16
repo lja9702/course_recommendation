@@ -1,11 +1,9 @@
-package com.donsamo.dongsamo;
+package com.dongsamo.dongsamo;
 
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,14 +11,17 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
+
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.donsamo.dongsamo.firebase_control.Store;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +30,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +37,11 @@ public class DirectAddActivity extends AppCompatActivity {
 
     Spinner sort_spinner, store_spinner;
     TextView sort_test, store_test;
+
+    Button search_btn;
+    EditText store_search;
+    LinearLayout linearLayout;
+
     private RecyclerView store_list;
     private StoreRecyclerViewAdapter myAdapter;
     private List<StoreCard> store;
@@ -54,11 +59,15 @@ public class DirectAddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_direct_add);
 
-
+        search_btn = (Button)findViewById(R.id.search_btn);
         sort_spinner = (Spinner) findViewById(R.id.sort_spn);
         store_spinner = (Spinner) findViewById(R.id.store_spn);
         sort_test = (TextView) findViewById(R.id.sort_test_txt);
         store_test = (TextView) findViewById(R.id.store_test_txt);
+
+        store_search = (EditText)findViewById(R.id.store_search);
+        linearLayout = (LinearLayout) findViewById(R.id.direct_linear);
+
         setSpinner();
 
         store = new ArrayList<>();
@@ -67,7 +76,6 @@ public class DirectAddActivity extends AppCompatActivity {
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         store_list.setLayoutManager(gridLayoutManager);//1행을 가진 그리드뷰로 레이아웃을 만듬
-
 
         //Add by kongil
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -141,4 +149,13 @@ public class DirectAddActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void onClick_search_click(View view){
+        String str = store_search.getText().toString();
+        Toast.makeText(DirectAddActivity.this, "hihi"+str, Toast.LENGTH_LONG).show();
+        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(store_search.getWindowToken(), 0);
+
+    }
+
 }

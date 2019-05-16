@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package com.donsamo.dongsamo;
+=======
+package com.donsamo.Dongsamo;
+>>>>>>> 430dd3cab30cf86ef77d8d98e2fc59ca5099c6e3
 
 import org.junit.Test;
 

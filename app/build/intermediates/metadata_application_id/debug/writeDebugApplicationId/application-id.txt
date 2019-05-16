@@ -1,1 +1,1 @@
-com.donsamo.dongsamo
+com.dongsamo.dongsamo

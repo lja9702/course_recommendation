@@ -1,4 +1,4 @@
-package com.donsamo.dongsamo;
+package com.dongsamo.dongsamo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

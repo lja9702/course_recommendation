@@ -1,4 +1,4 @@
-package com.donsamo.dongsamo;
+package com.dongsamo.dongsamo;
 
 import android.net.Uri;
 import android.support.annotation.NonNull;

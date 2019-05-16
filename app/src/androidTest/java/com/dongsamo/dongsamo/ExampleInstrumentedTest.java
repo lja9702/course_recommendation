@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package com.donsamo.dongsamo;
+=======
+package com.donsamo.Dongsamo;
+>>>>>>> 430dd3cab30cf86ef77d8d98e2fc59ca5099c6e3
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +25,10 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
+<<<<<<< HEAD
         assertEquals("com.donsamo.dongsamo", appContext.getPackageName());
+=======
+        assertEquals("com.donsamo.babple", appContext.getPackageName());
+>>>>>>> 430dd3cab30cf86ef77d8d98e2fc59ca5099c6e3
     }
 }
