@@ -1,18 +1,18 @@
 #Internal package file, do not edit.
-#Sat May 04 14:28:06 KST 2019
+#Thu May 09 21:54:22 KST 2019
 4.path=classes.dex
 8.set=DEX
 6.path=classes.dex
 0.baseType=DIRECTORY
 10.path=classes.dex
 5.baseType=DIRECTORY
-1.base=/home/kongil/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/20
+1.base=/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/12
 8.path=classes.dex
-3.base=/home/kongil/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/13
+3.base=/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/13
 4.set=DEX
-5.base=/home/kongil/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/15
-7.base=/home/kongil/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/17
-9.base=/home/kongil/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/19
+5.base=/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/11
+7.base=/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/17
+9.base=/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/18
 1.baseType=DIRECTORY
 0.set=DEX
 6.baseType=DIRECTORY
@@ -25,16 +25,16 @@
 3.path=classes.dex
 10.set=DEX
 5.path=classes.dex
-0.base=/home/kongil/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/18
+0.base=/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/20
 7.path=classes.dex
 9.path=classes.dex
 6.set=DEX
-2.base=/home/kongil/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/11
-4.base=/home/kongil/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/21
+2.base=/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/21
+4.base=/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/16
 3.baseType=DIRECTORY
-6.base=/home/kongil/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/12
-10.base=/home/kongil/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/16
-8.base=/home/kongil/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/14
+6.base=/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/14
+10.base=/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/19
+8.base=/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/15
 2.set=DEX
 8.baseType=DIRECTORY
 9.set=DEX

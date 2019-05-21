@@ -27,7 +27,6 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.NoActionBar" >
-        <activity android:name="com.donsamo.dongsamo.NearStoreActivity" />
         <activity android:name="com.donsamo.dongsamo.StoreActivity" />
         <activity android:name="com.donsamo.dongsamo.FirebaseUIActivity" />
         <activity android:name="com.donsamo.dongsamo.StorageActivity" />
