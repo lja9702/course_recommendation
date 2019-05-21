@@ -1,39 +1,45 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml:2:1-7:12
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml:2:1-7:12
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml:2:1-7:12
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml:2:1-7:12
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml:2:1-7:12
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml:2:1-7:12
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml:2:1-7:12
+ADDED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:2:1-12:12
+INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:2:1-12:12
+INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:2:1-12:12
+INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:2:1-12:12
+INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:2:1-12:12
+INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:2:1-12:12
+INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:2:1-12:12
 	package
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml:3:7-27
-		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
-		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
+		ADDED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:3:5-25
+		INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
+		INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
 	android:screenOrientation
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml:4:7-43
+		ADDED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:4:5-41
 	android:versionName
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml:6:7-34
-		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
-		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
+		ADDED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:6:5-32
+		INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
+		INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml:2:11-69
+		ADDED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml:5:7-33
-		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
-		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
+		ADDED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:5:5-31
+		INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
+		INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
+application
+ADDED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:8:5-10:19
+activity#org.opencv.android.CameraSurfaceView
+ADDED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:9:9-72
+	android:name
+		ADDED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml:9:19-60
 uses-sdk
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
+INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
+INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
+INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
+INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
-		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
+		INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
+		ADDED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
+		INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
-		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/opencv/java/AndroidManifest.xml
+		INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
+		ADDED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml
+		INJECTED from /home/kongil/Dongsamo/opencv/java/AndroidManifest.xml

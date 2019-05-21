@@ -6,6 +6,8 @@ import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.dongsamo.dongsamo.firebase_control.Store;
+
 public class StoreActivity extends AppCompatActivity {
     ImageView store_image;
     TextView store_text;
@@ -19,6 +21,9 @@ public class StoreActivity extends AppCompatActivity {
         store_text.setMovementMethod(new ScrollingMovementMethod());
 
         //kong todo 69 StoreRecyclerViewAdapter에서 인텐트로 보낸 store_name 정보 띄우기.
+        Store s = (Store) getIntent().getSerializableExtra("store");
+        //store_text.setText(getIntent().getStringExtra("store_name"));
+        store_text.setText(getIntent().getStringExtra(s.getName()));
     }
 
     private void setup(){

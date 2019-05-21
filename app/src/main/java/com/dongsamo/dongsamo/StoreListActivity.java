@@ -15,7 +15,7 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.donsamo.dongsamo.firebase_control.Store;
+import com.dongsamo.dongsamo.firebase_control.Store;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
