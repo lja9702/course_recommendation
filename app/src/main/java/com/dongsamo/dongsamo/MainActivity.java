@@ -1,6 +1,12 @@
 package com.dongsamo.dongsamo;
 
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.hardware.Camera;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +22,12 @@ import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.SurfaceView;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.googlecode.tesseract.android.TessBaseAPI;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
@@ -23,16 +35,26 @@ import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 
 public class MainActivity extends AppCompatActivity
         implements CameraBridgeViewBase.CvCameraViewListener2 {
 
     //dong todo opencv & OCR, Tesaract? 처리
     private static final String TAG = "opencv";
-    private CameraBridgeViewBase mOpenCvCameraView;
+    //private CameraBridgeViewBase mOpenCvCameraView;
     private Mat matInput;
     private Mat matResult;
 
+    //kongil
+    TessBaseAPI tessBaseAPI;
+    CameraSurfaceView surfaceView;
+    ImageButton capture_btn;
 
     static {
         System.loadLibrary("opencv_java4");
@@ -45,7 +67,7 @@ public class MainActivity extends AppCompatActivity
             switch (status) {
                 case LoaderCallbackInterface.SUCCESS:
                 {
-                    mOpenCvCameraView.enableView();
+                   // mOpenCvCameraView.enableView();
                 } break;
                 default:
                 {
@@ -72,12 +94,30 @@ public class MainActivity extends AppCompatActivity
             }
         }
 
+        /*
         mOpenCvCameraView = (CameraBridgeViewBase)findViewById(R.id.activity_surface_view);
         mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
         mOpenCvCameraView.setCameraIndex(0); // front-camera(1),  back-camera(0)
         mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
+        */
+
+        //kong
+
+        surfaceView = findViewById(R.id.activity_surfaceView);
+        capture_btn = (ImageButton)findViewById(R.id.capture_btn);
+
+        tessBaseAPI = new TessBaseAPI();
+        String dir = getFilesDir() + "/tesseract";
+        Log.d("TAGS", ""+dir);
+        if(checkLanguageFile(dir+"/tessdata")) {
+            //tessBaseAPI.init(dir, "kor");
+            Log.d("TAGS", "init");
+            tessBaseAPI.init(dir, "eng");
+        }
+
     }
+
 
     public void onClick_shop_list(View view){
         //Toast.makeText(MainActivity.super.getApplicationContext(), "주변 상점 리스트", Toast.LENGTH_LONG).show();
@@ -91,6 +131,111 @@ public class MainActivity extends AppCompatActivity
     }
 
     //by kongil
+    public void onClick_capture(View view) {
+        capture();
+    }
+
+    boolean checkLanguageFile(String dir)
+    {
+        File file = new File(dir);
+        Log.d("TAGS", ">>>>"+dir);
+        if(!file.exists() && file.mkdirs()) {
+            Log.d("TAGS", "no file");
+            createFiles(dir);
+        }
+        else if(file.exists()){
+            Log.d("TAGS", "has file");
+            String filePath = dir + "/eng.traineddata";
+            File langDataFile = new File(filePath);
+            if(!langDataFile.exists())
+                createFiles(dir);
+        }
+        return true;
+    }
+
+    private void createFiles(String dir)
+    {
+        AssetManager assetMgr = this.getAssets();
+
+        InputStream inputStream = null;
+        OutputStream outputStream = null;
+
+        try {
+            inputStream = assetMgr.open("eng.traineddata");
+
+            String destFile = dir + "/eng.traineddata";
+
+            outputStream = new FileOutputStream(destFile);
+
+            byte[] buffer = new byte[1024];
+            int read;
+            while ((read = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, read);
+            }
+            inputStream.close();
+            outputStream.flush();
+            outputStream.close();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void capture()
+    {
+        surfaceView.capture(new Camera.PictureCallback() {
+            @Override
+            public void onPictureTaken(byte[] bytes, Camera camera) {
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inSampleSize = 8;
+
+                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                bitmap = GetRotatedBitmap(bitmap, 90);
+
+                //imageView.setImageBitmap(bitmap);
+
+                capture_btn.setEnabled(false);
+                capture_btn.setImageResource(R.drawable.loading_btn);
+                new AsyncTess().execute(bitmap);
+
+                camera.startPreview();
+            }
+        });
+    }
+
+    public synchronized static Bitmap GetRotatedBitmap(Bitmap bitmap, int degrees) {
+        if (degrees != 0 && bitmap != null) {
+            Matrix m = new Matrix();
+            m.setRotate(degrees, (float) bitmap.getWidth() / 2, (float) bitmap.getHeight() / 2);
+            try {
+                Bitmap b2 = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), m, true);
+                if (bitmap != b2) {
+                    bitmap = b2;
+                }
+            } catch (OutOfMemoryError ex) {
+                ex.printStackTrace();
+            }
+        }
+        return bitmap;
+    }
+
+    private class AsyncTess extends AsyncTask<Bitmap, Integer, String> {
+        @Override
+        protected String doInBackground(Bitmap... mRelativeParams) {
+            tessBaseAPI.setImage(mRelativeParams[0]);
+            Log.d("Tag", "do in background");
+            Log.d("TAGS", ""+tessBaseAPI.getUTF8Text());
+            return tessBaseAPI.getUTF8Text();
+        }
+
+        protected void onPostExecute(String result) {
+            //textView.setText(result);
+            Toast.makeText(MainActivity.this, ""+result, Toast.LENGTH_LONG).show();
+            Log.d("Tag", "good");
+            capture_btn.setEnabled(true);
+            capture_btn.setImageResource(R.drawable.capture);
+        }
+    }
+
     public void onClick_manager_mode(View view){
         Intent intent = new Intent(MainActivity.this, PostActivity.class);
         startActivity(intent);
@@ -100,8 +245,8 @@ public class MainActivity extends AppCompatActivity
     public void onPause()
     {
         super.onPause();
-        if (mOpenCvCameraView != null)
-            mOpenCvCameraView.disableView();
+        //if (mOpenCvCameraView != null)
+         //   mOpenCvCameraView.disableView();
     }
 
     @Override
@@ -121,8 +266,8 @@ public class MainActivity extends AppCompatActivity
     public void onDestroy() {
         super.onDestroy();
 
-        if (mOpenCvCameraView != null)
-            mOpenCvCameraView.disableView();
+        //if (mOpenCvCameraView != null)
+         //   mOpenCvCameraView.disableView();
     }
 
     @Override
@@ -215,6 +360,7 @@ public class MainActivity extends AppCompatActivity
         });
         builder.create().show();
     }
+
 
 
 }
