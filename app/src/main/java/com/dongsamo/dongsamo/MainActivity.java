@@ -24,6 +24,7 @@ import android.support.v7.app.AlertDialog;
 import android.view.SurfaceView;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,9 +53,11 @@ public class MainActivity extends AppCompatActivity
     private Mat matResult;
 
     //kongil
+
     TessBaseAPI tessBaseAPI;
     CameraSurfaceView surfaceView;
     ImageButton capture_btn;
+    ImageView imageView;
 
     static {
         System.loadLibrary("opencv_java4");
@@ -104,6 +107,7 @@ public class MainActivity extends AppCompatActivity
 
         //kong
 
+        imageView = findViewById(R.id.imageView);
         surfaceView = findViewById(R.id.activity_surfaceView);
         capture_btn = (ImageButton)findViewById(R.id.capture_btn);
 
@@ -138,13 +142,10 @@ public class MainActivity extends AppCompatActivity
     boolean checkLanguageFile(String dir)
     {
         File file = new File(dir);
-        Log.d("TAGS", ">>>>"+dir);
         if(!file.exists() && file.mkdirs()) {
-            Log.d("TAGS", "no file");
             createFiles(dir);
         }
         else if(file.exists()){
-            Log.d("TAGS", "has file");
             String filePath = dir + "/eng.traineddata";
             File langDataFile = new File(filePath);
             if(!langDataFile.exists())
@@ -164,7 +165,6 @@ public class MainActivity extends AppCompatActivity
             inputStream = assetMgr.open("eng.traineddata");
 
             String destFile = dir + "/eng.traineddata";
-
             outputStream = new FileOutputStream(destFile);
 
             byte[] buffer = new byte[1024];
@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity
                 Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
                 bitmap = GetRotatedBitmap(bitmap, 90);
 
-                //imageView.setImageBitmap(bitmap);
+                imageView.setImageBitmap(bitmap);
 
                 capture_btn.setEnabled(false);
                 capture_btn.setImageResource(R.drawable.loading_btn);
@@ -222,15 +222,13 @@ public class MainActivity extends AppCompatActivity
         @Override
         protected String doInBackground(Bitmap... mRelativeParams) {
             tessBaseAPI.setImage(mRelativeParams[0]);
-            Log.d("Tag", "do in background");
-            Log.d("TAGS", ""+tessBaseAPI.getUTF8Text());
             return tessBaseAPI.getUTF8Text();
         }
 
         protected void onPostExecute(String result) {
             //textView.setText(result);
             Toast.makeText(MainActivity.this, ""+result, Toast.LENGTH_LONG).show();
-            Log.d("Tag", "good");
+            Log.d("TAGS", "result : "+ result);
             capture_btn.setEnabled(true);
             capture_btn.setImageResource(R.drawable.capture);
         }
