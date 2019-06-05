@@ -1,3 +1,0 @@
-C:/Users/lja97/OneDrive/Documents/GitHub/course_recommendation/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/native-lib.dir
-C:/Users/lja97/OneDrive/Documents/GitHub/course_recommendation/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/edit_cache.dir
-C:/Users/lja97/OneDrive/Documents/GitHub/course_recommendation/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/rebuild_cache.dir
