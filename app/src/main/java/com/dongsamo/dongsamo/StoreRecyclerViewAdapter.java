@@ -1,6 +1,7 @@
 package com.dongsamo.dongsamo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -14,6 +15,10 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
+
+import static com.dongsamo.dongsamo.DirectAddActivity.A_activity;
+import static com.dongsamo.dongsamo.DirectAddActivity.flag;
+import static com.dongsamo.dongsamo.StoreListActivity.B_Activity;
 
 public class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecyclerViewAdapter.MyViewHoler>{
     private Context mContext;
@@ -40,6 +45,7 @@ public class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecycler
         myViewHoler.card_distance.setText(""+String.valueOf(mData.get(i).getDistance())+" 이내");
         myViewHoler.card_star.setText(String.valueOf(mData.get(i).getStar()));
 
+        //kong todo true_heart일 때 DB 좋아요 데이터 true, false_heart일 때 DB 좋아요 false
         if(mData.get(i).isIs_heart())
             myViewHoler.card_heart.setImageResource(R.drawable.true_heart);
         else
@@ -50,7 +56,21 @@ public class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecycler
         myViewHoler.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext.getApplicationContext(), ""+mData.get(i).getName()+"으로 결정!", Toast.LENGTH_LONG).show();
+                //course.concat(mData.get(i).getName());
+                //Toast.makeText(mContext.getApplicationContext(), ""+course+mData.get(i).getName()+"으로 결정!", Toast.LENGTH_LONG).show();
+
+                if(flag) {
+                    Intent intent = new Intent(mContext.getApplicationContext(), CourseActivity.class);
+                    intent.putExtra("store_name", mData.get(i).getName());
+                    mContext.startActivity(intent);
+                    flag=false;
+                    A_activity.finish();
+                }
+                else{
+                    Intent intent = new Intent(mContext.getApplicationContext(), StoreActivity.class);
+                    intent.putExtra("store_name", mData.get(i).getName());
+                    mContext.startActivity(intent);
+                }
             }
         });
 

@@ -26,7 +26,9 @@
             android:layout_weight="85"/>
 
         <Spinner
+
             android:id="@+id/location_spn"
+            android:entries="@array/location_item"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="550"
@@ -77,26 +79,6 @@
             android:background="#fff">
 
         </Spinner>
-
-        <TextView
-            android:id="@+id/sort_test_txt"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="200"
-            android:layout_marginLeft="20dp"
-            android:gravity="center_vertical"
-            android:text="hi"
-            android:textColor="#000"/>
-
-        <TextView
-            android:id="@+id/store_test_txt"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="200"
-            android:layout_marginLeft="20dp"
-            android:gravity="center_vertical"
-            android:text="hi"
-            android:textColor="#000"/>
 
     </LinearLayout>
 

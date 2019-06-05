@@ -6,11 +6,6 @@
 /.idea/modules.xml
 /.idea/workspace.xml
 =======
-<<<<<<< HEAD
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-=======
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -18,7 +13,6 @@
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 >>>>>>> 430dd3cab30cf86ef77d8d98e2fc59ca5099c6e3
->>>>>>> 0994eb239f7025e7e8c362e85ddd5892f43a182b
 .DS_Store
 /build
 /captures

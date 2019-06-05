@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class CourseActivity extends AppCompatActivity {
 
     TextView course_text;
-    String course = null;
     String textview_txt = null;
+    static String course = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +22,25 @@ public class CourseActivity extends AppCompatActivity {
 
         course_text = (TextView)findViewById(R.id.course_text);
         course_text.setMovementMethod(new ScrollingMovementMethod());
+
+        try{
+            Intent intent = getIntent();
+            String name = intent.getExtras().getString("store_name");
+
+            course_text.setText(course + " " + name);
+        }catch (NullPointerException e){
+
+        }
+        //course_text.setText(course);
+
     }
 
     public void onClick_direct_add(View view){
+        course = String.valueOf(course_text.getText());
         Intent intent = new Intent(CourseActivity.this, DirectAddActivity.class);
+        intent.putExtra("textview", course);
         startActivity(intent);
+        finish();
     }
 
     public void onClick_trash(View view){

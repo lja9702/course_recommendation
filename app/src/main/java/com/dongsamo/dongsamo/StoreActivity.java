@@ -17,6 +17,8 @@ public class StoreActivity extends AppCompatActivity {
         store_image = (ImageView)findViewById(R.id.store_img);
         store_text = (TextView)findViewById(R.id.store_txt);
         store_text.setMovementMethod(new ScrollingMovementMethod());
+
+        //kong todo 69 StoreRecyclerViewAdapter에서 인텐트로 보낸 store_name 정보 띄우기.
     }
 
     private void setup(){

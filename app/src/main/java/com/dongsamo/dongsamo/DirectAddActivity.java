@@ -1,5 +1,7 @@
 package com.dongsamo.dongsamo;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -35,8 +37,9 @@ import java.util.List;
 
 public class DirectAddActivity extends AppCompatActivity {
 
+    static Activity A_activity;
+    static boolean flag=false;
     Spinner sort_spinner, store_spinner;
-    TextView sort_test, store_test;
 
     Button search_btn;
     EditText store_search;
@@ -53,17 +56,22 @@ public class DirectAddActivity extends AppCompatActivity {
     private FirebaseStorage storage;
     private StorageReference storageRef;
     private StorageReference imageRef;
+    static String course;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_direct_add);
 
+        Intent intent = getIntent();
+        String str = intent.getExtras().getString("textview");
+        course = str;
+        flag=true;
+
+        A_activity = this;
         search_btn = (Button)findViewById(R.id.search_btn);
         sort_spinner = (Spinner) findViewById(R.id.sort_spn);
         store_spinner = (Spinner) findViewById(R.id.store_spn);
-        sort_test = (TextView) findViewById(R.id.sort_test_txt);
-        store_test = (TextView) findViewById(R.id.store_test_txt);
 
         store_search = (EditText)findViewById(R.id.store_search);
         linearLayout = (LinearLayout) findViewById(R.id.direct_linear);
@@ -123,9 +131,9 @@ public class DirectAddActivity extends AppCompatActivity {
         sort_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //kong todo spinner item으로 sort
                 ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLACK);
                 ((TextView) adapterView.getChildAt(0)).setGravity(Gravity.CENTER);
-                sort_test.setText("sort : " + adapterView.getItemAtPosition(i));
 
             }
 
@@ -138,9 +146,9 @@ public class DirectAddActivity extends AppCompatActivity {
         store_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //kong todo spinner item으로 필터링
                 ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLACK);
                 ((TextView) adapterView.getChildAt(0)).setGravity(Gravity.CENTER);
-                store_test.setText("store : " + adapterView.getItemAtPosition(i));
             }
 
             @Override
@@ -155,6 +163,8 @@ public class DirectAddActivity extends AppCompatActivity {
         Toast.makeText(DirectAddActivity.this, "hihi"+str, Toast.LENGTH_LONG).show();
         InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(store_search.getWindowToken(), 0);
+
+        //kong todo str 이름을 가진 장소만 나오게 하기. str : 검색창(edittext)에 입력한 String
 
     }
 

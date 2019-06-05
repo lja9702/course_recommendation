@@ -1,5 +1,6 @@
 package com.dongsamo.dongsamo;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
@@ -28,8 +29,8 @@ import java.util.List;
 
 public class StoreListActivity extends AppCompatActivity {
 
-    Spinner sort_spinner, store_spinner;
-    TextView sort_test, store_test;
+    static Activity B_Activity;
+    Spinner sort_spinner, store_spinner, location_spinner;
     private RecyclerView store_list;
     private StoreRecyclerViewAdapter myAdapter;
     private List<StoreCard> store;
@@ -47,8 +48,7 @@ public class StoreListActivity extends AppCompatActivity {
 
         sort_spinner = (Spinner) findViewById(R.id.sort_spn);
         store_spinner = (Spinner) findViewById(R.id.store_spn);
-        sort_test = (TextView) findViewById(R.id.sort_test_txt);
-        store_test = (TextView) findViewById(R.id.store_test_txt);
+        location_spinner = (Spinner)findViewById(R.id.location_spn);
         setSpinner();
 
         store = new ArrayList<>();
@@ -105,10 +105,9 @@ public class StoreListActivity extends AppCompatActivity {
         sort_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //kong todo spinner 선택된거 기준으로 sort하기
                 ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLACK);
                 ((TextView) adapterView.getChildAt(0)).setGravity(Gravity.CENTER);
-                sort_test.setText("sort : " + adapterView.getItemAtPosition(i));
-
             }
 
             @Override
@@ -120,9 +119,23 @@ public class StoreListActivity extends AppCompatActivity {
         store_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //kong todo spinner 선택된거만 나오게하기. ex) 밥집, 술집, 놀거리
                 ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLACK);
                 ((TextView) adapterView.getChildAt(0)).setGravity(Gravity.CENTER);
-                store_test.setText("store : " + adapterView.getItemAtPosition(i));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        location_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //kong todo spinner 선택된 장소만 나오게 하기
+                ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLACK);
+                ((TextView) adapterView.getChildAt(0)).setGravity(Gravity.CENTER);
             }
 
             @Override

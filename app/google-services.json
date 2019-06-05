@@ -8,83 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:394884762076:android:dec74d64a412718b",
-        "android_client_info": {
-          "package_name": "com.dongsamo.dongsamo"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "394884762076-orv4i4to2jg2ng37p4c409gvkp4dshau.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.dongsamo.dongsamo",
-            "certificate_hash": "d6b8ba300bb24b3fb0b9995e04d76da9a082471a"
-          }
-        },
-        {
-          "client_id": "394884762076-1euusd2i06e5aqcmbrocrvdsn03l6q0c.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCeCpYQyXxg_EzwXlB8FYE_IvFgmTf5iu0"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "394884762076-1euusd2i06e5aqcmbrocrvdsn03l6q0c.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:394884762076:android:1b6b6429d5c7db37",
-        "android_client_info": {
-          "package_name": "com.donsamo.babple"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "394884762076-hvnt0026kvkpv2995sso5slb5eat0s35.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.donsamo.babple",
-            "certificate_hash": "78ec397c9a1c42f98e68d377416d3afb3aaa0265"
-          }
-        },
-        {
-          "client_id": "394884762076-1euusd2i06e5aqcmbrocrvdsn03l6q0c.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCeCpYQyXxg_EzwXlB8FYE_IvFgmTf5iu0"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "394884762076-1euusd2i06e5aqcmbrocrvdsn03l6q0c.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:394884762076:android:752b589dfb3ef964",
         "android_client_info": {
-          "package_name": "com.donsamo.dongsamo"
+          "package_name": "com.dongsamo.dongsamo"
         }
       },
       "oauth_client": [
@@ -92,7 +18,7 @@
           "client_id": "394884762076-mafp8obg3m9ecu7a5eq3rkd0uudcfp8m.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.donsamo.dongsamo",
+            "package_name": "com.dongsamo.dongsamo",
             "certificate_hash": "78ec397c9a1c42f98e68d377416d3afb3aaa0265"
           }
         },
