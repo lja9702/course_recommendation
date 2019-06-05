@@ -1,27 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/home/kongil/Dongsamo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
+            "outputFile": "C:\\Users\\lja97\\OneDrive\\Documents\\GitHub\\course_recommendation\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rTW\\values-zh-rTW.xml",
             "map": [
                 {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/af481dd277274f76bf1c53709011ac72/res/values-zh-rTW/values-zh-rTW.xml",
+                    "source": "C:\\Users\\lja97\\.gradle\\caches\\transforms-2\\files-2.1\\21890f0e5992256214f1c062bce54081\\res\\values-zh-rTW\\values.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "161",
+                        "endOffsets": "412"
                     },
                     "to": {
-                        "startLines": "50",
+                        "startLines": "37",
                         "startColumns": "4",
-                        "startOffsets": "5248",
-                        "endColumns": "100",
-                        "endOffsets": "5344"
+                        "startOffsets": "3697",
+                        "endColumns": "161",
+                        "endOffsets": "3854"
                     }
                 },
                 {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/323a4bb239a564138c6cf715a615c39d/res/values-zh-rTW/values-zh-rTW.xml",
+                    "source": "C:\\Users\\lja97\\.gradle\\caches\\transforms-2\\files-2.1\\2d036494f2446491bc8327315309ed45\\res\\values-zh-rTW\\values-zh-rTW.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/b3c5d6cf0314b8ccd06416428c7f6522/res/values-zh-rTW/values.xml",
+                    "source": "C:\\Users\\lja97\\.gradle\\caches\\transforms-2\\files-2.1\\5471e81ad4e1e2758bb45ab4e94062aa\\res\\values-zh-rTW\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/11b8903908314593435ee47086a20606/res/values-zh-rTW/values.xml",
+                    "source": "C:\\Users\\lja97\\.gradle\\caches\\transforms-2\\files-2.1\\8b830a31a4128e600deadad8f320820f\\res\\values-zh-rTW\\values.xml",
                     "from": {
                         "startLines": "4,5",
                         "startColumns": "0,0",
@@ -72,20 +72,20 @@
                     }
                 },
                 {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/b80b1a4a6f6d0dfbcb7d71cb119f5333/res/values-zh-rTW/values.xml",
+                    "source": "C:\\Users\\lja97\\.gradle\\caches\\transforms-2\\files-2.1\\3620b6bed953fb0ae89e1560f27b4590\\res\\values-zh-rTW\\values-zh-rTW.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "161",
-                        "endOffsets": "412"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "37",
+                        "startLines": "50",
                         "startColumns": "4",
-                        "startOffsets": "3697",
-                        "endColumns": "161",
-                        "endOffsets": "3854"
+                        "startOffsets": "5248",
+                        "endColumns": "100",
+                        "endOffsets": "5344"
                     }
                 }
             ]

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/kongil/Dongsamo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "C:\\Users\\lja97\\OneDrive\\Documents\\GitHub\\course_recommendation\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/eab1880bb814e51a21f0888d0b3376c2/res/values-v24/values-v24.xml",
+                    "source": "C:\\Users\\lja97\\.gradle\\caches\\transforms-2\\files-2.1\\adc1ee331c4f08c2d69cf4f95bf3dcc9\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/323a4bb239a564138c6cf715a615c39d/res/values-v24/values-v24.xml",
+                    "source": "C:\\Users\\lja97\\.gradle\\caches\\transforms-2\\files-2.1\\2d036494f2446491bc8327315309ed45\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
