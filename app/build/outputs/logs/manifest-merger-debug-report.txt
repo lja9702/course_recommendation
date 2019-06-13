@@ -1,0 +1,386 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/34cd6d9f77f9bbd89d0f7c8721b6c8bf/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cbe197a728ac806db125c91250b9bde8/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/82c8642fdb6e5a8e4d752ae70879b64e/AndroidManifest.xml:15:1-25:12
+MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/d8ef545c89f272d1ad6009b270b2f6b6/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/fb9e5e7c7e4fcf33ee6798d50e7dd99a/AndroidManifest.xml:15:1-26:12
+MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:17:1-42:12
+MERGED from [:opencv] /Users/CHOI_JIN/Documents/Dongsamo/opencv/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/25b131090352116d5ff34fd47f2d00c1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9f8e031125eb45c60e8d55b551535c9/AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/2a4198df91fc211e5d8855f633605975/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/60f804bd82a4f16adfa78101eb1189b0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f5f0a4705fd42e112f96f3a1ce8a2091/AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.gms:play-services-flags:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/a68cc03365b41be523443f5873d930a9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8eb4f93e9474ee67581ccee685f233a7/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/b52eeef035ee0722aa8cfe58bcfa44ab/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0675deb5a6e77a48b0fdb80d6a2f302a/AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/9b305a7cea13240cf6ae08f6d5ceced8/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/afdd57530765fdcafdc1a52dd2caef60/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4ff0e6eb33a9629b2626fd8728388127/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5dda030f64986adb2d6243b9fc1c9f20/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9d43d52be4a21ff2e7f3e6aa6a7e1e5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/ad5aabc547ad74a5be8c537bbf221025/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0b43535f94003e6a03cb835744a89e42/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4e5330e6fd63c08451b5a6746968bb57/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0fc3d5fd4f2204259157f58a86480825/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3a59d33a7697e3b0ffdd83fb89e6a4b7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/eb9b54670b02eb8247b6c4f79f7b40bf/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5b6fefe8890d7c9df2ec439bac76e0ca/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/c28f199e441e6e08ac435755ef252307/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f1f8e1bcdeffbf1fa48e8f6aa8864e73/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/66ca813a5a87cec46a40e9a7c1970de4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/50721b72fb89d6bcef30262419b4416f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/bfa28a69b8ac9a757376a28ee50af5ac/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4f3ad763f27f3c6953fe87f884196ec7/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/c1b68a930d23e53e7b864bc1363d6249/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/95a96100fc87af68e1af9bcf16620028/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f140e67d8a7ac35cf968dca4c5afcad2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/7581fa75d943a78171ab9d0968554172/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/810f098349248857cbf50a5ce5f74750/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/d71e3165444f565335b58a0bf5fe37b1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0a787886485688e3f88b06496bec0fd9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e52aefff6801675f474ebd4ea6fed10e/AndroidManifest.xml:2:1-11:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8d9018b2d907a0eaf75e1519d22192c1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cdd18a72a82b3eb3f6e7a050d8a6ead8/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4b28715434d890d9099dee5b297b439a/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+	package
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:3:5-36
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:7:5-67
+MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/82c8642fdb6e5a8e4d752ae70879b64e/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/82c8642fdb6e5a8e4d752ae70879b64e/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/fb9e5e7c7e4fcf33ee6798d50e7dd99a/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/fb9e5e7c7e4fcf33ee6798d50e7dd99a/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:24:5-67
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:7:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:8:5-79
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:8:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:9:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/82c8642fdb6e5a8e4d752ae70879b64e/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/82c8642fdb6e5a8e4d752ae70879b64e/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/fb9e5e7c7e4fcf33ee6798d50e7dd99a/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/fb9e5e7c7e4fcf33ee6798d50e7dd99a/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:10:22-76
+uses-permission#android.permission.CAMERA
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:11:5-65
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:11:22-62
+uses-feature#android.hardware.camera
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:13:5-60
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:13:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:14:5-70
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:14:19-67
+uses-feature#android.hardware.camera.front
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:15:5-66
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:15:19-63
+uses-feature#android.hardware.camera.front.autofocus
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:16:5-76
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:16:19-73
+application
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:18:5-45:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cbe197a728ac806db125c91250b9bde8/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cbe197a728ac806db125c91250b9bde8/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/25b131090352116d5ff34fd47f2d00c1/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/25b131090352116d5ff34fd47f2d00c1/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9f8e031125eb45c60e8d55b551535c9/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9f8e031125eb45c60e8d55b551535c9/AndroidManifest.xml:7:5-20
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f5f0a4705fd42e112f96f3a1ce8a2091/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f5f0a4705fd42e112f96f3a1ce8a2091/AndroidManifest.xml:10:5-20
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8eb4f93e9474ee67581ccee685f233a7/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8eb4f93e9474ee67581ccee685f233a7/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:9:5-15:19
+MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:9:5-15:19
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/b52eeef035ee0722aa8cfe58bcfa44ab/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/b52eeef035ee0722aa8cfe58bcfa44ab/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/9b305a7cea13240cf6ae08f6d5ceced8/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/9b305a7cea13240cf6ae08f6d5ceced8/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/bfa28a69b8ac9a757376a28ee50af5ac/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/bfa28a69b8ac9a757376a28ee50af5ac/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4f3ad763f27f3c6953fe87f884196ec7/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4f3ad763f27f3c6953fe87f884196ec7/AndroidManifest.xml:22:5-23:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e52aefff6801675f474ebd4ea6fed10e/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e52aefff6801675f474ebd4ea6fed10e/AndroidManifest.xml:9:5-20
+	android:screenOrientation
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:23:9-45
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/bfa28a69b8ac9a757376a28ee50af5ac/AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:24:9-35
+	android:label
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:21:9-41
+	android:roundIcon
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:22:9-54
+	android:icon
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:20:9-43
+	android:allowBackup
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:19:9-35
+	android:theme
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:25:9-59
+activity#com.dongsamo.dongsamo.StoreListActivity
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:26:9-85
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:26:19-73
+activity#com.dongsamo.dongsamo.MainActivity
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:27:9-29:59
+	android:windowSoftInputMode
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:29:13-56
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:28:13-62
+activity#com.dongsamo.dongsamo.Splash
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:30:9-38:20
+	android:theme
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:32:13-47
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:31:13-56
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:33:13-37:29
+action#android.intent.action.MAIN
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:34:17-69
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:34:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:36:17-77
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:36:27-74
+activity#com.dongsamo.dongsamo.CourseActivity
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:39:9-73
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:39:19-70
+activity#com.dongsamo.dongsamo.DecidingActivity
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:40:9-75
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:40:19-72
+activity#com.dongsamo.dongsamo.AIRunningActivity
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:41:9-76
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:41:19-73
+activity#com.dongsamo.dongsamo.DirectAddActivity
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:42:9-43:58
+	android:windowSoftInputMode
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:43:13-56
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:42:19-73
+activity#com.dongsamo.dongsamo.StoreActivity
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:44:9-72
+	android:name
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:44:19-69
+uses-sdk
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/34cd6d9f77f9bbd89d0f7c8721b6c8bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/34cd6d9f77f9bbd89d0f7c8721b6c8bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cbe197a728ac806db125c91250b9bde8/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cbe197a728ac806db125c91250b9bde8/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/82c8642fdb6e5a8e4d752ae70879b64e/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/82c8642fdb6e5a8e4d752ae70879b64e/AndroidManifest.xml:18:5-20:41
+MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/d8ef545c89f272d1ad6009b270b2f6b6/AndroidManifest.xml:7:5-9:41
+MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/d8ef545c89f272d1ad6009b270b2f6b6/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/fb9e5e7c7e4fcf33ee6798d50e7dd99a/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/fb9e5e7c7e4fcf33ee6798d50e7dd99a/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:21:5-44
+MERGED from [:opencv] /Users/CHOI_JIN/Documents/Dongsamo/opencv/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:opencv] /Users/CHOI_JIN/Documents/Dongsamo/opencv/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/25b131090352116d5ff34fd47f2d00c1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/25b131090352116d5ff34fd47f2d00c1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9f8e031125eb45c60e8d55b551535c9/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9f8e031125eb45c60e8d55b551535c9/AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/2a4198df91fc211e5d8855f633605975/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/2a4198df91fc211e5d8855f633605975/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/60f804bd82a4f16adfa78101eb1189b0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/60f804bd82a4f16adfa78101eb1189b0/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f5f0a4705fd42e112f96f3a1ce8a2091/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f5f0a4705fd42e112f96f3a1ce8a2091/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.android.gms:play-services-flags:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/a68cc03365b41be523443f5873d930a9/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-flags:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/a68cc03365b41be523443f5873d930a9/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8eb4f93e9474ee67581ccee685f233a7/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8eb4f93e9474ee67581ccee685f233a7/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/b52eeef035ee0722aa8cfe58bcfa44ab/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/b52eeef035ee0722aa8cfe58bcfa44ab/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0675deb5a6e77a48b0fdb80d6a2f302a/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0675deb5a6e77a48b0fdb80d6a2f302a/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/9b305a7cea13240cf6ae08f6d5ceced8/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/9b305a7cea13240cf6ae08f6d5ceced8/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/afdd57530765fdcafdc1a52dd2caef60/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/afdd57530765fdcafdc1a52dd2caef60/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4ff0e6eb33a9629b2626fd8728388127/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4ff0e6eb33a9629b2626fd8728388127/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5dda030f64986adb2d6243b9fc1c9f20/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5dda030f64986adb2d6243b9fc1c9f20/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9d43d52be4a21ff2e7f3e6aa6a7e1e5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9d43d52be4a21ff2e7f3e6aa6a7e1e5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/ad5aabc547ad74a5be8c537bbf221025/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/ad5aabc547ad74a5be8c537bbf221025/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0b43535f94003e6a03cb835744a89e42/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0b43535f94003e6a03cb835744a89e42/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4e5330e6fd63c08451b5a6746968bb57/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4e5330e6fd63c08451b5a6746968bb57/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0fc3d5fd4f2204259157f58a86480825/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0fc3d5fd4f2204259157f58a86480825/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3a59d33a7697e3b0ffdd83fb89e6a4b7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3a59d33a7697e3b0ffdd83fb89e6a4b7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/eb9b54670b02eb8247b6c4f79f7b40bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/eb9b54670b02eb8247b6c4f79f7b40bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5b6fefe8890d7c9df2ec439bac76e0ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5b6fefe8890d7c9df2ec439bac76e0ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/c28f199e441e6e08ac435755ef252307/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/c28f199e441e6e08ac435755ef252307/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f1f8e1bcdeffbf1fa48e8f6aa8864e73/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f1f8e1bcdeffbf1fa48e8f6aa8864e73/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/66ca813a5a87cec46a40e9a7c1970de4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/66ca813a5a87cec46a40e9a7c1970de4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/50721b72fb89d6bcef30262419b4416f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/50721b72fb89d6bcef30262419b4416f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/bfa28a69b8ac9a757376a28ee50af5ac/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/bfa28a69b8ac9a757376a28ee50af5ac/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4f3ad763f27f3c6953fe87f884196ec7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4f3ad763f27f3c6953fe87f884196ec7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/c1b68a930d23e53e7b864bc1363d6249/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/c1b68a930d23e53e7b864bc1363d6249/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/95a96100fc87af68e1af9bcf16620028/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/95a96100fc87af68e1af9bcf16620028/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f140e67d8a7ac35cf968dca4c5afcad2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f140e67d8a7ac35cf968dca4c5afcad2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/7581fa75d943a78171ab9d0968554172/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/7581fa75d943a78171ab9d0968554172/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/810f098349248857cbf50a5ce5f74750/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/810f098349248857cbf50a5ce5f74750/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/d71e3165444f565335b58a0bf5fe37b1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/d71e3165444f565335b58a0bf5fe37b1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0a787886485688e3f88b06496bec0fd9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0a787886485688e3f88b06496bec0fd9/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e52aefff6801675f474ebd4ea6fed10e/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e52aefff6801675f474ebd4ea6fed10e/AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8d9018b2d907a0eaf75e1519d22192c1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8d9018b2d907a0eaf75e1519d22192c1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cdd18a72a82b3eb3f6e7a050d8a6ead8/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cdd18a72a82b3eb3f6e7a050d8a6ead8/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4b28715434d890d9099dee5b297b439a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4b28715434d890d9099dee5b297b439a/AndroidManifest.xml:20:5-44
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+activity#com.google.firebase.auth.internal.FederatedSignInActivity
+ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:24:9-31:50
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:26:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:28:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:27:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:29:13-102
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:30:13-72
+	tools:replace
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:31:13-47
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:25:13-85
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:33:9-39:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:34:13-84
+meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
+ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:36:13-38:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:38:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:37:17-109
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:28:9-32
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:24:13-79
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:10:9-14:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:12:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:13:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:14:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:11:13-77
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:24:13-58
