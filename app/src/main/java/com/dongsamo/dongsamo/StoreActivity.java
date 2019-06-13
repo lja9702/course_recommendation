@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.dongsamo.dongsamo.firebase_control.Store;
 
 public class StoreActivity extends AppCompatActivity {
@@ -24,17 +25,9 @@ public class StoreActivity extends AppCompatActivity {
         store_text.setMovementMethod(new ScrollingMovementMethod());
 
         //kong todo 69 StoreRecyclerViewAdapter에서 인텐트로 보낸 store_name 정보 띄우기.
-        //Store s = (Store) getIntent().getSerializableExtra("store");
-//        Intent received = new Intent();
-//        Store s = new Store(received.getStringExtra("store_name"), received.getStringExtra("store_img_url"),  received.getDoubleExtra("store_heart",0), received.getDoubleExtra("store_distance",0), received.getBooleanExtra("store_is_heart", false));
-
-//        Log.d("TAG", s.getUrl());
-
-//        store_image.setImageURI(Uri.parse(s.getUrl()));
-
-        Log.d("TAG", getIntent().getStringExtra("store_img_url"));
-        store_text.setText(getIntent().getStringExtra("store_name"));
-        //store_text.setText(getIntent().getStringExtra(s.getName()));
+        StoreCard sc = (StoreCard) getIntent().getSerializableExtra("store");
+        Glide.with(store_image).load(""+sc.getImg_url()).into(store_image);
+        store_text.setText(sc.getName());
     }
 
     private void setup(){

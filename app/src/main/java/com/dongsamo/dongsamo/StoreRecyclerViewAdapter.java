@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.dongsamo.dongsamo.firebase_control.Store;
 
 import java.util.List;
 
@@ -68,12 +69,10 @@ public class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecycler
                 }
                 else{
                     Intent intent = new Intent(mContext.getApplicationContext(), StoreActivity.class);
-                    intent.putExtra("store", mData.get(i).getClass());
-                    intent.putExtra("store_img_url", mData.get(i).getImg_url());
-                    intent.putExtra("store_name", mData.get(i).getName());
-                    intent.putExtra("store_star", mData.get(i).getStar());
-                    intent.putExtra("store_distance", mData.get(i).getDistance());
-                    intent.putExtra("store_is_heart", mData.get(i).isIs_heart());
+                    StoreCard sc = mData.get(i);
+
+                    intent.putExtra("store", sc);
+
                     mContext.startActivity(intent);
                 }
             }
