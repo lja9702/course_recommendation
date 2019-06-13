@@ -1,0 +1,7 @@
+# ninja log v5
+11	5458	1558003610	CMakeFiles/native-lib.dir/native-lib.cpp.o	78dcf2009718e3f0
+5459	5557	1558003610	/home/kongil/Dongsamo/app/build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	684bbebcf03b03f9
+11	3310	1558004153	CMakeFiles/native-lib.dir/native-lib.cpp.o	78dcf2009718e3f0
+3310	3380	1558004153	/home/kongil/Dongsamo/app/build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	684bbebcf03b03f9
+16	4724	1558433000	CMakeFiles/native-lib.dir/native-lib.cpp.o	78dcf2009718e3f0
+4724	4913	1558433000	/home/kongil/Dongsamo/app/build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	684bbebcf03b03f9
