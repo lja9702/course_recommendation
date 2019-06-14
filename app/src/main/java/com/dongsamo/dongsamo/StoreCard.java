@@ -2,7 +2,9 @@ package com.dongsamo.dongsamo;
 
 import android.support.v7.app.AppCompatActivity;
 
-public class StoreCard extends AppCompatActivity {
+import java.io.Serializable;
+
+public class StoreCard extends AppCompatActivity implements Serializable {
 
     private String name;
     private double star;

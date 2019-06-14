@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 
-import com.donsamo.dongsamo.firebase_control.GlideApp;
+import com.dongsamo.dongsamo.firebase_control.GlideApp;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 

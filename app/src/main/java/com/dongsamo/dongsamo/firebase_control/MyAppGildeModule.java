@@ -1,4 +1,4 @@
-package com.donsamo.dongsamo.firebase_control;
+package com.dongsamo.dongsamo.firebase_control;
 
 import android.content.Context;
 import android.util.Log;
