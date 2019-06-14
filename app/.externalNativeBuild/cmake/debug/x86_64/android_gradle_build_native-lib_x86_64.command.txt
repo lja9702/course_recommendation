@@ -1,8 +1,0 @@
-Executable : /home/kongil/Android/Sdk/cmake/3.10.2.4988404/bin/cmake
-arguments : 
---build
-/home/kongil/Dongsamo/app/.externalNativeBuild/cmake/debug/x86_64
---target
-native-lib
-jvmArgs : 
-
