@@ -9,4 +9,8 @@
         android:minSdkVersion="21"
         android:targetSdkVersion="26" />
 
+    <application>
+        <activity android:name="org.opencv.android.CameraSurfaceView" />
+    </application>
+
 </manifest>

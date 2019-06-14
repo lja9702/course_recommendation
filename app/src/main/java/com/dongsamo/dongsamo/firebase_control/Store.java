@@ -1,6 +1,8 @@
-package com.donsamo.dongsamo.firebase_control;
+package com.dongsamo.dongsamo.firebase_control;
 
-public class Store {
+import java.io.Serializable;
+
+public class Store implements Serializable {
     private String name = "";
     private String url = "";
     private double star = 0;
