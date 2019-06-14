@@ -1,18 +1,18 @@
 {
   "buildFiles": [
-    "/home/kongil/Android/Sdk/ndk-bundle/build/cmake/platforms.cmake",
-    "/home/kongil/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
-    "/home/kongil/Dongsamo/app/src/main/cpp/CMakeLists.txt"
+    "/Users/CHOI_JIN/Library/Android/sdk/ndk-bundle/build/cmake/platforms.cmake",
+    "/Users/CHOI_JIN/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+    "/Users/CHOI_JIN/Documents/Dongsamo/app/src/main/cpp/CMakeLists.txt"
   ],
   "cleanCommands": [
-    "/home/kongil/Android/Sdk/cmake/3.10.2.4988404/bin/cmake --build \"/home/kongil/Dongsamo/app/.externalNativeBuild/cmake/release/x86\" --target clean"
+    "/Users/CHOI_JIN/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build \"/Users/CHOI_JIN/Documents/Dongsamo/app/.externalNativeBuild/cmake/release/x86\" --target clean"
   ],
   "libraries": {
     "native-lib-Release-x86": {
       "artifactName": "native-lib",
-      "buildCommand": "/home/kongil/Android/Sdk/cmake/3.10.2.4988404/bin/cmake --build \"/home/kongil/Dongsamo/app/.externalNativeBuild/cmake/release/x86\" --target native-lib",
+      "buildCommand": "/Users/CHOI_JIN/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build \"/Users/CHOI_JIN/Documents/Dongsamo/app/.externalNativeBuild/cmake/release/x86\" --target native-lib",
       "abi": "x86",
-      "output": "/home/kongil/Dongsamo/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so"
+      "output": "/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so"
     }
   }
 }

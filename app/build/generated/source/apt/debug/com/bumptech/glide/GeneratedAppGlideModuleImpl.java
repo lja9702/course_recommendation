@@ -2,7 +2,7 @@ package com.bumptech.glide;
 
 import android.content.Context;
 import android.util.Log;
-import com.dongsamo.dongsamo.firebase_control.MyAppGildeModule;
+import com.donsamo.dongsamo.firebase_control.MyAppGildeModule;
 import java.lang.Class;
 import java.lang.Override;
 import java.lang.SuppressWarnings;
@@ -16,7 +16,7 @@ final class GeneratedAppGlideModuleImpl extends GeneratedAppGlideModule {
   GeneratedAppGlideModuleImpl() {
     appGlideModule = new MyAppGildeModule();
     if (Log.isLoggable("Glide", Log.DEBUG)) {
-      Log.d("Glide", "Discovered AppGlideModule from annotation: com.dongsamo.dongsamo.firebase_control.MyAppGildeModule");
+      Log.d("Glide", "Discovered AppGlideModule from annotation: com.donsamo.dongsamo.firebase_control.MyAppGildeModule");
     }
   }
 

@@ -764,7 +764,7 @@ int drawable googleg_disabled_color_18 0x7f070076
 int drawable googleg_standard_color_18 0x7f070077
 int drawable ic_launcher_background 0x7f070078
 int drawable ic_launcher_foreground 0x7f070079
-int drawable loading_btn 0x7f07007a
+int drawable icon 0x7f07007a
 int drawable no_course 0x7f07007b
 int drawable notification_action_background 0x7f07007c
 int drawable notification_bg 0x7f07007d
@@ -820,7 +820,7 @@ int id action_mode_close_button 0x7f080016
 int id action_text 0x7f080017
 int id actions 0x7f080018
 int id activity_chooser_view_content 0x7f080019
-int id activity_surfaceView 0x7f08001a
+int id activity_surface_view 0x7f08001a
 int id add 0x7f08001b
 int id adjust_height 0x7f08001c
 int id adjust_width 0x7f08001d

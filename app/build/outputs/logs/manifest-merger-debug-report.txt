@@ -1,415 +1,386 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:2:1-63:12
-MERGED from [:opencv] /home/kongil/Dongsamo/opencv/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-16:12
-MERGED from [com.android.support:appcompat-v7:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/bfb88bacd6d248c15a4b7466a8337c16/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/kongil/.gradle/caches/transforms-2/files-2.1/9c836682542a32001fce724a3a95ac0c/AndroidManifest.xml:2:1-11:12
-MERGED from [com.google.firebase:firebase-database:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/4ecc7c4fb29338907766eaefd1ae801c/AndroidManifest.xml:15:1-25:12
-MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/5feb0f7f016e9c31f4d4b1dc20c787e5/AndroidManifest.xml:2:1-11:12
-MERGED from [com.google.firebase:firebase-storage:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/6d06a147c8c8e8bc593ec39276933ab3/AndroidManifest.xml:15:1-26:12
-MERGED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:17:1-42:12
-MERGED from [com.google.android.gms:play-services-places:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/8d069b9b84abeb2ac8057649761939c9/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/637a32be74f9e4373a690dba461bcf20/AndroidManifest.xml:17:1-32:12
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/632d99cbc7ca62b1e117750e854030b1/AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/eec551ab250e7228e8f77f1e2fec6d51/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:cardview-v7:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/5243025c21b0a68ad5d89d776ca02de6/AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.bumptech.glide:glide:4.8.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/f6d2e16b40d7fb9120b0b5d6e41d47cd/AndroidManifest.xml:2:1-12:12
-MERGED from [com.rmtheis:tess-two:9.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/615d49cc1b25f0b19805226d8b3ca000/AndroidManifest.xml:17:1-26:12
-MERGED from [com.google.android.gms:play-services-flags:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/3379ddf4cd7710228c2654d2bb6c4772/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/0504a216a99c5ef523bcb922082fd4bc/AndroidManifest.xml:2:1-10:12
-MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/49fdba39dda232c443f0d6c44f701b84/AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.firebase:firebase-common:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/282abef6cb9445041439a951e99f6961/AndroidManifest.xml:2:1-17:12
-MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/9fb165a14e4e30a16434b9d23c0bb157/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/08297745669f9065961b931862c58cd5/AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/f89865764cde5c579484f19783052af6/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-basement:16.1.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/d5175bc68b68b152a913a89f942489be/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/1d1da737e2e1746bcec5bcd3ff022a13/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/01a247e0662d87a1c13c72666c77ef69/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/f77f1df2de917bbc95032b9b2aaa9e9c/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/d3152d51148f01c29ca81ea0b28135f4/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/eb6289065eaf6b98483570d2cb78cda4/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/bc9f8ae3c396f7cc967029e1fdeebbc2/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:loader:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/e79acbf5bab5e88352205df26fb0efad/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:viewpager:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/73248b582677563ca02b8550c9519d81/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:coordinatorlayout:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/281786ea9c9608ea2035156b8043321c/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:drawerlayout:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/18d21edfe6e3faa40883c06981f98dbd/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:slidingpanelayout:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/64455e8371ffbd8727659d53ed5c8338/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:customview:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/e4d226ec099e152c206155c7878ff193/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/70fa3a21a7d59addfa76b828b991761c/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/12bf9d07bfb7ece4ba7e49799d87767b/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/0f220a553ba57a14ba1a211a870f0c48/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/10e8f18efe66ab3d86c7f3d4572c398d/AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:versionedparcelable:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/2c6e048000fa7a29cc4d766823d15492/AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:cursoradapter:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/26b540a6b3d416f1192e3b901b54d54d/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/812cae8c2000d6482b9c0f6f1527e039/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:documentfile:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/75f05303c0b3b3aea81bc72c888bec0a/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/b2626fb84a34219730b6f148e9c16b50/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:print:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/dd9f5742d3106ec0b7929a90d0389553/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/371016d86374c80aa0a8a60b15f153e0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:interpolator:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/2422ef3014ee865a2b439d68259d461d/AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/be33dbbef2d5d803351fe57f4b425dcb/AndroidManifest.xml:2:1-11:12
-MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/27b2c778fd7a3886c667010debad0370/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/c65db86593d32ae2a05794f9858c5e8c/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/4a5823f356e8de0e1c979d6bb8160073/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:2:1-63:12
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/34cd6d9f77f9bbd89d0f7c8721b6c8bf/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cbe197a728ac806db125c91250b9bde8/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/82c8642fdb6e5a8e4d752ae70879b64e/AndroidManifest.xml:15:1-25:12
+MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/d8ef545c89f272d1ad6009b270b2f6b6/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/fb9e5e7c7e4fcf33ee6798d50e7dd99a/AndroidManifest.xml:15:1-26:12
+MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:17:1-42:12
+MERGED from [:opencv] /Users/CHOI_JIN/Documents/Dongsamo/opencv/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/25b131090352116d5ff34fd47f2d00c1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9f8e031125eb45c60e8d55b551535c9/AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/2a4198df91fc211e5d8855f633605975/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/60f804bd82a4f16adfa78101eb1189b0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f5f0a4705fd42e112f96f3a1ce8a2091/AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.gms:play-services-flags:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/a68cc03365b41be523443f5873d930a9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8eb4f93e9474ee67581ccee685f233a7/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/b52eeef035ee0722aa8cfe58bcfa44ab/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0675deb5a6e77a48b0fdb80d6a2f302a/AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/9b305a7cea13240cf6ae08f6d5ceced8/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/afdd57530765fdcafdc1a52dd2caef60/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4ff0e6eb33a9629b2626fd8728388127/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5dda030f64986adb2d6243b9fc1c9f20/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9d43d52be4a21ff2e7f3e6aa6a7e1e5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/ad5aabc547ad74a5be8c537bbf221025/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0b43535f94003e6a03cb835744a89e42/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4e5330e6fd63c08451b5a6746968bb57/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0fc3d5fd4f2204259157f58a86480825/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3a59d33a7697e3b0ffdd83fb89e6a4b7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/eb9b54670b02eb8247b6c4f79f7b40bf/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5b6fefe8890d7c9df2ec439bac76e0ca/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/c28f199e441e6e08ac435755ef252307/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f1f8e1bcdeffbf1fa48e8f6aa8864e73/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/66ca813a5a87cec46a40e9a7c1970de4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/50721b72fb89d6bcef30262419b4416f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/bfa28a69b8ac9a757376a28ee50af5ac/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4f3ad763f27f3c6953fe87f884196ec7/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/c1b68a930d23e53e7b864bc1363d6249/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/95a96100fc87af68e1af9bcf16620028/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f140e67d8a7ac35cf968dca4c5afcad2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/7581fa75d943a78171ab9d0968554172/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/810f098349248857cbf50a5ce5f74750/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/d71e3165444f565335b58a0bf5fe37b1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0a787886485688e3f88b06496bec0fd9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e52aefff6801675f474ebd4ea6fed10e/AndroidManifest.xml:2:1-11:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8d9018b2d907a0eaf75e1519d22192c1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cdd18a72a82b3eb3f6e7a050d8a6ead8/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4b28715434d890d9099dee5b297b439a/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
 	package
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:3:5-36
-		INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
-		INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:3:5-36
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:2:1-63:12
-		INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:2:1-63:12
-		INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:1-49:12
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:5:5-67
-MERGED from [com.google.firebase:firebase-database:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/4ecc7c4fb29338907766eaefd1ae801c/AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-database:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/4ecc7c4fb29338907766eaefd1ae801c/AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-storage:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/6d06a147c8c8e8bc593ec39276933ab3/AndroidManifest.xml:24:5-67
-MERGED from [com.google.firebase:firebase-storage:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/6d06a147c8c8e8bc593ec39276933ab3/AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/637a32be74f9e4373a690dba461bcf20/AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/637a32be74f9e4373a690dba461bcf20/AndroidManifest.xml:24:5-67
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:7:5-67
+MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/82c8642fdb6e5a8e4d752ae70879b64e/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/82c8642fdb6e5a8e4d752ae70879b64e/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/fb9e5e7c7e4fcf33ee6798d50e7dd99a/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/fb9e5e7c7e4fcf33ee6798d50e7dd99a/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:24:5-67
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:7:22-64
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:6:5-79
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:8:5-79
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:6:22-76
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:8:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:7:5-81
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:9:5-81
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:7:22-78
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:9:22-78
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:8:5-79
-MERGED from [com.google.firebase:firebase-database:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/4ecc7c4fb29338907766eaefd1ae801c/AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-database:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/4ecc7c4fb29338907766eaefd1ae801c/AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-storage:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/6d06a147c8c8e8bc593ec39276933ab3/AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-storage:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/6d06a147c8c8e8bc593ec39276933ab3/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/637a32be74f9e4373a690dba461bcf20/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/637a32be74f9e4373a690dba461bcf20/AndroidManifest.xml:23:5-79
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/82c8642fdb6e5a8e4d752ae70879b64e/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/82c8642fdb6e5a8e4d752ae70879b64e/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/fb9e5e7c7e4fcf33ee6798d50e7dd99a/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/fb9e5e7c7e4fcf33ee6798d50e7dd99a/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:23:5-79
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:8:22-76
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:10:22-76
 uses-permission#android.permission.CAMERA
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:9:5-65
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:11:5-65
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:9:22-62
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:11:22-62
 uses-feature#android.hardware.camera
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:12:5-14:36
-	android:required
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:14:9-33
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:13:5-60
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:13:9-47
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:13:19-57
 uses-feature#android.hardware.camera.autofocus
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:15:5-17:36
-	android:required
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:17:9-33
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:14:5-70
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:16:9-57
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:14:19-67
 uses-feature#android.hardware.camera.front
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:18:5-20:36
-	android:required
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:20:9-33
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:15:5-66
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:19:9-53
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:15:19-63
 uses-feature#android.hardware.camera.front.autofocus
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:21:5-23:36
-	android:required
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:23:9-33
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:16:5-76
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:22:9-63
-supports-screens
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:25:5-30:39
-	android:largeScreens
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:27:9-36
-	android:smallScreens
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:30:9-36
-	android:normalScreens
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:28:9-37
-	android:resizeable
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:29:9-34
-	android:anyDensity
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:26:9-34
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:16:19-73
 application
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:33:5-61:19
-MERGED from [:opencv] /home/kongil/Dongsamo/opencv/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-14:19
-MERGED from [:opencv] /home/kongil/Dongsamo/opencv/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-14:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/kongil/.gradle/caches/transforms-2/files-2.1/9c836682542a32001fce724a3a95ac0c/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/kongil/.gradle/caches/transforms-2/files-2.1/9c836682542a32001fce724a3a95ac0c/AndroidManifest.xml:9:5-20
-MERGED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:23:5-40:19
-MERGED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:23:5-40:19
-MERGED from [com.google.android.gms:play-services-places:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/8d069b9b84abeb2ac8057649761939c9/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-places:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/8d069b9b84abeb2ac8057649761939c9/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/637a32be74f9e4373a690dba461bcf20/AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/637a32be74f9e4373a690dba461bcf20/AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/632d99cbc7ca62b1e117750e854030b1/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/632d99cbc7ca62b1e117750e854030b1/AndroidManifest.xml:7:5-20
-MERGED from [com.github.bumptech.glide:glide:4.8.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/f6d2e16b40d7fb9120b0b5d6e41d47cd/AndroidManifest.xml:10:5-20
-MERGED from [com.github.bumptech.glide:glide:4.8.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/f6d2e16b40d7fb9120b0b5d6e41d47cd/AndroidManifest.xml:10:5-20
-MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/0504a216a99c5ef523bcb922082fd4bc/AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/0504a216a99c5ef523bcb922082fd4bc/AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/49fdba39dda232c443f0d6c44f701b84/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/49fdba39dda232c443f0d6c44f701b84/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.firebase:firebase-common:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/282abef6cb9445041439a951e99f6961/AndroidManifest.xml:9:5-15:19
-MERGED from [com.google.firebase:firebase-common:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/282abef6cb9445041439a951e99f6961/AndroidManifest.xml:9:5-15:19
-MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/9fb165a14e4e30a16434b9d23c0bb157/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/9fb165a14e4e30a16434b9d23c0bb157/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/f89865764cde5c579484f19783052af6/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/f89865764cde5c579484f19783052af6/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-basement:16.1.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/d5175bc68b68b152a913a89f942489be/AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:16.1.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/d5175bc68b68b152a913a89f942489be/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-compat:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/10e8f18efe66ab3d86c7f3d4572c398d/AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:support-compat:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/10e8f18efe66ab3d86c7f3d4572c398d/AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:versionedparcelable:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/2c6e048000fa7a29cc4d766823d15492/AndroidManifest.xml:22:5-23:19
-MERGED from [com.android.support:versionedparcelable:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/2c6e048000fa7a29cc4d766823d15492/AndroidManifest.xml:22:5-23:19
-MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/be33dbbef2d5d803351fe57f4b425dcb/AndroidManifest.xml:9:5-20
-MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/be33dbbef2d5d803351fe57f4b425dcb/AndroidManifest.xml:9:5-20
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:18:5-45:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cbe197a728ac806db125c91250b9bde8/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cbe197a728ac806db125c91250b9bde8/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/25b131090352116d5ff34fd47f2d00c1/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/25b131090352116d5ff34fd47f2d00c1/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9f8e031125eb45c60e8d55b551535c9/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9f8e031125eb45c60e8d55b551535c9/AndroidManifest.xml:7:5-20
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f5f0a4705fd42e112f96f3a1ce8a2091/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f5f0a4705fd42e112f96f3a1ce8a2091/AndroidManifest.xml:10:5-20
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8eb4f93e9474ee67581ccee685f233a7/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8eb4f93e9474ee67581ccee685f233a7/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:9:5-15:19
+MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:9:5-15:19
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/b52eeef035ee0722aa8cfe58bcfa44ab/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/b52eeef035ee0722aa8cfe58bcfa44ab/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/9b305a7cea13240cf6ae08f6d5ceced8/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/9b305a7cea13240cf6ae08f6d5ceced8/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/bfa28a69b8ac9a757376a28ee50af5ac/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/bfa28a69b8ac9a757376a28ee50af5ac/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4f3ad763f27f3c6953fe87f884196ec7/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4f3ad763f27f3c6953fe87f884196ec7/AndroidManifest.xml:22:5-23:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e52aefff6801675f474ebd4ea6fed10e/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e52aefff6801675f474ebd4ea6fed10e/AndroidManifest.xml:9:5-20
 	android:screenOrientation
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:38:9-45
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:23:9-45
 	android:appComponentFactory
-		ADDED from [com.android.support:support-compat:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/10e8f18efe66ab3d86c7f3d4572c398d/AndroidManifest.xml:22:18-91
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/bfa28a69b8ac9a757376a28ee50af5ac/AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:39:9-35
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:24:9-35
 	android:label
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:36:9-41
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:21:9-41
 	android:roundIcon
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:37:9-54
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:22:9-54
 	android:icon
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:35:9-43
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:20:9-43
 	android:allowBackup
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:34:9-35
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:19:9-35
 	android:theme
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:40:9-59
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:25:9-59
 activity#com.dongsamo.dongsamo.StoreListActivity
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:41:9-55
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:26:9-85
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:41:19-52
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:26:19-73
 activity#com.dongsamo.dongsamo.MainActivity
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:42:9-44:59
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:27:9-29:59
 	android:windowSoftInputMode
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:44:13-56
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:29:13-56
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:43:13-41
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:28:13-62
 activity#com.dongsamo.dongsamo.Splash
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:45:9-53:20
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:30:9-38:20
 	android:theme
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:47:13-47
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:32:13-47
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:46:13-35
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:31:13-56
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:48:13-52:29
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:33:13-37:29
 action#android.intent.action.MAIN
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:49:17-69
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:34:17-69
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:49:25-66
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:34:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:51:17-77
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:36:17-77
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:51:27-74
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:36:27-74
 activity#com.dongsamo.dongsamo.CourseActivity
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:54:9-52
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:39:9-73
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:54:19-49
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:39:19-70
 activity#com.dongsamo.dongsamo.DecidingActivity
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:55:9-54
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:40:9-75
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:55:19-51
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:40:19-72
 activity#com.dongsamo.dongsamo.AIRunningActivity
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:56:9-55
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:41:9-76
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:56:19-52
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:41:19-73
 activity#com.dongsamo.dongsamo.DirectAddActivity
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:57:9-59:59
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:42:9-43:58
 	android:windowSoftInputMode
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:59:13-56
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:43:13-56
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:58:13-46
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:42:19-73
 activity#com.dongsamo.dongsamo.StoreActivity
-ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:60:9-51
+ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:44:9-72
 	android:name
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml:60:19-48
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml:44:19-69
 uses-sdk
-INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
-INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
-MERGED from [:opencv] /home/kongil/Dongsamo/opencv/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
-MERGED from [:opencv] /home/kongil/Dongsamo/opencv/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.support:appcompat-v7:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/bfb88bacd6d248c15a4b7466a8337c16/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/bfb88bacd6d248c15a4b7466a8337c16/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/kongil/.gradle/caches/transforms-2/files-2.1/9c836682542a32001fce724a3a95ac0c/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/kongil/.gradle/caches/transforms-2/files-2.1/9c836682542a32001fce724a3a95ac0c/AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.firebase:firebase-database:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/4ecc7c4fb29338907766eaefd1ae801c/AndroidManifest.xml:18:5-20:41
-MERGED from [com.google.firebase:firebase-database:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/4ecc7c4fb29338907766eaefd1ae801c/AndroidManifest.xml:18:5-20:41
-MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/5feb0f7f016e9c31f4d4b1dc20c787e5/AndroidManifest.xml:7:5-9:41
-MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/5feb0f7f016e9c31f4d4b1dc20c787e5/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.firebase:firebase-storage:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/6d06a147c8c8e8bc593ec39276933ab3/AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-storage:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/6d06a147c8c8e8bc593ec39276933ab3/AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:21:5-44
-MERGED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:21:5-44
-MERGED from [com.google.android.gms:play-services-places:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/8d069b9b84abeb2ac8057649761939c9/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-places:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/8d069b9b84abeb2ac8057649761939c9/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/637a32be74f9e4373a690dba461bcf20/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/637a32be74f9e4373a690dba461bcf20/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/632d99cbc7ca62b1e117750e854030b1/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/632d99cbc7ca62b1e117750e854030b1/AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/eec551ab250e7228e8f77f1e2fec6d51/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/eec551ab250e7228e8f77f1e2fec6d51/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/5243025c21b0a68ad5d89d776ca02de6/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/5243025c21b0a68ad5d89d776ca02de6/AndroidManifest.xml:20:5-44
-MERGED from [com.github.bumptech.glide:glide:4.8.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/f6d2e16b40d7fb9120b0b5d6e41d47cd/AndroidManifest.xml:6:5-8:41
-MERGED from [com.github.bumptech.glide:glide:4.8.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/f6d2e16b40d7fb9120b0b5d6e41d47cd/AndroidManifest.xml:6:5-8:41
-MERGED from [com.rmtheis:tess-two:9.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/615d49cc1b25f0b19805226d8b3ca000/AndroidManifest.xml:22:5-24:41
-MERGED from [com.rmtheis:tess-two:9.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/615d49cc1b25f0b19805226d8b3ca000/AndroidManifest.xml:22:5-24:41
-MERGED from [com.google.android.gms:play-services-flags:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/3379ddf4cd7710228c2654d2bb6c4772/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-flags:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/3379ddf4cd7710228c2654d2bb6c4772/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/0504a216a99c5ef523bcb922082fd4bc/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/0504a216a99c5ef523bcb922082fd4bc/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/49fdba39dda232c443f0d6c44f701b84/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/49fdba39dda232c443f0d6c44f701b84/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-common:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/282abef6cb9445041439a951e99f6961/AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.firebase:firebase-common:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/282abef6cb9445041439a951e99f6961/AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/9fb165a14e4e30a16434b9d23c0bb157/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/9fb165a14e4e30a16434b9d23c0bb157/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/08297745669f9065961b931862c58cd5/AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/08297745669f9065961b931862c58cd5/AndroidManifest.xml:6:5-44
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/f89865764cde5c579484f19783052af6/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/f89865764cde5c579484f19783052af6/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:16.1.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/d5175bc68b68b152a913a89f942489be/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:16.1.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/d5175bc68b68b152a913a89f942489be/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/1d1da737e2e1746bcec5bcd3ff022a13/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/1d1da737e2e1746bcec5bcd3ff022a13/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/01a247e0662d87a1c13c72666c77ef69/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/01a247e0662d87a1c13c72666c77ef69/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/f77f1df2de917bbc95032b9b2aaa9e9c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/f77f1df2de917bbc95032b9b2aaa9e9c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/d3152d51148f01c29ca81ea0b28135f4/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/d3152d51148f01c29ca81ea0b28135f4/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/eb6289065eaf6b98483570d2cb78cda4/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/eb6289065eaf6b98483570d2cb78cda4/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/bc9f8ae3c396f7cc967029e1fdeebbc2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/bc9f8ae3c396f7cc967029e1fdeebbc2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/e79acbf5bab5e88352205df26fb0efad/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/e79acbf5bab5e88352205df26fb0efad/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/73248b582677563ca02b8550c9519d81/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/73248b582677563ca02b8550c9519d81/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/281786ea9c9608ea2035156b8043321c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/281786ea9c9608ea2035156b8043321c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/18d21edfe6e3faa40883c06981f98dbd/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/18d21edfe6e3faa40883c06981f98dbd/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/64455e8371ffbd8727659d53ed5c8338/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/64455e8371ffbd8727659d53ed5c8338/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/e4d226ec099e152c206155c7878ff193/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/e4d226ec099e152c206155c7878ff193/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/70fa3a21a7d59addfa76b828b991761c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/70fa3a21a7d59addfa76b828b991761c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/12bf9d07bfb7ece4ba7e49799d87767b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/12bf9d07bfb7ece4ba7e49799d87767b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/0f220a553ba57a14ba1a211a870f0c48/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/0f220a553ba57a14ba1a211a870f0c48/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/10e8f18efe66ab3d86c7f3d4572c398d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/10e8f18efe66ab3d86c7f3d4572c398d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/2c6e048000fa7a29cc4d766823d15492/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/2c6e048000fa7a29cc4d766823d15492/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/26b540a6b3d416f1192e3b901b54d54d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/26b540a6b3d416f1192e3b901b54d54d/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/812cae8c2000d6482b9c0f6f1527e039/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/812cae8c2000d6482b9c0f6f1527e039/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/75f05303c0b3b3aea81bc72c888bec0a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/75f05303c0b3b3aea81bc72c888bec0a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/b2626fb84a34219730b6f148e9c16b50/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/b2626fb84a34219730b6f148e9c16b50/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/dd9f5742d3106ec0b7929a90d0389553/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/dd9f5742d3106ec0b7929a90d0389553/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/371016d86374c80aa0a8a60b15f153e0/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/371016d86374c80aa0a8a60b15f153e0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/2422ef3014ee865a2b439d68259d461d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/2422ef3014ee865a2b439d68259d461d/AndroidManifest.xml:20:5-44
-MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/be33dbbef2d5d803351fe57f4b425dcb/AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/be33dbbef2d5d803351fe57f4b425dcb/AndroidManifest.xml:5:5-7:41
-MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/27b2c778fd7a3886c667010debad0370/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/27b2c778fd7a3886c667010debad0370/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/c65db86593d32ae2a05794f9858c5e8c/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/c65db86593d32ae2a05794f9858c5e8c/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/4a5823f356e8de0e1c979d6bb8160073/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/4a5823f356e8de0e1c979d6bb8160073/AndroidManifest.xml:20:5-44
-INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
-INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/34cd6d9f77f9bbd89d0f7c8721b6c8bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/34cd6d9f77f9bbd89d0f7c8721b6c8bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cbe197a728ac806db125c91250b9bde8/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cbe197a728ac806db125c91250b9bde8/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/82c8642fdb6e5a8e4d752ae70879b64e/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/82c8642fdb6e5a8e4d752ae70879b64e/AndroidManifest.xml:18:5-20:41
+MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/d8ef545c89f272d1ad6009b270b2f6b6/AndroidManifest.xml:7:5-9:41
+MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/d8ef545c89f272d1ad6009b270b2f6b6/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/fb9e5e7c7e4fcf33ee6798d50e7dd99a/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/fb9e5e7c7e4fcf33ee6798d50e7dd99a/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:21:5-44
+MERGED from [:opencv] /Users/CHOI_JIN/Documents/Dongsamo/opencv/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:opencv] /Users/CHOI_JIN/Documents/Dongsamo/opencv/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/25b131090352116d5ff34fd47f2d00c1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/25b131090352116d5ff34fd47f2d00c1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9f8e031125eb45c60e8d55b551535c9/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9f8e031125eb45c60e8d55b551535c9/AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/2a4198df91fc211e5d8855f633605975/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/2a4198df91fc211e5d8855f633605975/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/60f804bd82a4f16adfa78101eb1189b0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/60f804bd82a4f16adfa78101eb1189b0/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f5f0a4705fd42e112f96f3a1ce8a2091/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f5f0a4705fd42e112f96f3a1ce8a2091/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.android.gms:play-services-flags:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/a68cc03365b41be523443f5873d930a9/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-flags:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/a68cc03365b41be523443f5873d930a9/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8eb4f93e9474ee67581ccee685f233a7/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8eb4f93e9474ee67581ccee685f233a7/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/b52eeef035ee0722aa8cfe58bcfa44ab/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/b52eeef035ee0722aa8cfe58bcfa44ab/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0675deb5a6e77a48b0fdb80d6a2f302a/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0675deb5a6e77a48b0fdb80d6a2f302a/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/9b305a7cea13240cf6ae08f6d5ceced8/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/9b305a7cea13240cf6ae08f6d5ceced8/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/afdd57530765fdcafdc1a52dd2caef60/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/afdd57530765fdcafdc1a52dd2caef60/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4ff0e6eb33a9629b2626fd8728388127/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4ff0e6eb33a9629b2626fd8728388127/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5dda030f64986adb2d6243b9fc1c9f20/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5dda030f64986adb2d6243b9fc1c9f20/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9d43d52be4a21ff2e7f3e6aa6a7e1e5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e9d43d52be4a21ff2e7f3e6aa6a7e1e5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/ad5aabc547ad74a5be8c537bbf221025/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/ad5aabc547ad74a5be8c537bbf221025/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0b43535f94003e6a03cb835744a89e42/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0b43535f94003e6a03cb835744a89e42/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4e5330e6fd63c08451b5a6746968bb57/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4e5330e6fd63c08451b5a6746968bb57/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0fc3d5fd4f2204259157f58a86480825/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0fc3d5fd4f2204259157f58a86480825/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3a59d33a7697e3b0ffdd83fb89e6a4b7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3a59d33a7697e3b0ffdd83fb89e6a4b7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/eb9b54670b02eb8247b6c4f79f7b40bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/eb9b54670b02eb8247b6c4f79f7b40bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5b6fefe8890d7c9df2ec439bac76e0ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5b6fefe8890d7c9df2ec439bac76e0ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/c28f199e441e6e08ac435755ef252307/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/c28f199e441e6e08ac435755ef252307/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f1f8e1bcdeffbf1fa48e8f6aa8864e73/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f1f8e1bcdeffbf1fa48e8f6aa8864e73/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/66ca813a5a87cec46a40e9a7c1970de4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/66ca813a5a87cec46a40e9a7c1970de4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/50721b72fb89d6bcef30262419b4416f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/50721b72fb89d6bcef30262419b4416f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/bfa28a69b8ac9a757376a28ee50af5ac/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/bfa28a69b8ac9a757376a28ee50af5ac/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4f3ad763f27f3c6953fe87f884196ec7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4f3ad763f27f3c6953fe87f884196ec7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/c1b68a930d23e53e7b864bc1363d6249/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/c1b68a930d23e53e7b864bc1363d6249/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/95a96100fc87af68e1af9bcf16620028/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/95a96100fc87af68e1af9bcf16620028/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f140e67d8a7ac35cf968dca4c5afcad2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/f140e67d8a7ac35cf968dca4c5afcad2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/7581fa75d943a78171ab9d0968554172/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/7581fa75d943a78171ab9d0968554172/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/810f098349248857cbf50a5ce5f74750/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/810f098349248857cbf50a5ce5f74750/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/d71e3165444f565335b58a0bf5fe37b1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/d71e3165444f565335b58a0bf5fe37b1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0a787886485688e3f88b06496bec0fd9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/0a787886485688e3f88b06496bec0fd9/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e52aefff6801675f474ebd4ea6fed10e/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/e52aefff6801675f474ebd4ea6fed10e/AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8d9018b2d907a0eaf75e1519d22192c1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8d9018b2d907a0eaf75e1519d22192c1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cdd18a72a82b3eb3f6e7a050d8a6ead8/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/cdd18a72a82b3eb3f6e7a050d8a6ead8/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4b28715434d890d9099dee5b297b439a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/4b28715434d890d9099dee5b297b439a/AndroidManifest.xml:20:5-44
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
-		INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
-		ADDED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
-		INJECTED from /home/kongil/Dongsamo/app/src/main/AndroidManifest.xml
-activity#org.opencv.android.CameraSurfaceView
-ADDED from [:opencv] /home/kongil/Dongsamo/opencv/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-73
-	android:name
-		ADDED from [:opencv] /home/kongil/Dongsamo/opencv/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:19-70
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/AndroidManifest.xml
 activity#com.google.firebase.auth.internal.FederatedSignInActivity
-ADDED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:24:9-31:50
+ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:24:9-31:50
 	android:excludeFromRecents
-		ADDED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:26:13-46
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:26:13-46
 	android:launchMode
-		ADDED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:28:13-44
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:28:13-44
 	android:exported
-		ADDED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:27:13-36
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:27:13-36
 	android:permission
-		ADDED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:29:13-102
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:29:13-102
 	android:theme
-		ADDED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:30:13-72
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:30:13-72
 	tools:replace
-		ADDED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:31:13-47
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:31:13-47
 	android:name
-		ADDED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:25:13-85
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:25:13-85
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:33:9-39:19
+ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:33:9-39:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:35:13-37
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:35:13-37
 	android:name
-		ADDED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:34:13-84
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:34:13-84
 meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
-ADDED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:36:13-38:85
+ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:36:13-38:85
 	android:value
-		ADDED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:38:17-82
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:38:17-82
 	android:name
-		ADDED from [com.google.firebase:firebase-auth:16.0.5] /home/kongil/.gradle/caches/transforms-2/files-2.1/86170b009428b4d2790f6fca3930e537/AndroidManifest.xml:37:17-109
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/8120c8528a9db80f039bf1f7c55ce3bc/AndroidManifest.xml:37:17-109
 uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/637a32be74f9e4373a690dba461bcf20/AndroidManifest.xml:26:5-28:35
+ADDED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:26:5-28:35
 	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/637a32be74f9e4373a690dba461bcf20/AndroidManifest.xml:27:9-41
+		ADDED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:27:9-41
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:15.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/637a32be74f9e4373a690dba461bcf20/AndroidManifest.xml:28:9-32
+		ADDED from [com.google.android.gms:play-services-maps:15.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/5d1267e33370e669bd6cd831c5630c1c/AndroidManifest.xml:28:9-32
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/49fdba39dda232c443f0d6c44f701b84/AndroidManifest.xml:23:9-26:75
+ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:23:9-26:75
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/49fdba39dda232c443f0d6c44f701b84/AndroidManifest.xml:25:13-37
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:25:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/49fdba39dda232c443f0d6c44f701b84/AndroidManifest.xml:26:13-72
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:26:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/kongil/.gradle/caches/transforms-2/files-2.1/49fdba39dda232c443f0d6c44f701b84/AndroidManifest.xml:24:13-79
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/3e4282216e84f76663de99ac52116eff/AndroidManifest.xml:24:13-79
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/282abef6cb9445041439a951e99f6961/AndroidManifest.xml:10:9-14:39
+ADDED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:10:9-14:39
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/282abef6cb9445041439a951e99f6961/AndroidManifest.xml:12:13-72
+		ADDED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:12:13-72
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/282abef6cb9445041439a951e99f6961/AndroidManifest.xml:13:13-37
+		ADDED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:13:13-37
 	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/282abef6cb9445041439a951e99f6961/AndroidManifest.xml:14:13-36
+		ADDED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:14:13-36
 	android:name
-		ADDED from [com.google.firebase:firebase-common:16.0.4] /home/kongil/.gradle/caches/transforms-2/files-2.1/282abef6cb9445041439a951e99f6961/AndroidManifest.xml:11:13-77
+		ADDED from [com.google.firebase:firebase-common:16.0.4] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/46dcdc789938e421406d567efd1357a2/AndroidManifest.xml:11:13-77
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:16.1.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/d5175bc68b68b152a913a89f942489be/AndroidManifest.xml:23:9-25:69
+ADDED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:16.1.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/d5175bc68b68b152a913a89f942489be/AndroidManifest.xml:25:13-66
+		ADDED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:25:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:16.1.0] /home/kongil/.gradle/caches/transforms-2/files-2.1/d5175bc68b68b152a913a89f942489be/AndroidManifest.xml:24:13-58
+		ADDED from [com.google.android.gms:play-services-basement:16.1.0] /Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/55f9dbad0fb8547fd6c0c610dac3fdfc/AndroidManifest.xml:24:13-58

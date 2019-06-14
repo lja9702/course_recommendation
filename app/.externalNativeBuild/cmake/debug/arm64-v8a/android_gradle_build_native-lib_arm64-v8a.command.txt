@@ -1,7 +1,7 @@
-Executable : /home/kongil/Android/Sdk/cmake/3.10.2.4988404/bin/cmake
+Executable : /Users/CHOI_JIN/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake
 arguments : 
 --build
-/home/kongil/Dongsamo/app/.externalNativeBuild/cmake/debug/arm64-v8a
+/Users/CHOI_JIN/Documents/Dongsamo/app/.externalNativeBuild/cmake/debug/arm64-v8a
 --target
 native-lib
 jvmArgs : 

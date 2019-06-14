@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "/home/kongil/Dongsamo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/0f220a553ba57a14ba1a211a870f0c48/res/values-v24/values-v24.xml",
+                    "source": "/Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/34cd6d9f77f9bbd89d0f7c8721b6c8bf/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                },
+                {
+                    "source": "/Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/50721b72fb89d6bcef30262419b4416f/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -18,16 +28,6 @@
                         "startOffsets": "347,413,474,540",
                         "endColumns": "65,60,65,66",
                         "endOffsets": "408,469,535,602"
-                    }
-                },
-                {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/bfb88bacd6d248c15a4b7466a8337c16/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
                     }
                 }
             ]

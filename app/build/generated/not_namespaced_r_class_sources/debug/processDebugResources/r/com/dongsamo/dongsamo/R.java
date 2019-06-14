@@ -3824,7 +3824,7 @@ public final class R {
     public static final int googleg_standard_color_18=0x7f070077;
     public static final int ic_launcher_background=0x7f070078;
     public static final int ic_launcher_foreground=0x7f070079;
-    public static final int loading_btn=0x7f07007a;
+    public static final int icon=0x7f07007a;
     public static final int no_course=0x7f07007b;
     public static final int notification_action_background=0x7f07007c;
     public static final int notification_bg=0x7f07007d;
@@ -3882,7 +3882,7 @@ public final class R {
     public static final int action_text=0x7f080017;
     public static final int actions=0x7f080018;
     public static final int activity_chooser_view_content=0x7f080019;
-    public static final int activity_surfaceView=0x7f08001a;
+    public static final int activity_surface_view=0x7f08001a;
     public static final int add=0x7f08001b;
     public static final int adjust_height=0x7f08001c;
     public static final int adjust_width=0x7f08001d;

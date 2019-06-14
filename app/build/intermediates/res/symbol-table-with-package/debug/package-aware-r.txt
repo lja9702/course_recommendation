@@ -765,7 +765,7 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-drawable loading_btn
+drawable icon
 drawable no_course
 drawable notification_action_background
 drawable notification_bg
@@ -821,7 +821,7 @@ id action_mode_close_button
 id action_text
 id actions
 id activity_chooser_view_content
-id activity_surfaceView
+id activity_surface_view
 id add
 id adjust_height
 id adjust_width

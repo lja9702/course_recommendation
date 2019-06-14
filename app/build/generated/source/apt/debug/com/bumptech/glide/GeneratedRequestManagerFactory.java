@@ -4,7 +4,7 @@ import android.content.Context;
 import com.bumptech.glide.manager.Lifecycle;
 import com.bumptech.glide.manager.RequestManagerRetriever;
 import com.bumptech.glide.manager.RequestManagerTreeNode;
-import com.dongsamo.dongsamo.firebase_control.GlideRequests;
+import com.donsamo.dongsamo.firebase_control.GlideRequests;
 import java.lang.Override;
 
 /**

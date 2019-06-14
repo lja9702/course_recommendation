@@ -1,37 +1,37 @@
 {
   "stringTable": {
-    "0": "/home/kongil/Dongsamo/app/.externalNativeBuild/cmake/release/arm64-v8a",
-    "1": "--target=aarch64-none-linux-android23 --gcc-toolchain=/home/kongil/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/kongil/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dnative_lib_EXPORTS -I/home/kongil/Dongsamo_backup/opencv/native/jni/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -std=gnu++11 -O2 -DNDEBUG -fPIC"
+    "0": "/Users/CHOI_JIN/Documents/Dongsamo/app/.externalNativeBuild/cmake/release/arm64-v8a",
+    "1": "--target=aarch64-none-linux-android23 --gcc-toolchain=/Users/CHOI_JIN/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/CHOI_JIN/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/CHOI_JIN/Documents/Dongsamo/opencv/native/jni/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++ -std=gnu++11 -O2 -DNDEBUG -fPIC"
   },
   "buildFiles": [
-    "/home/kongil/Android/Sdk/ndk-bundle/build/cmake/platforms.cmake",
-    "/home/kongil/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
-    "/home/kongil/Dongsamo/app/src/main/cpp/CMakeLists.txt"
+    "/Users/CHOI_JIN/Library/Android/sdk/ndk-bundle/build/cmake/platforms.cmake",
+    "/Users/CHOI_JIN/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+    "/Users/CHOI_JIN/Documents/Dongsamo/app/src/main/cpp/CMakeLists.txt"
   ],
   "cleanCommands": [
-    "/home/kongil/Android/Sdk/cmake/3.10.2.4988404/bin/cmake --build \"/home/kongil/Dongsamo/app/.externalNativeBuild/cmake/release/arm64-v8a\" --target clean"
+    "/Users/CHOI_JIN/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build \"/Users/CHOI_JIN/Documents/Dongsamo/app/.externalNativeBuild/cmake/release/arm64-v8a\" --target clean"
   ],
   "libraries": {
     "native-lib-Release-arm64-v8a": {
-      "buildCommand": "/home/kongil/Android/Sdk/cmake/3.10.2.4988404/bin/cmake --build \"/home/kongil/Dongsamo/app/.externalNativeBuild/cmake/release/arm64-v8a\" --target native-lib",
+      "buildCommand": "/Users/CHOI_JIN/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build \"/Users/CHOI_JIN/Documents/Dongsamo/app/.externalNativeBuild/cmake/release/arm64-v8a\" --target native-lib",
       "buildType": "release",
-      "toolchain": "3285680951",
+      "toolchain": "2487162744",
       "abi": "arm64-v8a",
       "artifactName": "native-lib",
       "files": [
         {
-          "src": "/home/kongil/Dongsamo_backup/app/src/main/cpp/native-lib.cpp",
+          "src": "/Users/CHOI_JIN/Documents/Dongsamo/app/src/main/cpp/native-lib.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         }
       ],
       "headers": [],
-      "output": "/home/kongil/Dongsamo/app/build/intermediates/cmake/release/obj/arm64-v8a/libnative-lib.so"
+      "output": "/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/cmake/release/obj/arm64-v8a/libnative-lib.so"
     }
   },
   "toolchains": {
-    "3285680951": {
-      "cppCompilerExecutable": "/home/kongil/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    "2487162744": {
+      "cppCompilerExecutable": "/Users/CHOI_JIN/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
     }
   },
   "cFileExtensions": [],

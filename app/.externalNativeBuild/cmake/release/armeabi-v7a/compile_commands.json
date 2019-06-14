@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/home/kongil/Dongsamo/app/.externalNativeBuild/cmake/release/armeabi-v7a",
-  "command": "/home/kongil/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi23 --gcc-toolchain=/home/kongil/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/kongil/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dnative_lib_EXPORTS -I/home/kongil/Dongsamo_backup/opencv/native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -std=gnu++11 -Oz -DNDEBUG  -fPIC   -o CMakeFiles/native-lib.dir/home/kongil/Dongsamo_backup/app/src/main/cpp/native-lib.cpp.o -c /home/kongil/Dongsamo_backup/app/src/main/cpp/native-lib.cpp",
-  "file": "/home/kongil/Dongsamo_backup/app/src/main/cpp/native-lib.cpp"
+  "directory": "/Users/CHOI_JIN/Documents/Dongsamo/app/.externalNativeBuild/cmake/release/armeabi-v7a",
+  "command": "/Users/CHOI_JIN/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=armv7-none-linux-androideabi23 --gcc-toolchain=/Users/CHOI_JIN/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/CHOI_JIN/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dnative_lib_EXPORTS -I/Users/CHOI_JIN/Documents/Dongsamo/opencv/native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mfpu=vfpv3-d16 -fno-addrsig -march=armv7-a -mthumb -mfpu=neon -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++  -std=gnu++11 -Oz -DNDEBUG  -fPIC   -o CMakeFiles/native-lib.dir/native-lib.cpp.o -c /Users/CHOI_JIN/Documents/Dongsamo/app/src/main/cpp/native-lib.cpp",
+  "file": "/Users/CHOI_JIN/Documents/Dongsamo/app/src/main/cpp/native-lib.cpp"
 }
 ]

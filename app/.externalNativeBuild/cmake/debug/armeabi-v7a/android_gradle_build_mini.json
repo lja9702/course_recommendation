@@ -1,18 +1,18 @@
 {
   "buildFiles": [
-    "/home/kongil/Android/Sdk/ndk-bundle/build/cmake/platforms.cmake",
-    "/home/kongil/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
-    "/home/kongil/Dongsamo/app/src/main/cpp/CMakeLists.txt"
+    "/Users/CHOI_JIN/Library/Android/sdk/ndk-bundle/build/cmake/platforms.cmake",
+    "/Users/CHOI_JIN/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+    "/Users/CHOI_JIN/Documents/Dongsamo/app/src/main/cpp/CMakeLists.txt"
   ],
   "cleanCommands": [
-    "/home/kongil/Android/Sdk/cmake/3.10.2.4988404/bin/cmake --build \"/home/kongil/Dongsamo/app/.externalNativeBuild/cmake/debug/armeabi-v7a\" --target clean"
+    "/Users/CHOI_JIN/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build \"/Users/CHOI_JIN/Documents/Dongsamo/app/.externalNativeBuild/cmake/debug/armeabi-v7a\" --target clean"
   ],
   "libraries": {
     "native-lib-Debug-armeabi-v7a": {
       "artifactName": "native-lib",
-      "buildCommand": "/home/kongil/Android/Sdk/cmake/3.10.2.4988404/bin/cmake --build \"/home/kongil/Dongsamo/app/.externalNativeBuild/cmake/debug/armeabi-v7a\" --target native-lib",
+      "buildCommand": "/Users/CHOI_JIN/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build \"/Users/CHOI_JIN/Documents/Dongsamo/app/.externalNativeBuild/cmake/debug/armeabi-v7a\" --target native-lib",
       "abi": "armeabi-v7a",
-      "output": "/home/kongil/Dongsamo/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so"
+      "output": "/Users/CHOI_JIN/Documents/Dongsamo/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so"
     }
   }
 }
