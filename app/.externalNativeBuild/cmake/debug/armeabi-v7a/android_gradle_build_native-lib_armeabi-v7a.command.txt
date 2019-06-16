@@ -1,7 +1,7 @@
-Executable : /home/kongil/Android/Sdk/cmake/3.10.2.4988404/bin/cmake
+Executable : /Users/MIPUNG/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake
 arguments : 
 --build
-/home/kongil/Dongsamo/app/.externalNativeBuild/cmake/debug/armeabi-v7a
+/Users/MIPUNG/Desktop/Dongsamo/app/.externalNativeBuild/cmake/debug/armeabi-v7a
 --target
 native-lib
 jvmArgs : 

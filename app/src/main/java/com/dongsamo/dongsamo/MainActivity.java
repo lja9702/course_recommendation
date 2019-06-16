@@ -1,5 +1,6 @@
 package com.dongsamo.dongsamo;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
@@ -9,6 +10,7 @@ import android.graphics.Matrix;
 import android.hardware.Camera;
 import android.os.AsyncTask;
 import android.os.CountDownTimer;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -51,6 +53,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
+import static java.lang.Thread.sleep;
 
 
 public class MainActivity extends AppCompatActivity
@@ -133,9 +137,17 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    private long mLastClickTime = 0;
+    int MIN_CLICK_INTERVAL = 2000;
     //by kongil
-    public void onClick_capture(View view) {
-        task = new AsyncTess();
+    public void onClick_capture(View view) throws InterruptedException {
+        if (SystemClock.elapsedRealtime() - mLastClickTime < MIN_CLICK_INTERVAL) {
+            Log.d("Test", "무조껀 2초뒤엔 클릭이 된다..");
+
+            return;
+        }
+        mLastClickTime = SystemClock.elapsedRealtime();
+
         capture();
     }
 
@@ -191,14 +203,15 @@ public class MainActivity extends AppCompatActivity
                 options.inSampleSize = 8;
 
                 Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                bitmap = GetRotatedBitmap(bitmap, 0); //90 -> 0
+                bitmap = GetRotatedBitmap(bitmap, 90); //90 -> 0
 
                 capture_btn.setEnabled(false);
                 capture_btn.setImageResource(R.drawable.loading_btn);
 
                 imageView.setImageBitmap(bitmap);
                 //1000 -> 1 sec
-                new AsyncTaskCancelTimerTask(task, 3000, 1000, true).start();
+                new AsyncTaskCancelTimerTask(task, 5000, 1000, true).start();
+                task = new AsyncTess();
                 task.execute(bitmap);
                 camera.startPreview();
             }
@@ -225,7 +238,7 @@ public class MainActivity extends AppCompatActivity
         @Override
         public void onTick(long millisUntilFinished) {
             Log.d(TAG, "onTick..");
-
+/*
             if(asyncTask == null) {
                 this.cancel();
                 return;
@@ -236,6 +249,7 @@ public class MainActivity extends AppCompatActivity
 
             if(asyncTask.getStatus() == AsyncTask.Status.FINISHED)
                 this.cancel();
+                */
         }
 
         @Override
@@ -279,8 +293,10 @@ public class MainActivity extends AppCompatActivity
     }
 
     private class AsyncTess extends AsyncTask<Bitmap, Integer, String> {
+        @SuppressLint("WrongThread")
         @Override
         protected String doInBackground(Bitmap... mRelativeParams) {
+            //imageView.setImageBitmap(mRelativeParams[0]);
             tessBaseAPI.setImage(mRelativeParams[0]);
             return tessBaseAPI.getUTF8Text();
         }
@@ -342,7 +358,7 @@ public class MainActivity extends AppCompatActivity
 
             capture_btn.setEnabled(true);
             capture_btn.setImageResource(R.drawable.capture);
-            task.cancel(true);
+           // task.cancel(true);
 
         }
     }
@@ -409,8 +425,7 @@ public class MainActivity extends AppCompatActivity
 
     //여기서부턴 퍼미션 관련 메소드
     static final int PERMISSIONS_REQUEST_CODE = 1000;
-    String[] PERMISSIONS  = {"android.permission.CAMERA"};
-
+    String[] PERMISSIONS  = {"android.permission.CAMERA", "android.permission.ACCESS_NETWORK_STATE", "android.permission.ACCESS_COARSE_LOCATION", "PERMISSIONS_ACCESS_FINE_LOCATION"};
 
     private boolean hasPermissions(String[] permissions) {
         int result;

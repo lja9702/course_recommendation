@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,10 +46,12 @@ import static java.lang.Boolean.FALSE;
 public class DecidingActivity extends AppCompatActivity {
 
 
-    private RelativeLayout activity_deciding;
+    private LinearLayout activity_deciding, bottom_layout;
     private TMapView tMapView;
     private Geocoder geocoder; //지오코더 -> 좌표에서 장소를, 장소에서 좌표를 알 수 있음
     private String apiKey = "c13a727c-011c-49bc-bb6c-a0c3ce5777f8";
+    private ImageButton decide_course_btn;
+    private ImageButton no_course_btn;
 
 
     TMapData tmapdata = new TMapData();
@@ -83,7 +86,8 @@ public class DecidingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deciding);
 
-        activity_deciding = new RelativeLayout(this);;
+        activity_deciding = (LinearLayout)findViewById(R.id.tmap);
+        bottom_layout = (LinearLayout)findViewById(R.id.bottom_layout);
         tMapView = new TMapView(this);
 
         tMapView.setSKTMapApiKey(apiKey);
@@ -94,7 +98,11 @@ public class DecidingActivity extends AppCompatActivity {
         tMapView.setCompassMode(true);
         tMapView.setTrackingMode(true);
         activity_deciding.addView(tMapView);
-        setContentView(activity_deciding);
+
+        no_course_btn = (ImageButton)findViewById(R.id.no_course_btn);
+        decide_course_btn = (ImageButton)findViewById(R.id.decide_course_btn);
+
+        //setContentView(activity_deciding);
 
       /*  TextView now_text_view = (TextView) this.findViewById(R.id.course_text);
         String target = now_text_view.getText().toString();
@@ -143,11 +151,12 @@ public class DecidingActivity extends AppCompatActivity {
 
     public void onClick_decide_course(View view){
         Toast.makeText(DecidingActivity.super.getApplicationContext(), "이 코스로 결정!", Toast.LENGTH_LONG).show();
-
+        decide_course_btn.setVisibility(View.INVISIBLE);
     }
 
     public void onClick_no_course(View view){
-        Toast.makeText(DecidingActivity.super.getApplicationContext(), "다른 코스 보여줘!", Toast.LENGTH_LONG).show();
-
+        Intent intent = new Intent(DecidingActivity.this, AIRunningActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

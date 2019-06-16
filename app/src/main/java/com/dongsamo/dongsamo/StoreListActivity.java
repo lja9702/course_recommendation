@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dongsamo.dongsamo.firebase_control.Store;
 import com.google.firebase.database.DataSnapshot;

@@ -7,11 +7,6 @@
     android:weightSum="1280"
     android:background="@drawable/background2">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="49">
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,14 +18,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="85"/>
-
-        <Spinner
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="550"
-            android:background="#fff">
-
-        </Spinner>
 
     </LinearLayout>
 
@@ -61,6 +48,12 @@
             android:layout_height="match_parent"
             android:layout_weight="98"/>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="49">
     </LinearLayout>
 
     <LinearLayout

@@ -842,6 +842,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id bottom_layout
 id button
 id button3
 id buttonPanel
@@ -915,7 +916,6 @@ id line3
 id listMode
 id list_item
 id location_spn
-id map
 id media_actions
 id message
 id middle
@@ -947,7 +947,6 @@ id restaurant_btn
 id right
 id right_icon
 id right_side
-id running_txt
 id satellite
 id screen
 id scrollIndicatorDown
@@ -1003,6 +1002,8 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id tmap
+id tmap_store
 id top
 id topPanel
 id trash_btn

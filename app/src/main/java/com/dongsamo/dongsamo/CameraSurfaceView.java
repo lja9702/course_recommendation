@@ -43,8 +43,8 @@ public class CameraSurfaceView extends SurfaceView implements SurfaceHolder.Call
 
             if (getResources().getConfiguration().orientation != Configuration.ORIENTATION_LANDSCAPE) {
                 parameters.set("orientation", "portrait");
-                camera.setDisplayOrientation(0); //90->0
-                parameters.setRotation(0);       //90->0
+                camera.setDisplayOrientation(90); //90->0
+                parameters.setRotation(90);       //90->0
             } else {
                 parameters.set("orientation", "landscape");
                 camera.setDisplayOrientation(0);

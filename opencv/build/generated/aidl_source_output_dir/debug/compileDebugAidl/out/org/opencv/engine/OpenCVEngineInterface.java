@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /home/kongil/Dongsamo/opencv/java/src/org/opencv/engine/OpenCVEngineInterface.aidl
+ * Original file: /Users/MIPUNG/Desktop/Dongsamo/opencv/java/src/org/opencv/engine/OpenCVEngineInterface.aidl
  */
 package org.opencv.engine;
 /**

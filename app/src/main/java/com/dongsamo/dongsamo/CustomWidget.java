@@ -66,8 +66,9 @@ public class CustomWidget extends Activity {
         Intent intent = new Intent(CustomWidget.this, StoreActivity.class);
         intent.putExtra("store", store.convert_to_card());
         startActivity(intent);
+        mOnClose();
     }
-    public void mOnClose(View v){
+    public void mOnClose(){
           /*
           //데이터 전달하기
           Intent intent = new Intent();
