@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Dongsamo</string>
+    <string name="app_name">밥플</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>

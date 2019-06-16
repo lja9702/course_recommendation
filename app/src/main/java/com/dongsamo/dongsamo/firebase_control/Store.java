@@ -1,5 +1,7 @@
 package com.dongsamo.dongsamo.firebase_control;
 
+import com.dongsamo.dongsamo.StoreCard;
+
 import java.io.Serializable;
 
 public class Store implements Serializable {
@@ -24,6 +26,10 @@ public class Store implements Serializable {
         this.star = star;
         this.distance = distance;
         this.is_heart = is_heart;
+    }
+    public StoreCard convert_to_card(){
+        StoreCard sc = new StoreCard(this.url, this.name, this.star, this.distance, this.is_heart);
+        return sc;
     }
 
     public double getStar() {

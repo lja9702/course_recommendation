@@ -6,11 +6,11 @@ import java.io.Serializable;
 
 public class StoreCard extends AppCompatActivity implements Serializable {
 
-    private String name;
+    private String name="";
+    private String img_url="";
     private double star;
     private double distance;
-    private boolean is_heart;
-    private String img_url;
+    private boolean is_heart=false;
 
     public StoreCard(String img_url, String name, double star, double distance, boolean is_heart) {
         this.img_url = img_url;
