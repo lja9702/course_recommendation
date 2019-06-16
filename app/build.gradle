@@ -34,27 +34,33 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //noinspection GradleCompatible
+    /*기본*/
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    /*firebase*/
     implementation 'com.google.firebase:firebase-database:16.0.4'
     implementation 'com.google.firebase:firebase-storage:16.0.4'
     implementation 'com.google.firebase:firebase-auth:16.0.5'
+    implementation 'com.firebaseui:firebase-ui-storage:4.3.1'
+
+    /*뭔지 모르겠음-opencv?*/
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(path: ':opencv')
 
-    //implementation 'com.google.android.gms:play-services-maps:15.0.1'
-    //implementation 'com.google.android.gms:play-services-location:15.0.1'
-    //implementation 'com.google.android.gms:play-services-places:15.0.1'
+    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
+    implementation 'com.google.android.gms:play-services-places:15.0.1'
     //noinspection GradleCompatible
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     //noinspection GradleCompatible
     implementation 'com.android.support:cardview-v7:28.0.0'
-    implementation 'com.firebaseui:firebase-ui-storage:4.3.1'
+    /*url을 이용한 image 올리기*/
     implementation 'com.github.bumptech.glide:glide:4.4.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.4.0'
-    //kongil
+    /*tesseract*/
     implementation 'com.rmtheis:tess-two:9.0.0'
+    /*tmap*/
     implementation files('libs/com.skt.Tmap_1.60.jar')
 }

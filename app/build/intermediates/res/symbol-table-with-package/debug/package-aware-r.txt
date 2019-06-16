@@ -464,6 +464,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -644,6 +645,7 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+dimen widget_margin
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -729,6 +731,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable ai_ask
+drawable app_icon
 drawable background1
 drawable background2
 drawable background3
@@ -759,6 +762,7 @@ drawable common_google_signin_btn_text_light_normal_background
 drawable course_ask
 drawable decide_course
 drawable direct_add
+drawable example_appwidget_preview
 drawable false_heart
 drawable fresh
 drawable googleg_disabled_color_18
@@ -766,6 +770,7 @@ drawable googleg_standard_color_18
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable icon
+drawable loading_btn
 drawable no_course
 drawable notification_action_background
 drawable notification_bg
@@ -821,7 +826,7 @@ id action_mode_close_button
 id action_text
 id actions
 id activity_chooser_view_content
-id activity_surface_view
+id activity_surfaceView
 id add
 id adjust_height
 id adjust_width
@@ -900,6 +905,7 @@ id image
 id imageView
 id info
 id invisible
+id is_heart
 id italic
 id item_touch_helper_previous_elevation
 id left
@@ -960,6 +966,8 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id shop_list_btn
+id shop_name
+id shop_score
 id shortcut
 id showCustom
 id showHome
@@ -1051,6 +1059,7 @@ layout activity_storage
 layout activity_store
 layout activity_store_list
 layout card_view_item
+layout customwidget
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1075,6 +1084,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -1115,7 +1125,9 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string add_widget
 string app_name
+string appwidget_text
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title
@@ -1557,3 +1569,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml custom_widget_info

@@ -37,7 +37,7 @@ import org.opencv.imgproc.Imgproc;
  */
 
 @TargetApi(21)
-public class JavaCamera2View extends CameraBridgeViewBase {
+public abstract class JavaCamera2View extends CameraBridgeViewBase {
 
     private static final String LOGTAG = "JavaCamera2View";
 

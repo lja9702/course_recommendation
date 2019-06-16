@@ -2,18 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dongsamo.dongsamo">
 
-
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 현재 위치 찾기* -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 카메라 -->
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature android:name="android.hardware.camera.front" />
-    <uses-feature android:name="android.hardware.camera.front.autofocus" />
+    <uses-feature android:name="android.hardware.camera.front.autofocus" /> <!-- dongin -->
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
 
     <application
         android:allowBackup="true"
@@ -23,12 +27,22 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name="com.dongsamo.dongsamo.StoreListActivity"></activity>
+        <receiver android:name=".CustomWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/custom_widget_info" />
+        </receiver>
+
+        <activity android:name=".StoreListActivity" />
         <activity
-            android:name="com.dongsamo.dongsamo.MainActivity"
+            android:name=".MainActivity"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="com.dongsamo.dongsamo.Splash"
+            android:name=".Splash"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,14 +50,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.dongsamo.dongsamo.CourseActivity" />
-        <activity android:name="com.dongsamo.dongsamo.DecidingActivity" />
-        <activity android:name="com.dongsamo.dongsamo.AIRunningActivity" />
-        <activity android:name="com.dongsamo.dongsamo.DirectAddActivity"
-            android:windowSoftInputMode="adjustNothing"/>
-        <activity android:name="com.dongsamo.dongsamo.StoreActivity" />
+        <activity android:name=".CourseActivity" />
+        <activity android:name=".DecidingActivity" />
+        <activity android:name=".AIRunningActivity" />
+        <activity
+            android:name=".DirectAddActivity"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity android:name=".StoreActivity" /> <!-- dongin -->
+        <activity
+            android:name=".CustomWidget"
+            android:theme="@android:style/Theme.Dialog" />
     </application>
-
-
 
 </manifest>

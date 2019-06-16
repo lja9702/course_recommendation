@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.hardware.Camera;
 import android.os.AsyncTask;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,13 +30,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dongsamo.dongsamo.firebase_control.Store;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.googlecode.tesseract.android.TessBaseAPI;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
+//import org.opencv.android.JavaCameraView;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
+import org.opencv.osgi.OpenCVNativeLoader;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -48,16 +58,16 @@ public class MainActivity extends AppCompatActivity
 
     //dong todo opencv & OCR, Tesaract? 처리
     private static final String TAG = "opencv";
-    //private CameraBridgeViewBase mOpenCvCameraView;
     private Mat matInput;
     private Mat matResult;
-
+    private AsyncTess task;
     //kongil
-
     TessBaseAPI tessBaseAPI;
     CameraSurfaceView surfaceView;
     ImageButton capture_btn;
     ImageView imageView;
+
+    DatabaseReference mDatabase;// Add by kongil
 
     static {
         System.loadLibrary("opencv_java4");
@@ -80,13 +90,11 @@ public class MainActivity extends AppCompatActivity
         }
     };
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             //퍼미션 상태 확인
@@ -96,14 +104,6 @@ public class MainActivity extends AppCompatActivity
                 requestPermissions(PERMISSIONS, PERMISSIONS_REQUEST_CODE);
             }
         }
-
-        /*
-        mOpenCvCameraView = (CameraBridgeViewBase)findViewById(R.id.activity_surface_view);
-        mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
-        mOpenCvCameraView.setCvCameraViewListener(this);
-        mOpenCvCameraView.setCameraIndex(0); // front-camera(1),  back-camera(0)
-        mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
-        */
 
         //kong
 
@@ -115,16 +115,15 @@ public class MainActivity extends AppCompatActivity
         String dir = getFilesDir() + "/tesseract";
         Log.d("TAGS", ""+dir);
         if(checkLanguageFile(dir+"/tessdata")) {
-            //tessBaseAPI.init(dir, "kor");
             Log.d("TAGS", "init");
             tessBaseAPI.init(dir, "eng");
         }
+
 
     }
 
 
     public void onClick_shop_list(View view){
-        //Toast.makeText(MainActivity.super.getApplicationContext(), "주변 상점 리스트", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(MainActivity.this, StoreListActivity.class);
         startActivity(intent);
     }
@@ -136,6 +135,7 @@ public class MainActivity extends AppCompatActivity
 
     //by kongil
     public void onClick_capture(View view) {
+        task = new AsyncTess();
         capture();
     }
 
@@ -156,6 +156,7 @@ public class MainActivity extends AppCompatActivity
 
     private void createFiles(String dir)
     {
+        Log.d("TAG", "createFiles");
         AssetManager assetMgr = this.getAssets();
 
         InputStream inputStream = null;
@@ -170,6 +171,7 @@ public class MainActivity extends AppCompatActivity
             byte[] buffer = new byte[1024];
             int read;
             while ((read = inputStream.read(buffer)) != -1) {
+                Log.d("TAG", "buffer : "+buffer);
                 outputStream.write(buffer, 0, read);
             }
             inputStream.close();
@@ -189,17 +191,75 @@ public class MainActivity extends AppCompatActivity
                 options.inSampleSize = 8;
 
                 Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                bitmap = GetRotatedBitmap(bitmap, 90);
-
-                imageView.setImageBitmap(bitmap);
+                bitmap = GetRotatedBitmap(bitmap, 0); //90 -> 0
 
                 capture_btn.setEnabled(false);
                 capture_btn.setImageResource(R.drawable.loading_btn);
-                new AsyncTess().execute(bitmap);
 
+                imageView.setImageBitmap(bitmap);
+                //1000 -> 1 sec
+                new AsyncTaskCancelTimerTask(task, 3000, 1000, true).start();
+                task.execute(bitmap);
                 camera.startPreview();
             }
         });
+    }
+
+
+    //jeong add -> time over check
+    class AsyncTaskCancelTimerTask extends CountDownTimer {
+        private AsyncTask asyncTask;
+        private boolean interrupt;
+
+        private AsyncTaskCancelTimerTask(AsyncTask asyncTask, long startTime, long interval) {
+            super(startTime, interval);
+            this.asyncTask = asyncTask;
+        }
+
+        private AsyncTaskCancelTimerTask(AsyncTask asyncTask, long startTime, long interval, boolean interrupt) {
+            super(startTime, interval);
+            this.asyncTask = asyncTask;
+            this.interrupt = interrupt;
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished) {
+            Log.d(TAG, "onTick..");
+
+            if(asyncTask == null) {
+                this.cancel();
+                return;
+            }
+
+            if(asyncTask.isCancelled())
+                this.cancel();
+
+            if(asyncTask.getStatus() == AsyncTask.Status.FINISHED)
+                this.cancel();
+        }
+
+        @Override
+        public void onFinish() {
+            Log.d(TAG, "onTick..");
+            Toast.makeText(MainActivity.this, "인식 실패", Toast.LENGTH_LONG).show();
+            if(asyncTask == null || asyncTask.isCancelled() )
+                return;
+
+            try {
+                if(asyncTask.getStatus() == AsyncTask.Status.FINISHED)
+                    return;
+
+                if(asyncTask.getStatus() == AsyncTask.Status.PENDING ||
+                        asyncTask.getStatus() == AsyncTask.Status.RUNNING ) {
+                    Log.d("check", "finish");
+                    capture_btn.setEnabled(true);
+                    capture_btn.setImageResource(R.drawable.capture);
+                    asyncTask.cancel(interrupt);
+                }
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public synchronized static Bitmap GetRotatedBitmap(Bitmap bitmap, int degrees) {
@@ -225,12 +285,65 @@ public class MainActivity extends AppCompatActivity
             return tessBaseAPI.getUTF8Text();
         }
 
-        protected void onPostExecute(String result) {
+        protected void onPostExecute(final String result) {
             //textView.setText(result);
             Toast.makeText(MainActivity.this, ""+result, Toast.LENGTH_LONG).show();
             Log.d("TAGS", "result : "+ result);
+            /*donging-widget*/
+            /*
+            intent.putExtra("name", "제면소");
+            intent.putExtra("score", "4.9");
+            */
+
+            mDatabase = FirebaseDatabase.getInstance().getReference();
+
+//            final Intent intent = new Intent(getApplicationContext(), CustomWidget.class);
+
+            ValueEventListener postListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    // Get Post object and use the values to update the UI
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        if (snapshot.getKey().equals("stores")) {
+                            for (DataSnapshot csnapshot : snapshot.getChildren()) {
+                                Store post = csnapshot.getValue(Store.class);
+                                if (result.contains(post.getName())) {
+                                    Intent intent = new Intent(getApplicationContext(), CustomWidget.class);
+
+                                    intent.putExtra("store", post);
+                                    Log.d("TAGS", "add");
+                                    if(intent.hasExtra("store")) {
+                                        Log.d("TAGS", "find!");
+                                        startActivityForResult(intent, 1);
+                                    }
+                                    else {
+                                        Log.d("TAGS", "no find!");
+                                    }
+
+                                }
+                            }
+                        }
+                        // ...
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Getting Post failed, log a message
+                    Log.w("TAG", "loadPost:onCancelled", databaseError.toException());
+                    // ...
+                }
+            };
+
+            mDatabase.addValueEventListener(postListener);
+            //mDatabase.addListenerForSingleValueEvent(postListener);
+
+            Log.d("TAGS", "done??");
+
             capture_btn.setEnabled(true);
             capture_btn.setImageResource(R.drawable.capture);
+            task.cancel(true);
+
         }
     }
 

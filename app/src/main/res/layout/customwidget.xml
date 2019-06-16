@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="150dp"
+    android:weightSum="10"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="#fff"
+    android:onClick="onClick_choose_store">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4.5"
+        android:background="#EB5F2D">
+        <TextView
+            android:id="@+id/shop_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="40sp"
+            android:text="Test"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:gravity="center"
+            android:padding="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5.5"
+        android:weightSum="10"
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/shop_score"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:text="test"
+            android:textSize="40sp"
+            android:textColor="#000"
+            android:gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/is_heart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:padding="15dp"
+            android:src="@drawable/true_heart"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+</LinearLayout>
