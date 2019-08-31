@@ -1,16 +1,19 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-65:12
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-78:12
+INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-78:12
+INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-78:12
+INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-78:12
 MERGED from [:opencv] /Users/MIPUNG/Desktop/Dongsamo/opencv/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-12:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/dd872f4c2de8933da07e0d70ae7c23cc/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/95cc304c5f224357b522bea13546749f/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-crash:16.2.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4262f3a5cbd44568de8455137e9cef66/AndroidManifest.xml:17:1-32:12
 MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5659f4c618b997672f852868d683bda8/AndroidManifest.xml:15:1-25:12
 MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/317bc083e273d3cc1b1017a8ee26a84f/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8a5e889bcc619edef8c70fab9f0374ae/AndroidManifest.xml:15:1-26:12
 MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:17:1-42:12
+MERGED from [com.google.firebase:firebase-core:16.0.8] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/87b5acac3b4a3c09f0c917f5181d6124/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-ml-vision:19.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/deb66c4138998141f76d5a80f417de7c/AndroidManifest.xml:2:1-8:12
 MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/7fe30fb415bb7b3e7af63017c7949aa7/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1167d7000507544315c408c8de40a469/AndroidManifest.xml:17:1-32:12
 MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4d71b31e06a0702079ca11f20600f7f1/AndroidManifest.xml:2:1-9:12
@@ -18,14 +21,33 @@ MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/MIPUNG/.gradle/c
 MERGED from [com.android.support:cardview-v7:28.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/f4f9933530a6f8666c1b980ee0717606/AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/ba62045da110b2ec40668bd6d473b056/AndroidManifest.xml:2:1-12:12
 MERGED from [com.rmtheis:tess-two:9.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/a67f215188afff5b444aa8a1fdca4f6f/AndroidManifest.xml:17:1-26:12
+MERGED from [com.google.android.gms:play-services-vision:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/95a160c8339e5419c1dee39468e6a178/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-vision-image-label:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/886fbd523ec0e3d3ecc484fea62c5ba0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-vision-common:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5a843e21f2763dd874d1832eabd49952/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-flags:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/72f1efc6c1798e342890ebaf0b61a78d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-ml-common:17.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/76d5d33709dba6eda95470a78e671a34/AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.firebase:firebase-analytics:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/a813d099659df1769c386cf7a4f021c5/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:17:1-36:12
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:17:1-59:12
 MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/895a08bacd961b122a2d3ffd25e7fc58/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/3238251cab4dd14a8f302bfff46568fb/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8c8140bb672ad285ddd65edc860226bf/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-clearcut:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5ba368a771824f8a8db5d767a294c1dd/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-phenotype:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/dcb2029613550f3ddafd7717b3664722/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/2db6c53a0cfa21d61b4df7986f363c8f/AndroidManifest.xml:17:1-29:12
 MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/7d5fa2f5e9141a9cbde5494303e3c2af/AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/0d23bd98fa05b8a9eb511ad1ab77e1e4/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4c43edb00630b849d744a8f0ceee5d75/AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/29a71c8eb18c29c4ecf96cf83441cfbe/AndroidManifest.xml:2:1-8:12
 MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/3ca2834b535dba182047cb4c66dffc2f/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/924b0e4bbf456c02b434ed47b9f0d1ed/AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:17:1-55:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/79b1ced48702ab6706f0a1c8330029a7/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/472a289ed77070f51f5b0c13a08e8b0f/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/53b2a931449ba681027704fce00e4072/AndroidManifest.xml:17:1-30:12
+MERGED from [com.google.android.gms:play-services-measurement-base:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/dcdc4caad294f0de3a6351f3e4d7c2ca/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/add77bf3d74b370e8c4cba6836a0e09c/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-basement:16.2.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/97a343c3ac5996a81fd0939c4b92e2d4/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:28.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/702c820cd61f8ff606ac2aca18d78ebf/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:28.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/ca76dad55b80dd26a38189916dcc22d4/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/237b8f8422694b5e4bc686355b40638b/AndroidManifest.xml:17:1-22:12
@@ -54,89 +76,118 @@ MERGED from [com.android.support:interpolator:28.0.0] /Users/MIPUNG/.gradle/cach
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/f1b5c57e7821495a5c6c393f907c74bf/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/2c8acf91544de6b7b01e9861fae8511f/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/334b5e47f15f154f7f9c567896327d2a/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-65:12
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/311d4c45ec8eea72990466b931f7515c/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-78:12
+INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-78:12
+INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-78:12
 	package
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:3:5-36
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:4:5-36
 		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-65:12
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-78:12
 		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-65:12
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:1-78:12
 		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:5:5-67
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:6:5-67
+MERGED from [com.google.firebase:firebase-crash:16.2.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4262f3a5cbd44568de8455137e9cef66/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-crash:16.2.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4262f3a5cbd44568de8455137e9cef66/AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5659f4c618b997672f852868d683bda8/AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5659f4c618b997672f852868d683bda8/AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8a5e889bcc619edef8c70fab9f0374ae/AndroidManifest.xml:24:5-67
 MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8a5e889bcc619edef8c70fab9f0374ae/AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1167d7000507544315c408c8de40a469/AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1167d7000507544315c408c8de40a469/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/53b2a931449ba681027704fce00e4072/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/53b2a931449ba681027704fce00e4072/AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:6:22-64
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:6:5-79
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:7:5-79
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:6:22-76
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:7:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:7:5-81
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:8:5-81
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:7:22-78
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:8:22-78
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:8:5-79
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:9:5-79
 MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5659f4c618b997672f852868d683bda8/AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5659f4c618b997672f852868d683bda8/AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8a5e889bcc619edef8c70fab9f0374ae/AndroidManifest.xml:23:5-79
 MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8a5e889bcc619edef8c70fab9f0374ae/AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1167d7000507544315c408c8de40a469/AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1167d7000507544315c408c8de40a469/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/53b2a931449ba681027704fce00e4072/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/53b2a931449ba681027704fce00e4072/AndroidManifest.xml:24:5-79
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:8:22-76
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:9:22-76
 uses-permission#android.permission.CAMERA
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:9:5-65
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:10:5-65
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:9:22-62
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:10:22-62
 uses-feature#android.hardware.camera
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:11:5-60
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:12:5-60
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:11:19-57
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:12:19-57
 uses-feature#android.hardware.camera.autofocus
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:12:5-70
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:13:5-70
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:12:19-67
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:13:19-67
 uses-feature#android.hardware.camera.front
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:13:5-66
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:14:5-66
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:13:19-63
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:14:19-63
 uses-feature#android.hardware.camera.front.autofocus
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:14:5-76
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:15:5-76
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:14:19-73
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:15:19-73
 supports-screens
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:15:5-20:39
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:16:5-21:39
 	android:largeScreens
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:17:9-36
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:18:9-36
 	android:smallScreens
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:20:9-36
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:21:9-36
 	android:normalScreens
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:18:9-37
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:19:9-37
 	android:resizeable
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:19:9-34
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:20:9-34
 	android:anyDensity
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:16:9-34
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:17:9-34
 application
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:22:5-63:19
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:23:5-76:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/95cc304c5f224357b522bea13546749f/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/95cc304c5f224357b522bea13546749f/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-crash:16.2.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4262f3a5cbd44568de8455137e9cef66/AndroidManifest.xml:24:5-30:19
+MERGED from [com.google.firebase:firebase-crash:16.2.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4262f3a5cbd44568de8455137e9cef66/AndroidManifest.xml:24:5-30:19
 MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.firebase:firebase-core:16.0.8] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/87b5acac3b4a3c09f0c917f5181d6124/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-core:16.0.8] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/87b5acac3b4a3c09f0c917f5181d6124/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/7fe30fb415bb7b3e7af63017c7949aa7/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/7fe30fb415bb7b3e7af63017c7949aa7/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1167d7000507544315c408c8de40a469/AndroidManifest.xml:30:5-20
@@ -145,18 +196,52 @@ MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/MIPUNG
 MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4d71b31e06a0702079ca11f20600f7f1/AndroidManifest.xml:7:5-20
 MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/ba62045da110b2ec40668bd6d473b056/AndroidManifest.xml:10:5-20
 MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/ba62045da110b2ec40668bd6d473b056/AndroidManifest.xml:10:5-20
+MERGED from [com.google.android.gms:play-services-vision:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/95a160c8339e5419c1dee39468e6a178/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/95a160c8339e5419c1dee39468e6a178/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision-image-label:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/886fbd523ec0e3d3ecc484fea62c5ba0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision-image-label:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/886fbd523ec0e3d3ecc484fea62c5ba0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision-common:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5a843e21f2763dd874d1832eabd49952/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision-common:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5a843e21f2763dd874d1832eabd49952/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/a813d099659df1769c386cf7a4f021c5/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/a813d099659df1769c386cf7a4f021c5/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:28:5-57:19
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:28:5-57:19
 MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/895a08bacd961b122a2d3ffd25e7fc58/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/895a08bacd961b122a2d3ffd25e7fc58/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8c8140bb672ad285ddd65edc860226bf/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8c8140bb672ad285ddd65edc860226bf/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-clearcut:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5ba368a771824f8a8db5d767a294c1dd/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-clearcut:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5ba368a771824f8a8db5d767a294c1dd/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-phenotype:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/dcb2029613550f3ddafd7717b3664722/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-phenotype:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/dcb2029613550f3ddafd7717b3664722/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/2db6c53a0cfa21d61b4df7986f363c8f/AndroidManifest.xml:22:5-27:19
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/2db6c53a0cfa21d61b4df7986f363c8f/AndroidManifest.xml:22:5-27:19
 MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/7d5fa2f5e9141a9cbde5494303e3c2af/AndroidManifest.xml:9:5-15:19
 MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/7d5fa2f5e9141a9cbde5494303e3c2af/AndroidManifest.xml:9:5-15:19
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/0d23bd98fa05b8a9eb511ad1ab77e1e4/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/0d23bd98fa05b8a9eb511ad1ab77e1e4/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4c43edb00630b849d744a8f0ceee5d75/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4c43edb00630b849d744a8f0ceee5d75/AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/3ca2834b535dba182047cb4c66dffc2f/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/3ca2834b535dba182047cb4c66dffc2f/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/924b0e4bbf456c02b434ed47b9f0d1ed/AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/924b0e4bbf456c02b434ed47b9f0d1ed/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:28:5-53:19
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:28:5-53:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/79b1ced48702ab6706f0a1c8330029a7/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/79b1ced48702ab6706f0a1c8330029a7/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:28:5-38:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:28:5-38:19
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/472a289ed77070f51f5b0c13a08e8b0f/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/472a289ed77070f51f5b0c13a08e8b0f/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/53b2a931449ba681027704fce00e4072/AndroidManifest.xml:27:5-28:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/53b2a931449ba681027704fce00e4072/AndroidManifest.xml:27:5-28:19
+MERGED from [com.google.android.gms:play-services-measurement-base:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/dcdc4caad294f0de3a6351f3e4d7c2ca/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/dcdc4caad294f0de3a6351f3e4d7c2ca/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/add77bf3d74b370e8c4cba6836a0e09c/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/add77bf3d74b370e8c4cba6836a0e09c/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.2.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/97a343c3ac5996a81fd0939c4b92e2d4/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.2.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/97a343c3ac5996a81fd0939c4b92e2d4/AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-compat:28.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8eb149c1cfc246bd9c7d8b9d49591987/AndroidManifest.xml:22:5-94
 MERGED from [com.android.support:support-compat:28.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8eb149c1cfc246bd9c7d8b9d49591987/AndroidManifest.xml:22:5-94
 MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/0031400da288358e32d61ddc20c78928/AndroidManifest.xml:22:5-23:19
@@ -164,91 +249,120 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/MIPUNG/.grad
 MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/7c38cd9e0df432ceb8e3c7e7ef2959f6/AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/7c38cd9e0df432ceb8e3c7e7ef2959f6/AndroidManifest.xml:9:5-20
 	android:screenOrientation
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:27:9-45
-	android:appComponentFactory
-		ADDED from [com.android.support:support-compat:28.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8eb149c1cfc246bd9c7d8b9d49591987/AndroidManifest.xml:22:18-91
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:29:9-45
 	android:supportsRtl
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:28:9-35
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:30:9-35
 	android:label
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:25:9-41
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:27:9-41
+	android:appComponentFactory
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:25:9-82
+		REJECTED from [com.android.support:support-compat:28.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8eb149c1cfc246bd9c7d8b9d49591987/AndroidManifest.xml:22:18-91
 	android:roundIcon
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:26:9-54
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:28:9-54
 	android:icon
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:24:9-43
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:26:9-43
 	android:allowBackup
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:23:9-35
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:24:9-35
 	android:theme
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:29:9-59
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:31:9-59
+	tools:replace
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:32:9-52
+activity#com.dongsamo.dongsamo.FindPWActivity
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:33:9-61
+	android:name
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:33:19-49
+activity#com.dongsamo.dongsamo.FindIDActivity
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:34:9-52
+	android:name
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:34:19-49
+activity#com.dongsamo.dongsamo.SignupActivity
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:35:9-52
+	android:name
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:35:19-49
+activity#com.dongsamo.dongsamo.LoginActivity
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:36:9-51
+	android:name
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:36:19-48
+meta-data#com.google.firebase.ml.vision.DEPENDENCIES
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:38:9-40:35
+	android:value
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:40:13-32
+	android:name
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:39:13-70
 receiver#com.dongsamo.dongsamo.CustomWidget
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:30:9-38:20
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:42:9-50:20
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:30:19-47
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:42:19-47
 intent-filter#action:name:android.appwidget.action.APPWIDGET_UPDATE
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:31:13-33:29
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:43:13-45:29
 action#android.appwidget.action.APPWIDGET_UPDATE
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:32:17-84
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:44:17-84
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:32:25-81
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:44:25-81
 meta-data#android.appwidget.provider
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:35:13-37:62
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:47:13-49:62
 	android:resource
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:37:17-59
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:49:17-59
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:36:17-58
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:48:17-58
 activity#com.dongsamo.dongsamo.StoreListActivity
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:40:9-55
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:52:9-55
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:40:19-52
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:52:19-52
 activity#com.dongsamo.dongsamo.MainActivity
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:41:9-43:59
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:53:9-55:59
 	android:windowSoftInputMode
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:43:13-56
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:55:13-56
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:42:13-41
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:54:13-41
 activity#com.dongsamo.dongsamo.Splash
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:44:9-52:20
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:56:9-64:20
 	android:theme
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:46:13-47
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:58:13-47
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:45:13-35
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:57:13-35
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:47:13-51:29
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:59:13-63:29
 action#android.intent.action.MAIN
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:48:17-69
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:60:17-69
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:48:25-66
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:60:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:50:17-77
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:62:17-77
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:50:27-74
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:62:27-74
 activity#com.dongsamo.dongsamo.CourseActivity
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:53:9-52
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:65:9-52
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:53:19-49
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:65:19-49
 activity#com.dongsamo.dongsamo.DecidingActivity
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:54:9-54
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:66:9-54
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:54:19-51
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:66:19-51
 activity#com.dongsamo.dongsamo.AIRunningActivity
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:55:9-55
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:67:9-55
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:55:19-52
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:67:19-52
 activity#com.dongsamo.dongsamo.DirectAddActivity
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:56:9-58:59
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:68:9-70:59
 	android:windowSoftInputMode
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:58:13-56
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:70:13-56
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:57:13-46
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:69:13-46
 activity#com.dongsamo.dongsamo.StoreActivity
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:59:9-51
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:71:9-51
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:59:19-48
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:71:19-48
 activity#com.dongsamo.dongsamo.CustomWidget
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:60:9-62:59
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:72:9-74:59
 	android:theme
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:62:13-56
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:74:13-56
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:61:13-41
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:73:13-41
+activity#com.dongsamo.dongsamo.PostActivity
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:75:9-50
+	android:name
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:75:19-47
 uses-sdk
 INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml
@@ -259,6 +373,8 @@ MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/MIPUNG/.gradle/cach
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/dd872f4c2de8933da07e0d70ae7c23cc/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/95cc304c5f224357b522bea13546749f/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/95cc304c5f224357b522bea13546749f/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-crash:16.2.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4262f3a5cbd44568de8455137e9cef66/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-crash:16.2.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4262f3a5cbd44568de8455137e9cef66/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5659f4c618b997672f852868d683bda8/AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.firebase:firebase-database:16.0.4] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5659f4c618b997672f852868d683bda8/AndroidManifest.xml:18:5-20:41
 MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/317bc083e273d3cc1b1017a8ee26a84f/AndroidManifest.xml:7:5-9:41
@@ -267,6 +383,10 @@ MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/MIPUNG/.gradle/
 MERGED from [com.google.firebase:firebase-storage:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8a5e889bcc619edef8c70fab9f0374ae/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-core:16.0.8] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/87b5acac3b4a3c09f0c917f5181d6124/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-core:16.0.8] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/87b5acac3b4a3c09f0c917f5181d6124/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-ml-vision:19.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/deb66c4138998141f76d5a80f417de7c/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-ml-vision:19.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/deb66c4138998141f76d5a80f417de7c/AndroidManifest.xml:6:5-44
 MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/7fe30fb415bb7b3e7af63017c7949aa7/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-places:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/7fe30fb415bb7b3e7af63017c7949aa7/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1167d7000507544315c408c8de40a469/AndroidManifest.xml:20:5-44
@@ -281,22 +401,60 @@ MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/MIPUNG/.gradle/caches
 MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/ba62045da110b2ec40668bd6d473b056/AndroidManifest.xml:6:5-8:41
 MERGED from [com.rmtheis:tess-two:9.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/a67f215188afff5b444aa8a1fdca4f6f/AndroidManifest.xml:22:5-24:41
 MERGED from [com.rmtheis:tess-two:9.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/a67f215188afff5b444aa8a1fdca4f6f/AndroidManifest.xml:22:5-24:41
+MERGED from [com.google.android.gms:play-services-vision:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/95a160c8339e5419c1dee39468e6a178/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/95a160c8339e5419c1dee39468e6a178/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision-image-label:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/886fbd523ec0e3d3ecc484fea62c5ba0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision-image-label:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/886fbd523ec0e3d3ecc484fea62c5ba0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision-common:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5a843e21f2763dd874d1832eabd49952/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision-common:17.0.2] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5a843e21f2763dd874d1832eabd49952/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-flags:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/72f1efc6c1798e342890ebaf0b61a78d/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-flags:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/72f1efc6c1798e342890ebaf0b61a78d/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-ml-common:17.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/76d5d33709dba6eda95470a78e671a34/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-ml-common:17.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/76d5d33709dba6eda95470a78e671a34/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-analytics:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/a813d099659df1769c386cf7a4f021c5/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/a813d099659df1769c386cf7a4f021c5/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/895a08bacd961b122a2d3ffd25e7fc58/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/895a08bacd961b122a2d3ffd25e7fc58/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/3238251cab4dd14a8f302bfff46568fb/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/3238251cab4dd14a8f302bfff46568fb/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8c8140bb672ad285ddd65edc860226bf/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8c8140bb672ad285ddd65edc860226bf/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-clearcut:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5ba368a771824f8a8db5d767a294c1dd/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-clearcut:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/5ba368a771824f8a8db5d767a294c1dd/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-phenotype:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/dcb2029613550f3ddafd7717b3664722/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-phenotype:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/dcb2029613550f3ddafd7717b3664722/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/2db6c53a0cfa21d61b4df7986f363c8f/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/2db6c53a0cfa21d61b4df7986f363c8f/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/7d5fa2f5e9141a9cbde5494303e3c2af/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-common:16.0.4] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/7d5fa2f5e9141a9cbde5494303e3c2af/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/0d23bd98fa05b8a9eb511ad1ab77e1e4/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/0d23bd98fa05b8a9eb511ad1ab77e1e4/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4c43edb00630b849d744a8f0ceee5d75/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4c43edb00630b849d744a8f0ceee5d75/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/29a71c8eb18c29c4ecf96cf83441cfbe/AndroidManifest.xml:6:5-44
 MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/29a71c8eb18c29c4ecf96cf83441cfbe/AndroidManifest.xml:6:5-44
 MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/3ca2834b535dba182047cb4c66dffc2f/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/3ca2834b535dba182047cb4c66dffc2f/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/924b0e4bbf456c02b434ed47b9f0d1ed/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/924b0e4bbf456c02b434ed47b9f0d1ed/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/79b1ced48702ab6706f0a1c8330029a7/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/79b1ced48702ab6706f0a1c8330029a7/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/472a289ed77070f51f5b0c13a08e8b0f/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/472a289ed77070f51f5b0c13a08e8b0f/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/53b2a931449ba681027704fce00e4072/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/53b2a931449ba681027704fce00e4072/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/dcdc4caad294f0de3a6351f3e4d7c2ca/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/dcdc4caad294f0de3a6351f3e4d7c2ca/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/add77bf3d74b370e8c4cba6836a0e09c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/add77bf3d74b370e8c4cba6836a0e09c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.2.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/97a343c3ac5996a81fd0939c4b92e2d4/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.2.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/97a343c3ac5996a81fd0939c4b92e2d4/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:28.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/702c820cd61f8ff606ac2aca18d78ebf/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:28.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/702c820cd61f8ff606ac2aca18d78ebf/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/ca76dad55b80dd26a38189916dcc22d4/AndroidManifest.xml:20:5-44
@@ -353,6 +511,8 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/MIPUNG/.gradle/c
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/2c8acf91544de6b7b01e9861fae8511f/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/334b5e47f15f154f7f9c567896327d2a/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/334b5e47f15f154f7f9c567896327d2a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/311d4c45ec8eea72990466b931f7515c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/311d4c45ec8eea72990466b931f7515c/AndroidManifest.xml:20:5-44
 INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml
 INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
@@ -363,6 +523,24 @@ INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml
 		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-crash:16.2.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4262f3a5cbd44568de8455137e9cef66/AndroidManifest.xml:25:9-29:19
+MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:33:9-39:19
+MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:33:9-39:19
+MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:27:9-33:19
+MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:27:9-33:19
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:29:9-35:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-crash:16.2.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4262f3a5cbd44568de8455137e9cef66/AndroidManifest.xml:25:18-89
+meta-data#com.google.firebase.components:com.google.firebase.crash.component.FirebaseCrashRegistrar
+ADDED from [com.google.firebase:firebase-crash:16.2.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4262f3a5cbd44568de8455137e9cef66/AndroidManifest.xml:26:13-28:85
+	android:value
+		ADDED from [com.google.firebase:firebase-crash:16.2.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4262f3a5cbd44568de8455137e9cef66/AndroidManifest.xml:28:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-crash:16.2.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/4262f3a5cbd44568de8455137e9cef66/AndroidManifest.xml:27:17-121
 activity#com.google.firebase.auth.internal.FederatedSignInActivity
 ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:24:9-31:50
 	android:excludeFromRecents
@@ -379,12 +557,6 @@ ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/cach
 		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:31:13-47
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:25:13-85
-service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:33:9-39:19
-	android:exported
-		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:35:13-37
-	android:name
-		ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:34:13-84
 meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
 ADDED from [com.google.firebase:firebase-auth:16.0.5] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/bbeeb574b28397de82ec3fac1f7fc1d2/AndroidManifest.xml:36:13-38:85
 	android:value
@@ -397,6 +569,62 @@ ADDED from [com.google.android.gms:play-services-maps:15.0.1] /Users/MIPUNG/.gra
 		ADDED from [com.google.android.gms:play-services-maps:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1167d7000507544315c408c8de40a469/AndroidManifest.xml:27:9-41
 	android:required
 		ADDED from [com.google.android.gms:play-services-maps:15.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1167d7000507544315c408c8de40a469/AndroidManifest.xml:28:9-32
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/53b2a931449ba681027704fce00e4072/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/53b2a931449ba681027704fce00e4072/AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:24:22-65
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:30:13-32:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:32:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/cb6cbc99f74ea5c5273263222e9551d5/AndroidManifest.xml:31:17-139
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:26:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:26:22-79
+meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
+ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:33:17-96
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:37:9-44:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:39:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:40:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:38:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:41:13-43:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:42:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:42:25-78
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:50:9-56:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:52:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:51:13-77
+intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:53:13-55:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:53:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:54:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/1aa342a9b942fbf5eaed4747c0b76199/AndroidManifest.xml:54:25-77
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/2db6c53a0cfa21d61b4df7986f363c8f/AndroidManifest.xml:23:9-26:75
 	android:exported
@@ -415,9 +643,59 @@ ADDED from [com.google.firebase:firebase-common:16.0.4] /Users/MIPUNG/.gradle/ca
 		ADDED from [com.google.firebase:firebase-common:16.0.4] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/7d5fa2f5e9141a9cbde5494303e3c2af/AndroidManifest.xml:14:13-36
 	android:name
 		ADDED from [com.google.firebase:firebase-common:16.0.4] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/7d5fa2f5e9141a9cbde5494303e3c2af/AndroidManifest.xml:11:13-77
-meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:16.1.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/924b0e4bbf456c02b434ed47b9f0d1ed/AndroidManifest.xml:23:9-25:69
-	android:value
-		ADDED from [com.google.android.gms:play-services-basement:16.1.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/924b0e4bbf456c02b434ed47b9f0d1ed/AndroidManifest.xml:25:13-66
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:26:5-110
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:16.1.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/924b0e4bbf456c02b434ed47b9f0d1ed/AndroidManifest.xml:24:13-58
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:30:13-85
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:34:9-42:20
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:29:9-37:20
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/39e1089b2d996914d712f53f1164931d/AndroidManifest.xml:29:9-37:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:36:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:37:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:38:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:35:13-100
+intent-filter#action:name:com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:39:13-41:29
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:40:17-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:40:25-76
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:44:9-47:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:46:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:45:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:48:9-52:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:50:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:51:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:52:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:16.4.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/81213859f1f505a6a52745460bc3643c/AndroidManifest.xml:49:13-87
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:16.2.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/97a343c3ac5996a81fd0939c4b92e2d4/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:16.2.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/97a343c3ac5996a81fd0939c4b92e2d4/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:16.2.0] /Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/97a343c3ac5996a81fd0939c4b92e2d4/AndroidManifest.xml:24:13-58

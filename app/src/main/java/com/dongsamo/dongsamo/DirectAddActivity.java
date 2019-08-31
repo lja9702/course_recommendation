@@ -96,7 +96,7 @@ public class DirectAddActivity extends AppCompatActivity {
                     if (snapshot.getKey().equals("stores")) {
                         for (DataSnapshot csnapshot : snapshot.getChildren()) {
                             Store post = csnapshot.getValue(Store.class);
-                            store.add(new StoreCard(post.getUrl(), post.getName(), post.getStar(),  post.getDistance(), post.isIs_heart()));
+                            //store.add(new StoreCard(post.getUrl(), post.getName(), post.getStar(),  post.getDistance(), post.isIs_heart()));
                             set_post_handler.sendEmptyMessage(0);
 
                         }

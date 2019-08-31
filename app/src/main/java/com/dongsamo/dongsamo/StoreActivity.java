@@ -36,7 +36,7 @@ public class StoreActivity extends AppCompatActivity {
 
         //kong todo 69 StoreRecyclerViewAdapter에서 인텐트로 보낸 store_name 정보 띄우기.
         StoreCard sc = (StoreCard) getIntent().getSerializableExtra("store");
-        Glide.with(store_image).load(""+sc.getImg_url()).into(store_image);
+        Glide.with(store_image).load(""+sc.getUrl()).into(store_image);
         store_text.setText(sc.getName());
 
         ln = (LinearLayout)findViewById(R.id.tmap_store);

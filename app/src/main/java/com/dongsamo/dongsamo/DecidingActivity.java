@@ -21,6 +21,7 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.location.Location;
 
 import com.skt.Tmap.TMapData;
 import com.skt.Tmap.TMapMarkerItem;
@@ -124,8 +125,15 @@ public class DecidingActivity extends AppCompatActivity {
         pinpinEE("진이알바",(float)37.477777, (float)126.952437,"TEST_DON");
         pinpinEE("서울대입구역",(float)37.481209, (float)126.952713,"TEST_YUK");
 
+        // gps 좌표 받아오는 코드
+        GPSclass gpSclass = new GPSclass(this);
+        Location loc = gpSclass.getLocation();
+        double lon = loc.getLongitude();
+        double lat = loc.getLatitude();
 
+    //    Toast.makeText(getApplicationContext(), "당신의 위치 \n위도 : " + lat + "\n경도 : " + lon, Toast.LENGTH_LONG).show();
 
+        pinpinEE("현재위치", (float)lat, (float)lon, "TEST_NOW");
         TMapPoint point1 = new TMapPoint((float)37.480897 ,(float)126.951086);
         TMapPoint point2 = new TMapPoint((float)37.475014, (float)126.953481);
         TMapPoint point3 = new TMapPoint((float)37.477777, (float)126.952437);

@@ -29,4 +29,7 @@ public class FirebaseUIActivity extends AppCompatActivity {
                 .load(storageReference.child("쿠우쿠우.jpg"))
                 .into(imageView);
     }
+
+    public static class GPSclass {
+    }
 }

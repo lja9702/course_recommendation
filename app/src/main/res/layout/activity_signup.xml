@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/signin_back"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:weightSum="1280"
+    android:onClick="onClick_signin_back">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="133"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="55"
+        android:weightSum="720">
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="99"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="300"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:text="회원가입"
+            android:textSize="18dp"
+            android:gravity="left|center"/>
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="550"
+        android:weightSum="720">
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="59"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="599"
+            android:background="#FAFAFA"
+            android:weightSum="599">
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="30"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="569"
+                android:orientation="vertical"
+                android:weightSum="566">
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="50"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="40"
+                    android:weightSum="569">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="150"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:text="E-Mail"
+                        android:textSize="18dp"
+                        android:gravity="left|center"/>
+
+                    <EditText
+                        android:id="@+id/signin_email"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="380"
+                        android:background="#F3F3F3"
+                        android:textSize="12dp"
+                        android:textColor="#000"
+                        android:paddingStart="5dp"
+                        android:inputType="textEmailAddress"
+                        android:hint="email을 입력하세요"
+                        android:textColorHint="#999"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="50"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="40"
+                    android:weightSum="569">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="150"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:text="ID"
+                        android:textSize="18dp"
+                        android:gravity="left|center"/>
+
+                    <EditText
+                        android:id="@+id/signin_id"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="380"
+                        android:background="#F3F3F3"
+                        android:textSize="12dp"
+                        android:textColor="#000"
+                        android:paddingStart="5dp"
+                        android:inputType="text"
+                        android:hint="영어,숫자만 입력 가능"
+                        android:textColorHint="#999"/>
+                </LinearLayout>
+
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="50"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="40"
+                    android:weightSum="569">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="150"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:text="PW"
+                        android:textSize="18dp"
+                        android:gravity="left|center"/>
+
+                    <EditText
+                        android:id="@+id/signin_pw"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="380"
+                        android:background="#F3F3F3"
+                        android:textSize="12dp"
+                        android:textColor="#000"
+                        android:paddingStart="5dp"
+                        android:textColorHint="#999"/>
+                </LinearLayout>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="50"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="40"
+                    android:weightSum="569">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="150"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:text="이름"
+                        android:textSize="18dp"
+                        android:gravity="left|center"/>
+
+                    <EditText
+                        android:id="@+id/signin_name"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="380"
+                        android:background="#F3F3F3"
+                        android:textSize="12dp"
+                        android:textColor="#000"
+                        android:paddingStart="5dp"
+                        android:inputType="text"/>
+                </LinearLayout>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="100"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="58"
+                    android:weightSum="596">
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="63"/>
+
+                    <ImageButton
+                        android:id="@+id/signin_fin"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="209"
+                        android:src="@drawable/signin_fin"
+                        android:scaleType="fitXY"
+                        android:background="@android:color/transparent"
+                        android:onClick="onClick_signin_fin"/>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="30"/>
+
+                    <ImageButton
+                        android:id="@+id/signin_cancel"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="209"
+                        android:src="@drawable/signin_cancel"
+                        android:scaleType="fitXY"
+                        android:background="@android:color/transparent"
+                        android:onClick="onClick_signin_cancel"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

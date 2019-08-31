@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/97a343c3ac5996a81fd0939c4b92e2d4/res/values-fr-rCA/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "219",
+                        "endOffsets": "470"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "4100",
+                        "endColumns": "219",
+                        "endOffsets": "4315"
+                    }
+                },
+                {
                     "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/8eb149c1cfc246bd9c7d8b9d49591987/res/values-fr-rCA/values-fr-rCA.xml",
                     "from": {
                         "startLines": "2",
@@ -35,23 +52,6 @@
                         "startOffsets": "6077",
                         "endColumns": "100",
                         "endOffsets": "6173"
-                    }
-                },
-                {
-                    "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/924b0e4bbf456c02b434ed47b9f0d1ed/res/values-fr-rCA/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "219",
-                        "endOffsets": "470"
-                    },
-                    "to": {
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "4100",
-                        "endColumns": "219",
-                        "endOffsets": "4315"
                     }
                 },
                 {

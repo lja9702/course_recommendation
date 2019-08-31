@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="location_item">
+        <item>전체</item>
         <item>서현역</item>
         <item>숭실대학교</item>
         <item>건국대학교</item>
