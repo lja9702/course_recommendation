@@ -267,10 +267,10 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/MIPUNG/.gradle/c
 		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:31:9-59
 	tools:replace
 		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:32:9-52
-activity#com.dongsamo.dongsamo.StoreMapActivity
-ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:33:9-63
+activity#com.dongsamo.dongsamo.MypageActivity
+ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:33:9-61
 	android:name
-		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:33:19-51
+		ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:33:19-49
 activity#com.dongsamo.dongsamo.UserCourseActivity
 ADDED from /Users/MIPUNG/Desktop/Dongsamo/app/src/main/AndroidManifest.xml:34:9-56
 	android:name

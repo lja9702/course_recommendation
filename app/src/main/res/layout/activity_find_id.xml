@@ -5,56 +5,49 @@
     android:onClick="onClick_login_back"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="@drawable/id_and_pw_background"
     android:orientation="vertical"
     android:weightSum="1280">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="364">
-    </Space>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="45"
-        android:weightSum="527">
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="89"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="50"
-            android:text="FIND ID"
-            android:textSize="18dp"
-            android:textColor="#000"
-            android:gravity="center|left"
-            android:textStyle="bold"/>
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="190"/>
+        android:layout_weight="450">
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="25">
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="335"
+        android:layout_weight="40"
         android:weightSum="720">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="99"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="200"
+            android:src="@drawable/find_id_btn"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="297"
+        android:weightSum="720"
+        >
 
         <Space
             android:layout_width="0dp"
@@ -64,136 +57,109 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="527"
-            android:background="@drawable/login_box"
-            android:weightSum="527">
+            android:orientation="vertical"
+            android:layout_weight="522"
+            android:weightSum="522"
+            android:background="@drawable/idpw_find_box">
 
             <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="35"/>
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="55"/>
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="497"
-                android:weightSum="301">
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="95"
+                android:weightSum="522">
 
                 <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="50"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="40"
-                    android:weightSum="497">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="150"
-                        android:text="email"
-                        android:textColor="#000"
-                        android:gravity="left|center"
-                        android:textSize="18dp"/>
-
-                    <Space
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="10"/>
-
-                    <EditText
-                        android:id="@+id/name_editText"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="300"
-                        android:background="#fff"
-                        android:textColor="#000"
-                        android:inputType="text"
-                        android:textColorHint="#999"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:weightSum="497">
-
-                    <Space
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="150"/>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="300"
-                        android:background="#000">
-
-                    </LinearLayout>
-
-                </LinearLayout>
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="50"/>
-
-
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="29"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="200"
+                    android:text="Email"
+                    android:textColor="#000"
+                    android:textSize="25dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="75"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="90"
+                android:weightSum="522">
 
                 <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="30"/>
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="29"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="55"
-                    android:weightSum="527">
-
-                    <Space
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="220"/>
-
-                    <TextView
-                        android:id="@+id/fin_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="확인"
-                        android:textColor="#000"
-                        android:textSize="15dp"
-                        android:background="#fff"
-                        android:gravity="center"
-                        android:padding="7dp"
-                        android:onClick="onClick_find_id_fin"/>
-
-                    <Space
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"/>
-
-                </LinearLayout>
+                <EditText
+                    android:id="@+id/find_id_email"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="477"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:inputType="textEmailAddress"/>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="80"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="90"
+                android:weightSum="522">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="220"/>
+
+                <ImageButton
+                    android:id="@+id/find_id_ok_btn"
+                    android:layout_width="29dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="73"
+                    android:background="@android:color/transparent"
+                    android:onClick="onClick_find_id_ok_btn"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ok_btn" />
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/not_found_textView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="아이디를 찾을 수 없습니다."
-        android:textColor="#ff1d1d"
-        android:textSize="14dp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:visibility="invisible"
-        />
+        android:layout_height="0dp"
+        android:layout_weight="20">
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50">
+
+        <TextView
+            android:id="@+id/not_found_textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="아이디를 찾을 수 없습니다."
+            android:textColor="#F00"
+            android:visibility="gone"/>
+    </LinearLayout>
 
 </LinearLayout>

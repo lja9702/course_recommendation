@@ -114,18 +114,18 @@ public class MainActivity extends AppCompatActivity
     }
 
     /*주변상점보기*/
-    public void onClick_shop_list(View view){
+    public void onClick_main_shop_list_btn(View view){
          Intent intent = new Intent(MainActivity.this, StoreListActivity.class);
         startActivity(intent);
     }
     /*코스추천*/
-    public void onClick_course_ask(View view){
+    public void onClick_main_course_ask_btn(View view){
         Intent intent = new Intent(MainActivity.this, CourseActivity.class);
         startActivity(intent);
     }
 
     /*카메라 캡쳐 capture 함수 호출*/
-    public void onClick_capture(View view) {
+    public void onClick_capture_btn(View view) {
         Log.d("TAGS", "onClick_capture");
         capture();
     }
@@ -417,5 +417,9 @@ public class MainActivity extends AppCompatActivity
         capture_btn.setImageResource(R.drawable.capture);
     }
 
+    public void onClick_main_mypage_btn(View view){
+        Intent intent = new Intent(this, MypageActivity.class);
+        startActivity(intent);
+    }
 
 }

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -19,8 +20,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class FindIDActivity extends AppCompatActivity {
     EditText name_editText;
-    TextView fin_btn, not_found_textView;
-
+    ImageButton fin_btn;
+    TextView not_found_textView;
     private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
     @Override
@@ -28,12 +29,12 @@ public class FindIDActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_id);
 
-        name_editText = (EditText)findViewById(R.id.name_editText);
-        fin_btn = (TextView)findViewById(R.id.fin_btn);
+        name_editText = (EditText)findViewById(R.id.find_id_email);
+        fin_btn = (ImageButton)findViewById(R.id.find_id_ok_btn);
         not_found_textView = (TextView)findViewById(R.id.not_found_textView);
     }
 
-    public void onClick_find_id_fin(View view){
+    public void onClick_find_id_ok_btn(View view){
         InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         im.hideSoftInputFromWindow(name_editText.getWindowToken(), 0);
         final String email = name_editText.getText().toString();
@@ -77,8 +78,10 @@ public class FindIDActivity extends AppCompatActivity {
         });
     }
 
+
     public void onClick_login_back(View view){
         InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         im.hideSoftInputFromWindow(name_editText.getWindowToken(), 0);
     }
+
 }

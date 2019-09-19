@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
 
     EditText login_editText, passwd_editText;
-    TextView find_id, find_pw;
+    ImageButton find_id, find_pw;
     ProgressDialog progressDialog;
 
     private FirebaseAuth firebaseAuth;
@@ -38,11 +39,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        login_editText = (EditText)findViewById(R.id.login_editText);
-        passwd_editText = findViewById(R.id.login_password_editText);
+        login_editText = (EditText)findViewById(R.id.login_id);
+        passwd_editText = findViewById(R.id.login_pw);
 
-        find_id = (TextView)findViewById(R.id.find_id);
-        find_pw = (TextView)findViewById(R.id.find_pw);
+        find_id = (ImageButton)findViewById(R.id.login_find_id_btn);
+        find_pw = (ImageButton)findViewById(R.id.login_find_pw_btn);
 
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -65,22 +66,22 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public void onClick_signin(View view){
+    public void onClick_login_signup_btn(View view){
         Intent intent = new Intent(this, SignupActivity.class);
         startActivity(intent);
     }
 
-    public void onClick_find_id(View view){
+    public void onClick_login_find_id_btn(View view){
         Intent intent = new Intent(this, FindIDActivity.class);
         startActivity(intent);
     }
 
-    public void onClick_find_pw(View view){
+    public void onClick_login_find_pw_btn(View view){
         Intent intent = new Intent(this, FindPWActivity.class);
         startActivity(intent);
     }
 
-    public void onClick_login(View view){
+    public void onClick_login_btn(View view){
 
         boolean valid = ValidateForm.validateEditText(login_editText, passwd_editText);
         if(!valid){
@@ -164,4 +165,5 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 }, 0);
     }
+
 }

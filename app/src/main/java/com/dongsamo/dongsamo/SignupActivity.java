@@ -25,8 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
-    EditText signin_email, signin_id, signin_pw, signin_name;
-    ImageButton signin_fin, signin_cancel;
+    EditText signup_email, signup_id, signup_pw, signup_name;
+    ImageButton signup_fin;
 
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
@@ -36,13 +36,12 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        signin_email = (EditText)findViewById(R.id.signin_email);
-        signin_id = (EditText)findViewById(R.id.signin_id);
-        signin_pw = (EditText)findViewById(R.id.signin_pw);
-        signin_name = (EditText)findViewById(R.id.signin_name);
+        signup_email = (EditText)findViewById(R.id.signup_email);
+        signup_id = (EditText)findViewById(R.id.signup_id);
+        signup_pw = (EditText)findViewById(R.id.signup_pw);
+        signup_name = (EditText)findViewById(R.id.signup_name);
 
-        signin_fin = (ImageButton)findViewById(R.id.signin_fin);
-        signin_cancel = (ImageButton)findViewById(R.id.signin_cancel);
+        signup_fin = (ImageButton)findViewById(R.id.signup_ok_btn);
 
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -52,42 +51,42 @@ public class SignupActivity extends AppCompatActivity {
 
     public void onClick_signin_back(View view){
         InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        im.hideSoftInputFromWindow(signin_id.getWindowToken(), 0);
+        im.hideSoftInputFromWindow(signup_id.getWindowToken(), 0);
     }
 
-    public void onClick_signin_fin(View view){
-        boolean valid = ValidateForm.validateEditText(signin_id, signin_email, signin_pw, signin_name);
+    public void onClick_signup_ok_btn(View view){
+        boolean valid = ValidateForm.validateEditText(signup_id, signup_email, signup_pw, signup_name);
         if(!valid){
             Log.d("ValidForm", "Some EditText is null");
             loadingEnd();
             return;
         }
         Log.d("ValidForm", "Start Valid");
-        if( !ValidateForm.validateEmail(signin_email.getText().toString()) ){
+        if( !ValidateForm.validateEmail(signup_email.getText().toString()) ){
             Log.d("ValidForm", "In Email");
             Toast.makeText(SignupActivity.this, "이메일 형식을 지켜주세요.", Toast.LENGTH_LONG).show();
             loadingEnd();
             return;
         }
         Log.d("ValidForm", "Pass Email");
-        if( !ValidateForm.validateId(signin_id.getText().toString()) ){
+        if( !ValidateForm.validateId(signup_id.getText().toString()) ){
             Log.d("ValidForm", "In ID");
             Toast.makeText(SignupActivity.this, "아이디는 영어와 숫자를 사용한 4자리 이상 20자리 이하 입니다.", Toast.LENGTH_LONG).show();
             loadingEnd();
             return;
         }
-//        Log.d("ValidForm", "Pass ID");
-//        if( !ValidateForm.validatePw(signin_pw.getText().toString())){
-//            Log.d("ValidForm", "In PW");
-//            Toast.makeText(getApplicationContext(), "비밀번호는 숫자 6자리 입니다.", Toast.LENGTH_LONG).show();
-//            loadingEnd();
-//            return;
-//        }
-//        Log.d("ValidForm", "Pass PW");
+        Log.d("ValidForm", "Pass ID");
+        if( !ValidateForm.validatePw(signup_pw.getText().toString())){
+            Log.d("ValidForm", "In PW");
+            Toast.makeText(getApplicationContext(), "비밀번호는 숫자 6자리 입니다.", Toast.LENGTH_LONG).show();
+            loadingEnd();
+            return;
+        }
+        Log.d("ValidForm", "Pass PW");
 
-        final String id = signin_id.getText().toString();
-        final String email = signin_email.getText().toString();
-        final String name = signin_name.getText().toString();
+        final String id = signup_id.getText().toString();
+        final String email = signup_email.getText().toString();
+        final String name = signup_name.getText().toString();
         Log.d(TAG, "email : " + email + "id : " + id);
 
         databaseReference.child("Email").child(id).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -97,7 +96,7 @@ public class SignupActivity extends AppCompatActivity {
                 String email2 = dataSnapshot.getValue(String.class);
                 Log.d(TAG, "email : " + email2);
                 if( email2 == null ){
-                    firebaseAuth.createUserWithEmailAndPassword(email, signin_pw.getText().toString())
+                    firebaseAuth.createUserWithEmailAndPassword(email, signup_pw.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>(){
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -105,7 +104,7 @@ public class SignupActivity extends AppCompatActivity {
                                         Log.d("check", "after : "+email+name);
                                         Log.d(TAG, "Success sign up");
                                         final Member member = new Member(id, email, name);
-                                        firebaseAuth.signInWithEmailAndPassword(email, signin_pw.getText().toString())
+                                        firebaseAuth.signInWithEmailAndPassword(email, signup_pw.getText().toString())
                                                 .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
                                                     @Override
                                                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -126,7 +125,7 @@ public class SignupActivity extends AppCompatActivity {
                                         Log.d(TAG, "user email:" + email);
                                     }
                                     else{
-                                        Toast.makeText(SignupActivity.this, "이메일이 이미 존재합니다.", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(SignupActivity.this, "다시 시도해주세요(이메일 중복 / 아이디 중복)", Toast.LENGTH_LONG).show();
                                     }
                                     loadingEnd();
                                 }
@@ -135,7 +134,7 @@ public class SignupActivity extends AppCompatActivity {
                 }
                 else{
                     loadingEnd();
-                    Toast.makeText(SignupActivity.this, "아이디가 존재합니다.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignupActivity.this, "다시 시도해주세요(이메일 중복 / 아이디 중복)", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -145,10 +144,6 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    public void onClick_signin_cancel(View view){
-        this.finish();
     }
 
     public void loading() {
@@ -172,4 +167,5 @@ public class SignupActivity extends AppCompatActivity {
                     }
                 }, 0);
     }
+
 }

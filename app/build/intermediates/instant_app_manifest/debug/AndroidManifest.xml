@@ -45,7 +45,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.NoActionBar" >
-        <activity android:name="com.dongsamo.dongsamo.StoreMapActivity" />
+        <activity android:name="com.dongsamo.dongsamo.MypageActivity" />
         <activity android:name="com.dongsamo.dongsamo.UserCourseActivity" />
         <activity android:name="com.dongsamo.dongsamo.FindPWActivity" />
         <activity android:name="com.dongsamo.dongsamo.FindIDActivity" />

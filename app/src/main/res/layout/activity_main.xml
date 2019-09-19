@@ -6,12 +6,35 @@
     android:layout_height="match_parent"
     android:weightSum="1280"
     android:orientation="vertical"
-    android:background="@drawable/background4">
+    android:background="@drawable/camera_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="100"
+        android:weightSum="720">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="570"/>
+
+        <ImageButton
+            android:id="@+id/main_mypage_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="120"
+            android:src="@drawable/mypage_btn"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:onClick="onClick_main_mypage_btn"/>
+
+    </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1144"
+        android:layout_weight="1044"
         android:background="#FFF">
 
         <!--
@@ -59,14 +82,14 @@
                 android:layout_weight="24"/>
 
             <ImageButton
-                android:id="@+id/shop_list_btn"
+                android:id="@+id/main_shop_list_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="247"
                 android:src="@drawable/shop_list"
                 android:scaleType="fitCenter"
                 android:background="@android:color/transparent"
-                android:onClick="onClick_shop_list"/>
+                android:onClick="onClick_main_shop_list_btn"/>
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -78,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="90"
                 android:background="@android:color/transparent"
-                android:onClick="onClick_capture"
+                android:onClick="onClick_capture_btn"
                 android:scaleType="fitCenter"
                 android:src="@drawable/capture" />
 
@@ -88,14 +111,14 @@
                 android:layout_weight="22"/>
 
             <ImageButton
-                android:id="@+id/course_ask_btn"
+                android:id="@+id/main_course_ask_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="272"
                 android:src="@drawable/course_ask"
                 android:scaleType="fitCenter"
                 android:background="@android:color/transparent"
-                android:onClick="onClick_course_ask"/>
+                android:onClick="onClick_main_course_ask_btn"/>
 
             <Space
                 android:layout_width="0dp"

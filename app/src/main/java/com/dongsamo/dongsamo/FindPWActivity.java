@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class FindPWActivity extends AppCompatActivity {
     EditText id_editText, email_editText;
-    TextView fin_btn;
+    ImageButton fin_btn;
 
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -30,14 +31,14 @@ public class FindPWActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_pw);
 
-        id_editText = (EditText)findViewById(R.id.id_editText);
-        email_editText = (EditText)findViewById(R.id.email_editText);
-        fin_btn = (TextView)findViewById(R.id.fin_btn);
+        id_editText = (EditText)findViewById(R.id.find_pw_id);
+        email_editText = (EditText)findViewById(R.id.find_pw_email);
+        fin_btn = (ImageButton)findViewById(R.id.find_pw_ok_btn);
 
 
     }
 
-    public void onClick_find_id_fin(View view){
+    public void onClick_find_pw_ok_btn(View view){
 
         if(!ValidateForm.validateEditText(id_editText, email_editText)){
             return;
@@ -80,6 +81,7 @@ public class FindPWActivity extends AppCompatActivity {
         alert.show();
 
     }
+
 
     public void onClick_login_back(View view){
         InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);

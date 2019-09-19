@@ -157,12 +157,12 @@ public class DecidingActivity extends AppCompatActivity {
 
     }
 
-    public void onClick_decide_course(View view){
+    public void onClick_decide_course_btn(View view){
         Toast.makeText(DecidingActivity.super.getApplicationContext(), "이 코스로 결정!", Toast.LENGTH_LONG).show();
         decide_course_btn.setVisibility(View.INVISIBLE);
     }
 
-    public void onClick_no_course(View view){
+    public void onClick_no_course_btn(View view){
         Intent intent = new Intent(DecidingActivity.this, AIRunningActivity.class);
         startActivity(intent);
         finish();

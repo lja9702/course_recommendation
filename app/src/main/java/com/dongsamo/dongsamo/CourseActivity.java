@@ -35,17 +35,20 @@ public class CourseActivity extends AppCompatActivity {
 
     }
 
-    public void onClick_direct_add(View view){
+    public void onClick_direct_add_btn(View view){
         course = String.valueOf(course_text.getText());
-        Intent intent = new Intent(CourseActivity.this, DirectAddActivity.class);
+        Intent intent = new Intent(CourseActivity.this, UserCourseActivity.class);
         intent.putExtra("textview", course);
         startActivity(intent);
         finish();
     }
 
-    public void onClick_trash(View view){
+    public void onClick_trash_btn(View view){
         course_text.setText("");
     }
+
+
+
 
     public void onClick_shop_btn(View view){
         switch (view.getId()){
@@ -53,24 +56,31 @@ public class CourseActivity extends AppCompatActivity {
                 textview_txt = String.valueOf(course_text.getText());
                 course_text.setText(textview_txt+"  밥");
                 break;
-            case R.id.play_btn:
+            case R.id.show_btn:
                 textview_txt = String.valueOf(course_text.getText());
-                course_text.setText(textview_txt+"  놀거리");
+                course_text.setText(textview_txt+"  문화/공연");
                 break;
             case R.id.cafe_btn:
                 textview_txt = String.valueOf(course_text.getText());
                 course_text.setText(textview_txt+"  카페");
                 break;
-            case R.id.fresh_btn:
-                textview_txt = String.valueOf(course_text.getText());
-                course_text.setText(textview_txt+"  술");
+            case R.id.etc_btn:
+                Intent intent = new Intent(this, DirectAddActivity.class);
+                //todo
+
+                startActivity(intent);
+//                textview_txt = String.valueOf(course_text.getText());
+//                course_text.setText(textview_txt+"  원하는 장소");
                 break;
         }
     }
 
-    public void onClick_ai_ask(View view){
+    public void onClick_ai_ask_btn(View view){
         Intent intent = new Intent(CourseActivity.this, AIRunningActivity.class);
         startActivity(intent);
     }
 
+    public void onClick_course_location_btn(View view){//밥플 지역
+
+    }
 }

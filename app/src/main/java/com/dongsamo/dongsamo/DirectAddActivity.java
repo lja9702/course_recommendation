@@ -63,20 +63,11 @@ public class DirectAddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_direct_add);
 
-        Intent intent = getIntent();
-        String str = intent.getExtras().getString("textview");
-        course = str;
-        flag=true;
-
-        A_activity = this;
         search_btn = (Button)findViewById(R.id.search_btn);
-        sort_spinner = (Spinner) findViewById(R.id.sort_spn);
-        store_spinner = (Spinner) findViewById(R.id.store_spn);
 
         store_search = (EditText)findViewById(R.id.store_search);
         linearLayout = (LinearLayout) findViewById(R.id.direct_linear);
 
-        setSpinner();
 
         store = new ArrayList<>();
         store_list = (RecyclerView) findViewById(R.id.store_list);
@@ -86,35 +77,35 @@ public class DirectAddActivity extends AppCompatActivity {
         store_list.setLayoutManager(gridLayoutManager);//1행을 가진 그리드뷰로 레이아웃을 만듬
 
         //Add by kongil
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-
-        ValueEventListener postListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    if (snapshot.getKey().equals("stores")) {
-                        for (DataSnapshot csnapshot : snapshot.getChildren()) {
-                            Store post = csnapshot.getValue(Store.class);
-                            //store.add(new StoreCard(post.getUrl(), post.getName(), post.getStar(),  post.getDistance(), post.isIs_heart()));
-                            set_post_handler.sendEmptyMessage(0);
-
-                        }
-                    }
-                    // ...
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w("TAG", "loadPost:onCancelled", databaseError.toException());
-                // ...
-            }
-        };
-
-        mDatabase.addValueEventListener(postListener);
-        //
+//        mDatabase = FirebaseDatabase.getInstance().getReference();
+//
+//        ValueEventListener postListener = new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                // Get Post object and use the values to update the UI
+//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+//                    if (snapshot.getKey().equals("stores")) {
+//                        for (DataSnapshot csnapshot : snapshot.getChildren()) {
+//                            Store post = csnapshot.getValue(Store.class);
+//                            //store.add(new StoreCard(post.getUrl(), post.getName(), post.getStar(),  post.getDistance(), post.isIs_heart()));
+//                            set_post_handler.sendEmptyMessage(0);
+//
+//                        }
+//                    }
+//                    // ...
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                // Getting Post failed, log a message
+//                Log.w("TAG", "loadPost:onCancelled", databaseError.toException());
+//                // ...
+//            }
+//        };
+//
+//        mDatabase.addValueEventListener(postListener);
+//        //
 
         set_post_handler = new Handler() {
             public void handleMessage(Message msg) {
@@ -127,40 +118,8 @@ public class DirectAddActivity extends AppCompatActivity {
 
         set_post_handler.sendEmptyMessage(0);
     }
-    private void setSpinner() {
-        sort_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                //kong todo spinner item으로 sort
-                ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLACK);
-                ((TextView) adapterView.getChildAt(0)).setGravity(Gravity.CENTER);
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        store_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                //kong todo spinner item으로 필터링
-                ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLACK);
-                ((TextView) adapterView.getChildAt(0)).setGravity(Gravity.CENTER);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-    }
 
     public void onClick_search_click(View view){
-        String str = store_search.getText().toString();
-        Toast.makeText(DirectAddActivity.this, "hihi"+str, Toast.LENGTH_LONG).show();
         InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(store_search.getWindowToken(), 0);
 

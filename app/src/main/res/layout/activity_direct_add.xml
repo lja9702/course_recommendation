@@ -57,50 +57,6 @@
         android:layout_height="0dp"
         android:layout_weight="36"></LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="46"
-        android:weightSum="720">
-
-        <Space
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="36"/>
-
-        <Spinner
-            android:id="@+id/store_spn"
-            android:entries="@array/store_item"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="124"
-            android:gravity="right"
-            android:background="#fff">
-
-        </Spinner>
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="32"/>
-
-        <Spinner
-            android:id="@+id/sort_spn"
-            android:entries="@array/sort_item"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="124"
-            android:gravity="right"
-            android:background="#fff">
-
-        </Spinner>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="31"></LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/store_list"
