@@ -83,8 +83,9 @@
                     android:layout_weight="80"
                     android:text="ID"
                     android:textColor="#000"
-                    android:textSize="23dp"
-                    android:textStyle="bold"/>
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:gravity="center|left"/>
 
                 <Space
                     android:layout_width="0dp"
@@ -98,7 +99,13 @@
                     android:layout_weight="340"
                     android:background="#fff"
                     android:textColor="#000"
-                    android:inputType="text"/>
+                    android:inputType="text"
+                    android:hint="알파벳+숫자 4~20자리"
+                    android:textSize="15dp"
+                    android:textColorHint="#AAA"
+                    android:paddingStart="8dp"
+                    android:maxLines="1"
+                    android:maxLength="20"/>
 
             </LinearLayout>
 
@@ -124,8 +131,9 @@
                     android:layout_weight="80"
                     android:text="PW"
                     android:textColor="#000"
-                    android:textSize="23dp"
-                    android:textStyle="bold"/>
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:gravity="center|left"/>
 
                 <Space
                     android:layout_width="0dp"
@@ -139,7 +147,13 @@
                     android:layout_weight="340"
                     android:background="#fff"
                     android:textColor="#000"
-                    android:inputType="numberPassword"/>
+                    android:inputType="numberPassword"
+                    android:hint="숫자 6자리"
+                    android:textSize="15dp"
+                    android:textColorHint="#AAA"
+                    android:paddingStart="8dp"
+                    android:maxLines="1"
+                    android:maxLength="6"/>
 
             </LinearLayout>
 
@@ -165,8 +179,9 @@
                     android:layout_weight="80"
                     android:text="이름"
                     android:textColor="#000"
-                    android:textSize="23dp"
-                    android:textStyle="bold"/>
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:gravity="center|left"/>
 
                 <Space
                     android:layout_width="0dp"
@@ -180,7 +195,11 @@
                     android:layout_weight="340"
                     android:background="#fff"
                     android:textColor="#000"
-                    android:inputType="text"/>
+                    android:inputType="text"
+                    android:textSize="15dp"
+                    android:paddingStart="8dp"
+                    android:maxLines="1"
+                    android:maxLength="5"/>
 
             </LinearLayout>
 
@@ -206,8 +225,9 @@
                     android:layout_weight="80"
                     android:text="Email"
                     android:textColor="#000"
-                    android:textSize="23dp"
-                    android:textStyle="bold"/>
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:gravity="center|left"/>
 
                 <Space
                     android:layout_width="0dp"
@@ -221,7 +241,11 @@
                     android:layout_weight="340"
                     android:background="#fff"
                     android:textColor="#000"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="textEmailAddress"
+                    android:textSize="15dp"
+                    android:paddingStart="8dp"
+                    android:maxLines="1"
+                    android:maxLength="30"/>
 
             </LinearLayout>
 

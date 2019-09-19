@@ -86,7 +86,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="85"
+                android:layout_weight="95"
                 android:weightSum="522">
 
                 <Space
@@ -100,7 +100,7 @@
                     android:layout_weight="100"
                     android:text="ID"
                     android:textColor="#000"
-                    android:textSize="23dp"
+                    android:textSize="20dp"
                     android:textStyle="bold"/>
 
                 <Space
@@ -123,12 +123,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="65"/>
+                android:layout_weight="55"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="85"
+                android:layout_weight="95"
                 android:weightSum="522">
 
                 <Space
@@ -142,7 +142,7 @@
                     android:layout_weight="100"
                     android:text="PW"
                     android:textColor="#000"
-                    android:textSize="23dp"
+                    android:textSize="20dp"
                     android:textStyle="bold"/>
 
                 <Space
@@ -163,7 +163,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="50"/>
+                android:layout_weight="30"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

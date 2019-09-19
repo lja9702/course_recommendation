@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "아이디는 영어와 숫자를 사용한 4자리 이상 20자리 이하 입니다.", Toast.LENGTH_LONG);
             return;
         }
-        databaseReference.child("Users").child(id).addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.child("Email").child(id).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String email = dataSnapshot.getValue(String.class);
@@ -133,7 +133,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.d(TAG, "로그인 실패");
+
             }
         });
 
