@@ -114,6 +114,7 @@ public class SignupActivity extends AppCompatActivity {
                                                                 user = firebaseAuth.getCurrentUser();
                                                             }
                                                             databaseReference.child("Users").child(user.getUid()).setValue(member);
+                                                            databaseReference.child("Email").child(id).setValue(email);
                                                             SignupActivity.this.finish();
                                                         }
                                                         else{
