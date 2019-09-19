@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -32,6 +33,8 @@ public class SignupActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     ProgressDialog progressDialog;
 
+    RadioGroup korean, chinese, japanese, american;
+    int korea_ck, china_ck, japan_ck, america_ck;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +45,11 @@ public class SignupActivity extends AppCompatActivity {
         signup_name = (EditText)findViewById(R.id.signup_name);
 
         signup_fin = (ImageButton)findViewById(R.id.signup_ok_btn);
+
+        korean = (RadioGroup)findViewById(R.id.korean_food_radioGroup);
+        japanese = (RadioGroup)findViewById(R.id.japan_food_radioGroup);
+        chinese = (RadioGroup)findViewById(R.id.china_food_radioGroup);
+        american = (RadioGroup)findViewById(R.id.america_food_radioGroup);
 
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -84,6 +92,47 @@ public class SignupActivity extends AppCompatActivity {
         }
         Log.d("ValidForm", "Pass PW");
 
+        korea_ck = korean.getCheckedRadioButtonId();
+        china_ck = chinese.getCheckedRadioButtonId();
+        japan_ck = japanese.getCheckedRadioButtonId();
+        america_ck = american.getCheckedRadioButtonId();
+
+        switch (korea_ck){
+            case R.id.korean_food_btn1:
+                korea_ck = 5; break;
+            case R.id.korean_food_btn2:
+                korea_ck = 3; break;
+            case R.id.korean_food_btn3:
+                korea_ck = 0; break;
+        }
+
+        switch (china_ck){
+            case R.id.china_food_btn1:
+                china_ck = 5; break;
+            case R.id.china_food_btn2:
+                china_ck = 3; break;
+            case R.id.china_food_btn3:
+                china_ck = 0; break;
+        }
+
+        switch (japan_ck){
+            case R.id.japan_food_btn1:
+                japan_ck = 5; break;
+            case R.id.japan_food_btn2:
+                japan_ck = 3; break;
+            case R.id.japan_food_btn3:
+                japan_ck = 0; break;
+        }
+
+        switch (america_ck){
+            case R.id.america_food_btn1:
+                america_ck = 5; break;
+            case R.id.america_food_btn2:
+                america_ck = 3; break;
+            case R.id.america_food_btn3:
+                america_ck = 0; break;
+        }
+
         final String id = signup_id.getText().toString();
         final String email = signup_email.getText().toString();
         final String name = signup_name.getText().toString();
@@ -103,7 +152,7 @@ public class SignupActivity extends AppCompatActivity {
                                     if(task.isSuccessful()){
                                         Log.d("check", "after : "+email+name);
                                         Log.d(TAG, "Success sign up");
-                                        final Member member = new Member(id, email, name);
+                                        final Member member = new Member(id, email, name, korea_ck, china_ck, japan_ck, america_ck);
                                         firebaseAuth.signInWithEmailAndPassword(email, signup_pw.getText().toString())
                                                 .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
                                                     @Override
