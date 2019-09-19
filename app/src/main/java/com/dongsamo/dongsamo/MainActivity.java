@@ -357,12 +357,15 @@ public class MainActivity extends AppCompatActivity
         builder.create().show();
     }
 
+    boolean db_find_flag = false;
+
     private void check(final String result) {
-        Toast.makeText(MainActivity.this, ""+result, Toast.LENGTH_LONG).show();
+        db_find_flag = false;
         Log.d("TAGS", "result : "+ result);
 
         /*donging-widget*/
         mDatabase = FirebaseDatabase.getInstance().getReference();
+
 
         ValueEventListener postListener = new ValueEventListener() {
             @Override
@@ -373,6 +376,7 @@ public class MainActivity extends AppCompatActivity
                         for (DataSnapshot csnapshot : snapshot.getChildren()) {
                             Store post = csnapshot.getValue(Store.class);
                             if (result.contains(post.getName())) {
+                                db_find_flag = true;
                                 Intent intent = new Intent(getApplicationContext(), CustomWidget.class);
 
                                 intent.putExtra("store", post);
@@ -401,6 +405,10 @@ public class MainActivity extends AppCompatActivity
         };
 
         mDatabase.addValueEventListener(postListener);
+
+        if (!db_find_flag) {
+            Toast.makeText(getApplicationContext(), result+"의 평가를 찾을 수 없습니다.", Toast.LENGTH_LONG).show();
+        }
         //mDatabase.addListenerForSingleValueEvent(postListener);
 
         Log.d("TAGS", "done??");
