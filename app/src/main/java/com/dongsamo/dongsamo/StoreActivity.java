@@ -23,7 +23,7 @@ public class StoreActivity extends AppCompatActivity {
     TextView store_text;
     TMapView tMapView;
     LinearLayout ln;
-    private String apiKey = "c13a727c-011c-49bc-bb6c-a0c3ce5777f8";
+    private String apiKey = "b766d096-d3c5-4a56-b48f-d799ca065447";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
