@@ -1,10 +1,13 @@
 package com.dongsamo.dongsamo;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,14 +16,18 @@ public class CourseActivity extends AppCompatActivity {
 
     TextView course_text;
     String textview_txt = null;
+    TextView course_location_btn;
     static String course = "";
     int count = 0;
+    AlertDialog alertDialog;
+    boolean flag = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
 
+        course_location_btn = (TextView)findViewById(R.id.course_location_btn);
         course_text = (TextView)findViewById(R.id.course_text);
         course_text.setMovementMethod(new ScrollingMovementMethod());
 
@@ -65,6 +72,11 @@ public class CourseActivity extends AppCompatActivity {
             return;
         }
 
+        if (flag){
+            Toast.makeText(CourseActivity.this, "밥플 지역을 먼저 선택해주세요.", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         count++;
         switch (view.getId()){
             case R.id.restaurant_btn:
@@ -73,20 +85,32 @@ public class CourseActivity extends AppCompatActivity {
                 break;
             case R.id.show_btn:
                 textview_txt = String.valueOf(course_text.getText());
-                course_text.setText(textview_txt+"  문화/공연");
+                Intent intent = new Intent(CourseActivity.this, CultureActivity.class);
+                startActivityForResult(intent, 1);
                 break;
             case R.id.cafe_btn:
                 textview_txt = String.valueOf(course_text.getText());
                 course_text.setText(textview_txt+"  카페");
                 break;
             case R.id.etc_btn:
-                Intent intent = new Intent(this, DirectAddActivity.class);
+                Intent intent2 = new Intent(CourseActivity.this, DirectAddActivity.class);
                 //todo
 
-                startActivity(intent);
+                startActivity(intent2);
 //                textview_txt = String.valueOf(course_text.getText());
 //                course_text.setText(textview_txt+"  원하는 장소");
                 break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode==1){
+            if(resultCode==RESULT_OK){
+                //데이터 받기
+                String result = data.getStringExtra("result");
+                course_text.setText(textview_txt+"  "+result);
+            }
         }
     }
 
@@ -101,6 +125,33 @@ public class CourseActivity extends AppCompatActivity {
     }
 
     public void onClick_course_location_btn(View view){//밥플 지역
+        final CharSequence[] items = {
+                "종로구", "중구", "용산구", "성동구", "광진구",
+                "동대문구", "중랑구", "성북구", "강북구", "도봉구",
+                "노원구", "은평구", "서대문구", "마포구", "양천구", "강서구",
+                "구로구", "금천구", "영등포구", "동작구", "관악구", "서초구",
+                "강남구", "송파구", "강동구" };
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(CourseActivity.this);
+
+        // 제목셋팅
+        alertDialogBuilder.setTitle("밥플지역 선택");
+        alertDialogBuilder.setItems(items,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,
+                                        int id) {
+
+                        // 프로그램을 종료한다
+                        course_location_btn.setText(items[id]);
+                        flag = false;
+                        dialog.dismiss();
+                    }
+                });
+
+        // 다이얼로그 생성
+        alertDialog = alertDialogBuilder.create();
+
+        // 다이얼로그 보여주기
+        alertDialog.show();
 
     }
 }

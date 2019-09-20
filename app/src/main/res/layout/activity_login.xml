@@ -208,30 +208,30 @@
             android:layout_height="match_parent"
             android:layout_weight="150"/>
 
-        <ImageButton
-            android:id="@+id/login_find_id_btn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="200"
-            android:src="@drawable/find_id_btn"
-            android:scaleType="fitCenter"
-            android:background="@android:color/transparent"
-            android:onClick="onClick_login_find_id_btn"/>
+        <!--<ImageButton-->
+            <!--android:id="@+id/login_find_id_btn"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="200"-->
+            <!--android:src="@drawable/find_id_btn"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:onClick="onClick_login_find_id_btn"/>-->
 
         <Space
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="20"/>
 
-        <ImageButton
-            android:id="@+id/login_find_pw_btn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="200"
-            android:src="@drawable/find_pw_btn"
-            android:scaleType="fitCenter"
-            android:background="@android:color/transparent"
-            android:onClick="onClick_login_find_pw_btn"/>
+        <!--<ImageButton-->
+            <!--android:id="@+id/login_find_pw_btn"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="200"-->
+            <!--android:src="@drawable/find_pw_btn"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:onClick="onClick_login_find_pw_btn"/>-->
 
     </LinearLayout>
 </LinearLayout>

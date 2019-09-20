@@ -903,6 +903,7 @@ id card_name
 id card_star
 id card_star_img
 id card_view
+id card_view3
 id center
 id center_horizontal
 id center_vertical
@@ -925,6 +926,7 @@ id crash_reporting_present
 id custom
 id customPanel
 id dark
+id date_data
 id decide_course_btn
 id decor_content_parent
 id default_activity_button
@@ -953,6 +955,7 @@ id glide_custom_view_target_tag
 id gone
 id group_divider
 id groups
+id heart
 id home
 id homeAsUp
 id hybrid
@@ -983,8 +986,6 @@ id listMode
 id list_item
 id login_back
 id login_btn
-id login_find_id_btn
-id login_find_pw_btn
 id login_id
 id login_pw
 id login_signup_btn
@@ -994,6 +995,7 @@ id main_shop_list_btn
 id media_actions
 id message
 id middle
+id money_data
 id multiply
 id mypage_down_box
 id mypage_email
@@ -1022,9 +1024,12 @@ id place_autocomplete_progress
 id place_autocomplete_search_button
 id place_autocomplete_search_input
 id place_autocomplete_separator
+id place_data
+id program_detail
 id progress_circular
 id progress_horizontal
 id radio
+id recylerview
 id restaurant_btn
 id right
 id right_icon
@@ -1088,6 +1093,7 @@ id textSpacerNoTitle
 id time
 id title
 id titleDividerNoCustom
+id title_data
 id title_template
 id tmap
 id tmap_store
@@ -1139,6 +1145,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_airunning
 layout activity_course
+layout activity_culture
 layout activity_deciding
 layout activity_direct_add
 layout activity_find_id
@@ -1154,6 +1161,7 @@ layout activity_storage
 layout activity_store
 layout activity_store_list
 layout activity_user_course
+layout card_view3
 layout card_view_item
 layout customwidget
 layout notification_action

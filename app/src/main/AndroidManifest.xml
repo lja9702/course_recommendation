@@ -30,7 +30,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".MypageActivity"></activity>
+        <activity android:name=".CultureActivity"></activity>
+        <activity android:name=".MypageActivity" />
         <activity android:name=".UserCourseActivity" />
         <activity android:name=".FindPWActivity" />
         <activity android:name=".FindIDActivity" />

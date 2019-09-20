@@ -43,6 +43,12 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import static java.lang.Boolean.FALSE;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+
 
 public class DecidingActivity extends AppCompatActivity {
 
@@ -166,5 +172,70 @@ public class DecidingActivity extends AppCompatActivity {
         Intent intent = new Intent(DecidingActivity.this, AIRunningActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    //좌표 받아오는 함수
+    public TMapPoint stringToTMapPoint(String target_name){
+        GeocodeThreadClass test = new GeocodeThreadClass(target_name);
+        Thread t = new Thread(test);
+        t.start();
+        while(test.get_result() == null);
+        return test.get_result();
+    }
+}
+
+
+class GeocodeThreadClass implements Runnable{
+
+    private TMapPoint result = null;
+    private String target_name;
+
+    public GeocodeThreadClass(String target_name){
+        this.target_name = target_name;
+    }
+
+    @Override
+    public void run() {
+        try {
+            //String apiURL = "https://openapi.naver.com/v1/search/local?query=" + text + "&display=" + display + "&";
+            String apiURL = "https://naveropenapi.apigw.ntruss.com/map-place/v1/search?query="+ this.target_name + "&coordinate=127.1054328,37.3595963&X-NCP-APIGW-API-KEY-ID=1424stl6gm&X-NCP-APIGW-API-KEY=olHNwdMUoTsToiQbEsBQ6qrL7BVqGIsHguxesLrA";
+            // coordinate : 검색할 중심 좌표, 서울이면 서울에서 검색, 부산이면 부산에서 검색
+            URL url = new URL(apiURL);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+//                    con.setRequestProperty("X-Naver-Client-Id", clientId);
+//                    con.setRequestProperty("X-Naver-Client-Secret", clientSecret);
+
+            int responseCode = con.getResponseCode();
+            BufferedReader br;
+            if (responseCode == 200) {
+                br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            } else {
+                br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+            }
+            StringBuilder sb = new StringBuilder();
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                sb.append(line + "\n");
+            }
+
+            br.close();
+            con.disconnect();
+            String now_data = sb.substring(sb.indexOf("\"x\""));
+            String now_data_array[] = now_data.split("\"");
+            float x_val =  Float.parseFloat(now_data_array[3]);
+            float y_val =  Float.parseFloat(now_data_array[7]);
+
+            this.result = new TMapPoint(y_val, x_val);
+            
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public TMapPoint get_result(){
+        return this.result;
     }
 }

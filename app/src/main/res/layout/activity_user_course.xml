@@ -59,19 +59,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="62"
+        android:layout_weight="82"
         android:weightSum="720">
 
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="532"/>
+            android:layout_weight="510"/>
 
         <ImageButton
             android:id="@+id/user_course_next_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="170"
+            android:layout_weight="180"
             android:src="@drawable/next_btn"
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"

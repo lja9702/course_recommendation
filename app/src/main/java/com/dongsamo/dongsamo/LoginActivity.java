@@ -42,8 +42,8 @@ public class LoginActivity extends AppCompatActivity {
         login_editText = (EditText)findViewById(R.id.login_id);
         passwd_editText = findViewById(R.id.login_pw);
 
-        find_id = (ImageButton)findViewById(R.id.login_find_id_btn);
-        find_pw = (ImageButton)findViewById(R.id.login_find_pw_btn);
+//        find_id = (ImageButton)findViewById(R.id.login_find_id_btn);
+//        find_pw = (ImageButton)findViewById(R.id.login_find_pw_btn);
 
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -71,15 +71,15 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClick_login_find_id_btn(View view){
-        Intent intent = new Intent(this, FindIDActivity.class);
-        startActivity(intent);
-    }
-
-    public void onClick_login_find_pw_btn(View view){
-        Intent intent = new Intent(this, FindPWActivity.class);
-        startActivity(intent);
-    }
+//    public void onClick_login_find_id_btn(View view){
+//        Intent intent = new Intent(this, FindIDActivity.class);
+//        startActivity(intent);
+//    }
+//
+//    public void onClick_login_find_pw_btn(View view){
+//        Intent intent = new Intent(this, FindPWActivity.class);
+//        startActivity(intent);
+//    }
 
     public void onClick_login_btn(View view){
 

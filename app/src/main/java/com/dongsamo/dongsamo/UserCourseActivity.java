@@ -24,19 +24,18 @@ public class UserCourseActivity extends AppCompatActivity {
         count = intent.getExtras().getInt("count");
         course = intent.getExtras().getString("course");
 
-        list = course.split(" ");
+        list = course.split("  ");
 
         next_btn = (ImageButton)findViewById(R.id.user_course_next_btn);
         fin_btn = (ImageButton)findViewById(R.id.user_course_finish_btn);
         course_item = (TextView)findViewById(R.id.course_item);
 
-        Log.d("tags", "list: "+list);
-        course_item.setText(""+list[1]);
+        course_item.setText("1"+"."+" "+list[1]);
 
     }
 
     public void onClick_user_course_next_btn(View view){
-
+        Intent intent = new Intent(this, UserCourseActivity.class);
     }
 
 }
