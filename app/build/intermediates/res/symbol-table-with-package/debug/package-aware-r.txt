@@ -918,6 +918,7 @@ id clip_vertical
 id collapseActionView
 id content
 id contentPanel
+id course_item
 id course_location_btn
 id course_text
 id crash_reporting_present
@@ -1069,6 +1070,7 @@ id standard
 id start
 id status_bar_latest_event_content
 id store_list
+id store_list_layout
 id store_name_textView
 id store_search
 id store_tmap

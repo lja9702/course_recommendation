@@ -50,7 +50,7 @@ public class DecidingActivity extends AppCompatActivity {
     private LinearLayout activity_deciding, bottom_layout;
     private TMapView tMapView;
     private Geocoder geocoder; //지오코더 -> 좌표에서 장소를, 장소에서 좌표를 알 수 있음
-    private String apiKey = "c13a727c-011c-49bc-bb6c-a0c3ce5777f8";
+    private String apiKey = "b766d096-d3c5-4a56-b48f-d799ca065447";
     private ImageButton decide_course_btn;
     private ImageButton no_course_btn;
 

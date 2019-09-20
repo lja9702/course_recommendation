@@ -14,6 +14,7 @@ public class CourseActivity extends AppCompatActivity {
     TextView course_text;
     String textview_txt = null;
     static String course = "";
+    int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,8 @@ public class CourseActivity extends AppCompatActivity {
 
         course_text = (TextView)findViewById(R.id.course_text);
         course_text.setMovementMethod(new ScrollingMovementMethod());
+
+        count = 0;
 
         try{
             Intent intent = getIntent();
@@ -36,25 +39,37 @@ public class CourseActivity extends AppCompatActivity {
     }
 
     public void onClick_direct_add_btn(View view){
+        if(count < 2){
+            Toast.makeText(getApplicationContext(), "2개 이상 선택해주세요.", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         course = String.valueOf(course_text.getText());
         Intent intent = new Intent(CourseActivity.this, UserCourseActivity.class);
-        intent.putExtra("textview", course);
+        intent.putExtra("course", course);
+        intent.putExtra("count", count);
         startActivity(intent);
-        finish();
     }
 
     public void onClick_trash_btn(View view){
         course_text.setText("");
+        count = 0;
     }
 
 
 
 
     public void onClick_shop_btn(View view){
+        if(count >= 4){
+            Toast.makeText(getApplicationContext(), "최대 4개까지 선택 가능합니다.", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        count++;
         switch (view.getId()){
             case R.id.restaurant_btn:
                 textview_txt = String.valueOf(course_text.getText());
-                course_text.setText(textview_txt+"  밥");
+                course_text.setText(textview_txt+"  맛집");
                 break;
             case R.id.show_btn:
                 textview_txt = String.valueOf(course_text.getText());
@@ -76,6 +91,11 @@ public class CourseActivity extends AppCompatActivity {
     }
 
     public void onClick_ai_ask_btn(View view){
+        if(count < 2){
+            Toast.makeText(getApplicationContext(), "2개 이상 선택해주세요.", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         Intent intent = new Intent(CourseActivity.this, AIRunningActivity.class);
         startActivity(intent);
     }

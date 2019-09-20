@@ -40,7 +40,7 @@
             android:layout_weight="300"/>
 
         <ImageButton
-            android:id="@+id/user_course_next_btn"
+            android:id="@+id/heart"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="130"

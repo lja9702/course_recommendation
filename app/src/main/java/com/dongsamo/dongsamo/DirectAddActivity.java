@@ -125,6 +125,8 @@ public class DirectAddActivity extends AppCompatActivity {
 
         //kong todo str 이름을 가진 장소만 나오게 하기. str : 검색창(edittext)에 입력한 String
 
+        Intent intent = new Intent(this, StoreActivity.class);
+        startActivity(intent);
     }
 
 }

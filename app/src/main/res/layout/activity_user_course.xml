@@ -19,6 +19,7 @@
         android:weightSum="720">
 
         <TextView
+            android:id="@+id/course_item"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="150"
