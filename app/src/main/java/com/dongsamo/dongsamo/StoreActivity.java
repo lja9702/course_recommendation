@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,7 +24,7 @@ public class StoreActivity extends AppCompatActivity {
     TextView store_text;
     TMapView tMapView;
     LinearLayout ln;
-    private String apiKey = "c13a727c-011c-49bc-bb6c-a0c3ce5777f8";
+    private String apiKey = "b766d096-d3c5-4a56-b48f-d799ca065447";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +33,6 @@ public class StoreActivity extends AppCompatActivity {
 
         store_text = (TextView)findViewById(R.id.store_name_textView);
         store_text.setMovementMethod(new ScrollingMovementMethod());
-
-        //kong todo 69 StoreRecyclerViewAdapter에서 인텐트로 보낸 store_name 정보 띄우기.
-        StoreCard sc = (StoreCard) getIntent().getSerializableExtra("store");
-        Glide.with(store_image).load(""+sc.getUrl()).into(store_image);
-        store_text.setText(sc.getName());
 
         ln = (LinearLayout)findViewById(R.id.tmap_store);
         tMapView = new TMapView(this);
@@ -80,6 +76,10 @@ public class StoreActivity extends AppCompatActivity {
 
     private void setup(){
         
+    }
+
+    public void onClick_heart(View view){
+
     }
 
 }
