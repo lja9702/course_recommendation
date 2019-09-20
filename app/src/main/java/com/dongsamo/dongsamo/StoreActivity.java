@@ -20,12 +20,17 @@ import com.skt.Tmap.TMapMarkerItem;
 import com.skt.Tmap.TMapPoint;
 import com.skt.Tmap.TMapView;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 public class StoreActivity extends AppCompatActivity {
+
     ImageView store_image;
     TextView store_text;
     TMapView tMapView;
     LinearLayout ln;
     private String apiKey = "b766d096-d3c5-4a56-b48f-d799ca065447";
+    //진아: firebaseAnalytics 선언
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +63,9 @@ public class StoreActivity extends AppCompatActivity {
         tMapView.setCompassMode(true);
         tMapView.setTrackingMode(true);
         ln.addView(tMapView);
+
+        //firebaseAnalytics 초기화
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         pinpinEE("쿠우쿠우",(float)37.480897 ,(float)126.951086, "TEST_SO");
 
@@ -92,7 +100,12 @@ public class StoreActivity extends AppCompatActivity {
     }
 
     public void onClick_heart(View view){
-
+        String contentType = "korean"; //업종
+        String itemId = "1"; //가게 이름
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, contentType);
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, itemId);
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
     }
 
 }
