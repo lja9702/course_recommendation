@@ -31,6 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.skt.Tmap.TMapPoint;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,7 @@ public class DirectAddActivity extends AppCompatActivity {
     Spinner sort_spinner, store_spinner;
 
     Button search_btn;
-    EditText store_search;
+    EditText store_search; //검색창 가져오기
     LinearLayout linearLayout;
 
     private RecyclerView store_list;
@@ -65,7 +66,7 @@ public class DirectAddActivity extends AppCompatActivity {
 
         search_btn = (Button)findViewById(R.id.search_btn);
 
-        store_search = (EditText)findViewById(R.id.store_search);
+        store_search = (EditText)findViewById(R.id.store_search); //검색창 xml이랑 java파일 연결
         linearLayout = (LinearLayout) findViewById(R.id.direct_linear);
 
 
@@ -124,7 +125,23 @@ public class DirectAddActivity extends AppCompatActivity {
         imm.hideSoftInputFromWindow(store_search.getWindowToken(), 0);
 
         //kong todo str 이름을 가진 장소만 나오게 하기. str : 검색창(edittext)에 입력한 String
+        String str = store_search.getText().toString(); //예를 들어 naver 검색
+        TMapPoint tMapPoint = stringToTMapPoint(str);
+        Intent intent = new Intent(this, StoreActivity.class);
 
+        intent.putExtra("lat_val",(float) tMapPoint.getLatitude());
+        intent.putExtra("lon_val",(float) tMapPoint.getLongitude());
+        intent.putExtra("name_val",str);
+        startActivity(intent);
+    }
+
+    //좌표 받아오는 함수
+    public TMapPoint stringToTMapPoint(String target_name){
+        GeocodeThreadClass test = new GeocodeThreadClass(target_name);
+        Thread t = new Thread(test);
+        t.start();
+        while(test.get_result() == null);
+        return test.get_result();
     }
 
 }

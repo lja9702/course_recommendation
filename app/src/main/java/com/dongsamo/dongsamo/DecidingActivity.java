@@ -176,7 +176,7 @@ public class DecidingActivity extends AppCompatActivity {
 
     //좌표 받아오는 함수
     public TMapPoint stringToTMapPoint(String target_name){
-        GeocodeThreadClass test = new GeocodeThreadClass("숭실대학교");
+        GeocodeThreadClass test = new GeocodeThreadClass(target_name);
         Thread t = new Thread(test);
         t.start();
         while(test.get_result() == null);
@@ -228,6 +228,7 @@ class GeocodeThreadClass implements Runnable{
             float y_val =  Float.parseFloat(now_data_array[7]);
 
             this.result = new TMapPoint(y_val, x_val);
+            
 
         } catch (Exception e) {
             System.out.println(e);

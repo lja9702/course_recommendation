@@ -30,10 +30,17 @@ public class StoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
 
+        Intent intent = getIntent();
+        float lat_data = intent.getFloatExtra("lat_val", 0);
+        float lon_data = intent.getFloatExtra("lon_val", 0);
+        String name_data = intent.getStringExtra("name_val");
+
+
         store_text = (TextView)findViewById(R.id.store_name_textView);
         store_text.setMovementMethod(new ScrollingMovementMethod());
 
         //kong todo 69 StoreRecyclerViewAdapter에서 인텐트로 보낸 store_name 정보 띄우기.
+
         StoreCard sc = (StoreCard) getIntent().getSerializableExtra("store");
         Glide.with(store_image).load(""+sc.getUrl()).into(store_image);
         store_text.setText(sc.getName());
@@ -50,7 +57,7 @@ public class StoreActivity extends AppCompatActivity {
         tMapView.setTrackingMode(true);
         ln.addView(tMapView);
 
-        pinpinEE("쿠우쿠우",(float)37.480897 ,(float)126.951086, "TEST_SO");
+        pinpinEE(name_data, lat_data ,lon_data, "TEST"+name_data);
 
     }
 
