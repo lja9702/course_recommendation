@@ -34,6 +34,21 @@
             android:textSize="23dp"
             android:textStyle="bold"/>
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="300"/>
+
+        <ImageButton
+            android:id="@+id/user_course_next_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="130"
+            android:src="@drawable/false_heart"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:onClick="onClick_heart" />
+
     </LinearLayout>
 
     <LinearLayout
