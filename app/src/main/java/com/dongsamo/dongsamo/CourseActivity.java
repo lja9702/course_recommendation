@@ -101,11 +101,8 @@ public class CourseActivity extends AppCompatActivity {
                 Intent intent2 = new Intent(CourseActivity.this, DirectAddActivity.class);
 
                 intent2.putExtra("office", office);
-                //todo
 
                 startActivityForResult(intent2, 1);
-//                textview_txt = String.valueOf(course_text.getText());
-//                course_text.setText(textview_txt+"  원하는 장소");
                 break;
         }
     }

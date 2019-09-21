@@ -212,7 +212,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="470"
+        android:layout_weight="330"
         android:weightSum="720">
 
         <Space
@@ -232,18 +232,69 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/mypage_like_list"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            </android.support.v7.widget.RecyclerView>
+                android:layout_height="match_parent"/>
         </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="20">
+        android:layout_weight="10"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50"
+        android:weightSum="720">
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="50"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="200"
+            android:src="@drawable/recent_course"/>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="100"
+        android:weightSum="720">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="50"/>
+
+        <LinearLayout
+            android:id="@+id/mypage_recent_box"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="620"
+            android:orientation="vertical"
+            android:weightSum="670"
+            android:background="@drawable/mypage_down_box" >
+
+            <TextView
+                android:id="@+id/mypage_recent_course"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="정주네집  공공일  정보과학관  미담길"
+                android:textColor="#000"
+                android:gravity="center"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="22"/>
 
     <LinearLayout
         android:layout_width="match_parent"

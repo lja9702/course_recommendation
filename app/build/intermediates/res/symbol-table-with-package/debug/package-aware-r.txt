@@ -821,6 +821,7 @@ drawable places_ic_search
 drawable play
 drawable powered_by_google_dark
 drawable powered_by_google_light
+drawable recent_course
 drawable restaurant
 drawable restaurant_btn
 drawable search
@@ -1005,6 +1006,8 @@ id mypage_id
 id mypage_like_list
 id mypage_logout_btn
 id mypage_name
+id mypage_recent_box
+id mypage_recent_course
 id mypage_withdraw_btn
 id name_data
 id never
@@ -1077,6 +1080,7 @@ id src_over
 id standard
 id start
 id status_bar_latest_event_content
+id store_info
 id store_list
 id store_list_layout
 id store_list_tmap
@@ -1109,6 +1113,7 @@ id up
 id useLogo
 id user_course_finish_btn
 id user_course_next_btn
+id user_like_card_view
 id want_card_view
 id wide
 id withText
@@ -1192,6 +1197,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout user_like_card_view
 layout want_card_view
 mipmap ic_launcher
 mipmap ic_launcher_foreground

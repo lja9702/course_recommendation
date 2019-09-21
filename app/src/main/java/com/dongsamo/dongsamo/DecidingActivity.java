@@ -117,7 +117,7 @@ public class DecidingActivity extends AppCompatActivity {
     }
 
     public void onClick_decide_course_btn(View view){
-        Toast.makeText(DecidingActivity.super.getApplicationContext(), "이 코스로 결정!", Toast.LENGTH_LONG).show();
+       // Toast.makeText(DecidingActivity.super.getApplicationContext(), "이 코스로 결정!", Toast.LENGTH_LONG).show();
         decide_course_btn.setVisibility(View.INVISIBLE);
     }
 

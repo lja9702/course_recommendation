@@ -3,10 +3,14 @@ package com.dongsamo.dongsamo;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -24,6 +28,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MypageActivity extends AppCompatActivity {
 
     TextView mypage_name, mypage_id, mypage_email;
@@ -37,11 +44,25 @@ public class MypageActivity extends AppCompatActivity {
     private FirebaseUser firebaseUser;
     private static final String TAG = "MypageActivity";
 
+    private List<UserLikeListitem> postlist;
+    private RecyclerView list;
+    private UserLikeRecyclerViewAdapter list_ap;
+    private Handler set_post_handler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
+        postlist = new ArrayList<>();
+        list = (RecyclerView) findViewById(R.id.mypage_like_list);
+        list_ap = new UserLikeRecyclerViewAdapter(MypageActivity.this, postlist);
+//        RecyclerDecoration spaceDecoration = new RecyclerDecoration(70);
+//        list.addItemDecoration(spaceDecoration);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
+        list.setLayoutManager(gridLayoutManager);//3행을 가진 그리드뷰로 레이아웃을 만듬
+
+        list.setAdapter(list_ap);
 
         mypage_name = (TextView) findViewById(R.id.mypage_name);
         mypage_id = (TextView) findViewById(R.id.mypage_id);
@@ -53,6 +74,15 @@ public class MypageActivity extends AppCompatActivity {
         sub = getSharedPreferences("subscribe", MODE_PRIVATE);
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        set_post_handler = new Handler() {
+            public void handleMessage(Message msg) {
+                list.setAdapter(list_ap);
+                list_ap.notifyDataSetChanged();
+            }
+        };
+
+        set_post_handler.sendEmptyMessage(0);
     }
 
     @Override
@@ -89,7 +119,10 @@ public class MypageActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot mdataSnapshot) {
                             for (DataSnapshot snapshot : mdataSnapshot.child("favorite").getChildren()) {
-                                Log.d("TAGS", "taste : " + snapshot.getKey());
+                                Log.d("TAGS",snapshot.getKey());
+
+                                postlist.add(new UserLikeListitem(snapshot.getKey()));
+                                //list_ap.notifyDataSetChanged();
                             }
                         }
 
@@ -99,6 +132,7 @@ public class MypageActivity extends AppCompatActivity {
                         }
                     });
 
+                    set_post_handler.sendEmptyMessage(0);
                 }
                 catch (NullPointerException e){
                     Toast.makeText(MypageActivity.this, "에러로 인해 로그아웃되었습니다.", Toast.LENGTH_LONG);

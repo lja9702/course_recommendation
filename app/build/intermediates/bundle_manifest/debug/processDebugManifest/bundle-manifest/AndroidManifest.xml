@@ -43,7 +43,8 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar" >
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:usesCleartextTraffic="true" >
         <activity android:name="com.dongsamo.dongsamo.CultureActivity" />
         <activity android:name="com.dongsamo.dongsamo.MypageActivity" />
         <activity android:name="com.dongsamo.dongsamo.UserCourseActivity" />
@@ -99,6 +100,9 @@
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.functions.FunctionsRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"

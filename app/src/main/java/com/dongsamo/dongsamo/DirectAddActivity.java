@@ -51,13 +51,7 @@ public class DirectAddActivity extends AppCompatActivity {
     private List<DirectAddItem> store;
 
     private Handler set_post_handler;
-    private String path = "new";
 
-    private DatabaseReference mDatabase;// Add by kongil
-    private FirebaseStorage storage;
-    private StorageReference storageRef;
-    private StorageReference imageRef;
-    static String course;
     String office="";
     float office_x=0, office_y=0;
 
