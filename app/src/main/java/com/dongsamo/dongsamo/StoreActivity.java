@@ -45,6 +45,7 @@ public class StoreActivity extends AppCompatActivity {
 
     TextView store_text, store_info;
     TMapView tMapView;
+    LinearLayout tmap_ln;
     private String apiKey = "b766d096-d3c5-4a56-b48f-d799ca065447";
     //진아: firebaseAnalytics 선언
     private FirebaseAnalytics mFirebaseAnalytics;
@@ -53,7 +54,7 @@ public class StoreActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseUser firebaseUser;
 
-    double store_x, store_y;
+    float store_x, store_y;
     String store_name, store_type, store_addr, store_call,store_unikey, user_id;
 
     @Override
@@ -62,8 +63,8 @@ public class StoreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_store);
 
         Intent intent = getIntent();
-        store_x = intent.getExtras().getDouble("store_x", 0);
-        store_y = intent.getExtras().getDouble("store_y", 0);
+        store_x = intent.getExtras().getFloat("store_x", 0);
+        store_y = intent.getExtras().getFloat("store_y", 0);
         store_name = intent.getExtras().getString("store_name"); //가게명
         store_type = intent.getExtras().getString("store_type"); //가게업태
         store_addr = intent.getExtras().getString("store_address"); //가게 도로명 주소
@@ -75,13 +76,16 @@ public class StoreActivity extends AppCompatActivity {
 
         store_text.setText(store_name);
 
-        tMapView = (TMapView)findViewById(R.id.store_tmap);
+        tmap_ln = (LinearLayout) findViewById(R.id.store_tmap);
+
+        tMapView = new TMapView(StoreActivity.this);
         tMapView.setSKTMapApiKey(apiKey);
         tMapView.setLanguage(TMapView.LANGUAGE_KOREAN);
-        tMapView.setZoomLevel(15);
+        tMapView.setZoomLevel(10);
         tMapView.setMapType(TMapView.MAPTYPE_STANDARD);
         tMapView.setCompassMode(true);
         tMapView.setTrackingMode(true);
+        tmap_ln.addView(tMapView);
 
         Log.d("TAG", "Intent: "+store_x+"  "+store_y+"  "+store_name+"  "+store_type+"  "+store_addr+"  "+store_call+"  "+store_unikey);
         //firebaseAnalytics 초기화
@@ -91,15 +95,14 @@ public class StoreActivity extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference();
         Log.d("TAG", "x: "+store_x+"  y: "+store_y);
 
-
         pinpinEE(store_name, store_x ,store_y, "TEST_"+store_name);
 
         store_info.setText("주소: "+store_addr+"\n전화번호: "+store_call+"\n업태: "+store_type);
 
     }
 
-    protected void pinpinEE(String pin_name, double x, double y, String pin_id){
-        TMapPoint tpoint = new TMapPoint(store_x, store_y);
+    protected void pinpinEE(String pin_name, float x, float y, String pin_id){
+        TMapPoint tpoint = new TMapPoint(y, x);
 
         TMapMarkerItem tItem = new TMapMarkerItem();
 
@@ -113,17 +116,12 @@ public class StoreActivity extends AppCompatActivity {
         tItem.setCanShowCallout(true);
         tItem.setAutoCalloutVisible(true);
 
-
         // 핀모양으로 된 마커를 사용할 경우 마커 중심을 하단 핀 끝으로 설정.
         tItem.setPosition((float)0.5, (float)0.5);         // 마커의 중심점을 하단, 중앙으로 설정
 
-        tMapView.setLocationPoint(store_y,store_x);
+        tMapView.setLocationPoint(x,y);
 
         tMapView.addMarkerItem(pin_id, tItem);
-    }
-
-    private void setup(){
-
     }
 
     public void onClick_heart(View view) throws InterruptedException {

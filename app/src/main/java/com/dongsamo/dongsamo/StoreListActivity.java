@@ -85,7 +85,7 @@ public class StoreListActivity extends AppCompatActivity {
 
         tMapView.setSKTMapApiKey(apiKey);
         tMapView.setLanguage(TMapView.LANGUAGE_KOREAN);
-        //tMapView.setIconVisibility(true); // 내 위치 (gps권한 주기)
+        tMapView.setIconVisibility(true); // 내 위치 (gps권한 주기)
         tMapView.setZoomLevel(15);
         tMapView.setMapType(TMapView.MAPTYPE_STANDARD);
         tMapView.setCompassMode(true);
@@ -125,7 +125,7 @@ public class StoreListActivity extends AppCompatActivity {
     }
 
     protected void pinpinEE(final String pin_name, final double x, final double y, String pin_id){
-        TMapPoint tpoint = new TMapPoint(x, y);
+        TMapPoint tpoint = new TMapPoint(y, x);
 
         TMapMarkerItem tItem = new TMapMarkerItem();
 
@@ -139,20 +139,26 @@ public class StoreListActivity extends AppCompatActivity {
         tItem.setCanShowCallout(true);
         tItem.setAutoCalloutVisible(true);
 
+        Bitmap bitmap2 = BitmapFactory.decodeResource(this.getResources(), R.drawable.charc);
+        int resizeWidth = 68;
+
+        double aspectRatio = (double) bitmap2.getHeight() / (double) bitmap2.getWidth();
+        int targetHeight = (int) (resizeWidth * aspectRatio);
+        Bitmap result = Bitmap.createScaledBitmap(bitmap2, resizeWidth, targetHeight, false);
+        if (result != bitmap2) {
+            bitmap2.recycle();
+        }
+
+        tItem.setCalloutRightButtonImage(result);
+
         // 핀모양으로 된 마커를 사용할 경우 마커 중심을 하단 핀 끝으로 설정.
         tItem.setPosition((float)0.5, (float)0.5);         // 마커의 중심점을 하단, 중앙으로 설정
 
         tMapView.addMarkerItem(pin_id, tItem);
 
-        tMapView.setOnClickListenerCallBack(new TMapView.OnClickListenerCallback() {
+        tMapView.setOnCalloutRightButtonClickListener(new TMapView.OnCalloutRightButtonClickCallback() {
             @Override
-            public boolean onPressEvent(ArrayList<TMapMarkerItem> arrayList, ArrayList<TMapPOIItem> arrayList1, TMapPoint tMapPoint, PointF pointF) {
-                return false;
-            }
-
-            @Override
-            public boolean onPressUpEvent(ArrayList<TMapMarkerItem> arrayList, ArrayList<TMapPOIItem> arrayList1, TMapPoint tMapPoint, PointF pointF) {
-
+            public void onCalloutRightButton(TMapMarkerItem tMapMarkerItem) {
                 JSONObject JS = null;
 
                 String ps_unikey=null, ps_name = null, ps_type = null, ps_call= null, ps_address= null;
@@ -165,26 +171,16 @@ public class StoreListActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                     if (JS != null) {
-                        for (int j = 0; j < jsonName.length; j++) {
-                            if (jsonName[j].equals("UPSO_NM")) {
-                                ps_name = JS.optString("UPSO_NM");
-                            } else if (jsonName[j].equals("TEL_NO")) {
-                                ps_call = JS.optString("TEL_NO");
-                            } else if (jsonName[j].equals("RDN_CODE_NM")) {
-                                ps_address = JS.optString("RDN_CODE_NM");
-                            } else if (jsonName[j].equals("BIZCND_CODE_NM")) {
-                                ps_type = JS.optString("BIZCND_CODE_NM");
-                            } else if (jsonName[j].equals("UPSO_SNO")){
-                                ps_unikey = JS.optString("UPSO_SNO");
-                            } else if( jsonName[j].equals("X_CNTS")){
-                                store_x = JS.optDouble("X_CNTS");
-                            }
-                            else if(jsonName[j].equals("Y_DNTS")){
-                                store_y = JS.optDouble("Y_DNTS");
-                            }
-                        }
+                        ps_name = JS.optString("UPSO_NM");
+                        ps_call = JS.optString("TEL_NO");
+                        ps_address = JS.optString("RDN_CODE_NM")+JS.optString("RDN_DETAIL_ADDR");
+                        ps_type = JS.optString("BIZCND_CODE_NM");
+                        ps_unikey = JS.optString("UPSO_SNO");
+                        store_x = JS.optDouble("X_CNTS");
+                        store_y = JS.optDouble("Y_DNTS");
 
-                        if(ps_name.equals(pin_name)) {
+                        Log.d("Tag", "pinName: "+tMapMarkerItem.getName()+" ps_name: "+ps_name);
+                        if(ps_name.equals(tMapMarkerItem.getName())) {
                             break;
                         }
                     }
@@ -192,19 +188,19 @@ public class StoreListActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(StoreListActivity.this, StoreActivity.class);
                 intent.putExtra("store_unikey", ps_unikey);
-                intent.putExtra("store_name", pin_name);
-                intent.putExtra("store_x", store_x);
-                intent.putExtra("store_y", store_y);
+                intent.putExtra("store_name", tMapMarkerItem.getName());
+                intent.putExtra("store_x", (float)store_x);
+                intent.putExtra("store_y", (float)store_y);
                 intent.putExtra("store_type", ps_type);
                 intent.putExtra("store_call", ps_call);
                 intent.putExtra("store_address", ps_address);
 
                 startActivity(intent);
 
-                return false;
             }
         });
     }
+
     JSONObject JS = null;
     private void insert_post() throws Exception {
         //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
@@ -217,26 +213,11 @@ public class StoreListActivity extends AppCompatActivity {
 
         int cnt = 0;
         for (int i = 0; i < building_list.length(); i++) {
-            final int index = i;
-            if(cnt > 10) {
+            if(cnt > 30)
                 break;
-            }
             cnt++;
 
-            Log.d("LOG", "hi Log2222222");
-
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            JS = building_list.getJSONObject(index);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }).start();
-
-
+            JS = building_list.getJSONObject(i);
             if (JS != null) {
                 for (int j = 0; j < jsonName.length; j++) {
                     if (jsonName[j].equals("UPSO_NM")) {
@@ -257,7 +238,7 @@ public class StoreListActivity extends AppCompatActivity {
             }
 
             if(ps_name != null) {
-                Log.d("LOG", ps_name+" "+store_x);
+                Log.d("LOG", "hi "+ps_name+" "+store_x);
                 pinpinEE(ps_name, store_x, store_y, "Pin"+ps_name);
             }
         }
