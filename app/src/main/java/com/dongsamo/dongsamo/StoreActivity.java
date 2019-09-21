@@ -131,12 +131,13 @@ public class StoreActivity extends AppCompatActivity {
 
         Log.d("TAG", user_id+" "+store_unikey + " " + store_type);
         //function으로 보낼 데이터들
+
         Map<String, Object> data = new HashMap<>();
         data.put("user_id", user_id);
         data.put("store_id", store_unikey);
 
         //Firebase function이랑 연결
-        Task<String> resTask = mFunctions.getHttpsCallable("dataInfo").call(data)
+        Task<String> resTask = mFunctions.getHttpsCallable("getDBData").call(data)
                 .continueWith(new Continuation<HttpsCallableResult, String>() {
                     @Override
                     public String then(@NonNull Task<HttpsCallableResult> task) throws Exception{
