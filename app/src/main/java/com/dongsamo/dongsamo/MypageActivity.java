@@ -36,6 +36,9 @@ public class MypageActivity extends AppCompatActivity {
     TextView mypage_name, mypage_id, mypage_email;
     ImageButton mypage_logout_btn, mypage_withdraw_btn;
 
+    TextView mypage_recent_course1, mypage_recent_course2, mypage_recent_course3, mypage_recent_course4;
+    ImageButton mypage_heart1, mypage_heart2, mypage_heart3, mypage_heart4;
+
     SharedPreferences sub;
     SharedPreferences.Editor editor;
 
@@ -70,6 +73,16 @@ public class MypageActivity extends AppCompatActivity {
 
         mypage_logout_btn = (ImageButton)findViewById(R.id.mypage_logout_btn);
         mypage_withdraw_btn = (ImageButton)findViewById(R.id.mypage_withdraw_btn);
+
+        mypage_recent_course1 = (TextView) findViewById(R.id.mypage_recent_course1);
+        mypage_recent_course2 = (TextView) findViewById(R.id.mypage_recent_course2);
+        mypage_recent_course3 = (TextView) findViewById(R.id.mypage_recent_course3);
+        mypage_recent_course4 = (TextView) findViewById(R.id.mypage_recent_course4);
+
+        mypage_heart1 = (ImageButton) findViewById(R.id.mypage_heart1);
+        mypage_heart2 = (ImageButton) findViewById(R.id.mypage_heart2);
+        mypage_heart3 = (ImageButton) findViewById(R.id.mypage_heart3);
+        mypage_heart4 = (ImageButton) findViewById(R.id.mypage_heart4);
 
         sub = getSharedPreferences("subscribe", MODE_PRIVATE);
         firebaseAuth = FirebaseAuth.getInstance();
@@ -158,6 +171,10 @@ public class MypageActivity extends AppCompatActivity {
         startActivity(intent);
         MypageActivity.this.finish();
         Toast.makeText(getApplicationContext(), "로그아웃 완료", Toast.LENGTH_LONG).show();
+    }
+
+    public void onClick_mypage_heart(View view){
+
     }
 
     public void onClick_mypage_withdraw_btn(View view){

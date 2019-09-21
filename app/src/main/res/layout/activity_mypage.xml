@@ -44,7 +44,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="370"
+        android:layout_weight="250"
         android:weightSum="720">
 
         <Space
@@ -57,18 +57,17 @@
             android:layout_height="match_parent"
             android:layout_weight="620"
             android:orientation="vertical"
-            android:weightSum="670"
             android:background="@drawable/mypage_up_box">
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="120"/>
+                android:layout_weight="0.3"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="90"
+                android:layout_weight="1"
                 android:weightSum="522">
 
                 <Space
@@ -80,6 +79,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="120"
+                    android:gravity="center|left"
                     android:text="이름"
                     android:textColor="#000"
                     android:textSize="18dp"
@@ -101,12 +101,12 @@
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="60"/>
+                android:layout_weight="0.3"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="90"
+                android:layout_weight="1"
                 android:weightSum="522">
 
                 <Space
@@ -118,6 +118,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="120"
+                    android:gravity="center|left"
                     android:text="아이디"
                     android:textColor="#000"
                     android:textSize="18dp"
@@ -138,12 +139,12 @@
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="60"/>
+                android:layout_weight="0.3"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="90"
+                android:layout_weight="1"
                 android:weightSum="522">
 
                 <Space
@@ -155,6 +156,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="120"
+                    android:gravity="center|left"
                     android:text="이메일"
                     android:textColor="#000"
                     android:textSize="18dp"
@@ -169,9 +171,12 @@
                     android:textColor="#000"
                     android:inputType="text"
                     android:paddingStart="3dp"/>
-
-
             </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -179,7 +184,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="40">
+        android:layout_weight="20">
 
     </LinearLayout>
 
@@ -205,14 +210,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="20">
+        android:layout_weight="10">
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="330"
+        android:layout_weight="300"
         android:weightSum="720">
 
         <Space
@@ -255,7 +260,7 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="200"
+            android:layout_weight="250"
             android:src="@drawable/recent_course"/>
 
     </LinearLayout>
@@ -263,7 +268,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="100"
+        android:layout_weight="300"
         android:weightSum="720">
 
         <Space
@@ -277,16 +282,108 @@
             android:layout_height="match_parent"
             android:layout_weight="620"
             android:orientation="vertical"
-            android:weightSum="670"
             android:background="@drawable/mypage_down_box" >
 
-            <TextView
-                android:id="@+id/mypage_recent_course"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="정주네집  공공일  정보과학관  미담길"
-                android:textColor="#000"
-                android:gravity="center"/>
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/mypage_recent_course1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:text="정주네집  공공일  정보과학관  미담길"
+                    android:textColor="#000"
+                    android:gravity="center"/>
+
+                <ImageButton
+                    android:id="@+id/mypage_heart1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"
+                    android:padding="5dp"
+                    android:onClick="onClick_mypage_heart"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/true_heart" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/mypage_recent_course2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:text="정주네집  공공일  정보과학관  미담길"
+                    android:textColor="#000"
+                    android:gravity="center"/>
+
+                <ImageButton
+                    android:id="@+id/mypage_heart2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"
+                    android:padding="5dp"
+                    android:onClick="onClick_mypage_heart"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/true_heart" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/mypage_recent_course3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:text="정주네집  공공일  정보과학관  미담길"
+                    android:textColor="#000"
+                    android:gravity="center"/>
+
+                <ImageButton
+                    android:id="@+id/mypage_heart3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"
+                    android:padding="5dp"
+                    android:onClick="onClick_mypage_heart"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/true_heart" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/mypage_recent_course4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:text="정주네집  공공일  정보과학관  미담길"
+                    android:textColor="#000"
+                    android:gravity="center"/>
+
+                <ImageButton
+                    android:id="@+id/mypage_heart4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"
+                    android:padding="5dp"
+                    android:onClick="onClick_mypage_heart"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/true_heart" />
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
@@ -294,7 +391,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="22"/>
+        android:layout_weight="18"/>
 
     <LinearLayout
         android:layout_width="match_parent"

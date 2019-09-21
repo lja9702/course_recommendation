@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Sep 21 23:15:20 KST 2019
+#Sun Sep 22 02:49:56 KST 2019
 5.base=/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/transforms/dexMerger/debug/21
 22.path=lib/arm64-v8a/libpngt.so
 32.set=NATIVE_RESOURCE

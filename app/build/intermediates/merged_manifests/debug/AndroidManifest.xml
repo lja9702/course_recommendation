@@ -42,7 +42,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar" >
+        android:testOnly="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:usesCleartextTraffic="true" >
         <activity android:name="com.dongsamo.dongsamo.CultureActivity" />
         <activity android:name="com.dongsamo.dongsamo.MypageActivity" />
         <activity android:name="com.dongsamo.dongsamo.UserCourseActivity" />
@@ -98,6 +100,9 @@
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.functions.FunctionsRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
@@ -174,6 +179,11 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <provider
+            android:name="com.android.tools.ir.server.InstantRunContentProvider"
+            android:authorities="com.dongsamo.dongsamo.com.android.tools.ir.server.InstantRunContentProvider"
+            android:multiprocess="true" />
     </application>
 
 </manifest>

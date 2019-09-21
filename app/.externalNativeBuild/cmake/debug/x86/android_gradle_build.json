@@ -1,37 +1,37 @@
 {
   "stringTable": {
-    "0": "/home/lja9702/StudioProjects/course_recommendation/app/.externalNativeBuild/cmake/debug/x86",
-    "1": "--target=i686-none-linux-android23 --gcc-toolchain=/home/lja9702/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/lja9702/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dnative_lib_EXPORTS -I/home/lja9702/StudioProjects/course_recommendation/opencv/native/jni/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -std=gnu++11 -O0 -fno-limit-debug-info -fPIC"
+    "0": "/Users/MIPUNG/Desktop/Dongsamo/app/.externalNativeBuild/cmake/debug/x86",
+    "1": "--target=i686-none-linux-android23 --gcc-toolchain=/Users/MIPUNG/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/MIPUNG/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/MIPUNG/Desktop/Dongsamo/opencv/native/jni/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++ -std=gnu++11 -O0 -fno-limit-debug-info -fPIC"
   },
   "buildFiles": [
-    "/home/lja9702/Android/Sdk/ndk-bundle/build/cmake/platforms.cmake",
-    "/home/lja9702/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
-    "/home/lja9702/StudioProjects/course_recommendation/app/src/main/cpp/CMakeLists.txt"
+    "/Users/MIPUNG/Library/Android/sdk/ndk-bundle/build/cmake/platforms.cmake",
+    "/Users/MIPUNG/Desktop/Dongsamo/app/src/main/cpp/CMakeLists.txt",
+    "/Users/MIPUNG/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake"
   ],
   "cleanCommands": [
-    "/home/lja9702/Android/Sdk/cmake/3.10.2.4988404/bin/cmake --build \"/home/lja9702/StudioProjects/course_recommendation/app/.externalNativeBuild/cmake/debug/x86\" --target clean"
+    "/Users/MIPUNG/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build \"/Users/MIPUNG/Desktop/Dongsamo/app/.externalNativeBuild/cmake/debug/x86\" --target clean"
   ],
   "libraries": {
     "native-lib-Debug-x86": {
-      "buildCommand": "/home/lja9702/Android/Sdk/cmake/3.10.2.4988404/bin/cmake --build \"/home/lja9702/StudioProjects/course_recommendation/app/.externalNativeBuild/cmake/debug/x86\" --target native-lib",
+      "buildCommand": "/Users/MIPUNG/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build \"/Users/MIPUNG/Desktop/Dongsamo/app/.externalNativeBuild/cmake/debug/x86\" --target native-lib",
       "buildType": "debug",
-      "toolchain": "1809180056",
+      "toolchain": "241337773",
       "abi": "x86",
       "artifactName": "native-lib",
       "files": [
         {
-          "src": "/home/lja9702/StudioProjects/course_recommendation/app/src/main/cpp/native-lib.cpp",
+          "src": "/Users/MIPUNG/Desktop/Dongsamo/app/src/main/cpp/native-lib.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         }
       ],
       "headers": [],
-      "output": "/home/lja9702/StudioProjects/course_recommendation/app/build/intermediates/cmake/debug/obj/x86/libnative-lib.so"
+      "output": "/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/cmake/debug/obj/x86/libnative-lib.so"
     }
   },
   "toolchains": {
-    "1809180056": {
-      "cppCompilerExecutable": "/home/lja9702/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    "241337773": {
+      "cppCompilerExecutable": "/Users/MIPUNG/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
     }
   },
   "cFileExtensions": [],

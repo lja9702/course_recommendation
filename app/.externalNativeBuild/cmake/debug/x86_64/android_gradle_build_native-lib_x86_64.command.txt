@@ -1,8 +1,0 @@
-Executable : /home/lja9702/Android/Sdk/cmake/3.10.2.4988404/bin/cmake
-arguments : 
---build
-/home/lja9702/StudioProjects/course_recommendation/app/.externalNativeBuild/cmake/debug/x86_64
---target
-native-lib
-jvmArgs : 
-
