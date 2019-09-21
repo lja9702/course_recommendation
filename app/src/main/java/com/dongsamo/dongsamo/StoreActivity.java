@@ -14,13 +14,24 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.bumptech.glide.Glide;
 import com.dongsamo.dongsamo.firebase_control.Store;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.functions.FirebaseFunctionsException;
+import com.google.firebase.functions.HttpsCallableResult;
 import com.skt.Tmap.TMapMarkerItem;
 import com.skt.Tmap.TMapPoint;
 import com.skt.Tmap.TMapView;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.functions.FirebaseFunctions;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class StoreActivity extends AppCompatActivity {
 
@@ -31,6 +42,8 @@ public class StoreActivity extends AppCompatActivity {
     private String apiKey = "b766d096-d3c5-4a56-b48f-d799ca065447";
     //진아: firebaseAnalytics 선언
     private FirebaseAnalytics mFirebaseAnalytics;
+    private FirebaseFunctions mFunctions;
+
     double store_x, store_y;
     String store_name;
     @Override
@@ -56,6 +69,7 @@ public class StoreActivity extends AppCompatActivity {
 
         //firebaseAnalytics 초기화
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        mFunctions = FirebaseFunctions.getInstance();
 
         pinpinEE(store_name, store_x ,store_y, "TEST_"+store_name);
 
@@ -89,13 +103,47 @@ public class StoreActivity extends AppCompatActivity {
 
     }
 
-    public void onClick_heart(View view){
-        String contentType = "korean"; //업종
-        String itemId = "1"; //가게 이름
+    public void onClick_heart(View view) throws InterruptedException {
+        String user_id = "1"; //업종
+        String store_id = "1234"; //가게id
+        String contentType = "Korean";
+
+        //function으로 보낼 데이터들
+        Map<String, Object> data = new HashMap<>();
+        data.put("user_id", user_id);
+        data.put("store_id", store_id);
+
+        //Firebase function이랑 연결
+        Task<String> resTask = mFunctions.getHttpsCallable("dataInfo").call(data)
+                .continueWith(new Continuation<HttpsCallableResult, String>() {
+                    @Override
+                    public String then(@NonNull Task<HttpsCallableResult> task) throws Exception{
+                        String result = (String) task.getResult().getData();
+                        return result;
+                    }
+                }).addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Exception e = task.getException();
+                            if (e instanceof FirebaseFunctionsException) {
+                                FirebaseFunctionsException ffe = (FirebaseFunctionsException) e;
+                                FirebaseFunctionsException.Code code = ffe.getCode();
+                                Object details = ffe.getDetails();
+                                Log.e("complete", "code: " + code, e);
+                            }
+                        }
+                        else
+                            Log.e("heart", "res: " + task.getResult());
+                    }
+                });
+
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, contentType);
-        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, itemId);
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, store_id);
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+
+
     }
 
 }

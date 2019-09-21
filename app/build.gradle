@@ -70,4 +70,7 @@ dependencies {
     implementation 'com.rmtheis:tess-two:9.0.0'
     /*tmap*/
     implementation files('libs/com.skt.Tmap_1.60.jar')
+
+    //jinah: firebase function
+    implementation 'com.google.firebase:firebase-functions:16.1.3'
 }
