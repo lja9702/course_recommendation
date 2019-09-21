@@ -39,6 +39,10 @@ import com.skt.Tmap.TMapPOIItem;
 import com.skt.Tmap.TMapPoint;
 import com.skt.Tmap.TMapView;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -73,8 +77,19 @@ public class StoreListActivity extends AppCompatActivity {
         lon = loc.getLongitude();
         lat = loc.getLatitude();
 
+        stringToApi();
+
         pinpinEE("테스트(내위치)", lat, lon, "test");
 
+    }
+
+    public String stringToApi(){
+        ReGeocodeThreadClass test = new ReGeocodeThreadClass(lat, lon);
+        Thread t = new Thread(test);
+        t.start();
+        while(test.get_result() == null);
+
+        return test.get_result();
     }
 
     protected void pinpinEE(final String pin_name, final double x, final double y, String pin_id){
@@ -118,4 +133,56 @@ public class StoreListActivity extends AppCompatActivity {
         });
     }
 
+}
+
+class ReGeocodeThreadClass implements Runnable {
+
+    private String result = null;
+    private String target_name;
+    private double my_lat, my_lon;
+
+
+    public ReGeocodeThreadClass(double x, double y) {
+        this.my_lat = x;
+        this.my_lon = y;
+    }
+
+    @Override
+    public void run() {
+
+        try {
+            String re_apiURL = null;
+            //String apiURL = "https://openapi.naver.com/v1/search/local?query=" + text + "&display=" + display + "&";
+            re_apiURL = "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+my_lat+","+my_lon+"&sourcecrs=epsg:4326&output=json&orders=legalcode,admcode";
+            // coordinate : 검색할 중심 좌표, 서울이면 서울에서 검색, 부산이면 부산에서 검색
+            URL re_url = new URL(re_apiURL);
+            HttpURLConnection con = (HttpURLConnection) re_url.openConnection();
+            con.setRequestMethod("GET");
+            int responseCode = con.getResponseCode();
+            BufferedReader br;
+            if (responseCode == 200) {
+                br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            } else {
+                br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+            }
+            StringBuilder sb = new StringBuilder();
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                sb.append(line + "\n");
+            }
+
+            br.close();
+            con.disconnect();
+            Log.d("tags", sb.toString());
+            this.result = sb.toString();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public String get_result() {
+        return this.result;
+    }
 }

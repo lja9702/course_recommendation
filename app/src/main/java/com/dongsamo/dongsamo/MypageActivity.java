@@ -73,8 +73,7 @@ public class MypageActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
-
-        // update name, ... TextView
+// update name, ... TextView
         databaseReference.child("Users").child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -83,6 +82,22 @@ public class MypageActivity extends AppCompatActivity {
                     mypage_name.setText(member.getName());
                     mypage_id.setText(member.getId());
                     mypage_email.setText(member.getEmail());
+
+                    Log.d("TAGS", member.getId());
+
+                    databaseReference.child("taste").child(member.getId()).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot mdataSnapshot) {
+                            for (DataSnapshot snapshot : mdataSnapshot.child("favorite").getChildren()) {
+                                Log.d("TAGS", "taste : " + snapshot.getKey());
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            Log.w(TAG, "Failed to read value.", databaseError.toException());
+                        }
+                    });
 
                 }
                 catch (NullPointerException e){
@@ -101,7 +116,6 @@ public class MypageActivity extends AppCompatActivity {
                 Log.w(TAG, "Failed to read value.", databaseError.toException());
             }
         });
-
     }
 
     public void onClick_mypage_logout_btn(View view){
