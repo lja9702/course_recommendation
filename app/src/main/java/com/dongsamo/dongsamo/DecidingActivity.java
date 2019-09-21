@@ -78,7 +78,7 @@ public class DecidingActivity extends AppCompatActivity {
         tItem.setCalloutTitle(pin_name);
         tItem.setCanShowCallout(true);
         tItem.setAutoCalloutVisible(true);
-        
+
 
         // 핀모양으로 된 마커를 사용할 경우 마커 중심을 하단 핀 끝으로 설정.
         tItem.setPosition((float)0.5, (float)1.0);         // 마커의 중심점을 하단, 중앙으로 설정
@@ -137,7 +137,7 @@ public class DecidingActivity extends AppCompatActivity {
         double lon = loc.getLongitude();
         double lat = loc.getLatitude();
 
-    //    Toast.makeText(getApplicationContext(), "당신의 위치 \n위도 : " + lat + "\n경도 : " + lon, Toast.LENGTH_LONG).show();
+        //    Toast.makeText(getApplicationContext(), "당신의 위치 \n위도 : " + lat + "\n경도 : " + lon, Toast.LENGTH_LONG).show();
 
         pinpinEE("현재위치", (float)lat, (float)lon, "TEST_NOW");
         TMapPoint point1 = new TMapPoint((float)37.480897 ,(float)126.951086);
@@ -153,13 +153,12 @@ public class DecidingActivity extends AppCompatActivity {
         passList.add(point4);
 
         tmapdata.findPathDataWithType(TMapData.TMapPathType.PEDESTRIAN_PATH, point1, point2, passList, 0, new TMapData.FindPathDataListenerCallback() {
-                    @Override
-                    public void onFindPathData(TMapPolyLine polyLine) {
-                        polyLine.setLineColor(Color.RED);
-                        tMapView.addTMapPolyLine("TEST_LINE" , polyLine);
-                    }
-                });
-
+            @Override
+            public void onFindPathData(TMapPolyLine polyLine) {
+                polyLine.setLineColor(Color.RED);
+                tMapView.addTMapPolyLine("TEST_LINE" , polyLine);
+            }
+        });
 
     }
 
@@ -175,7 +174,7 @@ public class DecidingActivity extends AppCompatActivity {
     }
 
     //좌표 받아오는 함수
-    public TMapPoint stringToTMapPoint(String target_name){
+    public String stringToApi(String target_name){
         GeocodeThreadClass test = new GeocodeThreadClass(target_name);
         Thread t = new Thread(test);
         t.start();
@@ -187,12 +186,13 @@ public class DecidingActivity extends AppCompatActivity {
 
 class GeocodeThreadClass implements Runnable{
 
-    private TMapPoint result = null;
+    private String result = null;
     private String target_name;
 
     public GeocodeThreadClass(String target_name){
         this.target_name = target_name;
     }
+
 
     @Override
     public void run() {
@@ -222,20 +222,14 @@ class GeocodeThreadClass implements Runnable{
 
             br.close();
             con.disconnect();
-            String now_data = sb.substring(sb.indexOf("\"x\""));
-            String now_data_array[] = now_data.split("\"");
-            float x_val =  Float.parseFloat(now_data_array[3]);
-            float y_val =  Float.parseFloat(now_data_array[7]);
-
-            this.result = new TMapPoint(y_val, x_val);
-            
+            this.result = sb.toString();
 
         } catch (Exception e) {
             System.out.println(e);
         }
     }
 
-    public TMapPoint get_result(){
+    public String get_result(){
         return this.result;
     }
 }

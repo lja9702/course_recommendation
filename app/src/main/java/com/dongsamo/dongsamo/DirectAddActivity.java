@@ -31,6 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.skt.Tmap.TMapPoint;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,7 @@ public class DirectAddActivity extends AppCompatActivity {
     Spinner sort_spinner, store_spinner;
 
     Button search_btn;
-    EditText store_search;
+    EditText store_search; //검색창 가져오기
     LinearLayout linearLayout;
 
     private RecyclerView store_list;
@@ -65,7 +66,7 @@ public class DirectAddActivity extends AppCompatActivity {
 
         search_btn = (Button)findViewById(R.id.search_btn);
 
-        store_search = (EditText)findViewById(R.id.store_search);
+        store_search = (EditText)findViewById(R.id.store_search); //검색창 xml이랑 java파일 연결
         linearLayout = (LinearLayout) findViewById(R.id.direct_linear);
 
 
@@ -124,9 +125,49 @@ public class DirectAddActivity extends AppCompatActivity {
         imm.hideSoftInputFromWindow(store_search.getWindowToken(), 0);
 
         //kong todo str 이름을 가진 장소만 나오게 하기. str : 검색창(edittext)에 입력한 String
+        String str = store_search.getText().toString(); //예를 들어 naver 검색
+        String api_returns = stringToApi(str);
 
-        Intent intent = new Intent(DirectAddActivity.this, StoreActivity.class);
+        //DirectAddActivity에 띄울 가게 이름들 리스트
+        String store_num_find = api_returns.substring(api_returns.indexOf("\"count\""));
+        String store_num_array[] = store_num_find.split("\"");
+        String store_num_array2[] = store_num_array[2].split(":");
+        String store_num_array3[] = store_num_array2[1].split("\\}");
+        int store_num = Integer.parseInt(store_num_array3[0]); //StoreList에 띄울 가게 갯수
+        String store_name_find = api_returns.substring(api_returns.indexOf("\"name\""));
+        String store_name_array[] = store_name_find.split("\"");
+        String[] real_store_name_list = new String [store_num];
+        for (int i=0;i<store_num;i++){
+            real_store_name_list[i] = store_name_array[30*i+3];
+        }
+
+
+        //lat,lon좌표
+        String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
+        System.out.println(now_data);
+        String now_data_array[] = now_data.split("\"");
+        float x_val =  Float.parseFloat(now_data_array[3]);
+        float y_val =  Float.parseFloat(now_data_array[7]);
+
+
+        Intent intent = new Intent(this, StoreActivity.class);
+
+        intent.putExtra("lat_val", x_val);
+        intent.putExtra("lon_val", y_val);
+        intent.putExtra("name_val", str);
         startActivity(intent);
     }
 
+
+
+    //api 받아오는 함수
+    public String stringToApi(String target_name){
+        GeocodeThreadClass test = new GeocodeThreadClass(target_name);
+        Thread t = new Thread(test);
+        t.start();
+        while(test.get_result() == null);
+        return test.get_result();
+    }
+
 }
+
