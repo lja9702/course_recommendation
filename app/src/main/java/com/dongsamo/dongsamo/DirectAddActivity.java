@@ -47,8 +47,8 @@ public class DirectAddActivity extends AppCompatActivity {
     LinearLayout linearLayout;
 
     private RecyclerView store_list;
-    private StoreRecyclerViewAdapter myAdapter;
-    private List<StoreCard> store;
+    private DirectAddRecyclerViewAdapter myAdapter;
+    private List<DirectAddItem> store;
 
     private Handler set_post_handler;
     private String path = "new";
@@ -58,6 +58,8 @@ public class DirectAddActivity extends AppCompatActivity {
     private StorageReference storageRef;
     private StorageReference imageRef;
     static String course;
+    String office="";
+    float office_x=0, office_y=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,44 +71,19 @@ public class DirectAddActivity extends AppCompatActivity {
         store_search = (EditText)findViewById(R.id.store_search); //검색창 xml이랑 java파일 연결
         linearLayout = (LinearLayout) findViewById(R.id.direct_linear);
 
+        Intent intent = getIntent();
+        office = intent.getExtras().getString("office");
+        office = office.concat("청");
+
+        get_xy(office);
 
         store = new ArrayList<>();
         store_list = (RecyclerView) findViewById(R.id.store_list);
-        myAdapter = new StoreRecyclerViewAdapter(this, store);
-
+        myAdapter = new DirectAddRecyclerViewAdapter(DirectAddActivity.this, store);
+        RecyclerDecoration spaceDecoration = new RecyclerDecoration(40);
+        store_list.addItemDecoration(spaceDecoration);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         store_list.setLayoutManager(gridLayoutManager);//1행을 가진 그리드뷰로 레이아웃을 만듬
-
-        //Add by kongil
-//        mDatabase = FirebaseDatabase.getInstance().getReference();
-//
-//        ValueEventListener postListener = new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                // Get Post object and use the values to update the UI
-//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-//                    if (snapshot.getKey().equals("stores")) {
-//                        for (DataSnapshot csnapshot : snapshot.getChildren()) {
-//                            Store post = csnapshot.getValue(Store.class);
-//                            //store.add(new StoreCard(post.getUrl(), post.getName(), post.getStar(),  post.getDistance(), post.isIs_heart()));
-//                            set_post_handler.sendEmptyMessage(0);
-//
-//                        }
-//                    }
-//                    // ...
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                // Getting Post failed, log a message
-//                Log.w("TAG", "loadPost:onCancelled", databaseError.toException());
-//                // ...
-//            }
-//        };
-//
-//        mDatabase.addValueEventListener(postListener);
-//        //
 
         set_post_handler = new Handler() {
             public void handleMessage(Message msg) {
@@ -141,27 +118,62 @@ public class DirectAddActivity extends AppCompatActivity {
             real_store_name_list[i] = store_name_array[30*i+3];
         }
 
+        //가게 도로명 주소
+        String road_address_find = api_returns.substring(api_returns.indexOf("\"road_address\""));
+        String road_address_array[] = road_address_find.split("\"");
+        String[] real_road_address_list = new String[store_num];
+        for(int i=0;i<store_num;i++){
+            real_road_address_list[i] = road_address_array[30*i+3];
+        }
+
+        //가게 전화번호
+        String phone_number_find = api_returns.substring(api_returns.indexOf("\"phone_number\""));
+        String phone_number_array[] = phone_number_find.split("\"");
+        String[] real_phone_number_list = new String[store_num];
+        for(int i=0;i<store_num;i++){
+            real_phone_number_list[i] = phone_number_array[30*i+3];
+        }
 
         //lat,lon좌표
         String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
         System.out.println(now_data);
         String now_data_array[] = now_data.split("\"");
-        float x_val =  Float.parseFloat(now_data_array[3]);
-        float y_val =  Float.parseFloat(now_data_array[7]);
+        String[] real_now_data_list = new String[store_num];
+        for(int i=0;i<store_num;i++){
+            float x_val =  Float.parseFloat(now_data_array[30*i+3]);
+            float y_val =  Float.parseFloat(now_data_array[30*i+7]);
+            real_now_data_list[i] = x_val+","+y_val;
+        }
+
+        for(int i=0; i<real_store_name_list.length; i++) {
+            if(real_phone_number_list[i].equals(""))
+                real_phone_number_list[i] = "-";
+
+            if(real_road_address_list[i].equals(""))
+                real_road_address_list[i] = "-";
+
+            if(real_store_name_list[i].equals(""))
+                real_store_name_list[i] = "-";
+
+            store.add(new DirectAddItem(real_store_name_list[i], real_road_address_list[i], real_phone_number_list[i], real_now_data_list[i]));
+            set_post_handler.sendEmptyMessage(0);
+        }
 
 
-        Intent intent = new Intent(this, StoreActivity.class);
-
-        intent.putExtra("lat_val", x_val);
-        intent.putExtra("lon_val", y_val);
-        intent.putExtra("name_val", str);
-        startActivity(intent);
     }
 
 
 
     //api 받아오는 함수
     public String stringToApi(String target_name){
+        GeocodeThreadClass test = new GeocodeThreadClass(target_name, office_x, office_y);
+        Thread t = new Thread(test);
+        t.start();
+        while(test.get_result() == null);
+        return test.get_result();
+    }
+
+    public String get_office_sb(String target_name){
         GeocodeThreadClass test = new GeocodeThreadClass(target_name);
         Thread t = new Thread(test);
         t.start();
@@ -169,5 +181,14 @@ public class DirectAddActivity extends AppCompatActivity {
         return test.get_result();
     }
 
+    public void get_xy(String office){
+        String api_returns = get_office_sb(office);
+        //lat,lon좌표
+        String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
+        System.out.println(now_data);
+        String now_data_array[] = now_data.split("\"");
+        office_x =  Float.parseFloat(now_data_array[3]);
+        office_y =  Float.parseFloat(now_data_array[7]);
+    }
 }
 

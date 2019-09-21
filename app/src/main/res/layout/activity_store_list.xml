@@ -45,6 +45,7 @@
         android:layout_weight="1022">
 
         <com.skt.Tmap.TMapView
+            android:id="@+id/store_list_tmap"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 

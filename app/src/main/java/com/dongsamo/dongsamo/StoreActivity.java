@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -18,50 +20,48 @@ import com.skt.Tmap.TMapMarkerItem;
 import com.skt.Tmap.TMapPoint;
 import com.skt.Tmap.TMapView;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 public class StoreActivity extends AppCompatActivity {
+
     ImageView store_image;
     TextView store_text;
     TMapView tMapView;
     LinearLayout ln;
     private String apiKey = "b766d096-d3c5-4a56-b48f-d799ca065447";
-
+    //진아: firebaseAnalytics 선언
+    private FirebaseAnalytics mFirebaseAnalytics;
+    double store_x, store_y;
+    String store_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
 
         Intent intent = getIntent();
-        float lat_data = intent.getFloatExtra("lat_val", 0);
-        float lon_data = intent.getFloatExtra("lon_val", 0);
-        String name_data = intent.getStringExtra("name_val");
-
+        store_x = intent.getExtras().getDouble("store_x", 0);
+        store_y = intent.getExtras().getDouble("store_y", 0);
+        store_name = intent.getExtras().getString("store_name");
 
         store_text = (TextView)findViewById(R.id.store_name_textView);
-        store_text.setMovementMethod(new ScrollingMovementMethod());
 
-        //kong todo 69 StoreRecyclerViewAdapter에서 인텐트로 보낸 store_name 정보 띄우기.
-
-        StoreCard sc = (StoreCard) getIntent().getSerializableExtra("store");
-        Glide.with(store_image).load(""+sc.getUrl()).into(store_image);
-        store_text.setText(sc.getName());
-
-        ln = (LinearLayout)findViewById(R.id.tmap_store);
-        tMapView = new TMapView(this);
-
+        store_text.setText(store_name);
+        tMapView = (TMapView)findViewById(R.id.store_tmap);
         tMapView.setSKTMapApiKey(apiKey);
         tMapView.setLanguage(TMapView.LANGUAGE_KOREAN);
-        //tMapView.setIconVisibility(true); // 내 위치 (gps권한 주기)
         tMapView.setZoomLevel(15);
         tMapView.setMapType(TMapView.MAPTYPE_STANDARD);
         tMapView.setCompassMode(true);
         tMapView.setTrackingMode(true);
-        ln.addView(tMapView);
 
-        pinpinEE(name_data, lat_data ,lon_data, "TEST"+name_data);
+        //firebaseAnalytics 초기화
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
+        pinpinEE(store_name, store_x ,store_y, "TEST_"+store_name);
 
     }
 
-    protected void pinpinEE(String pin_name, float x, float y, String pin_id){
+    protected void pinpinEE(String pin_name, double x, double y, String pin_id){
         TMapPoint tpoint = new TMapPoint(x, y);
 
         TMapMarkerItem tItem = new TMapMarkerItem();
@@ -78,7 +78,7 @@ public class StoreActivity extends AppCompatActivity {
 
 
         // 핀모양으로 된 마커를 사용할 경우 마커 중심을 하단 핀 끝으로 설정.
-        tItem.setPosition((float)0.5, (float)1.0);         // 마커의 중심점을 하단, 중앙으로 설정
+        tItem.setPosition((float)0.5, (float)0.5);         // 마커의 중심점을 하단, 중앙으로 설정
 
         tMapView.setLocationPoint(y,x);
 
@@ -89,5 +89,13 @@ public class StoreActivity extends AppCompatActivity {
 
     }
 
-}
+    public void onClick_heart(View view){
+        String contentType = "korean"; //업종
+        String itemId = "1"; //가게 이름
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, contentType);
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, itemId);
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+    }
 
+}

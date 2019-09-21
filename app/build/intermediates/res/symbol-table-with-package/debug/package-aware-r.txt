@@ -871,6 +871,7 @@ id actions
 id activity_chooser_view_content
 id activity_surfaceView
 id add
+id addr_data
 id adjust_height
 id adjust_width
 id ai_ask_btn
@@ -894,6 +895,7 @@ id button
 id button3
 id buttonPanel
 id cafe_btn
+id call_data
 id cancel_action
 id capture_btn
 id card_distance
@@ -1004,6 +1006,7 @@ id mypage_like_list
 id mypage_logout_btn
 id mypage_name
 id mypage_withdraw_btn
+id name_data
 id never
 id no_course_btn
 id none
@@ -1076,6 +1079,7 @@ id start
 id status_bar_latest_event_content
 id store_list
 id store_list_layout
+id store_list_tmap
 id store_name_textView
 id store_search
 id store_tmap
@@ -1105,6 +1109,7 @@ id up
 id useLogo
 id user_course_finish_btn
 id user_course_next_btn
+id want_card_view
 id wide
 id withText
 id wrap
@@ -1187,6 +1192,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout want_card_view
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round

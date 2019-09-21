@@ -188,17 +188,30 @@ class GeocodeThreadClass implements Runnable{
 
     private String result = null;
     private String target_name;
+    private float office_x, office_y;
+
+    public GeocodeThreadClass(String target_name, float x, float y){
+        this.target_name = target_name;
+        this.office_x = x;
+        this.office_y = y;
+    }
 
     public GeocodeThreadClass(String target_name){
         this.target_name = target_name;
+        this.office_x = 0;
+        this.office_y = 0;
     }
 
 
     @Override
     public void run() {
         try {
+            String apiURL=null;
             //String apiURL = "https://openapi.naver.com/v1/search/local?query=" + text + "&display=" + display + "&";
-            String apiURL = "https://naveropenapi.apigw.ntruss.com/map-place/v1/search?query="+ this.target_name + "&coordinate=127.1054328,37.3595963&X-NCP-APIGW-API-KEY-ID=1424stl6gm&X-NCP-APIGW-API-KEY=olHNwdMUoTsToiQbEsBQ6qrL7BVqGIsHguxesLrA";
+            if(this.office_x == 0 && this.office_y == 0)
+                apiURL = "https://naveropenapi.apigw.ntruss.com/map-place/v1/search?query="+ this.target_name + "&coordinate=127.1054328,37.3595963&X-NCP-APIGW-API-KEY-ID=1424stl6gm&X-NCP-APIGW-API-KEY=olHNwdMUoTsToiQbEsBQ6qrL7BVqGIsHguxesLrA";
+            else
+                apiURL = "https://naveropenapi.apigw.ntruss.com/map-place/v1/search?query="+ this.target_name + "&coordinate="+office_x+","+office_y+"&X-NCP-APIGW-API-KEY-ID=1424stl6gm&X-NCP-APIGW-API-KEY=olHNwdMUoTsToiQbEsBQ6qrL7BVqGIsHguxesLrA";
             // coordinate : 검색할 중심 좌표, 서울이면 서울에서 검색, 부산이면 부산에서 검색
             URL url = new URL(apiURL);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();

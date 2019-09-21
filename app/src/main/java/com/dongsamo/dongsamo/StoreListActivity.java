@@ -1,8 +1,13 @@
 package com.dongsamo.dongsamo;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.PointF;
 import android.location.Geocoder;
+import android.location.Location;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
@@ -28,6 +33,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.skt.Tmap.TMapMarkerItem;
+import com.skt.Tmap.TMapMarkerItem2;
+import com.skt.Tmap.TMapPOIItem;
+import com.skt.Tmap.TMapPoint;
 import com.skt.Tmap.TMapView;
 
 import java.util.ArrayList;
@@ -41,24 +50,15 @@ public class StoreListActivity extends AppCompatActivity {
 
     static Activity B_Activity;
 
-    private DatabaseReference mDatabase;// Add by kongil
-    private FirebaseStorage storage;
-    private StorageReference storageRef;
-    private StorageReference imageRef;
-
     private TMapView tMapView;
-    private Geocoder geocoder; //지오코더 -> 좌표에서 장소를, 장소에서 좌표를 알 수 있음
     private String apiKey = "b766d096-d3c5-4a56-b48f-d799ca065447";
-
-    private LinearLayout store_list_layout;
-
+    double lon, lat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_list);
 
-        store_list_layout = (LinearLayout)findViewById(R.id.store_list_layout);
-        tMapView = new TMapView(this);
+        tMapView = (TMapView)findViewById(R.id.store_list_tmap);
 
         tMapView.setSKTMapApiKey(apiKey);
         tMapView.setLanguage(TMapView.LANGUAGE_KOREAN);
@@ -67,7 +67,55 @@ public class StoreListActivity extends AppCompatActivity {
         tMapView.setMapType(TMapView.MAPTYPE_STANDARD);
         tMapView.setCompassMode(true);
         tMapView.setTrackingMode(true);
-        store_list_layout.addView(tMapView);
+
+        GPSclass gpSclass = new GPSclass(this);
+        Location loc = gpSclass.getLocation();
+        lon = loc.getLongitude();
+        lat = loc.getLatitude();
+
+        pinpinEE("테스트(내위치)", lat, lon, "test");
+
+    }
+
+    protected void pinpinEE(final String pin_name, final double x, final double y, String pin_id){
+        TMapPoint tpoint = new TMapPoint(x, y);
+
+        TMapMarkerItem tItem = new TMapMarkerItem();
+
+        tItem.setTMapPoint(tpoint);
+        tItem.setName(pin_name);
+        tItem.setVisible(TMapMarkerItem.VISIBLE);
+
+        Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.icon);
+        tItem.setIcon(bitmap);
+        tItem.setCalloutTitle(pin_name);
+        tItem.setCanShowCallout(true);
+        tItem.setAutoCalloutVisible(true);
+
+
+        // 핀모양으로 된 마커를 사용할 경우 마커 중심을 하단 핀 끝으로 설정.
+        tItem.setPosition((float)0.5, (float)1.0);         // 마커의 중심점을 하단, 중앙으로 설정
+
+        tMapView.setLocationPoint(y,x);
+
+        tMapView.addMarkerItem(pin_id, tItem);
+
+        tMapView.setOnClickListenerCallBack(new TMapView.OnClickListenerCallback() {
+            @Override
+            public boolean onPressEvent(ArrayList<TMapMarkerItem> arrayList, ArrayList<TMapPOIItem> arrayList1, TMapPoint tMapPoint, PointF pointF) {
+                return false;
+            }
+
+            @Override
+            public boolean onPressUpEvent(ArrayList<TMapMarkerItem> arrayList, ArrayList<TMapPOIItem> arrayList1, TMapPoint tMapPoint, PointF pointF) {
+                Intent intent = new Intent(StoreListActivity.this, StoreActivity.class);
+                intent.putExtra("store_name", pin_name);
+                intent.putExtra("store_x", x);
+                intent.putExtra("store_y", y);
+                startActivity(intent);
+                return false;
+            }
+        });
     }
 
 }

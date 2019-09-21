@@ -3,14 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
     android:clickable="true"
     android:longClickable="true"
     android:layout_margin="5dp"
     android:foreground="?android:attr/selectableItemBackground"
-    android:id="@+id/card_view3"
-    android:background="#fff"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp">
+    android:id="@+id/want_card_view"
+    android:background="#fff">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,15 +19,19 @@
         android:background="#fff">
 
         <TextView
-            android:padding="5dp"
-            android:id="@+id/title_data"
+            android:id="@+id/name_data"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center"
-            android:text="name_data"
-            android:textSize="15dp"
+            android:background="#3f3620"
+            android:text="이름"
+            android:textSize="18dp"
             android:textColor="#fff"
-            android:background="#3f3620"/>
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,13 +42,14 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="0.3"
                 android:gravity="center"
                 android:background="#f5e7c3"
-                android:text="날짜"
+                android:text="주소"
                 android:textSize="12dp"
                 android:textColor="@android:color/black"
-                />
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"/>
 
             <Space
                 android:layout_width="0dp"
@@ -53,28 +58,13 @@
                 android:background="#000"/>
 
             <TextView
+                android:id="@+id/addr_data"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:background="#f5e7c3"
-                android:text="장소"
-                android:textSize="12dp"
-                android:textColor="@android:color/black" />
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.01"
-                android:background="#000"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:background="#f5e7c3"
-                android:text="요금"
+                android:background="#fff"
+                android:text="addr"
                 android:textSize="12dp"
                 android:textColor="@android:color/black" />
 
@@ -89,19 +79,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="2dp">
+            android:layout_weight="1">
 
             <TextView
-                android:id="@+id/date_data"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="0.3"
                 android:gravity="center"
-                android:background="#fff"
-                android:text="type_data"
+                android:background="#f5e7c3"
+                android:text="전화번호"
                 android:textSize="12dp"
                 android:textColor="@android:color/black"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
                 />
 
             <Space
@@ -111,7 +101,7 @@
                 android:background="#000"/>
 
             <TextView
-                android:id="@+id/place_data"
+                android:id="@+id/call_data"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -121,49 +111,10 @@
                 android:textSize="12dp"
                 android:textColor="@android:color/black" />
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.01"
-                android:background="#000"/>
-
-            <TextView
-                android:id="@+id/money_data"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:background="#fff"
-                android:text="address_data"
-                android:textSize="12dp"
-                android:textColor="@android:color/black" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#000"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <TextView
-                android:id="@+id/program_detail"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:padding="5dp"
-                android:src="#fff"
-                android:text="program_detail"
-                android:textSize="12dp"
-                android:textColor="@android:color/black"
-                android:background="#fff"/>
 
 
-        </LinearLayout>
     </LinearLayout>
 
 

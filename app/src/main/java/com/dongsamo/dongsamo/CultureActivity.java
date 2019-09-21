@@ -38,6 +38,8 @@ public class CultureActivity extends AppCompatActivity {
         postlist = new ArrayList<>();
         list = (RecyclerView) findViewById(R.id.recylerview);
         list_ap = new RecyclerViewAdapter3(CultureActivity.this, postlist);
+        RecyclerDecoration spaceDecoration = new RecyclerDecoration(70);
+        list.addItemDecoration(spaceDecoration);
 
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);

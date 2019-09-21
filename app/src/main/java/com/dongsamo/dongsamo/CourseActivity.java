@@ -15,12 +15,13 @@ import android.widget.Toast;
 public class CourseActivity extends AppCompatActivity {
 
     TextView course_text;
-    String textview_txt = null;
+    String textview_txt = null, office="";
     TextView course_location_btn;
     static String course = "";
     int count = 0;
     AlertDialog alertDialog;
     boolean flag = true;
+    String[] want_location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class CourseActivity extends AppCompatActivity {
         course_text = (TextView)findViewById(R.id.course_text);
         course_text.setMovementMethod(new ScrollingMovementMethod());
 
+        want_location = new String[5];
         count = 0;
 
         try{
@@ -84,6 +86,7 @@ public class CourseActivity extends AppCompatActivity {
                 course_text.setText(textview_txt+"  맛집");
                 break;
             case R.id.show_btn:
+                count--;
                 textview_txt = String.valueOf(course_text.getText());
                 Intent intent = new Intent(CourseActivity.this, CultureActivity.class);
                 startActivityForResult(intent, 1);
@@ -93,10 +96,14 @@ public class CourseActivity extends AppCompatActivity {
                 course_text.setText(textview_txt+"  카페");
                 break;
             case R.id.etc_btn:
+                count--;
+                textview_txt = String.valueOf(course_text.getText());
                 Intent intent2 = new Intent(CourseActivity.this, DirectAddActivity.class);
+
+                intent2.putExtra("office", office);
                 //todo
 
-                startActivity(intent2);
+                startActivityForResult(intent2, 1);
 //                textview_txt = String.valueOf(course_text.getText());
 //                course_text.setText(textview_txt+"  원하는 장소");
                 break;
@@ -107,8 +114,11 @@ public class CourseActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode==1){
             if(resultCode==RESULT_OK){
+                count++;
                 //데이터 받기
                 String result = data.getStringExtra("result");
+                String location = data.getStringExtra("want_location");
+                want_location[want_location.length-1] = location;
                 course_text.setText(textview_txt+"  "+result);
             }
         }
@@ -142,6 +152,7 @@ public class CourseActivity extends AppCompatActivity {
 
                         // 프로그램을 종료한다
                         course_location_btn.setText(items[id]);
+                        office = String.valueOf(items[id]);
                         flag = false;
                         dialog.dismiss();
                     }
