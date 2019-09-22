@@ -37,6 +37,7 @@ public class CourseActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseUser firebaseUser;
 
+    float office_x, office_y;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,6 +113,8 @@ public class CourseActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "2개 이상 선택해주세요.", Toast.LENGTH_LONG).show();
             return;
         }
+        office = office.concat("청");
+        get_xy(office);
 
         course = String.valueOf(course_text.getText());
         Intent intent = new Intent(CourseActivity.this, UserCourseActivity.class);
@@ -121,8 +124,9 @@ public class CourseActivity extends AppCompatActivity {
         intent.putExtra("ori_count", count);
         intent.putExtra("count", count);
         intent.putExtra("store", store_list[1]);
-        office = office.concat("청");
-        intent.putExtra("office", office);
+
+        intent.putExtra("office_x", office_x);
+        intent.putExtra("office_y", office_y);
 
         startActivity(intent);
     }
@@ -226,6 +230,23 @@ public class CourseActivity extends AppCompatActivity {
 
         // 다이얼로그 보여주기
         alertDialog.show();
+    }
 
+
+    public String get_office_sb(String target_name){
+        GeocodeThreadClass test = new GeocodeThreadClass(target_name);
+        Thread t = new Thread(test);
+        t.start();
+        while(test.get_result() == null);
+        return test.get_result();
+    }
+
+    public void get_xy(String office){
+        String api_returns = get_office_sb(office);
+        //lat,lon좌표
+        String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
+        String now_data_array[] = now_data.split("\"");
+        office_x =  Float.parseFloat(now_data_array[3]);
+        office_y =  Float.parseFloat(now_data_array[7]);
     }
 }

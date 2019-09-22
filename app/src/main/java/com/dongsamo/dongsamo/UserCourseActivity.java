@@ -48,7 +48,6 @@ public class UserCourseActivity extends AppCompatActivity {
     private String apiKey = "b766d096-d3c5-4a56-b48f-d799ca065447";
     double lon, lat;
     String now_location, store="";
-    String office="";
     float office_x=0, office_y=0;
 
     @Override
@@ -80,8 +79,8 @@ public class UserCourseActivity extends AppCompatActivity {
         tMapView.setTrackingMode(true);
 
         //**구청 받아와서 구청 중심으로 지도 보이기
-        office = intent.getExtras().getString("office");
-        get_xy(office);
+        office_x = intent.getExtras().getFloat("office_x");
+        office_y = intent.getExtras().getFloat("office_y");
         tMapView.setLocationPoint((double)office_x,(double)office_y);
 
         course_item.setText("("+(ori_count-count+1)+"/"+ori_count+")"+" "+store);
@@ -153,7 +152,8 @@ public class UserCourseActivity extends AppCompatActivity {
 
                         Log.d("Tag", "pinName: "+tMapMarkerItem.getName()+" ps_name: "+ps_name);
                         if(ps_name.equals(tMapMarkerItem.getName())) {
-                            add_course = ps_name;
+                            add_course = tMapMarkerItem.getName();
+                            Log.d("Tag", "pinName: "+add_course);
                             course_item.setText("("+(ori_count-count+1)+"/"+ori_count+")"+" "+add_course);
 
                             break;
@@ -229,13 +229,10 @@ public class UserCourseActivity extends AppCompatActivity {
                     }
                     result = buffer.toString();
 
-                    Log.d("LOG", result);
                     JSONObject jsonObject1 = new JSONObject(result);
                     String CrtfcUpsoInfo = jsonObject1.getString("CrtfcUpsoInfo");
-                    Log.d("LOG", "CrtfcUpsoInfo: " + CrtfcUpsoInfo);
                     JSONObject jsonObject2 = new JSONObject(CrtfcUpsoInfo);
                     String row = jsonObject2.getString("row");
-                    Log.d("Log", "row: "+row);
                     building_list = new JSONArray(row);
 
                     reader.close();
@@ -258,50 +255,29 @@ public class UserCourseActivity extends AppCompatActivity {
 
     public void onClick_user_course_next_btn(View view){
         Intent intent = new Intent(UserCourseActivity.this, UserCourseActivity.class);
-        new_course.concat("  "+add_course);
-        Log.d("NEW_COURSE", new_course);
+        new_course = new_course.concat("  "+add_course);
+        Log.d("NEW_COURSE", "hihi  "+new_course);
         intent.putExtra("new_course", new_course);
         intent.putExtra("ori_count", ori_count);
         intent.putExtra("count", count-1);
         intent.putExtra("store_list", store_list);
         intent.putExtra("store", store_list[ori_count-count+2]);
-        intent.putExtra("office", office);
+        intent.putExtra("office_x", office_x);
+        intent.putExtra("office_y", office_y);
         startActivity(intent);
         finish();
     }
 
     public void onClick_user_course_finish_btn(View view){
         Intent intent = new Intent(UserCourseActivity.this, DecidingActivity.class);
-        Log.d("NEW_COURSE", new_course);
+        new_course = new_course.concat("  "+add_course);
+        Log.d("NEW_COURSE", "hihi  "+new_course);
         intent.putExtra("new_course", new_course);
         intent.putExtra("count", ori_count);
+
         startActivity(intent);
         finish();
     }
 
-    public String stringToApi(String target_name){
-        GeocodeThreadClass test = new GeocodeThreadClass(target_name, office_x, office_y);
-        Thread t = new Thread(test);
-        t.start();
-        while(test.get_result() == null);
-        return test.get_result();
-    }
-
-    public String get_office_sb(String target_name){
-        GeocodeThreadClass test = new GeocodeThreadClass(target_name);
-        Thread t = new Thread(test);
-        t.start();
-        while(test.get_result() == null);
-        return test.get_result();
-    }
-
-    public void get_xy(String office){
-        String api_returns = get_office_sb(office);
-        //lat,lon좌표
-        String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
-        String now_data_array[] = now_data.split("\"");
-        office_x =  Float.parseFloat(now_data_array[3]);
-        office_y =  Float.parseFloat(now_data_array[7]);
-    }
 
 }

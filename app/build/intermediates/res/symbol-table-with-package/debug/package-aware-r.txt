@@ -897,7 +897,6 @@ id bottom_layout
 id button
 id button3
 id buttonPanel
-id cafe_btn
 id call_data
 id cancel_action
 id capture_btn
