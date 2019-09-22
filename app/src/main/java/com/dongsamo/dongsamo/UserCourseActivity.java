@@ -3,6 +3,7 @@ package com.dongsamo.dongsamo;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.Location;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,6 +48,8 @@ public class UserCourseActivity extends AppCompatActivity {
     private String apiKey = "b766d096-d3c5-4a56-b48f-d799ca065447";
     double lon, lat;
     String now_location, store="";
+    String office="";
+    float office_x=0, office_y=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,10 +74,15 @@ public class UserCourseActivity extends AppCompatActivity {
         tMapView = (TMapView)findViewById(R.id.user_course_tmap);
         tMapView.setSKTMapApiKey(apiKey);
         tMapView.setLanguage(TMapView.LANGUAGE_KOREAN);
-        tMapView.setZoomLevel(12);
+        tMapView.setZoomLevel(13);
         tMapView.setMapType(TMapView.MAPTYPE_STANDARD);
         tMapView.setCompassMode(false);
         tMapView.setTrackingMode(true);
+
+        //**구청 받아와서 구청 중심으로 지도 보이기
+        office = intent.getExtras().getString("office");
+        get_xy(office);
+        tMapView.setLocationPoint((double)office_x,(double)office_y);
 
         course_item.setText("("+(ori_count-count+1)+"/"+ori_count+")"+" "+store);
 
@@ -107,7 +115,7 @@ public class UserCourseActivity extends AppCompatActivity {
         tItem.setIcon(bitmap);
         tItem.setCalloutTitle(pin_name);
         tItem.setCanShowCallout(true);
-        tItem.setAutoCalloutVisible(true);
+        tItem.setAutoCalloutVisible(false);
 
         Bitmap bitmap2 = BitmapFactory.decodeResource(this.getResources(), R.drawable.charc);
         int resizeWidth = 68;
@@ -257,6 +265,7 @@ public class UserCourseActivity extends AppCompatActivity {
         intent.putExtra("count", count-1);
         intent.putExtra("store_list", store_list);
         intent.putExtra("store", store_list[ori_count-count+2]);
+        intent.putExtra("office", office);
         startActivity(intent);
         finish();
     }
@@ -268,6 +277,31 @@ public class UserCourseActivity extends AppCompatActivity {
         intent.putExtra("count", ori_count);
         startActivity(intent);
         finish();
+    }
+
+    public String stringToApi(String target_name){
+        GeocodeThreadClass test = new GeocodeThreadClass(target_name, office_x, office_y);
+        Thread t = new Thread(test);
+        t.start();
+        while(test.get_result() == null);
+        return test.get_result();
+    }
+
+    public String get_office_sb(String target_name){
+        GeocodeThreadClass test = new GeocodeThreadClass(target_name);
+        Thread t = new Thread(test);
+        t.start();
+        while(test.get_result() == null);
+        return test.get_result();
+    }
+
+    public void get_xy(String office){
+        String api_returns = get_office_sb(office);
+        //lat,lon좌표
+        String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
+        String now_data_array[] = now_data.split("\"");
+        office_x =  Float.parseFloat(now_data_array[3]);
+        office_y =  Float.parseFloat(now_data_array[7]);
     }
 
 }

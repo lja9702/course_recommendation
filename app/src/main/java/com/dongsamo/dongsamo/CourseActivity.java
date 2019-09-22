@@ -61,6 +61,8 @@ public class CourseActivity extends AppCompatActivity {
         intent.putExtra("ori_count", count);
         intent.putExtra("count", count);
         intent.putExtra("store", store_list[1]);
+        office = office.concat("청");
+        intent.putExtra("office", office);
 
         startActivity(intent);
     }
