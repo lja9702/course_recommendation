@@ -19,6 +19,7 @@
         android:weightSum="720">
 
         <TextView
+            android:id="@+id/address_textView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="300"

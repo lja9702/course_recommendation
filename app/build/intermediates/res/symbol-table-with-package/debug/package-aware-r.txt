@@ -874,6 +874,7 @@ id activity_chooser_view_content
 id activity_surfaceView
 id add
 id addr_data
+id address_textView
 id adjust_height
 id adjust_width
 id ai_ask_btn

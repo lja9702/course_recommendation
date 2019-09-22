@@ -61,10 +61,12 @@ public class StoreListActivity extends AppCompatActivity {
 
     static Activity B_Activity;
 
+    TextView address_textView;
     private TMapView tMapView;
     private String apiKey = "b766d096-d3c5-4a56-b48f-d799ca065447";
     double lon, lat;
     String now_location;
+    String dong_location;
 
     String siteUrl = "http://openapi.seoul.go.kr:8088/";
     String ID = "6c5474475266627737325756715870";
@@ -80,6 +82,8 @@ public class StoreListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_list);
+
+        address_textView = (TextView)findViewById(R.id.address_textView);
 
         tMapView = (TMapView)findViewById(R.id.store_list_tmap);
 
@@ -100,7 +104,14 @@ public class StoreListActivity extends AppCompatActivity {
 
         pinpinEE("테스트(내위치)", lat, lon, "test");
 
-        now_location = "동작구";
+        String api_returns = stringToApi();
+        //내 위치 기반으로 무슨 구 인지 찾아오기
+        String store_num_find = api_returns.substring(api_returns.indexOf("\"name\""));
+        String store_num_array[] = store_num_find.split("\"");
+        now_location = store_num_array[75];
+        dong_location = store_num_array[93];
+        address_textView.setText(now_location+" "+dong_location);
+
 
         Log.d("tags", stringToApi());
         try {
