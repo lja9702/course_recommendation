@@ -18,7 +18,7 @@ public class CourseActivity extends AppCompatActivity {
     String textview_txt = null, office="";
     TextView course_location_btn;
     static String course = "";
-    int count = 0;
+    int count = 0, eat_count=0;
     AlertDialog alertDialog;
     boolean flag = true;
     String[] want_location;
@@ -67,6 +67,7 @@ public class CourseActivity extends AppCompatActivity {
 
     public void onClick_trash_btn(View view){
         course_text.setText("");
+        eat_count = 0;
         count = 0;
     }
 
@@ -84,6 +85,7 @@ public class CourseActivity extends AppCompatActivity {
         count++;
         switch (view.getId()){
             case R.id.restaurant_btn:
+                eat_count++;
                 textview_txt = String.valueOf(course_text.getText());
                 course_text.setText(textview_txt+"  맛집");
                 break;
@@ -131,6 +133,7 @@ public class CourseActivity extends AppCompatActivity {
 
         Intent intent = new Intent(CourseActivity.this, AIRunningActivity.class);
         intent.putExtra("new_course", course_text.getText().toString());
+        intent.putExtra("eat_count", eat_count);
         startActivity(intent);
     }
 
