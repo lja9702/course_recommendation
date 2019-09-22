@@ -60,6 +60,11 @@ public class DecidingActivity extends AppCompatActivity {
     private ImageButton no_course_btn;
     TMapData tmapdata = new TMapData();
     String course="";
+    String[] store_list;
+    String store_name;
+    ArrayList passList;
+    float store_x=0, store_y=0;
+    TMapPoint tp1 = null, tp2= null;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,7 +79,7 @@ public class DecidingActivity extends AppCompatActivity {
         //tMapView.setIconVisibility(true); // 내 위치 (gps권한 주기)
         tMapView.setZoomLevel(15);
         tMapView.setMapType(TMapView.MAPTYPE_STANDARD);
-        tMapView.setCompassMode(true);
+        tMapView.setCompassMode(false);
         tMapView.setTrackingMode(true);
         activity_deciding.addView(tMapView);
 
@@ -82,47 +87,72 @@ public class DecidingActivity extends AppCompatActivity {
         decide_course_btn = (ImageButton)findViewById(R.id.decide_course_btn);
 
         Intent intent = getIntent();
-        course = intent.getExtras().getString("new_course");
+        course = intent.getExtras().getString("new_course","");
+        store_list = course.split("  ");
+        passList = new ArrayList<TMapPoint>();
 
-        Log.d("course222", "course: "+course);
-        pinpinEE("쿠우쿠우",(float)37.480897 ,(float)126.951086, "TEST_SO");
-        pinpinEE("진이집",(float)37.475014, (float)126.953481,"TEST_JIN");
-        pinpinEE("진이알바",(float)37.477777, (float)126.952437,"TEST_DON");
-        pinpinEE("서울대입구역",(float)37.481209, (float)126.952713,"TEST_YUK");
+        ///출발지
+        String api_returns = stringToApi(store_list[1]);
+        String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
+        String now_data_array[] = now_data.split("\"");
+        store_x =  Float.parseFloat(now_data_array[3]);
+        store_y =  Float.parseFloat(now_data_array[7]);
+        tp1 = new TMapPoint(store_y, store_x);
+        pinpinEE(store_list[1], store_y, store_x,"no"+store_list[1]+"_test");
 
-        // gps 좌표 받아오는 코드
-        GPSclass gpSclass = new GPSclass(this);
-        Location loc = gpSclass.getLocation();
-        double lon = loc.getLongitude();
-        double lat = loc.getLatitude();
-
-        //    Toast.makeText(getApplicationContext(), "당신의 위치 \n위도 : " + lat + "\n경도 : " + lon, Toast.LENGTH_LONG).show();
-
-        pinpinEE("현재위치", (float)lat, (float)lon, "TEST_NOW");
-        TMapPoint point1 = new TMapPoint((float)37.480897 ,(float)126.951086);
-        TMapPoint point2 = new TMapPoint((float)37.475014, (float)126.953481);
-        TMapPoint point3 = new TMapPoint((float)37.477777, (float)126.952437);
-        TMapPoint point4 = new TMapPoint((float)37.481209, (float)126.952713);
+        ///시작지
+        String api_returns2 = stringToApi(store_list[2]);
+        String now_data2 = api_returns2.substring(api_returns2.indexOf("\"x\""));
+        String now_data_array2[] = now_data2.split("\"");
+        store_x =  Float.parseFloat(now_data_array2[3]);
+        store_y =  Float.parseFloat(now_data_array2[7]);
+        tp2 = new TMapPoint(store_y, store_x);
+        pinpinEE(store_list[2], store_y, store_x,"no"+store_list[2]+"_test");
 
 
-        ArrayList passList = new ArrayList<TMapPoint>();
-        TMapPolyLine tMapPolyLine = null;
+        for(int i=3; i < store_list.length; i++){
+            String api_returns3 = stringToApi(store_list[i]);
+            String now_data3 = api_returns3.substring(api_returns3.indexOf("\"x\""));
+            String now_data_array3[] = now_data3.split("\"");
+            store_x =  Float.parseFloat(now_data_array3[3]);
+            store_y =  Float.parseFloat(now_data_array3[7]);
+            pinpinEE(store_list[i],store_y,store_x,"a"+store_list[i]+"_test");
+        }
+
+
+        for(int i=0; i<passList.size(); i++){
+            Log.d("passlist", String.valueOf(((TMapPoint) passList.get(i)).getLatitude()));
+        }
+
         // 경로 추가 예제
-        passList.add(point3);
-        passList.add(point4);
+//        passList.add(point3);
+//        passList.add(point4);
 
-        tmapdata.findPathDataWithType(TMapData.TMapPathType.PEDESTRIAN_PATH, point1, point2, passList, 0, new TMapData.FindPathDataListenerCallback() {
+        tmapdata.findPathDataWithType(
+                TMapData.TMapPathType.PEDESTRIAN_PATH,
+                tp1, tp2, passList,
+                0, new TMapData.FindPathDataListenerCallback() {
+
             @Override
             public void onFindPathData(TMapPolyLine polyLine) {
                 polyLine.setLineColor(Color.RED);
-                tMapView.addTMapPolyLine("TEST_LINE" , polyLine);
+                tMapView.addTMapPolyLine("Course_line" , polyLine);
             }
         });
 
     }
 
+    public String stringToApi(String store_name){
+        GeocodeThreadClass test = new GeocodeThreadClass(store_name);
+        Thread t = new Thread(test);
+        t.start();
+        while(test.get_result() == null);
+        return test.get_result();
+    }
+
+
     public void onClick_decide_course_btn(View view){
-       // Toast.makeText(DecidingActivity.super.getApplicationContext(), "이 코스로 결정!", Toast.LENGTH_LONG).show();
+        // Toast.makeText(DecidingActivity.super.getApplicationContext(), "이 코스로 결정!", Toast.LENGTH_LONG).show();
         decide_course_btn.setVisibility(View.INVISIBLE);
     }
 
@@ -133,7 +163,10 @@ public class DecidingActivity extends AppCompatActivity {
     }
 
     protected void pinpinEE(String pin_name, float x, float y, String pin_id){
-        TMapPoint tpoint = new TMapPoint(x, y);
+        TMapPoint tpoint = new TMapPoint(store_y, store_x);
+        Log.d("pin_id", String.valueOf(pin_id.charAt(0)));
+        if(pin_id.charAt(0) == 'a')
+            passList.add(tpoint);
 
         TMapMarkerItem tItem = new TMapMarkerItem();
 
@@ -187,7 +220,7 @@ class GeocodeThreadClass implements Runnable{
             else
                 apiURL = "https://naveropenapi.apigw.ntruss.com/map-place/v1/search?query="+ this.target_name + "&coordinate="+office_x+","+office_y+"&X-NCP-APIGW-API-KEY-ID=otvptwo8i7&X-NCP-APIGW-API-KEY=ea7s1S6H0iRWh1afXSjK2cNCgtPqtsJNuhK3FLFM";
 
-             // coordinate : 검색할 중심 좌표, 서울이면 서울에서 검색, 부산이면 부산에서 검색
+            // coordinate : 검색할 중심 좌표, 서울이면 서울에서 검색, 부산이면 부산에서 검색
             URL url = new URL(apiURL);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");

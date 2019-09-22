@@ -92,7 +92,7 @@ public class StoreListActivity extends AppCompatActivity {
         tMapView.setIconVisibility(true); // 내 위치 (gps권한 주기)
         tMapView.setZoomLevel(15);
         tMapView.setMapType(TMapView.MAPTYPE_STANDARD);
-        tMapView.setCompassMode(true);
+        tMapView.setCompassMode(false);
         tMapView.setTrackingMode(true);
 
         GPSclass gpSclass = new GPSclass(this);

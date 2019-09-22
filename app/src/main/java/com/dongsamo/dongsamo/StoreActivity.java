@@ -53,6 +53,8 @@ public class StoreActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
     private FirebaseUser firebaseUser;
+    ImageButton heart;
+    private Intent intent;
 
     float store_x, store_y;
     String store_name, store_type, store_addr, store_call,store_unikey, user_id;
@@ -62,7 +64,7 @@ public class StoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
 
-        Intent intent = getIntent();
+        intent = getIntent();
         store_x = intent.getExtras().getFloat("store_x", 0);
         store_y = intent.getExtras().getFloat("store_y", 0);
         store_name = intent.getExtras().getString("store_name"); //가게명
@@ -74,6 +76,7 @@ public class StoreActivity extends AppCompatActivity {
         store_text = (TextView)findViewById(R.id.store_name_textView);
         store_info = (TextView)findViewById(R.id.store_info);
 
+        heart = (ImageButton)findViewById(R.id.heart);
         store_text.setText(store_name);
 
         tmap_ln = (LinearLayout) findViewById(R.id.store_tmap);
@@ -81,23 +84,62 @@ public class StoreActivity extends AppCompatActivity {
         tMapView = new TMapView(StoreActivity.this);
         tMapView.setSKTMapApiKey(apiKey);
         tMapView.setLanguage(TMapView.LANGUAGE_KOREAN);
-        tMapView.setZoomLevel(10);
+        tMapView.setZoomLevel(18);
         tMapView.setMapType(TMapView.MAPTYPE_STANDARD);
-        tMapView.setCompassMode(true);
+        tMapView.setCompassMode(false);
         tMapView.setTrackingMode(true);
         tmap_ln.addView(tMapView);
+
 
         Log.d("TAG", "Intent: "+store_x+"  "+store_y+"  "+store_name+"  "+store_type+"  "+store_addr+"  "+store_call+"  "+store_unikey);
         //firebaseAnalytics 초기화
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         mFunctions = FirebaseFunctions.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference();
         Log.d("TAG", "x: "+store_x+"  y: "+store_y);
 
         pinpinEE(store_name, store_x ,store_y, "TEST_"+store_name);
 
         store_info.setText("주소: "+store_addr+"\n전화번호: "+store_call+"\n업태: "+store_type);
+
+        databaseReference.child("Users").child(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Member member = dataSnapshot.getValue(Member.class);
+                Log.d("TAGS", member.getId());
+
+                databaseReference.child("favorite").child(member.getId()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot mdataSnapshot) {
+                        boolean is_heart = false;
+                        for (DataSnapshot snapshot : mdataSnapshot.getChildren()) {
+                            if (snapshot.getKey().equals(intent.getExtras().getString("store_name"))) {
+                                is_heart = true;
+                            }
+                        }
+
+                        if (is_heart) {
+                            heart.setImageResource(R.drawable.true_heart);
+                        }
+                        else {
+                            heart.setImageResource(R.drawable.false_heart);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.w("TAGS", "Failed to read value.", databaseError.toException());
+                    }
+                });
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                Log.w("TAGs", "Failed to read value.", databaseError.toException());
+            }
+        });
 
     }
 
@@ -133,6 +175,49 @@ public class StoreActivity extends AppCompatActivity {
         Map<String, Object> data = new HashMap<>();
         data.put("user_id", user_id);
         data.put("store_id", store_unikey);
+
+        databaseReference.child("Users").child(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Member member = dataSnapshot.getValue(Member.class);
+                Log.d("TAGS", member.getId());
+
+                databaseReference.child("favorite").child(member.getId()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot mdataSnapshot) {
+                        boolean is_heart = false;
+                        for (DataSnapshot snapshot : mdataSnapshot.getChildren()) {
+                            Log.d("TAGS", "snapshot key : " + snapshot.getKey());
+                            if (snapshot.getKey().equals(store_unikey)) {
+                                is_heart = true;
+                            }
+                            Log.d("TAGS", "favorite : " + snapshot.getKey());
+                        }
+
+                        if (is_heart) {
+                            mdataSnapshot.getRef().child(store_unikey).removeValue();
+                            heart.setImageResource(R.drawable.false_heart);
+                            Log.d("TAGS", "in here");
+                        }
+                        else {
+                            mdataSnapshot.getRef().child(store_unikey).setValue(0);
+                            heart.setImageResource(R.drawable.true_heart);
+                            Log.d("TAGS", "in here2");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.w("TAGS", "Failed to read value.", databaseError.toException());
+                    }
+                });
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                Log.w("TAGs", "Failed to read value.", databaseError.toException());
+            }
+        });
 
         //Firebase function이랑 연결
         Task<String> resTask = mFunctions.getHttpsCallable("getDBData").call(data)

@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity
                 Log.d("TAGS", "surfaceview capture");
 
                 FirebaseVisionTextRecognizer detector = FirebaseVision.getInstance()
-                        .getOnDeviceTextRecognizer();
+                        .getCloudTextRecognizer();
                 Task<FirebaseVisionText> result =
                         detector.processImage(image)
                                 .addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {

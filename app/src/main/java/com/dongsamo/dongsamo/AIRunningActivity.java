@@ -13,10 +13,14 @@ public class AIRunningActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_airunning);
 
+        Intent i = getIntent();
+        final String course = i.getExtras().getString("new_course");
         Handler handler = new Handler(){
             public void handleMessage(Message msg){
                 super.handleMessage(msg);
-                startActivity(new Intent(AIRunningActivity.this, DecidingActivity.class));
+                Intent intent = new Intent(AIRunningActivity.this, DecidingActivity.class);
+                intent.putExtra("new_course", course);
+                startActivity(intent);
                 finish();
             }
 

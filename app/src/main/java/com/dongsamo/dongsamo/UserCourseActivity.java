@@ -73,7 +73,7 @@ public class UserCourseActivity extends AppCompatActivity {
         tMapView.setLanguage(TMapView.LANGUAGE_KOREAN);
         tMapView.setZoomLevel(12);
         tMapView.setMapType(TMapView.MAPTYPE_STANDARD);
-        tMapView.setCompassMode(true);
+        tMapView.setCompassMode(false);
         tMapView.setTrackingMode(true);
 
         course_item.setText("("+(ori_count-count+1)+"/"+ori_count+")"+" "+store);
@@ -251,7 +251,7 @@ public class UserCourseActivity extends AppCompatActivity {
     public void onClick_user_course_next_btn(View view){
         Intent intent = new Intent(UserCourseActivity.this, UserCourseActivity.class);
         new_course.concat("  "+add_course);
-        Log.d("course222", new_course);
+        Log.d("NEW_COURSE", new_course);
         intent.putExtra("new_course", new_course);
         intent.putExtra("ori_count", ori_count);
         intent.putExtra("count", count-1);
@@ -263,6 +263,7 @@ public class UserCourseActivity extends AppCompatActivity {
 
     public void onClick_user_course_finish_btn(View view){
         Intent intent = new Intent(UserCourseActivity.this, DecidingActivity.class);
+        Log.d("NEW_COURSE", new_course);
         intent.putExtra("new_course", new_course);
         intent.putExtra("count", ori_count);
         startActivity(intent);
