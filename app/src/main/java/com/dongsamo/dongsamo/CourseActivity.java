@@ -2,6 +2,7 @@ package com.dongsamo.dongsamo;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,14 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class CourseActivity extends AppCompatActivity {
@@ -23,10 +32,19 @@ public class CourseActivity extends AppCompatActivity {
     boolean flag = true;
     String[] want_location;
 
+    String user_id="hi";
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference databaseReference;
+    private FirebaseUser firebaseUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        firebaseUser = firebaseAuth.getCurrentUser();
 
         course_location_btn = (TextView)findViewById(R.id.course_location_btn);
         course_text = (TextView)findViewById(R.id.course_text);
@@ -45,6 +63,48 @@ public class CourseActivity extends AppCompatActivity {
         }
         //course_text.setText(course);
 
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+
+        if( firebaseUser == null ){
+            Intent intent = new Intent(CourseActivity.this, LoginActivity.class);
+            startActivity(intent);
+            CourseActivity.this.finish();
+        }
+        updateUI();
+    }
+
+    public void updateUI(){
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+// update name, ... TextView
+        databaseReference.child("Users").child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Member member = dataSnapshot.getValue(Member.class);
+                try {
+                    user_id = member.getName();
+
+                }
+                catch (NullPointerException e){
+                    Toast.makeText(CourseActivity.this, "에러로 인해 로그아웃되었습니다.", Toast.LENGTH_LONG);
+                    firebaseAuth.signOut();
+
+                    Intent intent = new Intent(CourseActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    CourseActivity.this.finish();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
     }
 
     public void onClick_direct_add_btn(View view){
@@ -134,6 +194,7 @@ public class CourseActivity extends AppCompatActivity {
         Intent intent = new Intent(CourseActivity.this, AIRunningActivity.class);
         intent.putExtra("new_course", course_text.getText().toString());
         intent.putExtra("eat_count", eat_count);
+        intent.putExtra("user_id", user_id);
         startActivity(intent);
     }
 
