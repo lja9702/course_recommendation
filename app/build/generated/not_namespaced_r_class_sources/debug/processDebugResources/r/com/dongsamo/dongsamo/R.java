@@ -4182,12 +4182,13 @@ public final class R {
     public static final int useLogo=0x7f080111;
     public static final int user_course_finish_btn=0x7f080112;
     public static final int user_course_next_btn=0x7f080113;
-    public static final int user_like_card_view=0x7f080114;
-    public static final int want_card_view=0x7f080115;
-    public static final int wide=0x7f080116;
-    public static final int withText=0x7f080117;
-    public static final int wrap=0x7f080118;
-    public static final int wrap_content=0x7f080119;
+    public static final int user_course_tmap=0x7f080114;
+    public static final int user_like_card_view=0x7f080115;
+    public static final int want_card_view=0x7f080116;
+    public static final int wide=0x7f080117;
+    public static final int withText=0x7f080118;
+    public static final int wrap=0x7f080119;
+    public static final int wrap_content=0x7f08011a;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f090000;

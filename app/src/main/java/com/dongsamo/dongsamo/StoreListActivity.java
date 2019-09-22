@@ -102,7 +102,7 @@ public class StoreListActivity extends AppCompatActivity {
 
         now_location = "동작구";
 
-        //Log.d("tags", stringToApi());
+        Log.d("tags", stringToApi());
         try {
             new Task().execute().get();
 
@@ -312,7 +312,9 @@ class ReGeocodeThreadClass implements Runnable {
         try {
             String re_apiURL = null;
             //String apiURL = "https://openapi.naver.com/v1/search/local?query=" + text + "&display=" + display + "&";
-            re_apiURL = "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+my_lat+","+my_lon+"&sourcecrs=epsg:4326&output=json&orders=legalcode,admcode";
+            re_apiURL = "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+my_lon+","+my_lat+"&sourcecrs=epsg:4326&output=json&orders=legalcode,admcode&X-NCP-APIGW-API-KEY-ID=otvptwo8i7&X-NCP-APIGW-API-KEY=ea7s1S6H0iRWh1afXSjK2cNCgtPqtsJNuhK3FLFM";
+            Log.d("tags", re_apiURL);
+            //re_apiURL = "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="+"126.939512,37.512402"+"&sourcecrs=epsg:4326&output=json&orders=legalcode,admcode&X-NCP-APIGW-API-KEY-ID=otvptwo8i7&X-NCP-APIGW-API-KEY=ea7s1S6H0iRWh1afXSjK2cNCgtPqtsJNuhK3FLFM";
             // coordinate : 검색할 중심 좌표, 서울이면 서울에서 검색, 부산이면 부산에서 검색
             URL re_url = new URL(re_apiURL);
             HttpURLConnection con = (HttpURLConnection) re_url.openConnection();

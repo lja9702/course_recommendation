@@ -1121,6 +1121,7 @@ id up
 id useLogo
 id user_course_finish_btn
 id user_course_next_btn
+id user_course_tmap
 id user_like_card_view
 id want_card_view
 id wide

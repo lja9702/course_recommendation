@@ -59,6 +59,7 @@ public class DecidingActivity extends AppCompatActivity {
     private ImageButton decide_course_btn;
     private ImageButton no_course_btn;
     TMapData tmapdata = new TMapData();
+    String course="";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +81,10 @@ public class DecidingActivity extends AppCompatActivity {
         no_course_btn = (ImageButton)findViewById(R.id.no_course_btn);
         decide_course_btn = (ImageButton)findViewById(R.id.decide_course_btn);
 
+        Intent intent = getIntent();
+        course = intent.getExtras().getString("new_course");
+
+        Log.d("course222", "course: "+course);
         pinpinEE("쿠우쿠우",(float)37.480897 ,(float)126.951086, "TEST_SO");
         pinpinEE("진이집",(float)37.475014, (float)126.953481,"TEST_JIN");
         pinpinEE("진이알바",(float)37.477777, (float)126.952437,"TEST_DON");

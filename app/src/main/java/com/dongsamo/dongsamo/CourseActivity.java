@@ -55,8 +55,13 @@ public class CourseActivity extends AppCompatActivity {
 
         course = String.valueOf(course_text.getText());
         Intent intent = new Intent(CourseActivity.this, UserCourseActivity.class);
-        intent.putExtra("course", course);
+        intent.putExtra("location", course_location_btn.getText().toString());
+        String[] store_list = course.split("  ");
+        intent.putExtra("store_list", store_list);
+        intent.putExtra("ori_count", count);
         intent.putExtra("count", count);
+        intent.putExtra("store", store_list[1]);
+
         startActivity(intent);
     }
 
@@ -64,9 +69,6 @@ public class CourseActivity extends AppCompatActivity {
         course_text.setText("");
         count = 0;
     }
-
-
-
 
     public void onClick_shop_btn(View view){
         if(count >= 4){

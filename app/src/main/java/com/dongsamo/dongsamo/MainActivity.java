@@ -290,7 +290,6 @@ public class MainActivity extends AppCompatActivity
         /*donging-widget*/
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
