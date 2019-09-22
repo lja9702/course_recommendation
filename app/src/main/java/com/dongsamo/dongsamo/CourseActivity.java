@@ -155,10 +155,6 @@ public class CourseActivity extends AppCompatActivity {
                 Intent intent = new Intent(CourseActivity.this, CultureActivity.class);
                 startActivityForResult(intent, 1);
                 break;
-            case R.id.cafe_btn:
-                textview_txt = String.valueOf(course_text.getText());
-                course_text.setText(textview_txt+"  카페");
-                break;
             case R.id.etc_btn:
                 count--;
                 textview_txt = String.valueOf(course_text.getText());
@@ -202,12 +198,10 @@ public class CourseActivity extends AppCompatActivity {
         final CharSequence[] items = {
                 "강남구", "강동구", "강북구", "강서구", "관악구", "광진구", "구로구", "금천구",
                 "노원구", "도봉구", "동대문구", "동작구",
-                "마포구",
-                "서대문구", "양천구", "용산구","은평구",
-                "종로구", "중구",  "성동구",
-                 "중랑구", "성북구",
-                     "영등포구",  "서초구",
-                 "송파구"  };
+                "마포구","서대문구","서초구", "성동구","성북구","송파구",
+                 "양천구", "영등포구", "용산구", "은평구",
+                "종로구", "중구",  "중랑구"
+                };
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(CourseActivity.this);
 
         // 제목셋팅
