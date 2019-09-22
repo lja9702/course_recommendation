@@ -67,13 +67,14 @@
         android:weightSum="1"
         android:orientation="vertical">
 
-        <com.skt.Tmap.TMapView
+        <LinearLayout
             android:id="@+id/store_tmap"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.4">
+            android:layout_weight="0.4"
+            android:orientation="horizontal">
 
-        </com.skt.Tmap.TMapView>
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
@@ -86,6 +87,9 @@
             android:layout_height="0dp"
             android:layout_weight="0.6"
             android:textColor="#000"
+            android:gravity="top|left"
+            android:padding="15dp"
+            android:textSize="18dp"
             android:background="#f9f5ec"/>
     </LinearLayout>
 

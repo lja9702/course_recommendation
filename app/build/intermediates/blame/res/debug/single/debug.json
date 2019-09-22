@@ -540,6 +540,10 @@
         "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/dd872f4c2de8933da07e0d70ae7c23cc/res/color/abc_primary_text_material_light.xml"
     },
     {
+        "merged": "/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/res/merged/debug/drawable_click_des.png.flat",
+        "source": "/Users/MIPUNG/Desktop/Dongsamo/app/src/main/res/drawable/click_des.png"
+    },
+    {
         "merged": "/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
         "source": "/Users/MIPUNG/Desktop/Dongsamo/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
     },

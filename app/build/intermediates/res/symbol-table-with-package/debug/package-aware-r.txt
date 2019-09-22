@@ -746,6 +746,7 @@ drawable camera_background
 drawable capture
 drawable charc
 drawable choice
+drawable click_des
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
