@@ -102,7 +102,7 @@ public class StoreListActivity extends AppCompatActivity {
 
         tMapView.setLocationPoint(lon,lat);
 
-        pinpinEE("테스트(내위치)", lat, lon, "test");
+        //pinpinEE("테스트(내위치)", lat, lon, "test");
 
         String api_returns = stringToApi();
         //내 위치 기반으로 무슨 구 인지 찾아오기
@@ -148,7 +148,7 @@ public class StoreListActivity extends AppCompatActivity {
         tItem.setIcon(bitmap);
         tItem.setCalloutTitle(pin_name);
         tItem.setCanShowCallout(true);
-        tItem.setAutoCalloutVisible(true);
+        tItem.setAutoCalloutVisible(false);
 
         Bitmap bitmap2 = BitmapFactory.decodeResource(this.getResources(), R.drawable.charc);
         int resizeWidth = 68;
