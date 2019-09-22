@@ -88,7 +88,7 @@ public class CourseActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Member member = dataSnapshot.getValue(Member.class);
                 try {
-                    user_id = member.getName();
+                    user_id = member.getId();
 
                 }
                 catch (NullPointerException e){
