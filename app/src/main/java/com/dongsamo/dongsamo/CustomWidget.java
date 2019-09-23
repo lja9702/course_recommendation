@@ -1,19 +1,12 @@
 package com.dongsamo.dongsamo;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dongsamo.dongsamo.firebase_control.Store;
@@ -23,7 +16,9 @@ public class CustomWidget extends Activity {
     TextView shop_score;
     ImageButton heart_btn;
 
-    private Store store;
+    private Intent intent;
+    float store_x, store_y;
+    String store_name, store_type, store_addr, store_call,store_unikey, user_id;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -31,15 +26,24 @@ public class CustomWidget extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.customwidget);
 
+        intent = getIntent();
+        store_x = intent.getExtras().getFloat("store_x", 0);
+        store_y = intent.getExtras().getFloat("store_y", 0);
+        store_name = intent.getExtras().getString("store_name"); //가게명
+        store_type = intent.getExtras().getString("store_type"); //가게업태
+        store_addr = intent.getExtras().getString("store_address"); //가게 도로명 주소
+        store_call = intent.getExtras().getString("store_call"); //전화번호
+        store_unikey = intent.getExtras().getString("store_unikey"); //가게id
+
         //UI 객체생성
         shop_name = (TextView)findViewById(R.id.shop_name);
         shop_score = (TextView)findViewById(R.id.shop_score);
         heart_btn = (ImageButton)findViewById(R.id.is_heart);
         //데이터 가져오기
-        store = (Store) getIntent().getSerializableExtra("store");
+        //store = (Store) getIntent().getSerializableExtra("store");
 
-        shop_name.setText(store.getName());
-        shop_score.setText(String.valueOf(store.getStar()));
+        shop_name.setText(store_name);
+        shop_score.setText(String.valueOf(store_call));
 
         /*
         Intent intent = getIntent();
@@ -64,7 +68,16 @@ public class CustomWidget extends Activity {
     public void onClick_choose_store(View view){
         Log.d("TAGS", "choose_store");
         Intent intent = new Intent(CustomWidget.this, StoreActivity.class);
-        intent.putExtra("store", store.convert_to_card());
+
+        intent.putExtra("store_unikey", store_unikey);
+        intent.putExtra("store_name", store_name);
+        intent.putExtra("store_x", (float)store_x);
+        intent.putExtra("store_y", (float)store_y);
+        intent.putExtra("store_type", store_type);
+        intent.putExtra("store_call", store_call);
+        intent.putExtra("store_address", store_addr);
+
+        //intent.putExtra("store", store.convert_to_card());
         startActivity(intent);
         mOnClose();
     }

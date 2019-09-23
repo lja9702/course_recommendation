@@ -138,56 +138,7 @@
 
     </LinearLayout>
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="323"></LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="109"
-        android:weightSum="720">
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="118"/>
-
-        <ImageButton
-            android:id="@+id/restaurant_btn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="201"
-            android:src="@drawable/restaurant_btn"
-            android:scaleType="fitCenter"
-            android:background="@android:color/transparent"
-            android:onClick="onClick_shop_btn"/>
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="83"/>
-
-        <ImageButton
-            android:id="@+id/show_btn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="201"
-            android:src="@drawable/show_btn"
-            android:scaleType="fitCenter"
-            android:background="@android:color/transparent"
-            android:onClick="onClick_shop_btn"/>
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="118"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="26">
-
-    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="363"></LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -197,14 +148,14 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="118"/>
+            android:layout_weight="0.3"/>
 
         <ImageButton
-            android:id="@+id/cafe_btn"
+            android:id="@+id/restaurant_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="201"
-            android:src="@drawable/cafe_btn"
+            android:layout_weight="1"
+            android:src="@drawable/restaurant_btn"
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"
             android:onClick="onClick_shop_btn"/>
@@ -212,13 +163,27 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="83"/>
+            android:layout_weight="0.3"/>
+
+        <ImageButton
+            android:id="@+id/show_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/show_btn"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:onClick="onClick_shop_btn"/>
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"/>
 
         <ImageButton
             android:id="@+id/etc_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="201"
+            android:layout_weight="1"
             android:src="@drawable/etc_btn"
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"
@@ -226,14 +191,13 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="118"/>
-
+            android:layout_weight="0.3"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="61">
+        android:layout_weight="66">
 
     </LinearLayout>
 

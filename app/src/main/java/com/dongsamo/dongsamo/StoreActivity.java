@@ -49,7 +49,7 @@ public class StoreActivity extends AppCompatActivity {
     private String apiKey = "b766d096-d3c5-4a56-b48f-d799ca065447";
     //진아: firebaseAnalytics 선언
     private FirebaseAnalytics mFirebaseAnalytics;
-    private FirebaseFunctions mFunctions;
+
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
     private FirebaseUser firebaseUser;
@@ -94,7 +94,7 @@ public class StoreActivity extends AppCompatActivity {
         Log.d("TAG", "Intent: "+store_x+"  "+store_y+"  "+store_name+"  "+store_type+"  "+store_addr+"  "+store_call+"  "+store_unikey);
         //firebaseAnalytics 초기화
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-        mFunctions = FirebaseFunctions.getInstance();
+
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -170,6 +170,7 @@ public class StoreActivity extends AppCompatActivity {
         String contentType = store_type;
 
         Log.d("TAG", user_id+" "+store_unikey + " " + store_type);
+
         //function으로 보낼 데이터들
 
         Map<String, Object> data = new HashMap<>();
@@ -200,7 +201,7 @@ public class StoreActivity extends AppCompatActivity {
                             Log.d("TAGS", "in here");
                         }
                         else {
-                            mdataSnapshot.getRef().child(store_unikey).setValue(0);
+                            mdataSnapshot.getRef().setValue(store_unikey);
                             heart.setImageResource(R.drawable.true_heart);
                             Log.d("TAGS", "in here2");
                         }
@@ -218,31 +219,6 @@ public class StoreActivity extends AppCompatActivity {
                 Log.w("TAGs", "Failed to read value.", databaseError.toException());
             }
         });
-
-        //Firebase function이랑 연결
-        Task<String> resTask = mFunctions.getHttpsCallable("getDBData").call(data)
-                .continueWith(new Continuation<HttpsCallableResult, String>() {
-                    @Override
-                    public String then(@NonNull Task<HttpsCallableResult> task) throws Exception{
-                        String result = (String) task.getResult().getData();
-                        return result;
-                    }
-                }).addOnCompleteListener(new OnCompleteListener<String>() {
-                    @Override
-                    public void onComplete(@NonNull Task<String> task) {
-                        if (!task.isSuccessful()) {
-                            Exception e = task.getException();
-                            if (e instanceof FirebaseFunctionsException) {
-                                FirebaseFunctionsException ffe = (FirebaseFunctionsException) e;
-                                FirebaseFunctionsException.Code code = ffe.getCode();
-                                Object details = ffe.getDetails();
-                                Log.e("complete", "code: " + code, e);
-                            }
-                        }
-                        else
-                            Log.e("heart", "res: " + task.getResult());
-                    }
-                });
 
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, contentType);

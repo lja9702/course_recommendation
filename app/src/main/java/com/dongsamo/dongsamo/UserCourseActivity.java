@@ -3,6 +3,7 @@ package com.dongsamo.dongsamo;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.Location;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,6 +48,7 @@ public class UserCourseActivity extends AppCompatActivity {
     private String apiKey = "b766d096-d3c5-4a56-b48f-d799ca065447";
     double lon, lat;
     String now_location, store="";
+    float office_x=0, office_y=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,10 +73,15 @@ public class UserCourseActivity extends AppCompatActivity {
         tMapView = (TMapView)findViewById(R.id.user_course_tmap);
         tMapView.setSKTMapApiKey(apiKey);
         tMapView.setLanguage(TMapView.LANGUAGE_KOREAN);
-        tMapView.setZoomLevel(12);
+        tMapView.setZoomLevel(13);
         tMapView.setMapType(TMapView.MAPTYPE_STANDARD);
         tMapView.setCompassMode(false);
         tMapView.setTrackingMode(true);
+
+        //**구청 받아와서 구청 중심으로 지도 보이기
+        office_x = intent.getExtras().getFloat("office_x");
+        office_y = intent.getExtras().getFloat("office_y");
+        tMapView.setLocationPoint((double)office_x,(double)office_y);
 
         course_item.setText("("+(ori_count-count+1)+"/"+ori_count+")"+" "+store);
 
@@ -107,7 +114,7 @@ public class UserCourseActivity extends AppCompatActivity {
         tItem.setIcon(bitmap);
         tItem.setCalloutTitle(pin_name);
         tItem.setCanShowCallout(true);
-        tItem.setAutoCalloutVisible(true);
+        tItem.setAutoCalloutVisible(false);
 
         Bitmap bitmap2 = BitmapFactory.decodeResource(this.getResources(), R.drawable.charc);
         int resizeWidth = 68;
@@ -145,7 +152,8 @@ public class UserCourseActivity extends AppCompatActivity {
 
                         Log.d("Tag", "pinName: "+tMapMarkerItem.getName()+" ps_name: "+ps_name);
                         if(ps_name.equals(tMapMarkerItem.getName())) {
-                            add_course = ps_name;
+                            add_course = tMapMarkerItem.getName();
+                            Log.d("Tag", "pinName: "+add_course);
                             course_item.setText("("+(ori_count-count+1)+"/"+ori_count+")"+" "+add_course);
 
                             break;
@@ -221,13 +229,10 @@ public class UserCourseActivity extends AppCompatActivity {
                     }
                     result = buffer.toString();
 
-                    Log.d("LOG", result);
                     JSONObject jsonObject1 = new JSONObject(result);
                     String CrtfcUpsoInfo = jsonObject1.getString("CrtfcUpsoInfo");
-                    Log.d("LOG", "CrtfcUpsoInfo: " + CrtfcUpsoInfo);
                     JSONObject jsonObject2 = new JSONObject(CrtfcUpsoInfo);
                     String row = jsonObject2.getString("row");
-                    Log.d("Log", "row: "+row);
                     building_list = new JSONArray(row);
 
                     reader.close();
@@ -250,24 +255,29 @@ public class UserCourseActivity extends AppCompatActivity {
 
     public void onClick_user_course_next_btn(View view){
         Intent intent = new Intent(UserCourseActivity.this, UserCourseActivity.class);
-        new_course.concat("  "+add_course);
-        Log.d("NEW_COURSE", new_course);
+        new_course = new_course.concat("  "+add_course);
+        Log.d("NEW_COURSE", "hihi  "+new_course);
         intent.putExtra("new_course", new_course);
         intent.putExtra("ori_count", ori_count);
         intent.putExtra("count", count-1);
         intent.putExtra("store_list", store_list);
         intent.putExtra("store", store_list[ori_count-count+2]);
+        intent.putExtra("office_x", office_x);
+        intent.putExtra("office_y", office_y);
         startActivity(intent);
         finish();
     }
 
     public void onClick_user_course_finish_btn(View view){
         Intent intent = new Intent(UserCourseActivity.this, DecidingActivity.class);
-        Log.d("NEW_COURSE", new_course);
+        new_course = new_course.concat("  "+add_course);
+        Log.d("NEW_COURSE", "hihi  "+new_course);
         intent.putExtra("new_course", new_course);
         intent.putExtra("count", ori_count);
+
         startActivity(intent);
         finish();
     }
+
 
 }

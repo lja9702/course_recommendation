@@ -88,6 +88,7 @@ public class DecidingActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         course = intent.getExtras().getString("new_course","");
+        Log.d("Course222", course);
         store_list = course.split("  ");
         passList = new ArrayList<TMapPoint>();
 

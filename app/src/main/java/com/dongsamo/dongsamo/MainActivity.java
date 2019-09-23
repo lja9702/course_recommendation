@@ -2,24 +2,19 @@ package com.dongsamo.dongsamo;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
-import android.content.DialogInterface;
-import android.content.pm.PackageManager;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.hardware.Camera;
+import android.location.Location;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import android.annotation.TargetApi;
-import android.os.Build;
-
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -29,29 +24,31 @@ import com.dongsamo.dongsamo.firebase_control.Store;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
 import com.googlecode.tesseract.android.TessBaseAPI;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.util.List;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.concurrent.ExecutionException;
 
 
 public class MainActivity extends AppCompatActivity
@@ -67,6 +64,14 @@ public class MainActivity extends AppCompatActivity
     CameraSurfaceView surfaceView;
     ImageButton capture_btn;
     ImageView imageView;
+
+    double lon, lat;
+    String now_location;
+    String dong_location;
+    String siteUrl = "http://openapi.seoul.go.kr:8088/";
+    String ID = "6c5474475266627737325756715870";
+    String contents = "/json/CrtfcUpsoInfo/1/1000/";
+    JSONArray building_list;
 
     DatabaseReference mDatabase;// Add by kongil
 
@@ -102,6 +107,113 @@ public class MainActivity extends AppCompatActivity
         surfaceView = findViewById(R.id.activity_surfaceView);
         capture_btn = (ImageButton)findViewById(R.id.capture_btn);
 
+        GPSclass gpSclass = new GPSclass(this);
+        Location loc = gpSclass.getLocation();
+        lon = loc.getLongitude();
+        lat = loc.getLatitude();
+
+        String api_returns = stringToApi();
+        //내 위치 기반으로 무슨 구 인지 찾아오기
+        String store_num_find = api_returns.substring(api_returns.indexOf("\"name\""));
+        String store_num_array[] = store_num_find.split("\"");
+        now_location = store_num_array[75];
+    }
+
+    public String stringToApi(){
+        ReGeocodeThreadClass test = new ReGeocodeThreadClass(lat, lon);
+        Thread t = new Thread(test);
+        t.start();
+        while(test.get_result() == null);
+
+        return test.get_result();
+    }
+
+    JSONObject JS = null;
+    private boolean insert_post(String result) throws Exception {
+        //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
+        //RDN_CODE_NM: 도로명주소,
+
+        String ps_name = null, ps_type = null, ps_call= null, ps_address= null, ps_unikey;
+        double store_x = 0, store_y = 0;
+        Log.d("TAGS", "bef insert post!");
+        Log.d("TAGS", "hi Log   "+building_list.length());
+        Log.d("TAGS", "af insert post!");
+
+        for (int i = 0; i < building_list.length(); i++) {
+
+            JS = building_list.getJSONObject(i);
+            if (JS != null) {
+
+                ps_name = JS.optString("UPSO_NM");
+                Log.d("Store", "업소: "+ps_name);
+                if(ps_name != null) {
+                    Log.d("Store", result+"  "+ps_name);
+                    if(result.contains(ps_name)) {
+                        Log.d("Success", "HI success");
+
+                        ps_name = JS.optString("UPSO_NM");
+                        ps_call = JS.optString("TEL_NO");
+                        ps_address = JS.optString("RDN_CODE_NM")+JS.optString("RDN_DETAIL_ADDR");
+                        ps_type = JS.optString("BIZCND_CODE_NM");
+                        ps_unikey = JS.optString("UPSO_SNO");
+                        store_x = JS.optDouble("X_CNTS");
+                        store_y = JS.optDouble("Y_DNTS");
+
+                        wintent.putExtra("store_unikey", ps_unikey);
+                        wintent.putExtra("store_name", ps_name);
+                        wintent.putExtra("store_x", (float)store_x);
+                        wintent.putExtra("store_y", (float)store_y);
+                        wintent.putExtra("store_type", ps_type);
+                        wintent.putExtra("store_call", ps_call);
+                        wintent.putExtra("store_address", ps_address);
+
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public class FoodTask extends AsyncTask<String, String, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            URL url = null;
+            String result = null;
+            try {
+                url = new URL(""+siteUrl+ID+contents);
+
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                if (conn.getResponseCode() == conn.HTTP_OK) {
+                    InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
+                    BufferedReader reader = new BufferedReader(tmp);
+                    StringBuffer buffer = new StringBuffer();
+                    String str = null;
+                    while ((str = reader.readLine()) != null) {
+                        buffer.append(str);
+                    }
+                    result = buffer.toString();
+
+                    Log.d("LOG", result);
+                    JSONObject jsonObject1 = new JSONObject(result);
+                    String CrtfcUpsoInfo = jsonObject1.getString("CrtfcUpsoInfo");
+                    Log.d("LOG", "CrtfcUpsoInfo: " + CrtfcUpsoInfo);
+                    JSONObject jsonObject2 = new JSONObject(CrtfcUpsoInfo);
+                    String row = jsonObject2.getString("row");
+                    Log.d("Log", "row: "+row);
+                    building_list = new JSONArray(row);
+
+                    reader.close();
+                } else {
+                    Log.i("통신 결과", conn.getResponseCode() + "에러");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return result;
+        }
     }
 
     /*주변상점보기*/
@@ -282,52 +394,42 @@ public class MainActivity extends AppCompatActivity
 
 
     boolean db_find_flag = false;
-
+    Intent wintent;
     private void check(final String result) {
         db_find_flag = false;
         Log.d("TAGS", "result : "+ result);
 
         /*donging-widget*/
-        mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        ValueEventListener postListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    if (snapshot.getKey().equals("stores")) {
-                        for (DataSnapshot csnapshot : snapshot.getChildren()) {
-                            Store post = csnapshot.getValue(Store.class);
-                            if (result.contains(post.getName())) {
-                                db_find_flag = true;
-                                Intent intent = new Intent(getApplicationContext(), CustomWidget.class);
+        try {
+            Log.d("TAGS", "FOodTask");
+            new FoodTask().execute().get();
+            Log.d("TAGS", "Before insert");
+            Store post = new Store();
+            wintent = new Intent(getApplicationContext(), CustomWidget.class);
 
-                                intent.putExtra("store", post);
-                                Log.d("TAGS", "add");
-                                if(intent.hasExtra("store")) {
-                                    Log.d("TAGS", "find!");
-                                    startActivityForResult(intent, 1);
-                                }
-                                else {
-                                    Log.d("TAGS", "no find!");
-                                }
+            if(insert_post(result)){
+                db_find_flag = true;
 
-                            }
-                        }
-                    }
-                    // ...
+                Log.d("TAGS", "After insert");
+                wintent.putExtra("store", post);
+                Log.d("TAGS", "name : " + post.getName() + post.getX());
+                Log.d("TAGS", "add");
+                if(wintent.hasExtra("store")) {
+                    Log.d("TAGS", "find!");
+                    startActivityForResult(wintent, 1);
+                }
+                else {
+                    Log.d("TAGS", "no find!");
                 }
             }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w("TAG", "loadPost:onCancelled", databaseError.toException());
-                // ...
-            }
-        };
-
-        mDatabase.addValueEventListener(postListener);
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         if (!db_find_flag) {
             Toast.makeText(getApplicationContext(), result+"의 평가를 찾을 수 없습니다.", Toast.LENGTH_LONG).show();
