@@ -113,6 +113,7 @@ public class CourseActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "2개 이상 선택해주세요.", Toast.LENGTH_LONG).show();
             return;
         }
+        office="";
         office = office.concat("청");
         get_xy(office);
 
@@ -194,6 +195,8 @@ public class CourseActivity extends AppCompatActivity {
         }
 
         Intent intent = new Intent(CourseActivity.this, AIRunningActivity.class);
+        office = office.concat("청");
+        intent.putExtra("office", office);
         intent.putExtra("new_course", course_text.getText().toString());
         intent.putExtra("eat_count", eat_count);
         intent.putExtra("user_id", user_id);

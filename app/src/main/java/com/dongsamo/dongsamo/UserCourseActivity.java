@@ -63,7 +63,9 @@ public class UserCourseActivity extends AppCompatActivity {
         now_location = intent.getExtras().getString("location","");
         new_course = intent.getExtras().getString("new_course", "");
         store = intent.getExtras().getString("store","");
-
+        //**구청 받아와서 구청 중심으로 지도 보이기
+        office_x = intent.getExtras().getFloat("office_x");
+        office_y = intent.getExtras().getFloat("office_y");
 
         next_btn = (ImageButton)findViewById(R.id.user_course_next_btn);
         user_course_finish_btn = (ImageButton)findViewById(R.id.user_course_finish_btn);
@@ -78,9 +80,8 @@ public class UserCourseActivity extends AppCompatActivity {
         tMapView.setCompassMode(false);
         tMapView.setTrackingMode(true);
 
-        //**구청 받아와서 구청 중심으로 지도 보이기
-        office_x = intent.getExtras().getFloat("office_x");
-        office_y = intent.getExtras().getFloat("office_y");
+        Log.d("OFFICE", "X: "+office_x+" Y: "+office_y);
+
         tMapView.setLocationPoint((double)office_x,(double)office_y);
 
         course_item.setText("("+(ori_count-count+1)+"/"+ori_count+")"+" "+store);
@@ -131,6 +132,7 @@ public class UserCourseActivity extends AppCompatActivity {
         // 핀모양으로 된 마커를 사용할 경우 마커 중심을 하단 핀 끝으로 설정.
         tItem.setPosition((float)0.5, (float)0.5);         // 마커의 중심점을 하단, 중앙으로 설정
 
+        tMapView.setLocationPoint(x,y);
         tMapView.addMarkerItem(pin_id, tItem);
 
         tMapView.setOnCalloutRightButtonClickListener(new TMapView.OnCalloutRightButtonClickCallback() {

@@ -83,8 +83,8 @@ public class DecidingActivity extends AppCompatActivity {
         tMapView.setTrackingMode(true);
         activity_deciding.addView(tMapView);
 
-        no_course_btn = (ImageButton)findViewById(R.id.no_course_btn);
-        decide_course_btn = (ImageButton)findViewById(R.id.decide_course_btn);
+//        no_course_btn = (ImageButton)findViewById(R.id.no_course_btn);
+//        decide_course_btn = (ImageButton)findViewById(R.id.decide_course_btn);
 
         Intent intent = getIntent();
         course = intent.getExtras().getString("new_course","");
@@ -151,17 +151,17 @@ public class DecidingActivity extends AppCompatActivity {
         return test.get_result();
     }
 
-
-    public void onClick_decide_course_btn(View view){
-        // Toast.makeText(DecidingActivity.super.getApplicationContext(), "이 코스로 결정!", Toast.LENGTH_LONG).show();
-        decide_course_btn.setVisibility(View.INVISIBLE);
-    }
-
-    public void onClick_no_course_btn(View view){
-        Intent intent = new Intent(DecidingActivity.this, AIRunningActivity.class);
-        startActivity(intent);
-        finish();
-    }
+//
+//    public void onClick_decide_course_btn(View view){
+//        // Toast.makeText(DecidingActivity.super.getApplicationContext(), "이 코스로 결정!", Toast.LENGTH_LONG).show();
+//        decide_course_btn.setVisibility(View.INVISIBLE);
+//    }
+//
+//    public void onClick_no_course_btn(View view){
+//        Intent intent = new Intent(DecidingActivity.this, AIRunningActivity.class);
+//        startActivity(intent);
+//        finish();
+//    }
 
     protected void pinpinEE(String pin_name, float x, float y, String pin_id){
         TMapPoint tpoint = new TMapPoint(store_y, store_x);
