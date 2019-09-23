@@ -319,6 +319,10 @@ public class MainActivity extends AppCompatActivity
                                             public void onFailure(@NonNull Exception e) {
                                                 // Task failed with an exception
                                                 Log.d("TAGS", "FAIL");
+                                                capture_btn.setEnabled(true);
+                                                capture_btn.setImageResource(R.drawable.capture);
+                                                Toast.makeText(getApplicationContext(), "FAIL", Toast.LENGTH_LONG).show();
+
                                                 // ...
                                             }
                                         }
