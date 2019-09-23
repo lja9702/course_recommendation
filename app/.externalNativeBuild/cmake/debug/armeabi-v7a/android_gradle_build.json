@@ -1,37 +1,37 @@
 {
   "stringTable": {
-    "0": "/home/kongil/Dongsamo/app/.externalNativeBuild/cmake/debug/armeabi-v7a",
-    "1": "--target=armv7-none-linux-androideabi23 --gcc-toolchain=/home/kongil/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/kongil/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dnative_lib_EXPORTS -I/home/kongil/Dongsamo/opencv/native/jni/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -std=gnu++11 -O0 -fno-limit-debug-info -fPIC"
+    "0": "/home/lja9702/StudioProjects/course_recommendation/app/.externalNativeBuild/cmake/debug/armeabi-v7a",
+    "1": "--target=armv7-none-linux-androideabi23 --gcc-toolchain=/home/lja9702/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/lja9702/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dnative_lib_EXPORTS -I/home/lja9702/StudioProjects/course_recommendation/opencv/native/jni/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -std=gnu++11 -O0 -fno-limit-debug-info -fPIC"
   },
   "buildFiles": [
-    "/home/kongil/Android/Sdk/ndk-bundle/build/cmake/platforms.cmake",
-    "/home/kongil/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
-    "/home/kongil/Dongsamo/app/src/main/cpp/CMakeLists.txt"
+    "/home/lja9702/Android/Sdk/ndk-bundle/build/cmake/platforms.cmake",
+    "/home/lja9702/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+    "/home/lja9702/StudioProjects/course_recommendation/app/src/main/cpp/CMakeLists.txt"
   ],
   "cleanCommands": [
-    "/home/kongil/Android/Sdk/cmake/3.10.2.4988404/bin/cmake --build \"/home/kongil/Dongsamo/app/.externalNativeBuild/cmake/debug/armeabi-v7a\" --target clean"
+    "/home/lja9702/Android/Sdk/cmake/3.10.2.4988404/bin/cmake --build \"/home/lja9702/StudioProjects/course_recommendation/app/.externalNativeBuild/cmake/debug/armeabi-v7a\" --target clean"
   ],
   "libraries": {
     "native-lib-Debug-armeabi-v7a": {
-      "buildCommand": "/home/kongil/Android/Sdk/cmake/3.10.2.4988404/bin/cmake --build \"/home/kongil/Dongsamo/app/.externalNativeBuild/cmake/debug/armeabi-v7a\" --target native-lib",
+      "buildCommand": "/home/lja9702/Android/Sdk/cmake/3.10.2.4988404/bin/cmake --build \"/home/lja9702/StudioProjects/course_recommendation/app/.externalNativeBuild/cmake/debug/armeabi-v7a\" --target native-lib",
       "buildType": "debug",
-      "toolchain": "3285680951",
+      "toolchain": "1809180056",
       "abi": "armeabi-v7a",
       "artifactName": "native-lib",
       "files": [
         {
-          "src": "/home/kongil/Dongsamo/app/src/main/cpp/native-lib.cpp",
+          "src": "/home/lja9702/StudioProjects/course_recommendation/app/src/main/cpp/native-lib.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         }
       ],
       "headers": [],
-      "output": "/home/kongil/Dongsamo/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so"
+      "output": "/home/lja9702/StudioProjects/course_recommendation/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so"
     }
   },
   "toolchains": {
-    "3285680951": {
-      "cppCompilerExecutable": "/home/kongil/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    "1809180056": {
+      "cppCompilerExecutable": "/home/lja9702/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
     }
   },
   "cFileExtensions": [],

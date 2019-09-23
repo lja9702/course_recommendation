@@ -101,32 +101,6 @@ public class AIRunningActivity extends AppCompatActivity {
                         return result;
                     }
                 }).addOnCompleteListener(onCompleteListener);
-        Log.i("recommed", "msg" + recommendResult);
-
-        while(true){
-            if(recommendIsComplete)
-                break;
-        }
-
-
-        try {
-            new FoodTask().execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        int cntt = 0;
-        for(int i=1; i<st_list.length; i++){
-            if(st_list[i].equals("맛집")){
-                st_list[i] = recommendResult.get(cntt);
-                cntt++;
-            }
-            pass_course = pass_course.concat("  "+st_list[i]);
-        }
 
 
 
@@ -159,83 +133,117 @@ public class AIRunningActivity extends AppCompatActivity {
                 parent.recommendResult = (List <String> )task.getResult().get("recomStoreList");
                 parent.recommendIsComplete = true;
                 Log.i("recommend", "res: " + parent.recommendResult);
+
+                try {
+                    new FoodTask().execute().get();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
             }
         }
-    }
 
-    JSONObject JS = null;
-    private void insert_post() throws Exception {
-        //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
-        //RDN_CODE_NM: 도로명주소,
+        public class FoodTask extends AsyncTask<String, String, String> {
+            @Override
+            protected String doInBackground(String... params) {
+                URL url = null;
+                String result = null;
+                try {
+                    url = new URL(""+siteUrl+ID+contents);
+
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                    if (conn.getResponseCode() == conn.HTTP_OK) {
+                        InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
+                        BufferedReader reader = new BufferedReader(tmp);
+                        StringBuffer buffer = new StringBuffer();
+                        String str = null;
+                        while ((str = reader.readLine()) != null) {
+                            buffer.append(str);
+                        }
+                        result = buffer.toString();
+
+                        Log.d("LOG", result);
+                        JSONObject jsonObject1 = new JSONObject(result);
+                        String CrtfcUpsoInfo = jsonObject1.getString("CrtfcUpsoInfo");
+                        Log.d("LOG", "CrtfcUpsoInfo: " + CrtfcUpsoInfo);
+                        JSONObject jsonObject2 = new JSONObject(CrtfcUpsoInfo);
+                        String row = jsonObject2.getString("row");
+                        Log.d("Log", "row: "+row);
+                        building_list = new JSONArray(row);
+
+                        reader.close();
+                    } else {
+                        Log.i("통신 결과", conn.getResponseCode() + "에러");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    insert_post( );
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                return result;
+            }
+        }
+
+        JSONObject JS = null;
+        private void insert_post() throws Exception {
+            //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
+            //RDN_CODE_NM: 도로명주소,
 
 
-        String ps_name = null, ps_type = null;
-        double store_x = 0, store_y = 0;
-        Log.d("LOG", "hi Log   "+building_list.length());
+            String ps_name = null, ps_type = null;
+            double store_x = 0, store_y = 0;
+            Log.d("LOG", "hi Log   "+building_list.length());
 
-        int cnt = 0;
-        for(int k=0; k<recommendResult.size(); k++) {
-            for (int i = 0; i < building_list.length(); i++) {
+            int cnt = 0;
+            for(int k=0; k<parent.recommendResult.size(); k++) {
+                for (int i = 0; i < building_list.length(); i++) {
 
-                JS = building_list.getJSONObject(i);
-                if (JS != null) {
-                    ps_name = JS.optString("UPSO_NM");
-                    ps_type = JS.optString("UPSO_SNO");
-                    if (ps_name != null) {
-                        if (recommendResult.get(k).equals(ps_type)){
-                            result_list[cnt++] = ps_name;
+                    JS = building_list.getJSONObject(i);
+                    if (JS != null) {
+                        ps_name = JS.optString("UPSO_NM");
+                        ps_type = JS.optString("UPSO_SNO");
+                        if (ps_name != null) {
+                            if (parent.recommendResult.get(k).equals(ps_type)){
+                                Log.i("Log", "hi Log");
+                                result_list[cnt++] = ps_name;
+                            }
                         }
                     }
                 }
             }
-        }
-    }
 
-    public class FoodTask extends AsyncTask<String, String, String> {
-        @Override
-        protected String doInBackground(String... params) {
-            URL url = null;
-            String result = null;
-            try {
-                url = new URL(""+siteUrl+ID+contents+office);
 
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-                if (conn.getResponseCode() == conn.HTTP_OK) {
-                    InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
-                    BufferedReader reader = new BufferedReader(tmp);
-                    StringBuffer buffer = new StringBuffer();
-                    String str = null;
-                    while ((str = reader.readLine()) != null) {
-                        buffer.append(str);
-                    }
-                    result = buffer.toString();
-
-                    Log.d("LOG", result);
-                    JSONObject jsonObject1 = new JSONObject(result);
-                    String CrtfcUpsoInfo = jsonObject1.getString("CrtfcUpsoInfo");
-                    Log.d("LOG", "CrtfcUpsoInfo: " + CrtfcUpsoInfo);
-                    JSONObject jsonObject2 = new JSONObject(CrtfcUpsoInfo);
-                    String row = jsonObject2.getString("row");
-                    Log.d("Log", "row: "+row);
-                    building_list = new JSONArray(row);
-
-                    reader.close();
-                } else {
-                    Log.i("통신 결과", conn.getResponseCode() + "에러");
+            pass_course="";
+            int cntt = 0;
+            for(int i=0; i<st_list.length; i++){
+                if(st_list[i].equals("맛집")){
+                    pass_course += ("  "+result_list[i]);
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
+                else
+                    pass_course += ("  " + st_list[i]);
+
             }
 
-            try {
-                insert_post( );
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            return result;
+            Log.d("new_course", pass_course);
+            Intent intent = new Intent(AIRunningActivity.this, DecidingActivity.class);
+            intent.putExtra("new_course", pass_course);
+            startActivity(intent);
         }
     }
+
+
+
+
 
 }

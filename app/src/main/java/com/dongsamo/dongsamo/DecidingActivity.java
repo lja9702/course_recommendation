@@ -92,26 +92,27 @@ public class DecidingActivity extends AppCompatActivity {
         store_list = course.split("  ");
         passList = new ArrayList<TMapPoint>();
 
+        Log.d("Course222", store_list[1]);
         ///출발지
-        String api_returns = stringToApi(store_list[1]);
+        String api_returns = stringToApi(store_list[2]);
         String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
         String now_data_array[] = now_data.split("\"");
         store_x =  Float.parseFloat(now_data_array[3]);
         store_y =  Float.parseFloat(now_data_array[7]);
         tp1 = new TMapPoint(store_y, store_x);
-        pinpinEE(store_list[1], store_y, store_x,"no"+store_list[1]+"_test");
+        pinpinEE(store_list[2], store_y, store_x,"no"+store_list[2]+"_test");
 
         ///시작지
-        String api_returns2 = stringToApi(store_list[2]);
+        String api_returns2 = stringToApi(store_list[3]);
         String now_data2 = api_returns2.substring(api_returns2.indexOf("\"x\""));
         String now_data_array2[] = now_data2.split("\"");
         store_x =  Float.parseFloat(now_data_array2[3]);
         store_y =  Float.parseFloat(now_data_array2[7]);
         tp2 = new TMapPoint(store_y, store_x);
-        pinpinEE(store_list[2], store_y, store_x,"no"+store_list[2]+"_test");
+        pinpinEE(store_list[3], store_y, store_x,"no"+store_list[3]+"_test");
 
 
-        for(int i=3; i < store_list.length; i++){
+        for(int i=4; i < store_list.length; i++){
             String api_returns3 = stringToApi(store_list[i]);
             String now_data3 = api_returns3.substring(api_returns3.indexOf("\"x\""));
             String now_data_array3[] = now_data3.split("\"");

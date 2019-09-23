@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/kongil/Dongsamo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v21/values-watch-v21.xml",
+            "outputFile": "/home/lja9702/StudioProjects/course_recommendation/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "/home/kongil/.gradle/caches/transforms-2/files-2.1/bfb88bacd6d248c15a4b7466a8337c16/res/values-watch-v21/values-watch-v21.xml",
+                    "source": "/home/lja9702/.gradle/caches/transforms-2/files-2.1/06f49d62e5f91a7635036bf15ebda28b/res/values-watch-v21/values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",
