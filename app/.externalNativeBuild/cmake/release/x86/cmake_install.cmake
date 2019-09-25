@@ -1,4 +1,4 @@
-# Install script for directory: /Users/MIPUNG/Desktop/Dongsamo/app/src/main/cpp
+# Install script for directory: /Users/Mipung/Desktop/Dongsamo/app/src/main/cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

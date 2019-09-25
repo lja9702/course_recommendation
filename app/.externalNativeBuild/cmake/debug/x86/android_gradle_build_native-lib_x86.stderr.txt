@@ -1,1 +1,0 @@
-ninja: error: '/Users/MIPUNG/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/23/liblog.so', needed by '/Users/Mipung/Desktop/Dongsamo/app/build/intermediates/cmake/debug/obj/x86/libnative-lib.so', missing and no known rule to make it

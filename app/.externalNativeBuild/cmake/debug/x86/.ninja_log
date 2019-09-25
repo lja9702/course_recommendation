@@ -1,3 +1,3 @@
 # ninja log v5
-1	37	1569394259	build.ninja	361257659bd5b07a
-1	43	1569394403	build.ninja	361257659bd5b07a
+0	2068	1569422527	CMakeFiles/native-lib.dir/native-lib.cpp.o	1a3d624a35ef654b
+2069	2127	1569422527	/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/cmake/debug/obj/x86/libnative-lib.so	d6bab4ffc6c65129

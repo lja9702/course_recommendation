@@ -1,6 +1,6 @@
 Executable : /Users/MIPUNG/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake
 arguments : 
--H/Users/MIPUNG/Desktop/Dongsamo/app/src/main/cpp
+-H/Users/Mipung/Desktop/Dongsamo/app/src/main/cpp
 -B/Users/MIPUNG/Desktop/Dongsamo/app/.externalNativeBuild/cmake/debug/x86_64
 -DANDROID_ABI=x86_64
 -DANDROID_PLATFORM=android-23

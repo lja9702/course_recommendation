@@ -1,6 +1,0 @@
-[0/1] Re-running CMake...
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/MIPUNG/Desktop/Dongsamo/app/.externalNativeBuild/cmake/debug/x86_64
-[1/2] Building CXX object CMakeFiles/native-lib.dir/native-lib.cpp.o
-[2/2] Linking CXX shared library /Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so
