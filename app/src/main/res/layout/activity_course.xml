@@ -197,7 +197,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="66">
+        android:layout_weight="75">
 
     </LinearLayout>
 
@@ -209,7 +209,22 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="210"/>
+            android:layout_weight="60"/>
+
+        <ImageButton
+            android:id="@+id/direct_add_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="270"
+            android:src="@drawable/direct_add_btn"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:onClick="onClick_direct_add_btn"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"/>
 
         <ImageButton
             android:id="@+id/ai_ask_btn"
@@ -220,6 +235,7 @@
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"
             android:onClick="onClick_ai_ask_btn"/>
+
     </LinearLayout>
 
 </LinearLayout>

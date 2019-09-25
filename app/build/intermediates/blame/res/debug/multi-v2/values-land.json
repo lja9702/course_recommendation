@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
+            "outputFile": "/Users/CHOI_JIN/Documents/so/course_recommendation/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "/Users/MIPUNG/.gradle/caches/transforms-2/files-2.1/dd872f4c2de8933da07e0d70ae7c23cc/res/values-land/values-land.xml",
+                    "source": "/Users/CHOI_JIN/.gradle/caches/transforms-2/files-2.1/aaf3a366e57859b81b4ea53ae3a5543c/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",

@@ -67,6 +67,9 @@ public class UserCourseActivity extends AppCompatActivity {
         office_x = intent.getExtras().getFloat("office_x");
         office_y = intent.getExtras().getFloat("office_y");
 
+        intent.putExtra("office_x", office_x);
+        intent.putExtra("office_y", office_y);
+
         next_btn = (ImageButton)findViewById(R.id.user_course_next_btn);
         user_course_finish_btn = (ImageButton)findViewById(R.id.user_course_finish_btn);
         fin_btn = (ImageButton)findViewById(R.id.user_course_finish_btn);
@@ -84,6 +87,7 @@ public class UserCourseActivity extends AppCompatActivity {
 
         tMapView.setLocationPoint((double)office_x,(double)office_y);
 
+        Log.d("OFFICE", "--" + "X: "+office_x+" Y: "+office_y);
         course_item.setText("("+(ori_count-count+1)+"/"+ori_count+")"+" "+store);
 
         if(count == 1){
@@ -132,7 +136,7 @@ public class UserCourseActivity extends AppCompatActivity {
         // 핀모양으로 된 마커를 사용할 경우 마커 중심을 하단 핀 끝으로 설정.
         tItem.setPosition((float)0.5, (float)0.5);         // 마커의 중심점을 하단, 중앙으로 설정
 
-        tMapView.setLocationPoint(x,y);
+        //tMapView.setLocationPoint(x,y);
         tMapView.addMarkerItem(pin_id, tItem);
 
         tMapView.setOnCalloutRightButtonClickListener(new TMapView.OnCalloutRightButtonClickCallback() {
@@ -171,14 +175,13 @@ public class UserCourseActivity extends AppCompatActivity {
     private void insert_post() throws Exception {
         //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
         //RDN_CODE_NM: 도로명주소,
-
-
         String ps_name = null, ps_type = null, ps_call= null, ps_address= null;
         double store_x = 0, store_y = 0;
         Log.d("LOG", "hi Log   "+building_list.length());
 
         int cnt = 0;
         for (int i = 0; i < building_list.length(); i++) {
+
             if(cnt > 30)
                 break;
             cnt++;
@@ -200,12 +203,16 @@ public class UserCourseActivity extends AppCompatActivity {
                     else if(jsonName[j].equals("Y_DNTS")){
                         store_y = JS.optDouble("Y_DNTS");
                     }
+                    else if(jsonName[j].equals("CGG_CODE_NM")){
+                        Log.d("OFFICE: ", JS.optString("CGG_CODE_NM"));
+                    }
                 }
             }
 
             if(ps_name != null) {
-                Log.d("LOG", "hi "+ps_name+" "+store_x);
+                Log.d("LOG", "hi "+ps_name+" "+store_x+" "+store_y);
                 pinpinEE(ps_name, store_x, store_y, "Pin"+ps_name);
+
             }
         }
 
@@ -258,7 +265,7 @@ public class UserCourseActivity extends AppCompatActivity {
     public void onClick_user_course_next_btn(View view){
         Intent intent = new Intent(UserCourseActivity.this, UserCourseActivity.class);
         new_course = new_course.concat("  "+add_course);
-        Log.d("NEW_COURSE", "hihi  "+new_course);
+        Log.d("NEW_COURSE", "hihi  "+office_x+",  "+office_y);
         intent.putExtra("new_course", new_course);
         intent.putExtra("ori_count", ori_count);
         intent.putExtra("count", count-1);
@@ -266,6 +273,8 @@ public class UserCourseActivity extends AppCompatActivity {
         intent.putExtra("store", store_list[ori_count-count+2]);
         intent.putExtra("office_x", office_x);
         intent.putExtra("office_y", office_y);
+        intent.putExtra("location", now_location);
+
         startActivity(intent);
         finish();
     }

@@ -935,6 +935,7 @@ id decor_content_parent
 id default_activity_button
 id dimensions
 id direct
+id direct_add_btn
 id direct_linear
 id disableHome
 id edit_query
