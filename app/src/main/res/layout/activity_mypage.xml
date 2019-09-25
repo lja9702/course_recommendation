@@ -407,12 +407,23 @@
         <ImageButton
             android:id="@+id/mypage_logout_btn"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="130"
             android:background="@android:color/transparent"
             android:onClick="onClick_mypage_logout_btn"
             android:scaleType="fitCenter"
             android:src="@drawable/logout_btn" />
+
+        <ImageButton
+            android:id="@+id/mypage_logout_btn_black"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="130"
+            android:background="@android:color/transparent"
+            android:onClick="onClick_mypage_logout_btn"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logout_btn_black"
+            android:visibility="gone"/>
 
         <Space
             android:layout_width="0dp"
@@ -428,5 +439,17 @@
             android:onClick="onClick_mypage_withdraw_btn"
             android:scaleType="fitCenter"
             android:src="@drawable/withdraw_btn" />
+
+        <ImageButton
+            android:id="@+id/mypage_withdraw_btn_black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="140"
+            android:background="@android:color/transparent"
+            android:onClick="onClick_mypage_withdraw_btn"
+            android:scaleType="fitCenter"
+            android:src="@drawable/withdraw_btn_black"
+            android:visibility="gone"/>
+
     </LinearLayout>
 </LinearLayout>

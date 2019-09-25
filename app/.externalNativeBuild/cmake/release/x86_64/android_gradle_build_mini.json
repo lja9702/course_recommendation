@@ -1,0 +1,18 @@
+{
+  "buildFiles": [
+    "/Users/MIPUNG/Library/Android/sdk/ndk-bundle/build/cmake/platforms.cmake",
+    "/Users/MIPUNG/Desktop/Dongsamo/app/src/main/cpp/CMakeLists.txt",
+    "/Users/MIPUNG/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/MIPUNG/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build \"/Users/MIPUNG/Desktop/Dongsamo/app/.externalNativeBuild/cmake/release/x86_64\" --target clean"
+  ],
+  "libraries": {
+    "native-lib-Release-x86_64": {
+      "artifactName": "native-lib",
+      "buildCommand": "/Users/MIPUNG/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build \"/Users/MIPUNG/Desktop/Dongsamo/app/.externalNativeBuild/cmake/release/x86_64\" --target native-lib",
+      "abi": "x86_64",
+      "output": "/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/cmake/release/obj/x86_64/libnative-lib.so"
+    }
+  }
+}

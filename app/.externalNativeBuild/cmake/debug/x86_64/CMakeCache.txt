@@ -30,7 +30,7 @@ CMAKE_ANDROID_ARCH_ABI:UNINITIALIZED=x86_64
 CMAKE_ANDROID_NDK:UNINITIALIZED=/Users/MIPUNG/Library/Android/sdk/ndk-bundle
 
 //Archiver
-CMAKE_AR:FILEPATH=/Users/MIPUNG/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/x86_64-linux-android-ar
+CMAKE_AR:FILEPATH=/Users/Mipung/Desktop/Dongsamo/app/build/intermediates/cmake/debug/obj/x86/libnative-lib.so
 
 //Flags used by the compiler during all build types.
 CMAKE_ASM_FLAGS:STRING=
@@ -120,7 +120,7 @@ CMAKE_INSTALL_PREFIX:PATH=/usr/local
 CMAKE_LIBRARY_OUTPUT_DIRECTORY:UNINITIALIZED=/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/cmake/debug/obj/x86_64
 
 //Path to a program.
-CMAKE_LINKER:FILEPATH=/Users/MIPUNG/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/x86_64-linux-android-ld
+CMAKE_LINKER:FILEPATH=Users/Mipung/Desktop/Dongsamo/app/build/intermediates/cmake/debug/obj/x86/libnative-lib.so
 
 //No help, variable specified on the command line.
 CMAKE_MAKE_PROGRAM:UNINITIALIZED=/Users/MIPUNG/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja

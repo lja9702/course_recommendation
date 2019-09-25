@@ -28,6 +28,16 @@
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"
             android:onClick="onClick_main_mypage_btn"/>
+        <ImageButton
+            android:id="@+id/main_mypage_btn_black"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="120"
+            android:src="@drawable/mypage_btn_black"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:onClick="onClick_main_mypage_btn"
+            android:visibility="gone"/>
 
     </LinearLayout>
 
@@ -90,6 +100,19 @@
                 android:scaleType="fitCenter"
                 android:background="@android:color/transparent"
                 android:onClick="onClick_main_shop_list_btn"/>
+
+            <ImageButton
+                android:id="@+id/main_shop_list_btn_black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="247"
+                android:src="@drawable/shop_list_black"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:onClick="onClick_main_shop_list_btn"
+                android:visibility="gone"/>
+
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -119,6 +142,17 @@
                 android:scaleType="fitCenter"
                 android:background="@android:color/transparent"
                 android:onClick="onClick_main_course_ask_btn"/>
+
+            <ImageButton
+                android:id="@+id/main_course_ask_btn_black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="272"
+                android:src="@drawable/course_ask_black"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:onClick="onClick_main_course_ask_btn"
+                android:visibility="gone"/>
 
             <Space
                 android:layout_width="0dp"

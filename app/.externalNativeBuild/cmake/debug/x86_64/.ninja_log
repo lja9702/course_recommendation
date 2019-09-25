@@ -1,0 +1,14 @@
+# ninja log v5
+0	50	1569394256	build.ninja	9b3c38f4e651b63a
+0	2165	1569394258	CMakeFiles/native-lib.dir/native-lib.cpp.o	371ee16cb7e582db
+2166	2228	1569394258	/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	2caa105e2afbec6b
+0	43	1569394344	build.ninja	9b3c38f4e651b63a
+1	2215	1569394347	CMakeFiles/native-lib.dir/native-lib.cpp.o	371ee16cb7e582db
+2215	2273	1569394347	/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	2caa105e2afbec6b
+1	1981	1569394403	CMakeFiles/native-lib.dir/native-lib.cpp.o	371ee16cb7e582db
+1981	2039	1569394403	/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	2caa105e2afbec6b
+1	1803	1569394463	CMakeFiles/native-lib.dir/native-lib.cpp.o	371ee16cb7e582db
+1804	1844	1569394463	/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	2caa105e2afbec6b
+1	40	1569394516	build.ninja	9b3c38f4e651b63a
+1	1786	1569394518	CMakeFiles/native-lib.dir/native-lib.cpp.o	371ee16cb7e582db
+1786	1855	1569394518	/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	2caa105e2afbec6b
