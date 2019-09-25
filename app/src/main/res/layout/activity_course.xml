@@ -160,17 +160,6 @@
             android:background="@android:color/transparent"
             android:onClick="onClick_shop_btn"/>
 
-        <ImageButton
-            android:id="@+id/restaurant_btn_black"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/restaurant_btn_black"
-            android:scaleType="fitCenter"
-            android:background="@android:color/transparent"
-            android:onClick="onClick_shop_btn"
-            android:visibility="gone"/>
-
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -185,18 +174,6 @@
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"
             android:onClick="onClick_shop_btn"/>
-
-        <ImageButton
-            android:id="@+id/show_btn_black"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/show_btn_black"
-            android:scaleType="fitCenter"
-            android:background="@android:color/transparent"
-            android:onClick="onClick_shop_btn"
-            android:visibility="gone"/>
-
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -211,18 +188,6 @@
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"
             android:onClick="onClick_shop_btn"/>
-
-        <ImageButton
-            android:id="@+id/etc_btn_black"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/etc_btn_black"
-            android:scaleType="fitCenter"
-            android:background="@android:color/transparent"
-            android:onClick="onClick_shop_btn"
-            android:visibility="gone"/>
-
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -232,7 +197,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="66">
+        android:layout_weight="75">
 
     </LinearLayout>
 
@@ -244,7 +209,7 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="62"/>
+            android:layout_weight="60"/>
 
         <ImageButton
             android:id="@+id/direct_add_btn"
@@ -255,10 +220,11 @@
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"
             android:onClick="onClick_direct_add_btn"/>
+
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="62"/>
+            android:layout_weight="70"/>
 
         <ImageButton
             android:id="@+id/ai_ask_btn"
@@ -269,6 +235,7 @@
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"
             android:onClick="onClick_ai_ask_btn"/>
+
     </LinearLayout>
 
 </LinearLayout>

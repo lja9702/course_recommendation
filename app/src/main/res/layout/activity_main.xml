@@ -47,24 +47,10 @@
         android:layout_weight="1044"
         android:background="#FFF">
 
-        <!--
-        <org.opencv.android.JavaCameraView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/activity_surface_view" />
-        -->
-
         <com.dongsamo.dongsamo.CameraSurfaceView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/activity_surfaceView" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="191dp"
-            android:layout_height="209dp"
-            android:layout_gravity="bottom|right"
-            app:srcCompat="@android:color/background_dark" />
 
     </FrameLayout>
 

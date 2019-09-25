@@ -92,6 +92,7 @@ public class DecidingActivity extends AppCompatActivity {
         store_list = course.split("  ");
         passList = new ArrayList<TMapPoint>();
 
+        //course = "  "+course;
         Log.d("Course222", store_list[1]);
         ///출발지
         String api_returns = stringToApi(store_list[2]);

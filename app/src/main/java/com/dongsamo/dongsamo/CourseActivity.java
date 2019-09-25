@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import android.util.Log;
 
 
 public class CourseActivity extends AppCompatActivity {
@@ -113,8 +114,8 @@ public class CourseActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "2개 이상 선택해주세요.", Toast.LENGTH_LONG).show();
             return;
         }
-        office="";
-        office = office.concat("청");
+
+        office += "청";
         get_xy(office);
 
         course = String.valueOf(course_text.getText());
@@ -128,6 +129,8 @@ public class CourseActivity extends AppCompatActivity {
 
         intent.putExtra("office_x", office_x);
         intent.putExtra("office_y", office_y);
+
+        Log.d("OFFICE", "course   office"+office+"X: "+office_x+" Y: "+office_y);
 
         startActivity(intent);
     }

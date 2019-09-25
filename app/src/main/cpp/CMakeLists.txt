@@ -4,11 +4,7 @@
 # Sets the minimum version of CMake required to build the native library.
 
 cmake_minimum_required(VERSION 3.4.1)
-set(pathPROJECT /Users/MIPUNG/Desktop/Dongsamo
-
-
-
-        )
+set(pathPROJECT /Users/Mipung/Desktop/Dongsamo)
 set(pathOPENCV ${pathPROJECT}/opencv)
 set(pathLIBOPENCV_JAVA ${pathOPENCV}/native/libs/${ANDROID_ABI}/libopencv_java4.so)
 

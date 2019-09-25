@@ -957,7 +957,6 @@ id edit_query
 id end
 id end_padder
 id etc_btn
-id etc_btn_black
 id expand_activities_button
 id expanded_menu
 id fill
@@ -1065,7 +1064,6 @@ id progress_horizontal
 id radio
 id recylerview
 id restaurant_btn
-id restaurant_btn_black
 id right
 id right_icon
 id right_side
@@ -1093,7 +1091,6 @@ id showCustom
 id showHome
 id showTitle
 id show_btn
-id show_btn_black
 id signin_back
 id signup_email
 id signup_id
