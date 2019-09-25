@@ -209,7 +209,21 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="210"/>
+            android:layout_weight="62"/>
+
+        <ImageButton
+            android:id="@+id/direct_add_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="270"
+            android:src="@drawable/direct_add_btn"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:onClick="onClick_direct_add_btn"/>
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="62"/>
 
         <ImageButton
             android:id="@+id/ai_ask_btn"
