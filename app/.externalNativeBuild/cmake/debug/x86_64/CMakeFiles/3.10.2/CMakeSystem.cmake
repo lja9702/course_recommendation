@@ -1,6 +1,6 @@
-set(CMAKE_HOST_SYSTEM "Darwin-18.6.0")
+set(CMAKE_HOST_SYSTEM "Darwin-18.7.0")
 set(CMAKE_HOST_SYSTEM_NAME "Darwin")
-set(CMAKE_HOST_SYSTEM_VERSION "18.6.0")
+set(CMAKE_HOST_SYSTEM_VERSION "18.7.0")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
 include("/Users/MIPUNG/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake")
