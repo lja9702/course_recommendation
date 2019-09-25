@@ -3,99 +3,77 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/direct_background"
     android:orientation="vertical"
-    android:weightSum="1280"
-    android:background="@drawable/background4">
+    android:weightSum="1280">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="49">
-
-    </LinearLayout>
+        android:layout_weight="28"></LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="51"
+        android:layout_weight="70"
         android:weightSum="720">
 
-        <Space
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/address_textView"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="85"/>
-
-        <Spinner
-
-            android:id="@+id/location_spn"
-            android:entries="@array/location_item"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="550"
-            android:background="#fff">
-        </Spinner>
+            android:layout_weight="300"
+            android:layout_gravity="center"
+            android:text="서울 광진구"
+            android:textColor="#000"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:gravity="center"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="36"></LinearLayout>
+        android:layout_weight="22">
+
+    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/store_list_layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="46"
-        android:weightSum="720">
+        android:layout_weight="1022">
 
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="36"/>
+        <com.skt.Tmap.TMapView
+            android:id="@+id/store_list_tmap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Spinner
-            android:id="@+id/store_spn"
-            android:entries="@array/store_item"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="124"
-            android:gravity="right"
-            android:background="#fff">
-
-        </Spinner>
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="32"/>
-
-        <Spinner
-            android:id="@+id/sort_spn"
-            android:entries="@array/sort_item"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="124"
-            android:gravity="right"
-            android:background="#fff">
-
-        </Spinner>
-
+        </com.skt.Tmap.TMapView>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="31"></LinearLayout>
+        android:layout_weight="130"
+        android:weightSum="2">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/store_list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1077"
-        android:background="#fff">
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9"/>
 
-    </android.support.v7.widget.RecyclerView>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="밥플이를 클릭하면\n가게정보를 볼 수 있습니다."
+            android:textColor="#000"
+            android:src="@drawable/click_des"
+            />
 
+    </LinearLayout>
 
 
 </LinearLayout>

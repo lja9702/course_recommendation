@@ -3,53 +3,59 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1280"
+    android:background="@drawable/direct_background"
     android:orientation="vertical"
-    android:background="@drawable/background6">
+    android:weightSum="1280">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="49">
-
-    </LinearLayout>
+        android:layout_weight="32"></LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="450">
+        android:layout_weight="70"
+        android:weightSum="720">
 
-        <ImageView
-            android:id="@+id/store_img"
-            android:layout_width="match_parent"
+        <Space
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:scaleType="fitCenter"
-            android:background="#333"
-            android:src="@drawable/test"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="300">
+            android:layout_weight="50">
+        </Space>
 
         <TextView
-            android:id="@+id/store_txt"
-            android:layout_width="match_parent"
+            android:id="@+id/store_name_textView"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="name : mapa tofu sdfasdfsadfsdfadsfafsadfasdfdsafsfasdfasdfasdfsadfsadfasdfsadfasdfsdfsafdsafsadfsafsfsdafsdf
-asdfdsfsdafsdfsadfsdafsadfsasdfsadfdsfafsdfasdfsadfasdfasdfdsafdsafadsfasdfasdfasdfsfsdfasfdasfsdafasdfsfsafasdfasdfd
-safdsafsdfafasdfsafsdafdasfsdsdfasdfsadfsdfadsfafsadfasdfdsafsfasdfasdfasdfsadfsadfasdfsadfasdfsdfsafdsafsadfsafsfsdafsdf
-asdfdsfsdafsdfsadfsdafsadfsasdfsadfdsfafsdfasdfsadfasdfasdfdsafdsafadsfasdfasdfasdfsfsdfasfdasfsdafasdfsfsafasdfasdfd
-safdsafsdfafasdfsafsdafdasfsd"
+            android:layout_weight="500"
+            android:gravity="center|left"
+            android:text="논두렁"
             android:textColor="#000"
-            android:textSize="22dp"
-            android:textStyle="bold"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginTop="12dp"
-            android:scrollbars="vertical"/>
+            android:textSize="23dp"
+            android:textStyle="bold"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"/>
+
+        <ImageButton
+            android:id="@+id/heart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="130"
+            android:src="@drawable/false_heart"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:onClick="onClick_heart" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="22">
 
     </LinearLayout>
 
@@ -57,12 +63,40 @@ safdsafsdfafasdfsafsdafdasfsd"
         android:id="@+id/tmap_store"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="400"
-        android:orientation="horizontal"
-        android:layout_margin="20dp"
-        android:background="#fff">
+        android:layout_weight="1022"
+        android:weightSum="1"
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:id="@+id/store_tmap"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.03"/>
+
+        <TextView
+            android:id="@+id/store_info"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:textColor="#000"
+            android:gravity="top|left"
+            android:padding="15dp"
+            android:textSize="18dp"
+            android:background="#f9f5ec"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="37"></LinearLayout>
 
 
 

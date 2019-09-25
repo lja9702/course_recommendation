@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/direct_background"
+    android:orientation="vertical"
+    android:weightSum="1280">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="28"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="70"
+        android:weightSum="720">
+
+        <TextView
+            android:id="@+id/course_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="맛집"
+            android:textColor="#000"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:focusableInTouchMode="true"
+            android:focusable="true"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="22">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1022">
+
+        <com.skt.Tmap.TMapView
+            android:id="@+id/user_course_tmap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.skt.Tmap.TMapView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="82"
+        android:weightSum="720">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="510"/>
+
+        <ImageButton
+            android:id="@+id/user_course_next_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="180"
+            android:src="@drawable/next_btn"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:onClick="onClick_user_course_next_btn"
+            />
+
+        <ImageButton
+            android:id="@+id/user_course_finish_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="170"
+            android:src="@drawable/finish_btn"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:onClick="onClick_user_course_finish_btn"
+            android:visibility="gone" />
+    </LinearLayout>
+
+
+</LinearLayout>

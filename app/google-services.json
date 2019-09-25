@@ -8,14 +8,22 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:394884762076:android:752b589dfb3ef964",
+        "mobilesdk_app_id": "1:394884762076:android:dec74d64a412718b",
         "android_client_info": {
           "package_name": "com.dongsamo.dongsamo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "394884762076-mafp8obg3m9ecu7a5eq3rkd0uudcfp8m.apps.googleusercontent.com",
+          "client_id": "394884762076-njgcf2o0a7a9dbekghs9eqghb73ls6l6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dongsamo.dongsamo",
+            "certificate_hash": "9b7f25d18761fad392985e6d4ef1b1b0847513a5"
+          }
+        },
+        {
+          "client_id": "394884762076-1d35fjf3468mk5mb94le0a970fajah43.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.dongsamo.dongsamo",
@@ -23,40 +31,19 @@
           }
         },
         {
-          "client_id": "394884762076-1euusd2i06e5aqcmbrocrvdsn03l6q0c.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCeCpYQyXxg_EzwXlB8FYE_IvFgmTf5iu0"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "394884762076-1euusd2i06e5aqcmbrocrvdsn03l6q0c.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:394884762076:android:462b3931ef444d42",
-        "android_client_info": {
-          "package_name": "com.example.dongsamo"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "394884762076-md92buf26o6ctquf42fob01coba4toa9.apps.googleusercontent.com",
+          "client_id": "394884762076-65nb0aq7350ill5m73ccvod5f2ne20e0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.dongsamo",
-            "certificate_hash": "78ec397c9a1c42f98e68d377416d3afb3aaa0265"
+            "package_name": "com.dongsamo.dongsamo",
+            "certificate_hash": "5d2a3b4df77ac4ac42ec3ca97a3686aaac797cd3"
+          }
+        },
+        {
+          "client_id": "394884762076-orv4i4to2jg2ng37p4c409gvkp4dshau.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dongsamo.dongsamo",
+            "certificate_hash": "d6b8ba300bb24b3fb0b9995e04d76da9a082471a"
           }
         },
         {

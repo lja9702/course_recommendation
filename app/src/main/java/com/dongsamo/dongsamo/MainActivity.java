@@ -1,60 +1,54 @@
 package com.dongsamo.dongsamo;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.AssetManager;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.Matrix;
 import android.hardware.Camera;
+import android.location.Location;
 import android.os.AsyncTask;
-import android.os.CountDownTimer;
-import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-
-
-import android.content.DialogInterface;
-import android.annotation.TargetApi;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.view.SurfaceView;
-import android.widget.Button;
+
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dongsamo.dongsamo.firebase_control.Store;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.ml.vision.FirebaseVision;
+import com.google.firebase.ml.vision.common.FirebaseVisionImage;
+import com.google.firebase.ml.vision.text.FirebaseVisionText;
+import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
 import com.googlecode.tesseract.android.TessBaseAPI;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
-//import org.opencv.android.JavaCameraView;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
-import org.opencv.osgi.OpenCVNativeLoader;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
-
-import static java.lang.Thread.sleep;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.concurrent.ExecutionException;
 
 
 public class MainActivity extends AppCompatActivity
@@ -64,12 +58,20 @@ public class MainActivity extends AppCompatActivity
     private static final String TAG = "opencv";
     private Mat matInput;
     private Mat matResult;
-    private AsyncTess task;
+
     //kongil
     TessBaseAPI tessBaseAPI;
     CameraSurfaceView surfaceView;
     ImageButton capture_btn;
     ImageView imageView;
+
+    double lon, lat;
+    String now_location;
+    String dong_location;
+    String siteUrl = "http://openapi.seoul.go.kr:8088/";
+    String ID = "6c5474475266627737325756715870";
+    String contents = "/json/CrtfcUpsoInfo/1/1000/";
+    JSONArray building_list;
 
     DatabaseReference mDatabase;// Add by kongil
 
@@ -97,17 +99,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            //퍼미션 상태 확인
-            if (!hasPermissions(PERMISSIONS)) {
-
-                //퍼미션 허가 안되어있다면 사용자에게 요청
-                requestPermissions(PERMISSIONS, PERMISSIONS_REQUEST_CODE);
-            }
-        }
 
         //kong
 
@@ -115,42 +107,133 @@ public class MainActivity extends AppCompatActivity
         surfaceView = findViewById(R.id.activity_surfaceView);
         capture_btn = (ImageButton)findViewById(R.id.capture_btn);
 
-        tessBaseAPI = new TessBaseAPI();
-        String dir = getFilesDir() + "/tesseract";
-        Log.d("TAGS", ""+dir);
-        if(checkLanguageFile(dir+"/tessdata")) {
-            Log.d("TAGS", "init");
-            tessBaseAPI.init(dir, "eng");
-        }
+        GPSclass gpSclass = new GPSclass(this);
+        Location loc = gpSclass.getLocation();
+        lon = loc.getLongitude();
+        lat = loc.getLatitude();
 
-
+        String api_returns = stringToApi();
+        //내 위치 기반으로 무슨 구 인지 찾아오기
+        String store_num_find = api_returns.substring(api_returns.indexOf("\"name\""));
+        String store_num_array[] = store_num_find.split("\"");
+        now_location = store_num_array[75];
     }
 
+    public String stringToApi(){
+        ReGeocodeThreadClass test = new ReGeocodeThreadClass(lat, lon);
+        Thread t = new Thread(test);
+        t.start();
+        while(test.get_result() == null);
 
-    public void onClick_shop_list(View view){
-        Intent intent = new Intent(MainActivity.this, StoreListActivity.class);
+        return test.get_result();
+    }
+
+    JSONObject JS = null;
+    private boolean insert_post(String result) throws Exception {
+        //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
+        //RDN_CODE_NM: 도로명주소,
+
+        String ps_name = null, ps_type = null, ps_call= null, ps_address= null, ps_unikey;
+        double store_x = 0, store_y = 0;
+        Log.d("TAGS", "bef insert post!");
+        Log.d("TAGS", "hi Log   "+building_list.length());
+        Log.d("TAGS", "af insert post!");
+
+        for (int i = 0; i < building_list.length(); i++) {
+
+            JS = building_list.getJSONObject(i);
+            if (JS != null) {
+
+                ps_name = JS.optString("UPSO_NM");
+                Log.d("Store", "업소: "+ps_name);
+                if(ps_name != null) {
+                    Log.d("Store", result+"  "+ps_name);
+                    if(result.contains(ps_name)) {
+                        Log.d("Success", "HI success");
+
+                        ps_name = JS.optString("UPSO_NM");
+                        ps_call = JS.optString("TEL_NO");
+                        ps_address = JS.optString("RDN_CODE_NM")+JS.optString("RDN_DETAIL_ADDR");
+                        ps_type = JS.optString("BIZCND_CODE_NM");
+                        ps_unikey = JS.optString("UPSO_SNO");
+                        store_x = JS.optDouble("X_CNTS");
+                        store_y = JS.optDouble("Y_DNTS");
+
+                        wintent.putExtra("store_unikey", ps_unikey);
+                        wintent.putExtra("store_name", ps_name);
+                        wintent.putExtra("store_x", (float)store_x);
+                        wintent.putExtra("store_y", (float)store_y);
+                        wintent.putExtra("store_type", ps_type);
+                        wintent.putExtra("store_call", ps_call);
+                        wintent.putExtra("store_address", ps_address);
+
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public class FoodTask extends AsyncTask<String, String, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            URL url = null;
+            String result = null;
+            try {
+                url = new URL(""+siteUrl+ID+contents);
+
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                if (conn.getResponseCode() == conn.HTTP_OK) {
+                    InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
+                    BufferedReader reader = new BufferedReader(tmp);
+                    StringBuffer buffer = new StringBuffer();
+                    String str = null;
+                    while ((str = reader.readLine()) != null) {
+                        buffer.append(str);
+                    }
+                    result = buffer.toString();
+
+                    Log.d("LOG", result);
+                    JSONObject jsonObject1 = new JSONObject(result);
+                    String CrtfcUpsoInfo = jsonObject1.getString("CrtfcUpsoInfo");
+                    Log.d("LOG", "CrtfcUpsoInfo: " + CrtfcUpsoInfo);
+                    JSONObject jsonObject2 = new JSONObject(CrtfcUpsoInfo);
+                    String row = jsonObject2.getString("row");
+                    Log.d("Log", "row: "+row);
+                    building_list = new JSONArray(row);
+
+                    reader.close();
+                } else {
+                    Log.i("통신 결과", conn.getResponseCode() + "에러");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return result;
+        }
+    }
+
+    /*주변상점보기*/
+    public void onClick_main_shop_list_btn(View view){
+         Intent intent = new Intent(MainActivity.this, StoreListActivity.class);
         startActivity(intent);
     }
-
-    public void onClick_course_ask(View view){
+    /*코스추천*/
+    public void onClick_main_course_ask_btn(View view){
         Intent intent = new Intent(MainActivity.this, CourseActivity.class);
         startActivity(intent);
     }
 
-    private long mLastClickTime = 0;
-    int MIN_CLICK_INTERVAL = 2000;
-    //by kongil
-    public void onClick_capture(View view) throws InterruptedException {
-        if (SystemClock.elapsedRealtime() - mLastClickTime < MIN_CLICK_INTERVAL) {
-            Log.d("Test", "무조껀 2초뒤엔 클릭이 된다..");
-
-            return;
-        }
-        mLastClickTime = SystemClock.elapsedRealtime();
-
+    /*카메라 캡쳐 capture 함수 호출*/
+    public void onClick_capture_btn(View view) {
+        Log.d("TAGS", "onClick_capture");
         capture();
     }
 
+    /*training data 있는지 확인 if 없으면 -> createFiles*/
     boolean checkLanguageFile(String dir)
     {
         File file = new File(dir);
@@ -166,6 +249,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    /*training data 있는지 확인 if 없으면 -> createFiles*/
     private void createFiles(String dir)
     {
         Log.d("TAG", "createFiles");
@@ -194,6 +278,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    /*카메라 캡쳐*/
     private void capture()
     {
         surfaceView.capture(new Camera.PictureCallback() {
@@ -203,77 +288,48 @@ public class MainActivity extends AppCompatActivity
                 options.inSampleSize = 8;
 
                 Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                bitmap = GetRotatedBitmap(bitmap, 90); //90 -> 0
+                bitmap = GetRotatedBitmap(bitmap, 0); //90 -> 0
 
                 capture_btn.setEnabled(false);
                 capture_btn.setImageResource(R.drawable.loading_btn);
 
                 imageView.setImageBitmap(bitmap);
-                //1000 -> 1 sec
-                new AsyncTaskCancelTimerTask(task, 5000, 1000, true).start();
-                task = new AsyncTess();
-                task.execute(bitmap);
+
+                /*tesseract-> ML Kit*/
+                FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
+                Log.d("TAGS", "surfaceview capture");
+
+                FirebaseVisionTextRecognizer detector = FirebaseVision.getInstance()
+                        .getCloudTextRecognizer();
+                Task<FirebaseVisionText> result =
+                        detector.processImage(image)
+                                .addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
+                                    @Override
+                                    public void onSuccess(FirebaseVisionText firebaseVisionText) {
+                                        // Task completed successfully
+                                        String resultText = firebaseVisionText.getText();
+                                        Log.d("TAGS", "resultText : "+resultText);
+
+                                        check(resultText);
+                                    }
+                                })
+                                .addOnFailureListener(
+                                        new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                // Task failed with an exception
+                                                Log.d("TAGS", "FAIL");
+                                                capture_btn.setEnabled(true);
+                                                capture_btn.setImageResource(R.drawable.capture);
+                                                Toast.makeText(getApplicationContext(), "FAIL", Toast.LENGTH_LONG).show();
+
+                                                // ...
+                                            }
+                                        }
+                                );
                 camera.startPreview();
             }
         });
-    }
-
-
-    //jeong add -> time over check
-    class AsyncTaskCancelTimerTask extends CountDownTimer {
-        private AsyncTask asyncTask;
-        private boolean interrupt;
-
-        private AsyncTaskCancelTimerTask(AsyncTask asyncTask, long startTime, long interval) {
-            super(startTime, interval);
-            this.asyncTask = asyncTask;
-        }
-
-        private AsyncTaskCancelTimerTask(AsyncTask asyncTask, long startTime, long interval, boolean interrupt) {
-            super(startTime, interval);
-            this.asyncTask = asyncTask;
-            this.interrupt = interrupt;
-        }
-
-        @Override
-        public void onTick(long millisUntilFinished) {
-            Log.d(TAG, "onTick..");
-/*
-            if(asyncTask == null) {
-                this.cancel();
-                return;
-            }
-
-            if(asyncTask.isCancelled())
-                this.cancel();
-
-            if(asyncTask.getStatus() == AsyncTask.Status.FINISHED)
-                this.cancel();
-                */
-        }
-
-        @Override
-        public void onFinish() {
-            Log.d(TAG, "onTick..");
-            Toast.makeText(MainActivity.this, "인식 실패", Toast.LENGTH_LONG).show();
-            if(asyncTask == null || asyncTask.isCancelled() )
-                return;
-
-            try {
-                if(asyncTask.getStatus() == AsyncTask.Status.FINISHED)
-                    return;
-
-                if(asyncTask.getStatus() == AsyncTask.Status.PENDING ||
-                        asyncTask.getStatus() == AsyncTask.Status.RUNNING ) {
-                    Log.d("check", "finish");
-                    capture_btn.setEnabled(true);
-                    capture_btn.setImageResource(R.drawable.capture);
-                    asyncTask.cancel(interrupt);
-                }
-            } catch(Exception e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     public synchronized static Bitmap GetRotatedBitmap(Bitmap bitmap, int degrees) {
@@ -290,82 +346,6 @@ public class MainActivity extends AppCompatActivity
             }
         }
         return bitmap;
-    }
-
-    private class AsyncTess extends AsyncTask<Bitmap, Integer, String> {
-        @SuppressLint("WrongThread")
-        @Override
-        protected String doInBackground(Bitmap... mRelativeParams) {
-            //imageView.setImageBitmap(mRelativeParams[0]);
-            tessBaseAPI.setImage(mRelativeParams[0]);
-            return tessBaseAPI.getUTF8Text();
-        }
-
-        protected void onPostExecute(final String result) {
-            //textView.setText(result);
-            Toast.makeText(MainActivity.this, ""+result, Toast.LENGTH_LONG).show();
-            Log.d("TAGS", "result : "+ result);
-            /*donging-widget*/
-            /*
-            intent.putExtra("name", "제면소");
-            intent.putExtra("score", "4.9");
-            */
-
-            mDatabase = FirebaseDatabase.getInstance().getReference();
-
-//            final Intent intent = new Intent(getApplicationContext(), CustomWidget.class);
-
-            ValueEventListener postListener = new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    // Get Post object and use the values to update the UI
-                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        if (snapshot.getKey().equals("stores")) {
-                            for (DataSnapshot csnapshot : snapshot.getChildren()) {
-                                Store post = csnapshot.getValue(Store.class);
-                                if (result.contains(post.getName())) {
-                                    Intent intent = new Intent(getApplicationContext(), CustomWidget.class);
-
-                                    intent.putExtra("store", post);
-                                    Log.d("TAGS", "add");
-                                    if(intent.hasExtra("store")) {
-                                        Log.d("TAGS", "find!");
-                                        startActivityForResult(intent, 1);
-                                    }
-                                    else {
-                                        Log.d("TAGS", "no find!");
-                                    }
-
-                                }
-                            }
-                        }
-                        // ...
-                    }
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                    // Getting Post failed, log a message
-                    Log.w("TAG", "loadPost:onCancelled", databaseError.toException());
-                    // ...
-                }
-            };
-
-            mDatabase.addValueEventListener(postListener);
-            //mDatabase.addListenerForSingleValueEvent(postListener);
-
-            Log.d("TAGS", "done??");
-
-            capture_btn.setEnabled(true);
-            capture_btn.setImageResource(R.drawable.capture);
-           // task.cancel(true);
-
-        }
-    }
-
-    public void onClick_manager_mode(View view){
-        Intent intent = new Intent(MainActivity.this, PostActivity.class);
-        startActivity(intent);
     }
 
     @Override
@@ -392,9 +372,6 @@ public class MainActivity extends AppCompatActivity
 
     public void onDestroy() {
         super.onDestroy();
-
-        //if (mOpenCvCameraView != null)
-         //   mOpenCvCameraView.disableView();
     }
 
     @Override
@@ -412,8 +389,6 @@ public class MainActivity extends AppCompatActivity
 
         matInput = inputFrame.rgba();
 
-        //if ( matResult != null ) matResult.release(); fix 2018. 8. 18
-
         if ( matResult == null )
 
             matResult = new Mat(matInput.rows(), matInput.cols(), matInput.type());
@@ -422,71 +397,58 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    boolean db_find_flag = false;
+    Intent wintent;
+    private void check(final String result) {
+        db_find_flag = false;
+        Log.d("TAGS", "result : "+ result);
 
-    //여기서부턴 퍼미션 관련 메소드
-    static final int PERMISSIONS_REQUEST_CODE = 1000;
-    String[] PERMISSIONS  = {"android.permission.CAMERA", "android.permission.ACCESS_NETWORK_STATE", "android.permission.ACCESS_COARSE_LOCATION", "PERMISSIONS_ACCESS_FINE_LOCATION"};
+        /*donging-widget*/
 
-    private boolean hasPermissions(String[] permissions) {
-        int result;
+        try {
+            Log.d("TAGS", "FOodTask");
+            new FoodTask().execute().get();
+            Log.d("TAGS", "Before insert");
+            Store post = new Store();
+            wintent = new Intent(getApplicationContext(), CustomWidget.class);
 
-        //스트링 배열에 있는 퍼미션들의 허가 상태 여부 확인
-        for (String perms : permissions){
+            if(insert_post(result)){
+                db_find_flag = true;
 
-            result = ContextCompat.checkSelfPermission(this, perms);
-
-            if (result == PackageManager.PERMISSION_DENIED){
-                //허가 안된 퍼미션 발견
-                return false;
-            }
-        }
-
-        //모든 퍼미션이 허가되었음
-        return true;
-    }
-
-
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        switch(requestCode){
-
-            case PERMISSIONS_REQUEST_CODE:
-                if (grantResults.length > 0) {
-                    boolean cameraPermissionAccepted = grantResults[0]
-                            == PackageManager.PERMISSION_GRANTED;
-
-                    if (!cameraPermissionAccepted)
-                        showDialogForPermission("앱을 실행하려면 퍼미션을 허가하셔야합니다.");
+                Log.d("TAGS", "After insert");
+                wintent.putExtra("store", post);
+                Log.d("TAGS", "name : " + post.getName() + post.getX());
+                Log.d("TAGS", "add");
+                if(wintent.hasExtra("store")) {
+                    Log.d("TAGS", "find!");
+                    startActivityForResult(wintent, 1);
                 }
-                break;
+                else {
+                    Log.d("TAGS", "no find!");
+                }
+            }
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
+        if (!db_find_flag) {
+            Toast.makeText(getApplicationContext(), result+"의 평가를 찾을 수 없습니다.", Toast.LENGTH_LONG).show();
+        }
+        //mDatabase.addListenerForSingleValueEvent(postListener);
+
+        Log.d("TAGS", "done??");
+
+        capture_btn.setEnabled(true);
+        capture_btn.setImageResource(R.drawable.capture);
     }
 
-
-    @TargetApi(Build.VERSION_CODES.M)
-    private void showDialogForPermission(String msg) {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder( MainActivity.this);
-        builder.setTitle("알림");
-        builder.setMessage(msg);
-        builder.setCancelable(false);
-        builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id){
-                requestPermissions(PERMISSIONS, PERMISSIONS_REQUEST_CODE);
-            }
-        });
-        builder.setNegativeButton("아니오", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface arg0, int arg1) {
-                finish();
-            }
-        });
-        builder.create().show();
+    public void onClick_main_mypage_btn(View view){
+        Intent intent = new Intent(this, MypageActivity.class);
+        startActivity(intent);
     }
-
-
 
 }

@@ -2,9 +2,11 @@ package com.dongsamo.dongsamo;
 
 import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,9 @@ import java.util.List;
 import static com.dongsamo.dongsamo.DirectAddActivity.A_activity;
 import static com.dongsamo.dongsamo.DirectAddActivity.flag;
 import static com.dongsamo.dongsamo.StoreListActivity.B_Activity;
+import static java.lang.Math.abs;
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
 
 public class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecyclerViewAdapter.MyViewHoler>{
     private Context mContext;
@@ -43,7 +48,7 @@ public class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecycler
     @Override
     public void onBindViewHolder(@NonNull final MyViewHoler myViewHoler, final int i) {
         myViewHoler.card_name.setText(String.valueOf(mData.get(i).getName()));
-        myViewHoler.card_distance.setText(""+String.valueOf(mData.get(i).getDistance())+" 이내");
+        myViewHoler.card_distance.setText(""+String.valueOf(getDistance(mData.get(i).getX(), mData.get(i).getY())/1)+" 이내"); // 수정 필요
         myViewHoler.card_star.setText(String.valueOf(mData.get(i).getStar()));
 
         //kong todo true_heart일 때 DB 좋아요 데이터 true, false_heart일 때 DB 좋아요 false
@@ -52,7 +57,7 @@ public class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecycler
         else
             myViewHoler.card_heart.setImageResource(R.drawable.false_heart);
 
-        Glide.with(mContext).load(""+mData.get(i).getImg_url()).into(myViewHoler.card_img);
+        Glide.with(mContext).load(""+mData.get(i).getUrl()).into(myViewHoler.card_img);
 
         myViewHoler.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,6 +126,15 @@ public class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecycler
 
             cardView = (CardView)itemView.findViewById(R.id.card_view);
         }
+    }
+
+    private double getDistance(double store_x, double store_y) {
+        GPSclass gpsclass = new GPSclass(this.mContext);
+        Location cur_location = gpsclass.getLocation();
+        double cur_x = cur_location.getAltitude(), cur_y = cur_location.getLatitude();
+        Log.d("TAG", cur_x + " "+ cur_y);
+        double distance = sqrt(pow(store_x-cur_x, 2) + pow(store_y-cur_y, 2));
+        return distance;
     }
 
 }
