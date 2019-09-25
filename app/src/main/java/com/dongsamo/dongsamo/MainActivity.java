@@ -116,7 +116,12 @@ public class MainActivity extends AppCompatActivity
         //내 위치 기반으로 무슨 구 인지 찾아오기
         String store_num_find = api_returns.substring(api_returns.indexOf("\"name\""));
         String store_num_array[] = store_num_find.split("\"");
-        now_location = store_num_array[75];
+        try {
+            now_location = store_num_array[75];
+        }
+        catch (Exception e){
+            Toast.makeText(getApplicationContext(), "GPS 오류", Toast.LENGTH_LONG).show();
+        }
     }
 
     public String stringToApi(){
