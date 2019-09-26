@@ -1,5 +1,6 @@
 package com.dongsamo.dongsamo;
 
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -31,6 +32,9 @@ import com.skt.Tmap.TMapPoint;
 import com.skt.Tmap.TMapPolyLine;
 import com.skt.Tmap.TMapView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.io.IOException;
@@ -49,6 +53,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.concurrent.ExecutionException;
 
 
 public class DecidingActivity extends AppCompatActivity {
@@ -62,10 +67,15 @@ public class DecidingActivity extends AppCompatActivity {
     TMapData tmapdata = new TMapData();
     String course="";
     String[] store_list;
-    String store_name;
+    String store_name, result;
     ArrayList passList;
-    float store_x=0, store_y=0;
+    double store_x=0, store_y=0;
     TMapPoint tp1 = null, tp2= null;
+    String siteUrl = "http://openapi.seoul.go.kr:8088/";
+    String ID = "6c5474475266627737325756715870";
+    String contents = "/json/CrtfcUpsoInfo/1/1000/";
+    JSONArray building_list;
+    String now_location, office, ps_name = null;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +83,7 @@ public class DecidingActivity extends AppCompatActivity {
 
         activity_deciding = (LinearLayout)findViewById(R.id.tmap);
         bottom_layout = (LinearLayout)findViewById(R.id.bottom_layout);
+
         tMapView = new TMapView(this);
 
         tMapView.setSKTMapApiKey(apiKey);
@@ -84,79 +95,54 @@ public class DecidingActivity extends AppCompatActivity {
         tMapView.setTrackingMode(true);
         activity_deciding.addView(tMapView);
 
-        no_course_btn = (ImageButton)findViewById(R.id.no_course_btn);
-        decide_course_btn = (ImageButton)findViewById(R.id.decide_course_btn);
-
-        no_course_btn.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
-                    no_course_btn.setImageResource(R.drawable.no_course_black);
-                }
-                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
-                    no_course_btn.setImageResource(R.drawable.no_course);
-                }
-                return false;
-            }
-        });
-
-        decide_course_btn.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
-                    decide_course_btn.setImageResource(R.drawable.decide_course_black);
-                }
-                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
-                    decide_course_btn.setImageResource(R.drawable.decide_course);
-                }
-                return false;
-            }
-        });
-
-
         Intent intent = getIntent();
         course = intent.getExtras().getString("new_course","");
-        Log.d("Course222", course);
+        course = course.substring(2);
+
+        office = intent.getExtras().getString("office");
+        office = office.substring(0, office.length()-1);
+
+        Log.d("Course222", "full:"+office+"  "+course);
         store_list = course.split("  ");
         passList = new ArrayList<TMapPoint>();
 
         //course = "  "+course;
         ///출발지
-        String api_returns = stringToApi(store_list[2]);
-        String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
-        String now_data_array[] = now_data.split("\"");
-        store_x =  Float.parseFloat(now_data_array[3]);
-        store_y =  Float.parseFloat(now_data_array[7]);
-        tp1 = new TMapPoint(store_y, store_x);
-        pinpinEE(store_list[2], store_y, store_x,"no"+store_list[2]+"_test");
+        try {
+            Log.d("Course222", "first:"+store_list[1]);
+            store_name = store_list[1];
+            new FoodTask().execute().get();
+            insert_post(result);
+            tMapView.setLocationPoint(store_x,store_y);
+            tp1 = new TMapPoint(store_y, store_x);
+            Log.d("Course222", "first:"+store_x+" "+store_y);
+            pinpinEE(store_list[1], store_x, store_y,"no"+store_list[1]+"_test");
 
-        ///시작지
-        String api_returns2 = stringToApi(store_list[3]);
-        String now_data2 = api_returns2.substring(api_returns2.indexOf("\"x\""));
-        String now_data_array2[] = now_data2.split("\"");
-        store_x =  Float.parseFloat(now_data_array2[3]);
-        store_y =  Float.parseFloat(now_data_array2[7]);
-        tp2 = new TMapPoint(store_y, store_x);
-        pinpinEE(store_list[3], store_y, store_x,"no"+store_list[3]+"_test");
+            ///시작지
+            Log.d("Course222", "second:"+store_list[2]);
+            store_name = store_list[2];
+            insert_post(result);
+            Log.d("Course222", "second:"+store_x+" "+store_y);
+            tp2 = new TMapPoint(store_y, store_x);
+            pinpinEE(store_list[2], store_x, store_y,"no"+store_list[2]+"_test");
 
+            for(int i=3; i < store_list.length; i++){
+                store_name = store_list[i];
+                insert_post(result);
+                pinpinEE(store_list[i],store_x,store_y,"a"+store_list[i]+"_test");
+            }
 
-        for(int i=4; i < store_list.length; i++){
-            String api_returns3 = stringToApi(store_list[i]);
-            String now_data3 = api_returns3.substring(api_returns3.indexOf("\"x\""));
-            String now_data_array3[] = now_data3.split("\"");
-            store_x =  Float.parseFloat(now_data_array3[3]);
-            store_y =  Float.parseFloat(now_data_array3[7]);
-            pinpinEE(store_list[i],store_y,store_x,"a"+store_list[i]+"_test");
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
 
         for(int i=0; i<passList.size(); i++){
             Log.d("passlist", String.valueOf(((TMapPoint) passList.get(i)).getLatitude()));
         }
-
-        // 경로 추가 예제
-//        passList.add(point3);
-//        passList.add(point4);
 
         tmapdata.findPathDataWithType(
                 TMapData.TMapPathType.PEDESTRIAN_PATH,
@@ -180,21 +166,8 @@ public class DecidingActivity extends AppCompatActivity {
         return test.get_result();
     }
 
-//
-//    public void onClick_decide_course_btn(View view){
-//        // Toast.makeText(DecidingActivity.super.getApplicationContext(), "이 코스로 결정!", Toast.LENGTH_LONG).show();
-//        decide_course_btn.setVisibility(View.INVISIBLE);
-//    }
-//
-//    public void onClick_no_course_btn(View view){
-//        Intent intent = new Intent(DecidingActivity.this, AIRunningActivity.class);
-//        startActivity(intent);
-//        finish();
-//    }
-
-    protected void pinpinEE(String pin_name, float x, float y, String pin_id){
+    protected void pinpinEE(String pin_name, double x, double y, String pin_id){
         TMapPoint tpoint = new TMapPoint(store_y, store_x);
-        Log.d("pin_id", String.valueOf(pin_id.charAt(0)));
         if(pin_id.charAt(0) == 'a')
             passList.add(tpoint);
 
@@ -210,13 +183,136 @@ public class DecidingActivity extends AppCompatActivity {
         tItem.setCanShowCallout(true);
         tItem.setAutoCalloutVisible(true);
 
+        Bitmap bitmap2 = BitmapFactory.decodeResource(this.getResources(), R.drawable.charc);
+        int resizeWidth = 68;
+
+        double aspectRatio = (double) bitmap2.getHeight() / (double) bitmap2.getWidth();
+        int targetHeight = (int) (resizeWidth * aspectRatio);
+        Bitmap result = Bitmap.createScaledBitmap(bitmap2, resizeWidth, targetHeight, false);
+        if (result != bitmap2) {
+            bitmap2.recycle();
+        }
+
+        tItem.setCalloutRightButtonImage(result);
+
+        tMapView.setOnCalloutRightButtonClickListener(new TMapView.OnCalloutRightButtonClickCallback() {
+            @Override
+            public void onCalloutRightButton(TMapMarkerItem tMapMarkerItem) {
+                JSONObject JS = null;
+
+                String ps_unikey=null, ps_name = null, ps_type = null, ps_call= null, ps_address= null;
+                double store_x = 0, store_y = 0;
+
+                for (int i = 0; i < building_list.length(); i++) {
+                    try {
+                        JS = building_list.getJSONObject(i);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    if (JS != null) {
+                        ps_name = JS.optString("UPSO_NM");
+                        ps_call = JS.optString("TEL_NO");
+                        ps_address = JS.optString("RDN_CODE_NM")+JS.optString("RDN_DETAIL_ADDR");
+                        ps_type = JS.optString("BIZCND_CODE_NM");
+                        ps_unikey = JS.optString("UPSO_SNO");
+                        store_x = JS.optDouble("X_CNTS");
+                        store_y = JS.optDouble("Y_DNTS");
+
+                        Log.d("Tag", "pinName: "+tMapMarkerItem.getName()+" ps_name: "+ps_name);
+                        if(ps_name.equals(tMapMarkerItem.getName())) {
+                            break;
+                        }
+                    }
+                }
+
+                Intent intent = new Intent(DecidingActivity.this, StoreActivity.class);
+                intent.putExtra("store_unikey", ps_unikey);
+                intent.putExtra("store_name", tMapMarkerItem.getName());
+                intent.putExtra("store_x", (float)store_x);
+                intent.putExtra("store_y", (float)store_y);
+                intent.putExtra("store_type", ps_type);
+                intent.putExtra("store_call", ps_call);
+                intent.putExtra("store_address", ps_address);
+
+                startActivity(intent);
+            }
+        });
 
         // 핀모양으로 된 마커를 사용할 경우 마커 중심을 하단 핀 끝으로 설정.
         tItem.setPosition((float)0.5, (float)1.0);         // 마커의 중심점을 하단, 중앙으로 설정
 
-        tMapView.setLocationPoint(y,x);
+        //
 
         tMapView.addMarkerItem(pin_id, tItem);
+    }
+
+    JSONObject JS = null;
+    private boolean insert_post(String result) throws Exception {
+        //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
+        //RDN_CODE_NM: 도로명주소,
+        for (int i = 0; i < building_list.length(); i++) {
+            JS = building_list.getJSONObject(i);
+
+            if (JS != null) {
+                ps_name = JS.optString("UPSO_NM");
+                Log.d("Store", "업소: "+ps_name);
+                if(ps_name != null) {
+                    Log.d("Store", result+"  "+ps_name);
+                    if(store_name.equals(ps_name)) {
+                        Log.d("Success", "HI success");
+
+                        store_x = JS.optDouble("X_CNTS");
+                        store_y = JS.optDouble("Y_DNTS");
+
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public class FoodTask extends AsyncTask<String, String, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            URL url = null;
+            String result = null;
+            try {
+                url = new URL(""+siteUrl+ID+contents);
+
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                if (conn.getResponseCode() == conn.HTTP_OK) {
+                    InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
+                    BufferedReader reader = new BufferedReader(tmp);
+                    StringBuffer buffer = new StringBuffer();
+                    String str = null;
+                    while ((str = reader.readLine()) != null) {
+                        buffer.append(str);
+                    }
+                    result = buffer.toString();
+
+                    Log.d("LOG", result);
+                    JSONObject jsonObject1 = new JSONObject(result);
+                    String CrtfcUpsoInfo = jsonObject1.getString("CrtfcUpsoInfo");
+                    Log.d("LOG", "CrtfcUpsoInfo: " + CrtfcUpsoInfo);
+                    JSONObject jsonObject2 = new JSONObject(CrtfcUpsoInfo);
+                    String row = jsonObject2.getString("row");
+                    Log.d("Log", "row: "+row);
+                    building_list = new JSONArray(row);
+
+                    reader.close();
+                } else {
+                    Log.i("통신 결과", conn.getResponseCode() + "에러");
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+            return result;
+        }
     }
 }
 
@@ -282,4 +378,6 @@ class GeocodeThreadClass implements Runnable{
     public String get_result(){
         return this.result;
     }
+
+
 }

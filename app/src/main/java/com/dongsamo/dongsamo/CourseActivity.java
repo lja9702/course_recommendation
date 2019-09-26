@@ -196,31 +196,7 @@ public class CourseActivity extends AppCompatActivity {
         });
     }
 
-    public void onClick_direct_add_btn(View view){
-        if(count < 2){
-            Toast.makeText(getApplicationContext(), "2개 이상 선택해주세요.", Toast.LENGTH_LONG).show();
-            return;
-        }
 
-        office += "청";
-        get_xy(office);
-
-        course = String.valueOf(course_text.getText());
-        Intent intent = new Intent(CourseActivity.this, UserCourseActivity.class);
-        intent.putExtra("location", course_location_btn.getText().toString());
-        String[] store_list = course.split("  ");
-        intent.putExtra("store_list", store_list);
-        intent.putExtra("ori_count", count);
-        intent.putExtra("count", count);
-        intent.putExtra("store", store_list[1]);
-
-        intent.putExtra("office_x", office_x);
-        intent.putExtra("office_y", office_y);
-
-        Log.d("OFFICE", "course   office"+office+"X: "+office_x+" Y: "+office_y);
-
-        startActivity(intent);
-    }
 
     public void onClick_trash_btn(View view){
         course_text.setText("");
@@ -290,6 +266,33 @@ public class CourseActivity extends AppCompatActivity {
         intent.putExtra("new_course", course_text.getText().toString());
         intent.putExtra("eat_count", eat_count);
         intent.putExtra("user_id", user_id);
+        startActivity(intent);
+    }
+
+    public void onClick_direct_add_btn(View view){
+        if(count < 2){
+            Toast.makeText(getApplicationContext(), "2개 이상 선택해주세요.", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        office += "청";
+        get_xy(office);
+
+        course = String.valueOf(course_text.getText());
+        Intent intent = new Intent(CourseActivity.this, UserCourseActivity.class);
+        intent.putExtra("office", office);
+        intent.putExtra("location", course_location_btn.getText().toString());
+        String[] store_list = course.split("  ");
+        intent.putExtra("store_list", store_list);
+        intent.putExtra("ori_count", count);
+        intent.putExtra("count", count);
+        intent.putExtra("store", store_list[1]);
+
+        intent.putExtra("office_x", office_x);
+        intent.putExtra("office_y", office_y);
+
+        Log.d("OFFICE", "course   office"+office+"X: "+office_x+" Y: "+office_y);
+
         startActivity(intent);
     }
 

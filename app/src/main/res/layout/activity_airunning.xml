@@ -13,6 +13,12 @@
         android:layout_weight="1157">
 
     </LinearLayout>
+    
+    <ProgressBar
+        android:id="@+id/ai_running_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
 
 
 </LinearLayout>

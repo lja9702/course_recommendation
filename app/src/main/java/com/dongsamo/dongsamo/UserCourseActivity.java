@@ -32,7 +32,7 @@ public class UserCourseActivity extends AppCompatActivity {
     ImageButton next_btn, fin_btn,user_course_finish_btn;
     TextView course_item;
     int count = 0, ori_count=0;
-    String course="", new_course="", add_course = "";
+    String course="", new_course="", add_course = "", office;
     String[] store_list;
 
     String siteUrl = "http://openapi.seoul.go.kr:8088/";
@@ -67,6 +67,7 @@ public class UserCourseActivity extends AppCompatActivity {
         //**구청 받아와서 구청 중심으로 지도 보이기
         office_x = intent.getExtras().getFloat("office_x");
         office_y = intent.getExtras().getFloat("office_y");
+        office = intent.getExtras().getString("office");
 
         intent.putExtra("office_x", office_x);
         intent.putExtra("office_y", office_y);
@@ -301,6 +302,7 @@ public class UserCourseActivity extends AppCompatActivity {
         intent.putExtra("office_x", office_x);
         intent.putExtra("office_y", office_y);
         intent.putExtra("location", now_location);
+        intent.putExtra("office", office);
 
         startActivity(intent);
         finish();
@@ -309,9 +311,12 @@ public class UserCourseActivity extends AppCompatActivity {
     public void onClick_user_course_finish_btn(View view){
         Intent intent = new Intent(UserCourseActivity.this, DecidingActivity.class);
         new_course += ("  "+add_course);
+        new_course = "  "+new_course;
         Log.d("NEW_COURSE", "hihi  "+new_course);
         intent.putExtra("new_course", new_course);
         intent.putExtra("count", ori_count);
+        intent.putExtra("office", office);
+
 
         startActivity(intent);
         finish();

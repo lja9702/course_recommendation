@@ -895,6 +895,7 @@ id address_textView
 id adjust_height
 id adjust_width
 id ai_ask_btn
+id ai_running_progress
 id alertTitle
 id all
 id always
@@ -948,7 +949,6 @@ id custom
 id customPanel
 id dark
 id date_data
-id decide_course_btn
 id decor_content_parent
 id default_activity_button
 id dimensions
@@ -1042,7 +1042,6 @@ id mypage_withdraw_btn
 id mypage_withdraw_btn_black
 id name_data
 id never
-id no_course_btn
 id none
 id normal
 id not_found_textView
