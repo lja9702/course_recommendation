@@ -155,14 +155,13 @@ public class MypageActivity extends AppCompatActivity {
 
                     Log.d("TAGS", member.getId());
 
-                    databaseReference.child("taste").child(member.getId()).addValueEventListener(new ValueEventListener() {
+                    databaseReference.child("favorite").child(member.getId()).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot mdataSnapshot) {
-                            for (DataSnapshot snapshot : mdataSnapshot.child("favorite").getChildren()) {
-                                Log.d("TAGS",snapshot.getKey());
 
-                                postlist.add(new UserLikeListitem(snapshot.getKey()));
-                                //list_ap.notifyDataSetChanged();
+                            for (DataSnapshot snapshot : mdataSnapshot.getChildren()) {
+                                Log.d("TAGS", "snap key : " + snapshot.getKey());
+                                postlist.add(new UserLikeListitem((String)snapshot.getValue()));// Object 형으로 return, 가게번호 to jeong
                             }
                         }
 
