@@ -1,7 +1,8 @@
 {
   "stringTable": {
     "0": "/Users/MIPUNG/Desktop/Dongsamo/app/.externalNativeBuild/cmake/debug/x86",
-    "1": "--target=i686-none-linux-android23 --gcc-toolchain=/Users/MIPUNG/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/MIPUNG/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/Mipung/Desktop/Dongsamo/opencv/native/jni/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++ -std=gnu++11 -O0 -fno-limit-debug-info -fPIC"
+    "1": "--target=i686-none-linux-android23 --gcc-toolchain=/Users/MIPUNG/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/MIPUNG/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/Mipung/Desktop/Dongsamo/opencv/native/jni/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++ -std=gnu++11 -O0 -fno-limit-debug-info -fPIC",
+    "2": "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++  -std=gnu++11 -O0 -fno-limit-debug-info  -fPIC   -Dnative_lib_EXPORTS -I /Users/Mipung/Desktop/Dongsamo/opencv/native/jni/include"
   },
   "buildFiles": [
     "/Users/MIPUNG/Library/Android/sdk/ndk-bundle/build/cmake/platforms.cmake",
@@ -20,8 +21,8 @@
       "artifactName": "native-lib",
       "files": [
         {
-          "src": "/Users/Mipung/Desktop/Dongsamo/app/src/main/cpp/native-lib.cpp",
-          "flagsOrdinal": 1,
+          "src": "/Users/MIPUNG/Desktop/Dongsamo/app/src/main/cpp/native-lib.cpp",
+          "flagsOrdinal": 2,
           "workingDirectoryOrdinal": 0
         }
       ],
