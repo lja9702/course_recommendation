@@ -784,6 +784,7 @@ drawable find_id_btn
 drawable find_ok_btn
 drawable find_pw_btn
 drawable finish_btn
+drawable finish_btn_black
 drawable fresh
 drawable good_face
 drawable googleg_disabled_color_18
@@ -811,6 +812,7 @@ drawable mypage_down_box
 drawable mypage_text
 drawable mypage_up_box
 drawable next_btn
+drawable next_btn_black
 drawable no_course
 drawable no_course_black
 drawable notification_action_background
@@ -946,6 +948,7 @@ id custom
 id customPanel
 id dark
 id date_data
+id decide_course_btn
 id decor_content_parent
 id default_activity_button
 id dimensions
@@ -1039,6 +1042,7 @@ id mypage_withdraw_btn
 id mypage_withdraw_btn_black
 id name_data
 id never
+id no_course_btn
 id none
 id normal
 id not_found_textView

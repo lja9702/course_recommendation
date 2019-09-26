@@ -187,23 +187,47 @@ public class StoreActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot mdataSnapshot) {
                         boolean is_heart = false;
+                        int last_cnt = 0;
+                        int empty_cnt = 0;
+                        int before_index = -1;
+                        int if_index = -1;
+                        int cnt = 0;
+                        Log.d("TAGS", "datasnapshot : "+ mdataSnapshot.getValue());
                         for (DataSnapshot snapshot : mdataSnapshot.getChildren()) {
                             Log.d("TAGS", "snapshot key : " + snapshot.getKey());
-                            if (snapshot.getKey().equals(store_unikey)) {
-                                is_heart = true;
+                            Log.d("TAGS", "snapshot VALUE : " + snapshot.getValue());
+
+                            int index = Integer.parseInt(snapshot.getKey());
+                            if (before_index == index - 1) {
+                                before_index = index;
                             }
+                            else {
+                                if (if_index == -1) {
+                                    if_index = index - 1;
+                                }
+                            }
+
+                            if (snapshot.getValue().equals(store_unikey)) {
+                                is_heart = true;
+                                cnt = Integer.parseInt(snapshot.getKey());
+                            }
+                            last_cnt++;
                             Log.d("TAGS", "favorite : " + snapshot.getKey());
                         }
 
                         if (is_heart) {
-                            mdataSnapshot.getRef().child(store_unikey).removeValue();
+                            mdataSnapshot.getRef().child(String.valueOf(cnt)).removeValue();
                             heart.setImageResource(R.drawable.false_heart);
                             Log.d("TAGS", "in here");
                         }
                         else {
-                            mdataSnapshot.getRef().setValue(store_unikey);
+                            if (if_index == -1) {
+                                mdataSnapshot.getRef().child(String.valueOf(last_cnt)).setValue(store_unikey);
+                            }
+                            else {
+                                mdataSnapshot.getRef().child(String.valueOf(if_index)).setValue(store_unikey);
+                            }
                             heart.setImageResource(R.drawable.true_heart);
-                            Log.d("TAGS", "in here2");
                         }
                     }
 

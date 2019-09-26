@@ -209,7 +209,7 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="60"/>
+            android:layout_weight="70"/>
 
         <ImageButton
             android:id="@+id/direct_add_btn"
@@ -224,7 +224,7 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="70"/>
+            android:layout_weight="50"/>
 
         <ImageButton
             android:id="@+id/ai_ask_btn"

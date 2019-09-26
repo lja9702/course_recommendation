@@ -12,6 +12,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 import android.support.annotation.NonNull;
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity
     //kongil
     TessBaseAPI tessBaseAPI;
     CameraSurfaceView surfaceView;
-    ImageButton capture_btn;
+    ImageButton capture_btn, main_course_ask_btn, main_shop_list_btn, main_mypage_btn;
     ImageView imageView;
 
     double lon, lat;
@@ -106,6 +107,48 @@ public class MainActivity extends AppCompatActivity
         imageView = findViewById(R.id.imageView);
         surfaceView = findViewById(R.id.activity_surfaceView);
         capture_btn = (ImageButton)findViewById(R.id.capture_btn);
+        main_course_ask_btn = (ImageButton) findViewById(R.id.main_course_ask_btn);
+        main_shop_list_btn = (ImageButton) findViewById(R.id.main_shop_list_btn);
+        main_mypage_btn = (ImageButton) findViewById(R.id.main_mypage_btn);
+
+        main_shop_list_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    main_shop_list_btn.setImageResource(R.drawable.shop_list_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    main_shop_list_btn.setImageResource(R.drawable.shop_list);
+                }
+                return false;
+            }
+        });
+
+        main_course_ask_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    main_course_ask_btn.setImageResource(R.drawable.course_ask_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    main_course_ask_btn.setImageResource(R.drawable.course_ask);
+                }
+                return false;
+            }
+        });
+
+        main_mypage_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    main_mypage_btn.setImageResource(R.drawable.mypage_btn_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    main_mypage_btn.setImageResource(R.drawable.mypage_btn);
+                }
+                return false;
+            }
+        });
 
         GPSclass gpSclass = new GPSclass(this);
         Location loc = gpSclass.getLocation();

@@ -13,6 +13,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -34,9 +35,8 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
 
     EditText login_editText, passwd_editText;
-    ImageButton find_id, find_pw;
     ProgressDialog progressDialog;
-
+    ImageButton login_signup_btn;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
 
@@ -45,17 +45,27 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
-
         login_editText = (EditText)findViewById(R.id.login_id);
         passwd_editText = findViewById(R.id.login_pw);
-
-//        find_id = (ImageButton)findViewById(R.id.login_find_id_btn);
-//        find_pw = (ImageButton)findViewById(R.id.login_find_pw_btn);
-
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
         progressDialog = new ProgressDialog(LoginActivity.this);
+
+        login_signup_btn = (ImageButton) findViewById(R.id.login_signup_btn);
+
+        login_signup_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    login_signup_btn.setImageResource(R.drawable.sign_up_btn_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    login_signup_btn.setImageResource(R.drawable.sign_up_btn);
+                }
+                return false;
+            }
+        });
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             //퍼미션 상태 확인

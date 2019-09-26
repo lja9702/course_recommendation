@@ -223,7 +223,6 @@ public class AIRunningActivity extends AppCompatActivity {
                 }
             }
 
-
             pass_course="";
             int cntt = 0;
             for(int i=0; i<st_list.length; i++){

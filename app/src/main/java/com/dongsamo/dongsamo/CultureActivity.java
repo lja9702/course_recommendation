@@ -101,10 +101,7 @@ public class CultureActivity extends AppCompatActivity {
             URL url = null;
             String result = null;
             try {
-                if(intent_location != null)
-                    url = new URL(""+siteUrl+ID+contents+intent_location);
-                else
-                    url = new URL(""+siteUrl+ID+contents);
+                url = new URL(""+siteUrl+ID+contents);
 
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 

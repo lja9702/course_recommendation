@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -74,6 +75,32 @@ public class UserCourseActivity extends AppCompatActivity {
         user_course_finish_btn = (ImageButton)findViewById(R.id.user_course_finish_btn);
         fin_btn = (ImageButton)findViewById(R.id.user_course_finish_btn);
         course_item = (TextView)findViewById(R.id.course_item);
+
+        next_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    next_btn.setImageResource(R.drawable.next_btn_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    next_btn.setImageResource(R.drawable.next_btn);
+                }
+                return false;
+            }
+        });
+
+        user_course_finish_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    user_course_finish_btn.setImageResource(R.drawable.finish_btn_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    user_course_finish_btn.setImageResource(R.drawable.finish_btn);
+                }
+                return false;
+            }
+        });
 
         tMapView = (TMapView)findViewById(R.id.user_course_tmap);
         tMapView.setSKTMapApiKey(apiKey);
@@ -281,7 +308,7 @@ public class UserCourseActivity extends AppCompatActivity {
 
     public void onClick_user_course_finish_btn(View view){
         Intent intent = new Intent(UserCourseActivity.this, DecidingActivity.class);
-        new_course = new_course.concat("  "+add_course);
+        new_course += ("  "+add_course);
         Log.d("NEW_COURSE", "hihi  "+new_course);
         intent.putExtra("new_course", new_course);
         intent.putExtra("count", ori_count);

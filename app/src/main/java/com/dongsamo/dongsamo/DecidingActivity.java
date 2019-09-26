@@ -3,6 +3,7 @@ package com.dongsamo.dongsamo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -83,8 +84,35 @@ public class DecidingActivity extends AppCompatActivity {
         tMapView.setTrackingMode(true);
         activity_deciding.addView(tMapView);
 
-//        no_course_btn = (ImageButton)findViewById(R.id.no_course_btn);
-//        decide_course_btn = (ImageButton)findViewById(R.id.decide_course_btn);
+        no_course_btn = (ImageButton)findViewById(R.id.no_course_btn);
+        decide_course_btn = (ImageButton)findViewById(R.id.decide_course_btn);
+
+        no_course_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    no_course_btn.setImageResource(R.drawable.no_course_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    no_course_btn.setImageResource(R.drawable.no_course);
+                }
+                return false;
+            }
+        });
+
+        decide_course_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    decide_course_btn.setImageResource(R.drawable.decide_course_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    decide_course_btn.setImageResource(R.drawable.decide_course);
+                }
+                return false;
+            }
+        });
+
 
         Intent intent = getIntent();
         course = intent.getExtras().getString("new_course","");
@@ -93,7 +121,6 @@ public class DecidingActivity extends AppCompatActivity {
         passList = new ArrayList<TMapPoint>();
 
         //course = "  "+course;
-        Log.d("Course222", store_list[1]);
         ///출발지
         String api_returns = stringToApi(store_list[2]);
         String now_data = api_returns.substring(api_returns.indexOf("\"x\""));

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -73,6 +74,32 @@ public class MypageActivity extends AppCompatActivity {
 
         mypage_logout_btn = (ImageButton)findViewById(R.id.mypage_logout_btn);
         mypage_withdraw_btn = (ImageButton)findViewById(R.id.mypage_withdraw_btn);
+
+        mypage_logout_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    mypage_logout_btn.setImageResource(R.drawable.logout_btn_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    mypage_logout_btn.setImageResource(R.drawable.logout_btn);
+                }
+                return false;
+            }
+        });
+
+        mypage_withdraw_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    mypage_withdraw_btn.setImageResource(R.drawable.withdraw_btn_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    mypage_withdraw_btn.setImageResource(R.drawable.withdraw_btn);
+                }
+                return false;
+            }
+        });
 
         mypage_recent_course1 = (TextView) findViewById(R.id.mypage_recent_course1);
         mypage_recent_course2 = (TextView) findViewById(R.id.mypage_recent_course2);

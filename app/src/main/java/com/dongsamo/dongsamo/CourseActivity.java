@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -37,8 +38,9 @@ public class CourseActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
     private FirebaseUser firebaseUser;
-
     float office_x, office_y;
+
+    ImageButton restaurant_btn, show_btn, etc_btn, direct_add_btn, ai_ask_btn, trash_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +53,91 @@ public class CourseActivity extends AppCompatActivity {
         course_location_btn = (TextView)findViewById(R.id.course_location_btn);
         course_text = (TextView)findViewById(R.id.course_text);
         course_text.setMovementMethod(new ScrollingMovementMethod());
+
+        restaurant_btn = (ImageButton) findViewById(R.id.restaurant_btn);
+        show_btn = (ImageButton) findViewById(R.id.show_btn);
+        etc_btn = (ImageButton) findViewById(R.id.etc_btn);
+        direct_add_btn = (ImageButton) findViewById(R.id.direct_add_btn);
+        ai_ask_btn = (ImageButton) findViewById(R.id.ai_ask_btn);
+        trash_btn = (ImageButton) findViewById(R.id.trash_btn);
+
+        trash_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    trash_btn.setImageResource(R.drawable.trash_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    trash_btn.setImageResource(R.drawable.trash);
+                }
+                return false;
+            }
+        });
+
+        restaurant_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    restaurant_btn.setImageResource(R.drawable.restaurant_btn_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    restaurant_btn.setImageResource(R.drawable.restaurant_btn);
+                }
+                return false;
+            }
+        });
+
+        show_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    show_btn.setImageResource(R.drawable.show_btn_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    show_btn.setImageResource(R.drawable.show_btn);
+                }
+                return false;
+            }
+        });
+
+        etc_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    etc_btn.setImageResource(R.drawable.etc_btn_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    etc_btn.setImageResource(R.drawable.etc_btn);
+                }
+                return false;
+            }
+        });
+
+        direct_add_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    direct_add_btn.setImageResource(R.drawable.direct_add_btn_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    direct_add_btn.setImageResource(R.drawable.direct_add_btn);
+                }
+                return false;
+            }
+        });
+
+        ai_ask_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    ai_ask_btn.setImageResource(R.drawable.ai_ask_btn_black);
+                }
+                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    ai_ask_btn.setImageResource(R.drawable.ai_ask_btn);
+                }
+                return false;
+            }
+        });
 
         want_location = new String[5];
         count = 0;
