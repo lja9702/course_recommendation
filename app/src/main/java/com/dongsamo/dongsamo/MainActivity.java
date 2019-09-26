@@ -229,7 +229,7 @@ public class MainActivity extends AppCompatActivity
             URL url = null;
             String result = null;
             try {
-                url = new URL(""+siteUrl+ID+contents);
+                url = new URL(""+siteUrl+ID+contents+now_location);
 
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
@@ -499,4 +499,9 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    public void onClick_main_help_btn(View view){
+        Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
+        intent.putExtra("flag", false);
+        startActivity(intent);
+    }
 }

@@ -34,6 +34,7 @@
             android:background="#fff"
             android:textColor="#000"
             android:hint="장소 이름을 입력하세요."
+            android:inputType="text"
             android:textColorHint="#888"
             android:paddingLeft="5dp"
             android:maxLines="1">

@@ -195,9 +195,7 @@ public class CourseActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
+    
     public void onClick_trash_btn(View view){
         course_text.setText("");
         eat_count = 0;
@@ -275,7 +273,8 @@ public class CourseActivity extends AppCompatActivity {
             return;
         }
 
-        office += "청";
+        if(office.charAt((office.length()-1)) != '청')
+            office += "청";
         get_xy(office);
 
         course = String.valueOf(course_text.getText());

@@ -17,7 +17,22 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="570"/>
+            android:layout_weight="25"/>
+
+        <ImageButton
+            android:id="@+id/main_help_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="60"
+            android:background="@android:color/transparent"
+            android:onClick="onClick_main_help_btn"
+            android:scaleType="fitCenter"
+            android:src="@drawable/help_btn" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="490"/>
 
         <ImageButton
             android:id="@+id/main_mypage_btn"

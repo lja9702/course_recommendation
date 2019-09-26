@@ -110,25 +110,53 @@ public class DecidingActivity extends AppCompatActivity {
         ///출발지
         try {
             Log.d("Course222", "first:"+store_list[1]);
+            store_x = store_y = 0;
             store_name = store_list[1];
             new FoodTask().execute().get();
             insert_post(result);
+            if(store_x == store_y && store_x == 0){
+                String api_returns = stringToApi(store_list[1]);
+                Log.d("Course222", "log:"+api_returns);
+                String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
+                String now_data_array[] = now_data.split("\"");
+                store_x =  Float.parseFloat(now_data_array[3]);
+                store_y =  Float.parseFloat(now_data_array[7]);
+            }
+
             tMapView.setLocationPoint(store_x,store_y);
             tp1 = new TMapPoint(store_y, store_x);
             Log.d("Course222", "first:"+store_x+" "+store_y);
             pinpinEE(store_list[1], store_x, store_y,"no"+store_list[1]+"_test");
 
+            store_x = store_y = 0;
             ///시작지
             Log.d("Course222", "second:"+store_list[2]);
             store_name = store_list[2];
             insert_post(result);
+            if(store_x == store_y && store_x == 0){
+                String api_returns = stringToApi(store_list[2]);
+                Log.d("Course222", "log:"+api_returns);
+                String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
+                String now_data_array[] = now_data.split("\"");
+                store_x =  Float.parseFloat(now_data_array[3]);
+                store_y =  Float.parseFloat(now_data_array[7]);
+            }
             Log.d("Course222", "second:"+store_x+" "+store_y);
             tp2 = new TMapPoint(store_y, store_x);
             pinpinEE(store_list[2], store_x, store_y,"no"+store_list[2]+"_test");
 
             for(int i=3; i < store_list.length; i++){
+                store_x = store_y = 0;
                 store_name = store_list[i];
                 insert_post(result);
+                if(store_x == store_y && store_x == 0){
+                    String api_returns = stringToApi(store_list[i]);
+                    Log.d("Course222", "log:"+api_returns);
+                    String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
+                    String now_data_array[] = now_data.split("\"");
+                    store_x =  Float.parseFloat(now_data_array[3]);
+                    store_y =  Float.parseFloat(now_data_array[7]);
+                }
                 pinpinEE(store_list[i],store_x,store_y,"a"+store_list[i]+"_test");
             }
 

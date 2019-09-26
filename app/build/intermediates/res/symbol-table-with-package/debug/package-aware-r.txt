@@ -789,6 +789,8 @@ drawable fresh
 drawable good_face
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable help_btn
+drawable help_btn_black
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable icon
@@ -809,6 +811,7 @@ drawable logout_btn_black
 drawable mypage_btn
 drawable mypage_btn_black
 drawable mypage_down_box
+drawable mypage_favorite
 drawable mypage_text
 drawable mypage_up_box
 drawable next_btn
@@ -1013,6 +1016,7 @@ id login_signup_btn
 id login_signup_btn_black
 id main_course_ask_btn
 id main_course_ask_btn_black
+id main_help_btn
 id main_mypage_btn
 id main_mypage_btn_black
 id main_shop_list_btn
@@ -1192,6 +1196,7 @@ layout activity_direct_add
 layout activity_find_id
 layout activity_find_pw
 layout activity_firebase_ui
+layout activity_help
 layout activity_login
 layout activity_main
 layout activity_mypage

@@ -239,6 +239,7 @@ public class AIRunningActivity extends AppCompatActivity {
             intent.putExtra("new_course", pass_course);
             intent.putExtra("office", office);
             startActivity(intent);
+            finish();
         }
     }
 

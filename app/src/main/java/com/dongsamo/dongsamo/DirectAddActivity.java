@@ -67,8 +67,6 @@ public class DirectAddActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         office = intent.getExtras().getString("office");
-        office = office.concat("청");
-
         get_xy(office);
 
         store = new ArrayList<>();
@@ -155,8 +153,6 @@ public class DirectAddActivity extends AppCompatActivity {
 
 
     }
-
-
 
     //api 받아오는 함수
     public String stringToApi(String target_name){

@@ -46,6 +46,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.dongsamo.dongsamo.HelpActivity" />
         <activity android:name="com.dongsamo.dongsamo.CultureActivity" />
         <activity android:name="com.dongsamo.dongsamo.MypageActivity" />
         <activity android:name="com.dongsamo.dongsamo.UserCourseActivity" />

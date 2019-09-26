@@ -69,6 +69,7 @@ public class UserCourseActivity extends AppCompatActivity {
         office_y = intent.getExtras().getFloat("office_y");
         office = intent.getExtras().getString("office");
 
+
         intent.putExtra("office_x", office_x);
         intent.putExtra("office_y", office_y);
 
@@ -102,6 +103,14 @@ public class UserCourseActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        if(!store.equals("맛집")){
+            add_course = store;
+            if(count != 1)
+                next_btn.performClick();
+            else
+                fin_btn.performClick();
+        }
 
         tMapView = (TMapView)findViewById(R.id.user_course_tmap);
         tMapView.setSKTMapApiKey(apiKey);
