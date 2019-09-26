@@ -250,21 +250,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="50"
+        android:layout_weight="30"
         android:weightSum="720">
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="50"/>
+            android:layout_weight="10"/>
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="250"
-            android:src="@drawable/recent_course"/>
+            android:layout_weight="220"
+            android:src="@drawable/mypage_favorite"/>
+
 
     </LinearLayout>
-
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
