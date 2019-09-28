@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.skt.Tmap.TMapMarkerItem;
 import com.skt.Tmap.TMapPoint;
@@ -218,7 +219,6 @@ public class UserCourseActivity extends AppCompatActivity {
 
         int cnt = 0;
         for (int i = 0; i < building_list.length(); i++) {
-
             if(cnt > 30)
                 break;
             cnt++;
@@ -300,6 +300,10 @@ public class UserCourseActivity extends AppCompatActivity {
     }
 
     public void onClick_user_course_next_btn(View view){
+        if(add_course.equals("")){
+            Toast.makeText(getApplicationContext(), "맛집을 선택해주세요.", Toast.LENGTH_LONG).show();
+            return;
+        }
         Intent intent = new Intent(UserCourseActivity.this, UserCourseActivity.class);
         new_course = new_course.concat("  "+add_course);
         Log.d("NEW_COURSE", "hihi  "+office_x+",  "+office_y);
@@ -318,6 +322,10 @@ public class UserCourseActivity extends AppCompatActivity {
     }
 
     public void onClick_user_course_finish_btn(View view){
+        if(add_course.equals("")){
+            Toast.makeText(getApplicationContext(), "맛집을 선택해주세요.", Toast.LENGTH_LONG).show();
+            return;
+        }
         Intent intent = new Intent(UserCourseActivity.this, DecidingActivity.class);
         new_course += ("  "+add_course);
         new_course = "  "+new_course;

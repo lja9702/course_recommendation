@@ -301,16 +301,7 @@
                     android:textColor="#000"
                     android:gravity="center"/>
 
-                <ImageButton
-                    android:id="@+id/mypage_heart1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:background="@android:color/transparent"
-                    android:padding="5dp"
-                    android:onClick="onClick_mypage_heart"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/true_heart" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -326,16 +317,6 @@
                     android:textColor="#000"
                     android:gravity="center"/>
 
-                <ImageButton
-                    android:id="@+id/mypage_heart2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:background="@android:color/transparent"
-                    android:padding="5dp"
-                    android:onClick="onClick_mypage_heart"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/true_heart" />
             </LinearLayout>
 
             <LinearLayout
@@ -351,16 +332,6 @@
                     android:textColor="#000"
                     android:gravity="center"/>
 
-                <ImageButton
-                    android:id="@+id/mypage_heart3"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:background="@android:color/transparent"
-                    android:padding="5dp"
-                    android:onClick="onClick_mypage_heart"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/true_heart" />
             </LinearLayout>
 
             <LinearLayout
@@ -376,16 +347,6 @@
                     android:textColor="#000"
                     android:gravity="center"/>
 
-                <ImageButton
-                    android:id="@+id/mypage_heart4"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:background="@android:color/transparent"
-                    android:padding="5dp"
-                    android:onClick="onClick_mypage_heart"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/true_heart" />
             </LinearLayout>
 
         </LinearLayout>

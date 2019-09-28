@@ -1,5 +1,6 @@
 package com.dongsamo.dongsamo;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -24,11 +26,12 @@ public class CultureActivity extends AppCompatActivity {
     String siteUrl = "http://openapi.seoul.go.kr:8088/";
     String ID = "715a7862706c6a613131344b74576676";
     String contents = "/json/culturalEventInfo/1/1000/";
-    String intent_name = null, intent_location = null;
     private List<Post3> postlist;
     private RecyclerView list;
     private RecyclerViewAdapter3 list_ap;
     JSONArray building_list;
+    ProgressDialog pd;
+    int cnt = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,16 +43,28 @@ public class CultureActivity extends AppCompatActivity {
         list_ap = new RecyclerViewAdapter3(CultureActivity.this, postlist);
         RecyclerDecoration spaceDecoration = new RecyclerDecoration(70);
         list.addItemDecoration(spaceDecoration);
-
+        list.setOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                if (!list.canScrollVertically(1)) {
+                    showProgress("더 많은 문화공연을 가져오는 중");
+                    cnt+=5;
+                    try {
+                        insert_post(cnt);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    hideProgress();
+                    Log.i("Tag", "End of list");
+                }
+            }
+        });
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         list.setLayoutManager(gridLayoutManager);//3행을 가진 그리드뷰로 레이아웃을 만듬
 
         try {
             new Task().execute().get();
-            Thread.sleep(1);
-            insert_post( );
-
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -63,36 +78,45 @@ public class CultureActivity extends AppCompatActivity {
         list.setAdapter(list_ap);
     }
 
-    private void insert_post() throws Exception {
+    private void insert_post(int cnt) throws Exception {
+
         String[] jsonName = {"CODENAME","TITLE","DATE","PLACE","ORG_NAME","USE_TRGT","USE_FEE","PLAYER","PROGRAM","ETC_DESC",
                 "ORG_LINK","MAIN_IMG","RGSTDATE","TICKET","STRTDATE","END_DATE","THEMECODE"};
 
         JSONObject JS = null;
 
         String ps_title=null, ps_date=null, ps_place = null, ps_money=null, ps_detail=null;
+        Log.d("Course222", "log:"+building_list.length());
 
-        for (int i = 0; i < building_list.length(); i++) {
+
+        for (int i = cnt; i < building_list.length() && i < cnt+5; i++) {
+
             JS = building_list.getJSONObject(i);
             if (JS != null) {
-                for (int j = 0; j < jsonName.length; j++) {
-                    if (jsonName[j].equals("TITLE")) {
-                        ps_title = JS.optString("TITLE");
-                    } else if (jsonName[j].equals("DATE")) {
-                        ps_date = JS.optString("DATE");
-                    } else if (jsonName[j].equals("PLACE")) {
-                        ps_place = JS.optString("PLACE");
-                    }
-                    else if(jsonName[j].equals("USE_FEE")){
-                        ps_money = JS.optString("USE_FEE");
-                    }
-                    else if(jsonName[j].equals("PROGRAM")){
-                        ps_detail = JS.optString("PROGRAM");
-                    }
-                }
+                ps_title = JS.optString("TITLE");
+                ps_date = JS.optString("DATE");
+                ps_place = JS.optString("PLACE");
+                ps_money = JS.optString("USE_FEE");
+                ps_detail = JS.optString("PROGRAM");
             }
-            postlist.add(new Post3(ps_title, ps_date, ps_place, ps_money, ps_detail));
-            list_ap.notifyDataSetChanged();
+
+            Log.d("Course222", "log:"+ps_place);
+            String api_returns = stringToApi(ps_place);
+            Log.d("Course222", "log:"+api_returns);
+            if(!api_returns.contains("x")){
+                continue;
+            }
+            String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
+            String now_data_array[] = now_data.split("\"");
+            float store_x =  Float.parseFloat(now_data_array[3]);
+            float store_y =  Float.parseFloat(now_data_array[7]);
+            Log.d("Course222", "log:"+store_x+" "+store_y);
+
+            if(store_x != 0.0 && store_y != 0.0) {
+                postlist.add(new Post3(ps_title, ps_date, ps_place, ps_money, ps_detail));
+            }
         }
+        list_ap.notifyDataSetChanged();
     }
 
     public class Task extends AsyncTask<String, String, String> {
@@ -128,11 +152,37 @@ public class CultureActivity extends AppCompatActivity {
                 } else {
                     Log.i("통신 결과", conn.getResponseCode() + "에러");
                 }
+
+                insert_post(cnt);
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
             return result;
+        }
+    }
+
+    public String stringToApi(String store_name){
+        GeocodeThreadClass test = new GeocodeThreadClass(store_name);
+        Thread t = new Thread(test);
+        t.start();
+        while(test.get_result() == null);
+        return test.get_result();
+    }
+
+
+    public void showProgress(String msg) {
+        if( pd == null ) {// 객체를 1회만 생성한다.
+            pd = new ProgressDialog(CultureActivity.this); // 생성한다.
+            pd.setCancelable(false); // 백키로 닫는 기능을 제거한다.
+        }
+        pd.setMessage(msg); // 원하는 메시지를 세팅한다.
+        pd.show(); // 화면에 띠워라
+    }
+    // 프로그레스 다이얼로그 숨기기
+    public void hideProgress() {
+        if (pd != null && pd.isShowing()) { // 닫는다 : 객체가 존재하고, 보일때만
+            pd.dismiss();
         }
     }
 }

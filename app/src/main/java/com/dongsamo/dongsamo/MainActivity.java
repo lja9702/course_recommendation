@@ -25,7 +25,13 @@ import com.dongsamo.dongsamo.firebase_control.Store;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
@@ -47,6 +53,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.ExecutionException;
@@ -73,6 +80,10 @@ public class MainActivity extends AppCompatActivity
     String ID = "6c5474475266627737325756715870";
     String contents = "/json/CrtfcUpsoInfo/1/1000/";
     JSONArray building_list;
+    String pass_ps;
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference databaseReference;
+    private FirebaseUser firebaseUser;
 
     DatabaseReference mDatabase;// Add by kongil
 
@@ -102,7 +113,31 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
         //kong
+        try {
+            new FoodTask().execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        databaseReference.child("Parsing").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@androidx.annotation.NonNull DataSnapshot dataSnapshot) {
+                dataSnapshot.getRef().child("Data").removeValue();
+                dataSnapshot.getRef().child("Data").setValue(pass_ps);
+            }
+            @Override
+            public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
+
+                Log.w("TAGs", "Failed to read value.", databaseError.toException());
+            }
+        });
 
         imageView = findViewById(R.id.imageView);
         surfaceView = findViewById(R.id.activity_surfaceView);
@@ -181,7 +216,7 @@ public class MainActivity extends AppCompatActivity
         //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
         //RDN_CODE_NM: 도로명주소,
 
-        String ps_name = null, ps_type = null, ps_call= null, ps_address= null, ps_unikey;
+        String ps_name = null, ps_type = null, ps_call= null, ps_address= null, ps_unikey, place_name;
         double store_x = 0, store_y = 0;
         Log.d("TAGS", "bef insert post!");
         Log.d("TAGS", "hi Log   "+building_list.length());
@@ -191,77 +226,38 @@ public class MainActivity extends AppCompatActivity
 
             JS = building_list.getJSONObject(i);
             if (JS != null) {
+                place_name = JS.optString("CGG_CODE_NM");
+                if(place_name.equals(now_location)) {
+                    ps_name = JS.optString("UPSO_NM");
+                    Log.d("Store", "업소: " + ps_name);
+                    if (ps_name != null) {
+                        Log.d("Store", result + "  " + ps_name);
+                        if (result.contains(ps_name)) {
+                            Log.d("Success", "HI success");
 
-                ps_name = JS.optString("UPSO_NM");
-                Log.d("Store", "업소: "+ps_name);
-                if(ps_name != null) {
-                    Log.d("Store", result+"  "+ps_name);
-                    if(result.contains(ps_name)) {
-                        Log.d("Success", "HI success");
+                            ps_name = JS.optString("UPSO_NM");
+                            ps_call = JS.optString("TEL_NO");
+                            ps_address = JS.optString("RDN_CODE_NM") + JS.optString("RDN_DETAIL_ADDR");
+                            ps_type = JS.optString("BIZCND_CODE_NM");
+                            ps_unikey = JS.optString("UPSO_SNO");
+                            store_x = JS.optDouble("X_CNTS");
+                            store_y = JS.optDouble("Y_DNTS");
 
-                        ps_name = JS.optString("UPSO_NM");
-                        ps_call = JS.optString("TEL_NO");
-                        ps_address = JS.optString("RDN_CODE_NM")+JS.optString("RDN_DETAIL_ADDR");
-                        ps_type = JS.optString("BIZCND_CODE_NM");
-                        ps_unikey = JS.optString("UPSO_SNO");
-                        store_x = JS.optDouble("X_CNTS");
-                        store_y = JS.optDouble("Y_DNTS");
+                            wintent.putExtra("store_unikey", ps_unikey);
+                            wintent.putExtra("store_name", ps_name);
+                            wintent.putExtra("store_x", (float) store_x);
+                            wintent.putExtra("store_y", (float) store_y);
+                            wintent.putExtra("store_type", ps_type);
+                            wintent.putExtra("store_call", ps_call);
+                            wintent.putExtra("store_address", ps_address);
 
-                        wintent.putExtra("store_unikey", ps_unikey);
-                        wintent.putExtra("store_name", ps_name);
-                        wintent.putExtra("store_x", (float)store_x);
-                        wintent.putExtra("store_y", (float)store_y);
-                        wintent.putExtra("store_type", ps_type);
-                        wintent.putExtra("store_call", ps_call);
-                        wintent.putExtra("store_address", ps_address);
-
-                        return true;
+                            return true;
+                        }
                     }
                 }
             }
         }
         return false;
-    }
-
-    public class FoodTask extends AsyncTask<String, String, String> {
-        @Override
-        protected String doInBackground(String... params) {
-            URL url = null;
-            String result = null;
-            try {
-                url = new URL(""+siteUrl+ID+contents+now_location);
-
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-                if (conn.getResponseCode() == conn.HTTP_OK) {
-                    InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
-                    BufferedReader reader = new BufferedReader(tmp);
-                    StringBuffer buffer = new StringBuffer();
-                    String str = null;
-                    while ((str = reader.readLine()) != null) {
-                        buffer.append(str);
-                    }
-                    result = buffer.toString();
-
-                    Log.d("LOG", result);
-                    JSONObject jsonObject1 = new JSONObject(result);
-                    String CrtfcUpsoInfo = jsonObject1.getString("CrtfcUpsoInfo");
-                    Log.d("LOG", "CrtfcUpsoInfo: " + CrtfcUpsoInfo);
-                    JSONObject jsonObject2 = new JSONObject(CrtfcUpsoInfo);
-                    String row = jsonObject2.getString("row");
-                    Log.d("Log", "row: "+row);
-                    building_list = new JSONArray(row);
-
-                    reader.close();
-                } else {
-                    Log.i("통신 결과", conn.getResponseCode() + "에러");
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            return result;
-        }
     }
 
     /*주변상점보기*/
@@ -279,51 +275,6 @@ public class MainActivity extends AppCompatActivity
     public void onClick_capture_btn(View view) {
         Log.d("TAGS", "onClick_capture");
         capture();
-    }
-
-    /*training data 있는지 확인 if 없으면 -> createFiles*/
-    boolean checkLanguageFile(String dir)
-    {
-        File file = new File(dir);
-        if(!file.exists() && file.mkdirs()) {
-            createFiles(dir);
-        }
-        else if(file.exists()){
-            String filePath = dir + "/eng.traineddata";
-            File langDataFile = new File(filePath);
-            if(!langDataFile.exists())
-                createFiles(dir);
-        }
-        return true;
-    }
-
-    /*training data 있는지 확인 if 없으면 -> createFiles*/
-    private void createFiles(String dir)
-    {
-        Log.d("TAG", "createFiles");
-        AssetManager assetMgr = this.getAssets();
-
-        InputStream inputStream = null;
-        OutputStream outputStream = null;
-
-        try {
-            inputStream = assetMgr.open("eng.traineddata");
-
-            String destFile = dir + "/eng.traineddata";
-            outputStream = new FileOutputStream(destFile);
-
-            byte[] buffer = new byte[1024];
-            int read;
-            while ((read = inputStream.read(buffer)) != -1) {
-                Log.d("TAG", "buffer : "+buffer);
-                outputStream.write(buffer, 0, read);
-            }
-            inputStream.close();
-            outputStream.flush();
-            outputStream.close();
-        }catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     /*카메라 캡쳐*/
@@ -408,6 +359,16 @@ public class MainActivity extends AppCompatActivity
     public void onResume()
     {
         super.onResume();
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+
+        if( firebaseUser == null ){
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            MainActivity.this.finish();
+        }
+
+        super.onResume();
 
         if (!OpenCVLoader.initDebug()) {
             Log.d(TAG, "onResume :: Internal OpenCV library not found.");
@@ -455,7 +416,6 @@ public class MainActivity extends AppCompatActivity
 
         try {
             Log.d("TAGS", "FOodTask");
-            new FoodTask().execute().get();
             Log.d("TAGS", "Before insert");
             Store post = new Store();
             wintent = new Intent(getApplicationContext(), CustomWidget.class);
@@ -503,5 +463,47 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
         intent.putExtra("flag", false);
         startActivity(intent);
+    }
+
+    public class FoodTask extends AsyncTask<String, String, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            URL url = null;
+            String result = null;
+            try {
+                url = new URL(""+siteUrl+ID+contents);
+
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                if (conn.getResponseCode() == conn.HTTP_OK) {
+                    InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
+                    BufferedReader reader = new BufferedReader(tmp);
+                    StringBuffer buffer = new StringBuffer();
+                    String str = null;
+                    while ((str = reader.readLine()) != null) {
+                        buffer.append(str);
+                    }
+                    result = buffer.toString();
+
+                    Log.d("LOG", result);
+                    JSONObject jsonObject1 = new JSONObject(result);
+                    String CrtfcUpsoInfo = jsonObject1.getString("CrtfcUpsoInfo");
+                    Log.d("LOG", "CrtfcUpsoInfo: " + CrtfcUpsoInfo);
+                    JSONObject jsonObject2 = new JSONObject(CrtfcUpsoInfo);
+                    String row = jsonObject2.getString("row");
+                    Log.d("Log", "row: "+row);
+                    building_list = new JSONArray(row);
+                    pass_ps = row;
+
+                    reader.close();
+                } else {
+                    Log.i("통신 결과", conn.getResponseCode() + "에러");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return result;
+        }
     }
 }

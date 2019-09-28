@@ -170,44 +170,9 @@ public class StoreListActivity extends AppCompatActivity {
         tMapView.setOnCalloutRightButtonClickListener(new TMapView.OnCalloutRightButtonClickCallback() {
             @Override
             public void onCalloutRightButton(TMapMarkerItem tMapMarkerItem) {
-                JSONObject JS = null;
-
-                String ps_unikey=null, ps_name = null, ps_type = null, ps_call= null, ps_address= null;
-                double store_x = 0, store_y = 0;
-
-                for (int i = 0; i < building_list.length(); i++) {
-                    try {
-                        JS = building_list.getJSONObject(i);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    if (JS != null) {
-                        ps_name = JS.optString("UPSO_NM");
-                        ps_call = JS.optString("TEL_NO");
-                        ps_address = JS.optString("RDN_CODE_NM")+JS.optString("RDN_DETAIL_ADDR");
-                        ps_type = JS.optString("BIZCND_CODE_NM");
-                        ps_unikey = JS.optString("UPSO_SNO");
-                        store_x = JS.optDouble("X_CNTS");
-                        store_y = JS.optDouble("Y_DNTS");
-
-                        Log.d("Tag", "pinName: "+tMapMarkerItem.getName()+" ps_name: "+ps_name);
-                        if(ps_name.equals(tMapMarkerItem.getName())) {
-                            break;
-                        }
-                    }
-                }
-
                 Intent intent = new Intent(StoreListActivity.this, StoreActivity.class);
-                intent.putExtra("store_unikey", ps_unikey);
                 intent.putExtra("store_name", tMapMarkerItem.getName());
-                intent.putExtra("store_x", (float)store_x);
-                intent.putExtra("store_y", (float)store_y);
-                intent.putExtra("store_type", ps_type);
-                intent.putExtra("store_call", ps_call);
-                intent.putExtra("store_address", ps_address);
-
                 startActivity(intent);
-
             }
         });
     }
@@ -216,8 +181,6 @@ public class StoreListActivity extends AppCompatActivity {
     private void insert_post() throws Exception {
         //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
         //RDN_CODE_NM: 도로명주소,
-
-
         String ps_name = null, ps_type = null, ps_call= null, ps_address= null;
         double store_x = 0, store_y = 0;
         Log.d("LOG", "hi Log   "+building_list.length());

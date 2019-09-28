@@ -1,5 +1,6 @@
 package com.dongsamo.dongsamo;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -33,6 +34,8 @@ public class CourseActivity extends AppCompatActivity {
     AlertDialog alertDialog;
     boolean flag = true;
     String[] want_location;
+    ProgressDialog progressDialog;
+
 
     String user_id="hi";
     private FirebaseAuth firebaseAuth;
@@ -45,6 +48,7 @@ public class CourseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
+        progressDialog = new ProgressDialog(CourseActivity.this);
 
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -195,7 +199,7 @@ public class CourseActivity extends AppCompatActivity {
             }
         });
     }
-    
+
     public void onClick_trash_btn(View view){
         course_text.setText("");
         eat_count = 0;
@@ -286,7 +290,6 @@ public class CourseActivity extends AppCompatActivity {
         intent.putExtra("ori_count", count);
         intent.putExtra("count", count);
         intent.putExtra("store", store_list[1]);
-
         intent.putExtra("office_x", office_x);
         intent.putExtra("office_y", office_y);
 
@@ -344,4 +347,27 @@ public class CourseActivity extends AppCompatActivity {
         office_x =  Float.parseFloat(now_data_array[3]);
         office_y =  Float.parseFloat(now_data_array[7]);
     }
+
+    public void loading() {
+        //로딩
+        new android.os.Handler().postDelayed(
+                new Runnable() {
+                    public void run() {
+                        progressDialog.setIndeterminate(true);
+                        progressDialog.setMessage("문화정보를 불러오는 중입니다.");
+                        progressDialog.show();
+                    }
+                }, 0);
+    }
+
+    public void loadingEnd() {
+        new android.os.Handler().postDelayed(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                    }
+                }, 0);
+    }
 }
+

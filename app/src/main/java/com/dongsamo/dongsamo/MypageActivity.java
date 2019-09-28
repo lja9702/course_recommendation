@@ -3,6 +3,7 @@ package com.dongsamo.dongsamo;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
@@ -29,8 +30,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class MypageActivity extends AppCompatActivity {
 
@@ -38,7 +48,6 @@ public class MypageActivity extends AppCompatActivity {
     ImageButton mypage_logout_btn, mypage_withdraw_btn;
 
     TextView mypage_recent_course1, mypage_recent_course2, mypage_recent_course3, mypage_recent_course4;
-    ImageButton mypage_heart1, mypage_heart2, mypage_heart3, mypage_heart4;
 
     SharedPreferences sub;
     SharedPreferences.Editor editor;
@@ -53,16 +62,41 @@ public class MypageActivity extends AppCompatActivity {
     private UserLikeRecyclerViewAdapter list_ap;
     private Handler set_post_handler;
 
+    String siteUrl = "http://openapi.seoul.go.kr:8088/";
+    String ID = "6c5474475266627737325756715870";
+    String contents = "/json/CrtfcUpsoInfo/1/1000/ / / / /";
+    JSONArray building_list;
+    String pass_ps;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        databaseReference.child("Parsing").child("Data").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@androidx.annotation.NonNull DataSnapshot dataSnapshot) {
+                try {
+                    Log.d("Test", String.valueOf(dataSnapshot.getValue()));
+                    building_list = new JSONArray(String.valueOf(dataSnapshot.getValue()));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            @Override
+            public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
+
+                Log.w("TAGs", "Failed to read value.", databaseError.toException());
+            }
+        });
+
         postlist = new ArrayList<>();
         list = (RecyclerView) findViewById(R.id.mypage_like_list);
         list_ap = new UserLikeRecyclerViewAdapter(MypageActivity.this, postlist);
-//        RecyclerDecoration spaceDecoration = new RecyclerDecoration(70);
-//        list.addItemDecoration(spaceDecoration);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         list.setLayoutManager(gridLayoutManager);//3행을 가진 그리드뷰로 레이아웃을 만듬
 
@@ -105,15 +139,19 @@ public class MypageActivity extends AppCompatActivity {
         mypage_recent_course2 = (TextView) findViewById(R.id.mypage_recent_course2);
         mypage_recent_course3 = (TextView) findViewById(R.id.mypage_recent_course3);
         mypage_recent_course4 = (TextView) findViewById(R.id.mypage_recent_course4);
-
-        mypage_heart1 = (ImageButton) findViewById(R.id.mypage_heart1);
-        mypage_heart2 = (ImageButton) findViewById(R.id.mypage_heart2);
-        mypage_heart3 = (ImageButton) findViewById(R.id.mypage_heart3);
-        mypage_heart4 = (ImageButton) findViewById(R.id.mypage_heart4);
+//
+//        try {
+//            new FoodTask().execute().get();
+//        } catch (ExecutionException e) {
+//            e.printStackTrace();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
         sub = getSharedPreferences("subscribe", MODE_PRIVATE);
-        firebaseAuth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+
 
         set_post_handler = new Handler() {
             public void handleMessage(Message msg) {
@@ -130,7 +168,7 @@ public class MypageActivity extends AppCompatActivity {
         super.onResume();
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
-
+        postlist.clear();
         if( firebaseUser == null ){
             Intent intent = new Intent(MypageActivity.this, LoginActivity.class);
             startActivity(intent);
@@ -140,7 +178,6 @@ public class MypageActivity extends AppCompatActivity {
     }
 
     public void updateUI(){
-
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
 // update name, ... TextView
@@ -155,14 +192,21 @@ public class MypageActivity extends AppCompatActivity {
 
                     Log.d("TAGS", member.getId());
 
-                    databaseReference.child("taste").child(member.getId()).addValueEventListener(new ValueEventListener() {
+                    databaseReference.child("favorite").child(member.getId()).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot mdataSnapshot) {
-                            for (DataSnapshot snapshot : mdataSnapshot.child("favorite").getChildren()) {
-                                Log.d("TAGS",snapshot.getKey());
 
-                                postlist.add(new UserLikeListitem(snapshot.getKey()));
-                                //list_ap.notifyDataSetChanged();
+                            for (DataSnapshot snapshot : mdataSnapshot.getChildren()) {
+                                Log.d("TAGS", "snap key : " + snapshot.getKey());
+                                String name="";
+                                try {
+                                    name = insert_post((String)snapshot.getValue());
+                                    Log.i("Log", "hi Log: "+name);
+                                    postlist.add(new UserLikeListitem(name));// Object 형으로 return, 가게번호 to jeong
+                                    set_post_handler.sendEmptyMessage(0);
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                             }
                         }
 
@@ -172,7 +216,6 @@ public class MypageActivity extends AppCompatActivity {
                         }
                     });
 
-                    set_post_handler.sendEmptyMessage(0);
                 }
                 catch (NullPointerException e){
                     Toast.makeText(MypageActivity.this, "에러로 인해 로그아웃되었습니다.", Toast.LENGTH_LONG);
@@ -198,10 +241,6 @@ public class MypageActivity extends AppCompatActivity {
         startActivity(intent);
         MypageActivity.this.finish();
         Toast.makeText(getApplicationContext(), "로그아웃 완료", Toast.LENGTH_LONG).show();
-    }
-
-    public void onClick_mypage_heart(View view){
-
     }
 
     public void onClick_mypage_withdraw_btn(View view){
@@ -254,5 +293,31 @@ public class MypageActivity extends AppCompatActivity {
             }
         });
         alert_confirm.show();
+    }
+
+    JSONObject JS = null;
+    private String insert_post(String build_num) throws Exception {
+        //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
+        //RDN_CODE_NM: 도로명주소,
+        String ps_name = null, ps_type = null;
+        double store_x = 0, store_y = 0;
+        Log.d("LOG", "hi Log   " + building_list.length());
+
+        int cnt = 0;
+        for (int i = 0; i < building_list.length(); i++) {
+
+            JS = building_list.getJSONObject(i);
+            if (JS != null) {
+                ps_name = JS.optString("UPSO_NM");
+                ps_type = JS.optString("UPSO_SNO");
+                if (ps_name != null) {
+                    if (ps_type.equals(build_num)) {
+                        Log.i("Log", "hi Log: "+ps_name);
+                        return ps_name;
+                    }
+                }
+            }
+        }
+        return "";
     }
 }

@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
@@ -38,6 +39,12 @@ import com.skt.Tmap.TMapView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.functions.FirebaseFunctions;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -55,23 +62,53 @@ public class StoreActivity extends AppCompatActivity {
     private FirebaseUser firebaseUser;
     ImageButton heart;
     private Intent intent;
+    private long mLastClickTime = 0;
 
     float store_x, store_y;
     String store_name, store_type, store_addr, store_call,store_unikey, user_id;
-
+    JSONArray building_list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        databaseReference.child("Parsing").child("Data").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@androidx.annotation.NonNull DataSnapshot dataSnapshot) {
+                try {
+                    Log.d("Test", String.valueOf(dataSnapshot.getValue()));
+                    building_list = new JSONArray(String.valueOf(dataSnapshot.getValue()));
+                    try {
+                        insert_post();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            @Override
+            public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
+
+                Log.w("TAGs", "Failed to read value.", databaseError.toException());
+            }
+        });
+
         intent = getIntent();
-        store_x = intent.getExtras().getFloat("store_x", 0);
-        store_y = intent.getExtras().getFloat("store_y", 0);
         store_name = intent.getExtras().getString("store_name"); //가게명
-        store_type = intent.getExtras().getString("store_type"); //가게업태
-        store_addr = intent.getExtras().getString("store_address"); //가게 도로명 주소
-        store_call = intent.getExtras().getString("store_call"); //전화번호
-        store_unikey = intent.getExtras().getString("store_unikey"); //가게id
+
+        if(store_x == 0 && store_y == 0) {
+            store_x = intent.getExtras().getFloat("store_x", 0);
+            store_y = intent.getExtras().getFloat("store_y", 0);
+            store_type = intent.getExtras().getString("store_type", ""); //가게업태
+            store_addr = intent.getExtras().getString("store_address", ""); //가게 도로명 주소
+            store_call = intent.getExtras().getString("store_call", ""); //전화번호
+            store_unikey = intent.getExtras().getString("store_unikey", ""); //가게id
+        }
 
         store_text = (TextView)findViewById(R.id.store_name_textView);
         store_info = (TextView)findViewById(R.id.store_info);
@@ -80,7 +117,6 @@ public class StoreActivity extends AppCompatActivity {
         store_text.setText(store_name);
 
         tmap_ln = (LinearLayout) findViewById(R.id.store_tmap);
-
         tMapView = new TMapView(StoreActivity.this);
         tMapView.setSKTMapApiKey(apiKey);
         tMapView.setLanguage(TMapView.LANGUAGE_KOREAN);
@@ -90,19 +126,13 @@ public class StoreActivity extends AppCompatActivity {
         tMapView.setTrackingMode(true);
         tmap_ln.addView(tMapView);
 
-
         Log.d("TAG", "Intent: "+store_x+"  "+store_y+"  "+store_name+"  "+store_type+"  "+store_addr+"  "+store_call+"  "+store_unikey);
         //firebaseAnalytics 초기화
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        firebaseUser = firebaseAuth.getCurrentUser();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
         Log.d("TAG", "x: "+store_x+"  y: "+store_y);
 
-        pinpinEE(store_name, store_x ,store_y, "TEST_"+store_name);
 
-        store_info.setText("주소: "+store_addr+"\n전화번호: "+store_call+"\n업태: "+store_type);
 
         databaseReference.child("Users").child(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -115,7 +145,7 @@ public class StoreActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot mdataSnapshot) {
                         boolean is_heart = false;
                         for (DataSnapshot snapshot : mdataSnapshot.getChildren()) {
-                            if (snapshot.getKey().equals(intent.getExtras().getString("store_name"))) {
+                            if (snapshot.getValue().equals(store_unikey)) {
                                 is_heart = true;
                             }
                         }
@@ -141,6 +171,9 @@ public class StoreActivity extends AppCompatActivity {
             }
         });
 
+        pinpinEE(store_name, store_x ,store_y, "TEST_"+store_name);
+
+        store_info.setText("주소: "+store_addr+"\n\n전화번호: "+store_call+"\n\n업태: "+store_type);
     }
 
     protected void pinpinEE(String pin_name, float x, float y, String pin_id){
@@ -167,6 +200,11 @@ public class StoreActivity extends AppCompatActivity {
     }
 
     public void onClick_heart(View view) throws InterruptedException {
+        if (SystemClock.elapsedRealtime() - mLastClickTime < 500){
+            return;
+        }
+        mLastClickTime = SystemClock.elapsedRealtime();
+
         String contentType = store_type;
 
         Log.d("TAG", user_id+" "+store_unikey + " " + store_type);
@@ -297,4 +335,43 @@ public class StoreActivity extends AppCompatActivity {
         });
     }
 
+    JSONObject JS = null;
+    private void insert_post() throws Exception {
+        //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
+        //RDN_CODE_NM: 도로명주소,
+        String ps_unikey=null, ps_name = null, ps_type = null, ps_call= null, ps_address= null;
+        double ps_store_x = 0, ps_store_y = 0;
+
+        for (int i = 0; i < building_list.length(); i++) {
+            try {
+                JS = building_list.getJSONObject(i);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (JS != null) {
+                ps_name = JS.optString("UPSO_NM");
+                ps_call = JS.optString("TEL_NO");
+                ps_address = JS.optString("RDN_CODE_NM") + JS.optString("RDN_DETAIL_ADDR");
+                ps_type = JS.optString("BIZCND_CODE_NM");
+                ps_unikey = JS.optString("UPSO_SNO");
+                ps_store_x = JS.optDouble("X_CNTS");
+                ps_store_y = JS.optDouble("Y_DNTS");
+
+
+                if (ps_name.equals(store_name)) {
+                    Log.d("TAG", "Intent22: "+ps_name+"  "+ps_call+"  "+ps_address+"  "+ps_type+"  "+ps_unikey+"  "+ps_store_x+"  "+ps_store_y);
+                    store_x = (float)ps_store_x;
+                    store_y = (float)ps_store_y;
+                    store_name = ps_name;
+                    store_type = ps_type;
+                    store_addr = ps_address;
+                    store_call = ps_call;
+                    store_unikey = ps_unikey;
+                    pinpinEE(store_name, store_x ,store_y, "TEST_"+store_name);
+                    store_info.setText("주소: "+store_addr+"\n\n전화번호: "+store_call+"\n\n업태: "+store_type);
+                    return;
+                }
+            }
+        }
+    }
 }

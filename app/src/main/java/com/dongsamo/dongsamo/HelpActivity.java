@@ -19,12 +19,13 @@ public class HelpActivity extends AppCompatActivity {
 
     }
 
-    public void onClick_button(View view){
+    public void onClick_help_fin(View view){
         if(flag){
             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         }
 
         finish();
     }
+
 
 }

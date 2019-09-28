@@ -98,16 +98,6 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    public void onClick_login_find_id_btn(View view){
-//        Intent intent = new Intent(this, FindIDActivity.class);
-//        startActivity(intent);
-//    }
-//
-//    public void onClick_login_find_pw_btn(View view){
-//        Intent intent = new Intent(this, FindPWActivity.class);
-//        startActivity(intent);
-//    }
-
     public void onClick_login_btn(View view){
 
         boolean valid = ValidateForm.validateEditText(login_editText, passwd_editText);
@@ -146,6 +136,7 @@ public class LoginActivity extends AppCompatActivity {
                                     LoginActivity.this.finish();
                                 }
                                 else{
+                                    loadingEnd();
                                     InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                                     im.hideSoftInputFromWindow(login_editText.getWindowToken(), 0);
                                     Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_LONG).show();

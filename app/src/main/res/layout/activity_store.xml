@@ -26,19 +26,20 @@
 
         <TextView
             android:id="@+id/store_name_textView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="500"
             android:gravity="center|left"
             android:text="논두렁"
             android:textColor="#000"
-            android:textSize="23dp"
-            android:textStyle="bold"/>
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:maxLines="1"/>
 
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="10"/>
+            android:layout_weight="30"/>
 
         <ImageButton
             android:id="@+id/heart"
