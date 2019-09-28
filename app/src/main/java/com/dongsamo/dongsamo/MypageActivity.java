@@ -47,8 +47,6 @@ public class MypageActivity extends AppCompatActivity {
     TextView mypage_name, mypage_id, mypage_email;
     ImageButton mypage_logout_btn, mypage_withdraw_btn;
 
-    TextView mypage_recent_course1, mypage_recent_course2, mypage_recent_course3, mypage_recent_course4;
-
     SharedPreferences sub;
     SharedPreferences.Editor editor;
 
@@ -57,14 +55,11 @@ public class MypageActivity extends AppCompatActivity {
     private FirebaseUser firebaseUser;
     private static final String TAG = "MypageActivity";
 
-    private List<UserLikeListitem> postlist;
-    private RecyclerView list;
-    private UserLikeRecyclerViewAdapter list_ap;
+    private List<UserLikeListitem> postlist, recomlist;
+    private RecyclerView list, recom_rc;
+    private UserLikeRecyclerViewAdapter list_ap, recom_ap;
     private Handler set_post_handler;
-
-    String siteUrl = "http://openapi.seoul.go.kr:8088/";
-    String ID = "6c5474475266627737325756715870";
-    String contents = "/json/CrtfcUpsoInfo/1/1000/ / / / /";
+    String[] store_list;
     JSONArray building_list;
     String pass_ps;
 
@@ -74,7 +69,25 @@ public class MypageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
 
+        postlist = new ArrayList<>();
+        list = (RecyclerView) findViewById(R.id.mypage_like_list);
+        list_ap = new UserLikeRecyclerViewAdapter(MypageActivity.this, postlist);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
+        list.setLayoutManager(gridLayoutManager);//3행을 가진 그리드뷰로 레이아웃을 만듬
+
+        list.setAdapter(list_ap);
+
+        recomlist = new ArrayList<>();
+        recom_rc = (RecyclerView) findViewById(R.id.mypage_recom_list);
+        recom_ap = new UserLikeRecyclerViewAdapter(MypageActivity.this, recomlist);
+        GridLayoutManager gridLayoutManager2 = new GridLayoutManager(this, 2);
+        recom_rc.setLayoutManager(gridLayoutManager2);//3행을 가진 그리드뷰로 레이아웃을 만듬
+
+        list.setAdapter(list_ap);
+        recom_rc.setAdapter(recom_ap);
+
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
         databaseReference.child("Parsing").child("Data").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -94,13 +107,28 @@ public class MypageActivity extends AppCompatActivity {
             }
         });
 
-        postlist = new ArrayList<>();
-        list = (RecyclerView) findViewById(R.id.mypage_like_list);
-        list_ap = new UserLikeRecyclerViewAdapter(MypageActivity.this, postlist);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
-        list.setLayoutManager(gridLayoutManager);//3행을 가진 그리드뷰로 레이아웃을 만듬
+        databaseReference.child("Users").child(firebaseUser.getUid()).child("Recom_Store").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@androidx.annotation.NonNull DataSnapshot dataSnapshot) {
+                recomlist.clear();
+                pass_ps = dataSnapshot.getValue().toString();
+                Log.d("pass_ps", pass_ps);
+                if(pass_ps != null && !(pass_ps.equals("")))
+                    store_list = pass_ps.split("  ");
 
-        list.setAdapter(list_ap);
+                for(int i=1; i<store_list.length; i++){
+                    Log.d("pass", store_list[i]);
+                    recomlist.add(new UserLikeListitem(store_list[i]));
+                    recom_ap.notifyDataSetChanged();
+                }
+
+            }
+            @Override
+            public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
+
+                Log.w("TAGs", "Failed to read value.", databaseError.toException());
+            }
+        });
 
         mypage_name = (TextView) findViewById(R.id.mypage_name);
         mypage_id = (TextView) findViewById(R.id.mypage_id);
@@ -135,23 +163,7 @@ public class MypageActivity extends AppCompatActivity {
             }
         });
 
-        mypage_recent_course1 = (TextView) findViewById(R.id.mypage_recent_course1);
-        mypage_recent_course2 = (TextView) findViewById(R.id.mypage_recent_course2);
-        mypage_recent_course3 = (TextView) findViewById(R.id.mypage_recent_course3);
-        mypage_recent_course4 = (TextView) findViewById(R.id.mypage_recent_course4);
-//
-//        try {
-//            new FoodTask().execute().get();
-//        } catch (ExecutionException e) {
-//            e.printStackTrace();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
         sub = getSharedPreferences("subscribe", MODE_PRIVATE);
-
 
         set_post_handler = new Handler() {
             public void handleMessage(Message msg) {

@@ -47,7 +47,7 @@ public class AIRunningActivity extends AppCompatActivity {
     List<String> recommendResult;        //추천 리스트
     boolean recommendIsComplete;
 
-    String user_id="hi", ori_course, office, pass_course="";
+    String user_id="hi", ori_course, office, pass_course="", recom_store="";
 
     String siteUrl = "http://openapi.seoul.go.kr:8088/";
     String ID = "6c5474475266627737325756715870";
@@ -89,26 +89,22 @@ public class AIRunningActivity extends AppCompatActivity {
         //function으로 넘기는 user_id (추천을 진행할 id)
         Map<String, Object> data = new HashMap<>();
         data.put("user_id", user_id);
-
-        AIOnCompleteListener onCompleteListener = new AIOnCompleteListener(AIRunningActivity.this);
-
-        //recommendation 함수 호출
-        Task<HashMap<String, Object>> recomTask = mFunctions.getHttpsCallable("Recommendation").call(data)
-                .continueWith(new Continuation<HttpsCallableResult, HashMap<String, Object> >() {
-                    @Override
-                    public HashMap<String, Object> then(@NonNull Task<HttpsCallableResult> task) throws Exception{
-                        HashMap<String, Object> result = (HashMap<String, Object>) task.getResult().getData();
-                        return result;
-                    }
-                }).addOnCompleteListener(onCompleteListener);
-
-
-
-        //
-
-        //Firebase function이랑 연결
-
-
+        try {
+            AIOnCompleteListener onCompleteListener = new AIOnCompleteListener(AIRunningActivity.this);
+            //recommendation 함수 호출
+            Task<HashMap<String, Object>> recomTask = mFunctions.getHttpsCallable("Recommendation").call(data)
+                    .continueWith(new Continuation<HttpsCallableResult, HashMap<String, Object> >() {
+                        @Override
+                        public HashMap<String, Object> then(@NonNull Task<HttpsCallableResult> task) throws Exception{
+                            HashMap<String, Object> result = (HashMap<String, Object>) task.getResult().getData();
+                            return result;
+                        }
+                    }).addOnCompleteListener(onCompleteListener);
+        }
+        catch (Exception e){
+            finish();
+            startActivity(new Intent(AIRunningActivity.this, AIRunningActivity.class));
+        }
     }
 
     class AIOnCompleteListener implements OnCompleteListener<HashMap<String, Object> >{
@@ -200,7 +196,6 @@ public class AIRunningActivity extends AppCompatActivity {
             //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
             //RDN_CODE_NM: 도로명주소,
 
-
             String ps_name = null, ps_type = null;
             double store_x = 0, store_y = 0;
             Log.d("LOG", "hi Log   "+building_list.length());
@@ -223,6 +218,9 @@ public class AIRunningActivity extends AppCompatActivity {
                 }
             }
 
+            for(int i=0; i<cnt; i++)
+                recom_store += ("  "+result_list[i]);
+
             pass_course="";
             int cntt = 0;
             for(int i=0; i<st_list.length; i++){
@@ -236,14 +234,11 @@ public class AIRunningActivity extends AppCompatActivity {
 
             Log.d("new_course", pass_course);
             Intent intent = new Intent(AIRunningActivity.this, DecidingActivity.class);
+            intent.putExtra("recom_store", recom_store);
             intent.putExtra("new_course", pass_course);
             intent.putExtra("office", office);
             startActivity(intent);
+            finish();
         }
     }
-
-
-
-
-
 }

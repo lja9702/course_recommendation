@@ -493,7 +493,8 @@ public class MainActivity extends AppCompatActivity
                     String row = jsonObject2.getString("row");
                     Log.d("Log", "row: "+row);
                     building_list = new JSONArray(row);
-                    pass_ps = row;
+                    if(building_list != null)
+                        pass_ps = row;
 
                     reader.close();
                 } else {

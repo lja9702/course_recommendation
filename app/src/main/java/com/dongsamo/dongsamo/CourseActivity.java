@@ -36,7 +36,6 @@ public class CourseActivity extends AppCompatActivity {
     String[] want_location;
     ProgressDialog progressDialog;
 
-
     String user_id="hi";
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
@@ -263,7 +262,8 @@ public class CourseActivity extends AppCompatActivity {
         }
 
         Intent intent = new Intent(CourseActivity.this, AIRunningActivity.class);
-        office = office.concat("청");
+        if(!office.contains("청"))
+            office += "청";
         intent.putExtra("office", office);
         intent.putExtra("new_course", course_text.getText().toString());
         intent.putExtra("eat_count", eat_count);
@@ -277,8 +277,9 @@ public class CourseActivity extends AppCompatActivity {
             return;
         }
 
-        if(office.charAt((office.length()-1)) != '청')
+        if(!office.contains("청"))
             office += "청";
+        Log.d("office", "Office:"+ office);
         get_xy(office);
 
         course = String.valueOf(course_text.getText());

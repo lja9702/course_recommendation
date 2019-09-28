@@ -1034,11 +1034,8 @@ id mypage_like_list
 id mypage_logout_btn
 id mypage_logout_btn_black
 id mypage_name
-id mypage_recent_box
-id mypage_recent_course1
-id mypage_recent_course2
-id mypage_recent_course3
-id mypage_recent_course4
+id mypage_recom_box
+id mypage_recom_list
 id mypage_withdraw_btn
 id mypage_withdraw_btn_black
 id name_data

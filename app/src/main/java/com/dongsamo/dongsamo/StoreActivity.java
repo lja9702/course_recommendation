@@ -132,8 +132,6 @@ public class StoreActivity extends AppCompatActivity {
 
         Log.d("TAG", "x: "+store_x+"  y: "+store_y);
 
-
-
         databaseReference.child("Users").child(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

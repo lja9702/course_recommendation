@@ -1,6 +1,7 @@
 package com.dongsamo.dongsamo;
 
 import android.os.AsyncTask;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -25,6 +26,13 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.location.Location;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.skt.Tmap.TMapData;
 import com.skt.Tmap.TMapMarkerItem;
 import com.skt.Tmap.TMapPOIItem;
@@ -77,9 +85,20 @@ public class DecidingActivity extends AppCompatActivity {
     JSONArray building_list;
     String now_location, office, ps_name = null;
 
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference databaseReference;
+    private FirebaseUser firebaseUser;
+
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deciding);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        firebaseUser = firebaseAuth.getCurrentUser();
+
 
         activity_deciding = (LinearLayout)findViewById(R.id.tmap);
         bottom_layout = (LinearLayout)findViewById(R.id.bottom_layout);
@@ -98,11 +117,26 @@ public class DecidingActivity extends AppCompatActivity {
         Intent intent = getIntent();
         course = intent.getExtras().getString("new_course","");
         course = course.substring(2);
+        final String recom_store = intent.getExtras().getString("recom_store");
 
         office = intent.getExtras().getString("office");
         office = office.substring(0, office.length()-1);
 
         Log.d("Course222", "full:"+office+"  "+course);
+
+        databaseReference.child("Users").child(firebaseUser.getUid()).child("Recom_Store").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                dataSnapshot.getRef().removeValue();
+                dataSnapshot.getRef().setValue(recom_store);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.w("TAG", "Failed to read value.", databaseError.toException());
+            }
+        });
+
         store_list = course.split("  ");
         passList = new ArrayList<TMapPoint>();
 
@@ -184,6 +218,18 @@ public class DecidingActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        if( firebaseUser == null ){
+            Intent intent = new Intent(DecidingActivity.this, LoginActivity.class);
+            startActivity(intent);
+            DecidingActivity.this.finish();
+        }
     }
 
     public String stringToApi(String store_name){
