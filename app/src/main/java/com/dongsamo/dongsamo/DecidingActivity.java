@@ -288,7 +288,7 @@ public class DecidingActivity extends AppCompatActivity {
                         ps_call = JS.optString("TEL_NO");
                         ps_address = JS.optString("RDN_CODE_NM")+JS.optString("RDN_DETAIL_ADDR");
                         ps_type = JS.optString("BIZCND_CODE_NM");
-                        ps_unikey = JS.optString("UPSO_SNO");
+                        ps_unikey = JS.optString("CRTFC_UPSO_MGT_SNO");
                         store_x = JS.optDouble("X_CNTS");
                         store_y = JS.optDouble("Y_DNTS");
 

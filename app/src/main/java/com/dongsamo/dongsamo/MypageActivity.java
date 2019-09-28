@@ -113,15 +113,15 @@ public class MypageActivity extends AppCompatActivity {
                 recomlist.clear();
                 pass_ps = dataSnapshot.getValue().toString();
                 Log.d("pass_ps", pass_ps);
-                if(pass_ps != null && !(pass_ps.equals("")))
+                if(pass_ps != null && !(pass_ps.equals(""))) {
                     store_list = pass_ps.split("  ");
 
-                for(int i=1; i<store_list.length; i++){
-                    Log.d("pass", store_list[i]);
-                    recomlist.add(new UserLikeListitem(store_list[i]));
-                    recom_ap.notifyDataSetChanged();
+                    for(int i=1; i<store_list.length; i++){
+                        Log.d("pass", store_list[i]);
+                        recomlist.add(new UserLikeListitem(store_list[i]));
+                        recom_ap.notifyDataSetChanged();
+                    }
                 }
-
             }
             @Override
             public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
@@ -321,7 +321,7 @@ public class MypageActivity extends AppCompatActivity {
             JS = building_list.getJSONObject(i);
             if (JS != null) {
                 ps_name = JS.optString("UPSO_NM");
-                ps_type = JS.optString("UPSO_SNO");
+                ps_type = JS.optString("CRTFC_UPSO_MGT_SNO");
                 if (ps_name != null) {
                     if (ps_type.equals(build_num)) {
                         Log.i("Log", "hi Log: "+ps_name);

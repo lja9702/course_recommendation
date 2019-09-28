@@ -89,7 +89,7 @@ public class AIRunningActivity extends AppCompatActivity {
         //function으로 넘기는 user_id (추천을 진행할 id)
         Map<String, Object> data = new HashMap<>();
         data.put("user_id", user_id);
-        try {
+       // try {
             AIOnCompleteListener onCompleteListener = new AIOnCompleteListener(AIRunningActivity.this);
             //recommendation 함수 호출
             Task<HashMap<String, Object>> recomTask = mFunctions.getHttpsCallable("Recommendation").call(data)
@@ -100,11 +100,18 @@ public class AIRunningActivity extends AppCompatActivity {
                             return result;
                         }
                     }).addOnCompleteListener(onCompleteListener);
-        }
-        catch (Exception e){
-            finish();
-            startActivity(new Intent(AIRunningActivity.this, AIRunningActivity.class));
-        }
+      //  }
+//        catch (NullPointerException e){
+//            e.printStackTrace();
+//            Intent intent = new Intent(AIRunningActivity.this, AIRunningActivity.class);
+//            intent.putExtra("office", office);
+//            intent.putExtra("new_course", ori_course);
+//            intent.putExtra("eat_count", eat_count);
+//            intent.putExtra("user_id", user_id);
+//            finish();
+//
+//            startActivity(intent);
+//        }
     }
 
     class AIOnCompleteListener implements OnCompleteListener<HashMap<String, Object> >{
@@ -207,7 +214,7 @@ public class AIRunningActivity extends AppCompatActivity {
                     JS = building_list.getJSONObject(i);
                     if (JS != null) {
                         ps_name = JS.optString("UPSO_NM");
-                        ps_type = JS.optString("UPSO_SNO");
+                        ps_type = JS.optString("CRTFC_UPSO_MGT_SNO");
                         if (ps_name != null) {
                             if (parent.recommendResult.get(k).equals(ps_type)){
                                 Log.i("Log", "hi Log");
