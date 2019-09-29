@@ -82,7 +82,7 @@ public class DecidingActivity extends AppCompatActivity {
     String contents = "/json/CrtfcUpsoInfo/1/1000/ / / / /";
     JSONArray building_list;
     String now_location, office, ps_name = null;
-
+    boolean isRandom;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
     private FirebaseUser firebaseUser;
@@ -98,7 +98,7 @@ public class DecidingActivity extends AppCompatActivity {
         activity_deciding = (LinearLayout)findViewById(R.id.tmap);
         bottom_layout = (LinearLayout)findViewById(R.id.bottom_layout);
 
-        tMapView = new TMapView(this);
+        tMapView = new TMapView(DecidingActivity.this);
 
         tMapView.setSKTMapApiKey(apiKey);
         tMapView.setLanguage(TMapView.LANGUAGE_KOREAN);
@@ -118,6 +118,10 @@ public class DecidingActivity extends AppCompatActivity {
         office = intent.getExtras().getString("office");
         office = office.substring(0, office.length()-1);
 
+        isRandom = intent.getExtras().getBoolean("isRandom", false);
+        if(isRandom){
+            Toast.makeText(getApplicationContext(), "추천을 할 수 있도록 가게를 좋아요를 눌러주세요.", Toast.LENGTH_LONG).show();
+        }
         Log.d("Course222", "full:"+office+"  "+course);
 
         databaseReference.child("Users").child(firebaseUser.getUid()).child("Recom_Store").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -145,12 +149,16 @@ public class DecidingActivity extends AppCompatActivity {
             new FoodTask().execute().get();
             insert_post(result);
             if(store_x == store_y && store_x == 0){
-                String api_returns = stringToApi(store_list[1]);
-                Log.d("Course222", "log:"+api_returns);
-                String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
-                String now_data_array[] = now_data.split("\"");
-                store_x =  Float.parseFloat(now_data_array[3]);
-                store_y =  Float.parseFloat(now_data_array[7]);
+                new FoodTask2().execute().get();
+                insert_post(result);
+                if(store_x == store_y && store_x == 0) {
+                    String api_returns = stringToApi(store_list[1]);
+                    Log.d("Course222", "log:" + api_returns);
+                    String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
+                    String now_data_array[] = now_data.split("\"");
+                    store_x = Float.parseFloat(now_data_array[3]);
+                    store_y = Float.parseFloat(now_data_array[7]);
+                }
             }
 
             tMapView.setLocationPoint(store_x,store_y);
@@ -164,13 +172,18 @@ public class DecidingActivity extends AppCompatActivity {
             store_name = store_list[2];
             insert_post(result);
             if(store_x == store_y && store_x == 0){
-                String api_returns = stringToApi(store_list[2]);
-                Log.d("Course222", "log:"+api_returns);
-                String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
-                String now_data_array[] = now_data.split("\"");
-                store_x =  Float.parseFloat(now_data_array[3]);
-                store_y =  Float.parseFloat(now_data_array[7]);
+                new FoodTask2().execute().get();
+                insert_post(result);
+                if(store_x == store_y && store_x == 0) {
+                    String api_returns = stringToApi(store_list[2]);
+                    Log.d("Course222", "log:" + api_returns);
+                    String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
+                    String now_data_array[] = now_data.split("\"");
+                    store_x = Float.parseFloat(now_data_array[3]);
+                    store_y = Float.parseFloat(now_data_array[7]);
+                }
             }
+
             Log.d("Course222", "second:"+store_x+" "+store_y);
             tp2 = new TMapPoint(store_y, store_x);
             pinpinEE(store_list[2], store_x, store_y,"no"+store_list[2]+"_test");
@@ -180,16 +193,20 @@ public class DecidingActivity extends AppCompatActivity {
                 store_name = store_list[i];
                 insert_post(result);
                 if(store_x == store_y && store_x == 0){
-                    String api_returns = stringToApi(store_list[i]);
-                    Log.d("Course222", "log:"+api_returns);
-                    String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
-                    String now_data_array[] = now_data.split("\"");
-                    store_x =  Float.parseFloat(now_data_array[3]);
-                    store_y =  Float.parseFloat(now_data_array[7]);
+                    new FoodTask2().execute().get();
+                    insert_post(result);
+                    if(store_x == store_y && store_x == 0) {
+                        String api_returns = stringToApi(store_list[i]);
+                        Log.d("Course222", "log:" + api_returns);
+                        String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
+                        String now_data_array[] = now_data.split("\"");
+                        store_x = Float.parseFloat(now_data_array[3]);
+                        store_y = Float.parseFloat(now_data_array[7]);
+                    }
                 }
+
                 pinpinEE(store_list[i],store_x,store_y,"a"+store_list[i]+"_test");
             }
-
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -213,7 +230,6 @@ public class DecidingActivity extends AppCompatActivity {
                 tMapView.addTMapPolyLine("Course_line" , polyLine);
             }
         });
-
     }
 
     @Override
@@ -349,6 +365,49 @@ public class DecidingActivity extends AppCompatActivity {
             String result = null;
             try {
                 url = new URL(""+siteUrl+ID+contents+real_place);
+
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                if (conn.getResponseCode() == conn.HTTP_OK) {
+                    InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
+                    BufferedReader reader = new BufferedReader(tmp);
+                    StringBuffer buffer = new StringBuffer();
+                    String str = null;
+                    while ((str = reader.readLine()) != null) {
+                        buffer.append(str);
+                    }
+                    result = buffer.toString();
+
+                    Log.d("LOG", result);
+                    JSONObject jsonObject1 = new JSONObject(result);
+                    String CrtfcUpsoInfo = jsonObject1.getString("CrtfcUpsoInfo");
+                    Log.d("LOG", "CrtfcUpsoInfo: " + CrtfcUpsoInfo);
+                    JSONObject jsonObject2 = new JSONObject(CrtfcUpsoInfo);
+                    String row = jsonObject2.getString("row");
+                    Log.d("Log", "row: "+row);
+                    building_list = new JSONArray(row);
+
+                    reader.close();
+                } else {
+                    Log.i("통신 결과", conn.getResponseCode() + "에러");
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+            return result;
+        }
+    }
+
+    public class FoodTask2 extends AsyncTask<String, String, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            URL url = null;
+            String result = null;
+            try {
+                url = new URL(""+siteUrl+ID+contents);
 
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 

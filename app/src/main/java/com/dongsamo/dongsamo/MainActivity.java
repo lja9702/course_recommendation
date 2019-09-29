@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity
     TessBaseAPI tessBaseAPI;
     CameraSurfaceView surfaceView;
     ImageButton capture_btn, main_course_ask_btn, main_shop_list_btn, main_mypage_btn;
-    ImageView imageView;
 
     double lon, lat;
     String now_location;
@@ -139,7 +138,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        imageView = findViewById(R.id.imageView);
         surfaceView = findViewById(R.id.activity_surfaceView);
         capture_btn = (ImageButton)findViewById(R.id.capture_btn);
         main_course_ask_btn = (ImageButton) findViewById(R.id.main_course_ask_btn);

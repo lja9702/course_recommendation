@@ -45,6 +45,7 @@ public class AIRunningActivity extends AppCompatActivity {
     String course;
     private FirebaseFunctions mFunctions;
     List<String> recommendResult;        //추천 리스트
+    boolean isRandom = false;
     boolean recommendIsComplete;
 
     String user_id="hi", ori_course, office, pass_course="", recom_store="", real_place="";
@@ -135,6 +136,7 @@ public class AIRunningActivity extends AppCompatActivity {
             }
             else {
                 parent.recommendResult = (List <String> )task.getResult().get("recomStoreList");
+                parent.isRandom = (boolean)task.getResult().get("isRandomData");
                 parent.recommendIsComplete = true;
                 Log.i("recommend", "res: " + parent.recommendResult);
 
@@ -238,6 +240,7 @@ public class AIRunningActivity extends AppCompatActivity {
             intent.putExtra("new_course", pass_course);
             intent.putExtra("office", office);
             intent.putExtra("real_place", real_place);
+            intent.putExtra("isRandom", isRandom);
             startActivity(intent);
             finish();
         }
