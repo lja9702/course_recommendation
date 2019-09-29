@@ -40,12 +40,13 @@ import java.util.concurrent.ExecutionException;
 
 public class AIRunningActivity extends AppCompatActivity {
 
-    String[] st_list, result_list;
+    String[] st_list, result_list, recommed_list;
     int eat_count;
     String course;
     private FirebaseFunctions mFunctions;
     List<String> recommendResult;        //추천 리스트
-    boolean isRandom = false;
+    List<String> unionStoreResult;      //추천 + 좋아요 리스트
+    boolean isRandomData = false;
     boolean recommendIsComplete;
 
     String user_id="hi", ori_course, office, pass_course="", recom_store="", real_place="";
@@ -118,12 +119,15 @@ public class AIRunningActivity extends AppCompatActivity {
                 }
                 Log.e("complete", "code: " + e.getMessage(), e);
             }
-            else {
-                parent.recommendResult = (List <String> )task.getResult().get("recomStoreList");
-                parent.isRandom = (boolean)task.getResult().get("isRandomData");
+            else {  //firebase function으로 부터 추천 리스트와 추천+좋아요 리스트 그리고 좋아요를 누른 적이 한번이라도 있는지 확인하는 데이터 receive
+                parent.unionStoreResult = (List <String> )task.getResult().get("unionStoreList");
+                parent.isRandomData = (boolean)task.getResult().get("isRandomData");
+                if(parent.isRandomData == false){
+                    parent.recommendResult = (List <String> )task.getResult().get("recomStoreList");
+                }
                 parent.recommendIsComplete = true;
                 Log.i("recommend", "res: " + parent.recommendResult);
-
+                Log.i("union", "res: " + parent.unionStoreResult);
                 try {
                     new FoodTask().execute().get();
                 } catch (ExecutionException e) {
@@ -182,12 +186,12 @@ public class AIRunningActivity extends AppCompatActivity {
         private void insert_post() throws Exception {
             //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
             //RDN_CODE_NM: 도로명주소,
-            result_list = new String[parent.recommendResult.size()+10];
+            result_list = new String[parent.unionStoreResult.size()+10];
 
             String ps_name = null, ps_type = null;
             Log.d("LOG", "hi Log   "+building_list.length());
             int cnt = 0;
-            for(int k=0; k<parent.recommendResult.size(); k++) {
+            for(int k=0; k<parent.unionStoreResult.size(); k++) {
                 for (int i = 0; i < building_list.length(); i++) {
 
                     JS = building_list.getJSONObject(i);
@@ -195,7 +199,7 @@ public class AIRunningActivity extends AppCompatActivity {
                         ps_name = JS.optString("UPSO_NM");
                         ps_type = JS.optString("CRTFC_UPSO_MGT_SNO");
                         if (ps_name != null) {
-                            if (parent.recommendResult.get(k).equals(ps_type)){
+                            if (parent.unionStoreResult.get(k).equals(ps_type)){
                                 Log.i("Log", "hi Log");
                                 result_list[cnt++] = ps_name;
                             }
@@ -203,12 +207,36 @@ public class AIRunningActivity extends AppCompatActivity {
                     }
                 }
             }
+            if(parent.isRandomData == false) {
+                cnt = 0;
+                recommed_list = new String[parent.recommendResult.size() + 10];
+                for (int k = 0; k < parent.recommendResult.size(); k++) {
+                    for (int i = 0; i < building_list.length(); i++) {
 
-            for(int i=0; i<cnt; i++)
-                recom_store += ("  "+result_list[i]);
+                        JS = building_list.getJSONObject(i);
+                        if (JS != null) {
+                            ps_name = JS.optString("UPSO_NM");
+                            ps_type = JS.optString("CRTFC_UPSO_MGT_SNO");
+                            if (ps_name != null) {
+                                if (parent.recommendResult.get(k).equals(ps_type)) {
+                                    Log.i("Log", "hi Log");
+                                    recommed_list[cnt++] = ps_name;
+                                }
+                            }
+                        }
+                    }
+                }
+                for(int i=0; i<cnt; i++)
+                    recom_store += ("  "+recommed_list[i]);
+            }
+
+            else{
+                for(int i=0; i<cnt; i++)
+                    recom_store += ("  "+result_list[i]);
+            }
 
             pass_course="";
-            int cntt = 0;
+
             for(int i=0; i<st_list.length; i++){
                 if(st_list[i].equals("맛집")){
                     pass_course += ("  "+result_list[i]);
@@ -224,7 +252,7 @@ public class AIRunningActivity extends AppCompatActivity {
             intent.putExtra("new_course", pass_course);
             intent.putExtra("office", office);
             intent.putExtra("real_place", real_place);
-            intent.putExtra("isRandom", isRandom);
+            intent.putExtra("isRandom", isRandomData);
             startActivity(intent);
             finish();
         }
