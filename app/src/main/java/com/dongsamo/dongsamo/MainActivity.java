@@ -185,10 +185,15 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        GPSclass gpSclass = new GPSclass(this);
-        Location loc = gpSclass.getLocation();
-        lon = loc.getLongitude();
-        lat = loc.getLatitude();
+        try {
+            GPSclass gpSclass = new GPSclass(this);
+            Location loc = gpSclass.getLocation();
+            lon = loc.getLongitude();
+            lat = loc.getLatitude();
+        }
+        catch (NullPointerException e){
+            Toast.makeText(getApplicationContext(), "위치정보를 키시고 앱을 재실행해주세요.", Toast.LENGTH_LONG).show();
+        }
 
         String api_returns = stringToApi();
         //내 위치 기반으로 무슨 구 인지 찾아오기
