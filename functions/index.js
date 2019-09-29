@@ -61,7 +61,7 @@ exports.Recommendation = functions.https.onCall((data, context) => {
   //user_id, store_id라는 파라미터를 가져옴
   const user_id = data.user_id;
 
-  if(!(user_id in sigDict)){
+  if(!(user_id in dbDict)){
     var random_user = "";
     do{
       random_user = userIdList[getRandomInt(0, userIdList.length)];
