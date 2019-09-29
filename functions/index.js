@@ -14,6 +14,7 @@ var ref = db.ref("favorite");
 let dbDict = {}; //db Dictionary key: user_id value: store_array
 let sigDict = {}; //row: user_id value: signiture array
 let secIndex = {};//secondary Index
+let userIdList = [];
 const SIGSIZE = 10;
 
 //db가 업데이트 될때 갱신하는 함수
@@ -24,13 +25,11 @@ exports.getDBData = functions.https.onCall((data, context) => {
     console.log("The read failed: " + errorObject.code);
   });
 
+  signiture();
+  makeSecondaryIndex();
   console.log(dbDict);
   console.log(sigDict);
   console.log(secIndex);
-
-  signiture();
-  makeSecondaryIndex();
-
   return dbDict;
 });
 
@@ -47,16 +46,43 @@ exports.dataInfo = functions.https.onCall((data, context) => {
 });
 
 exports.Recommendation = functions.https.onCall((data, context) => {
+  ref.on("value", function(snapshot) {
+    dbDict = snapshot.val();
+    console.log("dbDict: " + dbDict);
+  }, function (errorObject) {
+    console.log("The read failed: " + errorObject.code);
+  });
+  signiture();
+  makeSecondaryIndex();
+  console.log(dbDict);
+  console.log(sigDict);
+  console.log(secIndex);
+
   //user_id, store_id라는 파라미터를 가져옴
   const user_id = data.user_id;
+
+  if(!(user_id in sigDict)){
+    var random_user = "";
+    do{
+      random_user = userIdList[getRandomInt(0, userIdList.length)];
+    } while(sigDict[random_user].length < 4);
+
+    console.log("random_user: " + random_user);
+    return {recomStoreList: dbDict[random_user], isRandomData : true};
+  }
+  console.log(user_id);
   //가장 비슷한 선호도를 지니는 user추천
   let syncSignitureUser = {};
   for(var idx = 0;idx < SIGSIZE;idx++){
     var key = String(sigDict[user_id][idx]) + "-" + String(idx);
-    for(var similar_user in sec_Index[key])
+    for(var idx2 in secIndex[key]){
+      var similar_user = secIndex[key][idx2];
+      if(!(similar_user in syncSignitureUser))
+        syncSignitureUser[similar_user] = 0;
       syncSignitureUser[similar_user]++;
+    }
   }
-  let mostSyncUser = 0, maxCnt = 0;
+  let mostSyncUser = user_id, maxCnt = 0;
   for(user in syncSignitureUser){
     if(user === user_id) continue;
     if(maxCnt < syncSignitureUser[user]){
@@ -64,8 +90,11 @@ exports.Recommendation = functions.https.onCall((data, context) => {
       mostSyncUser = user;
     }
   }
-
-  return {recomStoreList: dbDict[mostSyncUser].filter(x => !dbDict[user_id].includes(x))};
+  console.log(syncSignitureUser);
+  console.log(mostSyncUser);
+  console.log(dbDict[mostSyncUser]);
+  console.log(dbDict[user_id]);
+  return {recomStoreList: dbDict[mostSyncUser].filter(x => !dbDict[user_id].includes(x)), isRandomData : false};
 });
 
 // min_Hash 값을 return 하는 함수
@@ -74,15 +103,17 @@ let minHash = function(a_index, user_id){
   let res = MOD; //store_id가 10이라고 가정
   let prime = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
 
-  for(var store_id in dbDict[user_id])
-    res = Math.min(res, (prime[a_index] * dbDict[user_id][store_id] + 2 * a_index) % MOD);
-
+  for(var store_id in dbDict[user_id]){
+    var store = dbDict[user_id][store_id];
+    res = Math.min(res, (prime[a_index] * parseInt(store) + 2 * a_index) % MOD);
+  }
   return res;
 }
 //signiture를 만드는 함수 (min_Hash들의 집합)
 var signiture = function(){
   for(var user_id in dbDict){
     sigDict[user_id] = [];
+    userIdList.push(user_id);
     for(var a_index = 0;a_index < SIGSIZE;a_index++){
       let sig = minHash(a_index, user_id);
       sigDict[user_id].push(sig);
@@ -98,4 +129,11 @@ var makeSecondaryIndex = function(){
       secIndex[key].push(user_id);
     }
   }
+}
+
+//random으로 user_id 가져오기
+function getRandomInt(min, max){
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
 }
