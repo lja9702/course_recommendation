@@ -90,7 +90,7 @@ public class AIRunningActivity extends AppCompatActivity {
         //function으로 넘기는 user_id (추천을 진행할 id)
         Map<String, Object> data = new HashMap<>();
         data.put("user_id", user_id);
-       // try {
+        //try {
             AIOnCompleteListener onCompleteListener = new AIOnCompleteListener(AIRunningActivity.this);
             //recommendation 함수 호출
             Task<HashMap<String, Object>> recomTask = mFunctions.getHttpsCallable("Recommendation").call(data)
@@ -101,7 +101,7 @@ public class AIRunningActivity extends AppCompatActivity {
                             return result;
                         }
                     }).addOnCompleteListener(onCompleteListener);
-      //  }
+        //}
 //        catch (NullPointerException e){
 //            e.printStackTrace();
 //            Intent intent = new Intent(AIRunningActivity.this, AIRunningActivity.class);
@@ -147,8 +147,6 @@ public class AIRunningActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-
             }
         }
 
