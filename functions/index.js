@@ -65,10 +65,13 @@ exports.Recommendation = functions.https.onCall((data, context) => {
     var random_user = "";
     do{
       random_user = userIdList[getRandomInt(0, userIdList.length)];
-    } while(sigDict[random_user].length < 4);
+      console.log("random_user: " + random_user + " len: " + dbDict[random_user].length);
+    } while(dbDict[random_user].length < 4);
 
     console.log("random_user: " + random_user);
-    return {recomStoreList: dbDict[random_user], isRandomData : true};
+
+    var shuffle_list = shuffle(dbDict[random_user]);
+    return {unionStoreList: shuffle_list, isRandomData : true};
   }
   console.log(user_id);
   //가장 비슷한 선호도를 지니는 user추천
@@ -90,11 +93,17 @@ exports.Recommendation = functions.https.onCall((data, context) => {
       mostSyncUser = user;
     }
   }
-  console.log(syncSignitureUser);
-  console.log(mostSyncUser);
-  console.log(dbDict[mostSyncUser]);
-  console.log(dbDict[user_id]);
-  return {recomStoreList: dbDict[mostSyncUser].filter(x => !dbDict[user_id].includes(x)), isRandomData : false};
+  console.log("syncUser: " + mostSyncUser);
+  console.log("mostSyncUser's List: " + dbDict[mostSyncUser]);
+  console.log("myUserList: " + dbDict[user_id]);
+
+  var intersection = shuffle(dbDict[mostSyncUser].filter(x => !dbDict[user_id].includes(x)));
+  console.log("intersection: " + intersection);
+
+  var union = shuffle(unionFunc(dbDict[mostSyncUser], dbDict[user_id]));
+  console.log("union: " + union);
+
+  return {recomStoreList: intersection, unionStoreList: union, isRandomData : false};
 });
 
 // min_Hash 값을 return 하는 함수
@@ -122,6 +131,7 @@ var signiture = function(){
 }
 //Secondary index를 만들어 "#signiture값-index값"를 키로하고 user_id들의 array를 value로 함
 var makeSecondaryIndex = function(){
+  secIndex = {};
   for(var user_id in sigDict){
     for(var a_index = 0;a_index < SIGSIZE;a_index++){
       var key = String(sigDict[user_id][a_index]) + "-" + String(a_index);
@@ -136,4 +146,16 @@ function getRandomInt(min, max){
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function shuffle(a) {   //랜덤하게 섞는 함수
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
+function unionFunc(a, b) {  //합집합
+  return a.concat(b.filter((item) => a.indexOf(item) < 0));
 }
