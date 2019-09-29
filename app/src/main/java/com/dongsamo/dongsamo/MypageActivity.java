@@ -297,6 +297,7 @@ public class MypageActivity extends AppCompatActivity {
 
                                                     databaseReference.child("Email").child(member.getId()).removeValue();
                                                     databaseReference.child("Users").child(uid).removeValue();
+                                                    databaseReference.child("favorite").child(member.getId()).removeValue();
                                                 }
 
                                                 @Override

@@ -219,12 +219,12 @@ public class DecidingActivity extends AppCompatActivity {
                 tp1, tp2, passList,
                 0, new TMapData.FindPathDataListenerCallback() {
 
-            @Override
-            public void onFindPathData(TMapPolyLine polyLine) {
-                polyLine.setLineColor(Color.RED);
-                tMapView.addTMapPolyLine("Course_line" , polyLine);
-            }
-        });
+                    @Override
+                    public void onFindPathData(TMapPolyLine polyLine) {
+                        polyLine.setLineColor(Color.RED);
+                        tMapView.addTMapPolyLine("Course_line" , polyLine);
+                    }
+                });
 
         if(isRandom){
             Toast.makeText(getApplicationContext(), "AI가 추천을 할 수 있도록 맛집 좋아요를 눌러주세요.", Toast.LENGTH_LONG).show();
@@ -313,7 +313,7 @@ public class DecidingActivity extends AppCompatActivity {
                 Intent intent = new Intent(DecidingActivity.this, StoreActivity.class);
 
                 if(store_x == 0 && store_y == 0){
-                //todo 네이버API
+                    //todo 네이버API
                     String api_returns = stringToApi(tMapMarkerItem.getName());
                     Log.d("Course222", "log:" + api_returns);
                     String now_data = api_returns.substring(api_returns.indexOf("\"x\""));

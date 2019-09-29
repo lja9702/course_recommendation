@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity
             switch (status) {
                 case LoaderCallbackInterface.SUCCESS:
                 {
-                   // mOpenCvCameraView.enableView();
+                    // mOpenCvCameraView.enableView();
                 } break;
                 default:
                 {
@@ -267,7 +267,7 @@ public class MainActivity extends AppCompatActivity
 
     /*주변상점보기*/
     public void onClick_main_shop_list_btn(View view){
-         Intent intent = new Intent(MainActivity.this, StoreListActivity.class);
+        Intent intent = new Intent(MainActivity.this, StoreListActivity.class);
         startActivity(intent);
     }
     /*코스추천*/
@@ -355,7 +355,7 @@ public class MainActivity extends AppCompatActivity
     {
         super.onPause();
         //if (mOpenCvCameraView != null)
-         //   mOpenCvCameraView.disableView();
+        //   mOpenCvCameraView.disableView();
     }
 
     @Override
@@ -474,7 +474,7 @@ public class MainActivity extends AppCompatActivity
             URL url = null;
             String result = null;
             try {
-                url = new URL(""+siteUrl+ID+contents);
+                url = new URL(""+siteUrl+ID+contents+now_location);
 
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
