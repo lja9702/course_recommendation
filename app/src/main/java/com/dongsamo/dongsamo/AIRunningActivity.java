@@ -47,7 +47,7 @@ public class AIRunningActivity extends AppCompatActivity {
     List<String> recommendResult;        //추천 리스트
     boolean recommendIsComplete;
 
-    String user_id="hi", ori_course, office, pass_course="", recom_store="";
+    String user_id="hi", ori_course, office, pass_course="", recom_store="", real_place="";
 
     String siteUrl = "http://openapi.seoul.go.kr:8088/";
     String ID = "6c5474475266627737325756715870";
@@ -77,8 +77,9 @@ public class AIRunningActivity extends AppCompatActivity {
         course = intent1.getExtras().getString("new_course");
         eat_count = intent1.getExtras().getInt("eat_count");
         user_id = intent1.getExtras().getString("user_id");
+        real_place = intent1.getExtras().getString("real_place");
+
         st_list = course.split("  ");
-        result_list = new String[10];
 
         if(eat_count == 0){
             handler.sendEmptyMessageDelayed(0,3000);
@@ -197,10 +198,10 @@ public class AIRunningActivity extends AppCompatActivity {
         private void insert_post() throws Exception {
             //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
             //RDN_CODE_NM: 도로명주소,
-            String ps_name = null, ps_type = null;
-            double store_x = 0, store_y = 0;
-            Log.d("LOG", "hi Log   "+building_list.length());
+            result_list = new String[parent.recommendResult.size()+10];
 
+            String ps_name = null, ps_type = null;
+            Log.d("LOG", "hi Log   "+building_list.length());
             int cnt = 0;
             for(int k=0; k<parent.recommendResult.size(); k++) {
                 for (int i = 0; i < building_list.length(); i++) {
@@ -238,6 +239,7 @@ public class AIRunningActivity extends AppCompatActivity {
             intent.putExtra("recom_store", recom_store);
             intent.putExtra("new_course", pass_course);
             intent.putExtra("office", office);
+            intent.putExtra("real_place", real_place);
             startActivity(intent);
             finish();
         }

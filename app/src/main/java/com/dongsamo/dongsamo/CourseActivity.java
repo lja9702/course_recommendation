@@ -262,6 +262,8 @@ public class CourseActivity extends AppCompatActivity {
         }
 
         Intent intent = new Intent(CourseActivity.this, AIRunningActivity.class);
+        intent.putExtra("real_place", course_location_btn.getText().toString());
+
         if(!office.contains("청"))
             office += "청";
         intent.putExtra("office", office);
@@ -276,14 +278,15 @@ public class CourseActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "2개 이상 선택해주세요.", Toast.LENGTH_LONG).show();
             return;
         }
-
+        Intent intent = new Intent(CourseActivity.this, UserCourseActivity.class);
+        intent.putExtra("real_place", course_location_btn.getText().toString());
         if(!office.contains("청"))
             office += "청";
         Log.d("office", "Office:"+ office);
         get_xy(office);
 
         course = String.valueOf(course_text.getText());
-        Intent intent = new Intent(CourseActivity.this, UserCourseActivity.class);
+
         intent.putExtra("office", office);
         intent.putExtra("location", course_location_btn.getText().toString());
         String[] store_list = course.split("  ");

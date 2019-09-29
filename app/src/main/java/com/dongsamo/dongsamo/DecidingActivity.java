@@ -65,8 +65,6 @@ import java.util.concurrent.ExecutionException;
 
 
 public class DecidingActivity extends AppCompatActivity {
-
-
     private LinearLayout activity_deciding, bottom_layout;
     private TMapView tMapView;
     private String apiKey = "b766d096-d3c5-4a56-b48f-d799ca065447";
@@ -75,21 +73,19 @@ public class DecidingActivity extends AppCompatActivity {
     TMapData tmapdata = new TMapData();
     String course="";
     String[] store_list;
-    String store_name, result;
+    String store_name, result, real_place;
     ArrayList passList;
     double store_x=0, store_y=0;
     TMapPoint tp1 = null, tp2= null;
     String siteUrl = "http://openapi.seoul.go.kr:8088/";
     String ID = "6c5474475266627737325756715870";
-    String contents = "/json/CrtfcUpsoInfo/1/1000/";
+    String contents = "/json/CrtfcUpsoInfo/1/1000/ / / / /";
     JSONArray building_list;
     String now_location, office, ps_name = null;
 
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
     private FirebaseUser firebaseUser;
-
-
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +94,6 @@ public class DecidingActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
         firebaseUser = firebaseAuth.getCurrentUser();
-
 
         activity_deciding = (LinearLayout)findViewById(R.id.tmap);
         bottom_layout = (LinearLayout)findViewById(R.id.bottom_layout);
@@ -116,6 +111,7 @@ public class DecidingActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         course = intent.getExtras().getString("new_course","");
+        real_place = intent.getExtras().getString("real_place");
         course = course.substring(2);
         final String recom_store = intent.getExtras().getString("recom_store");
 
@@ -352,7 +348,7 @@ public class DecidingActivity extends AppCompatActivity {
             URL url = null;
             String result = null;
             try {
-                url = new URL(""+siteUrl+ID+contents);
+                url = new URL(""+siteUrl+ID+contents+real_place);
 
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
