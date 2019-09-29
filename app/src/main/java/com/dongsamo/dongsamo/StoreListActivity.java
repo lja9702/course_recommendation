@@ -102,8 +102,6 @@ public class StoreListActivity extends AppCompatActivity {
 
         tMapView.setLocationPoint(lon,lat);
 
-        //pinpinEE("테스트(내위치)", lat, lon, "test");
-
         String api_returns = stringToApi();
         //내 위치 기반으로 무슨 구 인지 찾아오기
         String store_num_find = api_returns.substring(api_returns.indexOf("\"name\""));
@@ -111,7 +109,6 @@ public class StoreListActivity extends AppCompatActivity {
         now_location = store_num_array[75];
         dong_location = store_num_array[93];
         address_textView.setText(now_location+" "+dong_location);
-
 
         Log.d("tags", stringToApi());
         try {
@@ -170,9 +167,7 @@ public class StoreListActivity extends AppCompatActivity {
             @Override
             public void onCalloutRightButton(TMapMarkerItem tMapMarkerItem) {
                 JSONObject JS = null;
-
                 String ps_unikey=null, ps_name = null, ps_type = null, ps_call= null, ps_address= null;
-                double store_x = 0, store_y = 0;
 
                 for (int i = 0; i < building_list.length(); i++) {
                     try {
@@ -182,12 +177,6 @@ public class StoreListActivity extends AppCompatActivity {
                     }
                     if (JS != null) {
                         ps_name = JS.optString("UPSO_NM");
-                        ps_call = JS.optString("TEL_NO");
-                        ps_address = JS.optString("RDN_CODE_NM")+JS.optString("RDN_DETAIL_ADDR");
-                        ps_type = JS.optString("BIZCND_CODE_NM");
-                        ps_unikey = JS.optString("CRTFC_UPSO_MGT_SNO");
-                        store_x = JS.optDouble("X_CNTS");
-                        store_y = JS.optDouble("Y_DNTS");
 
                         Log.d("Tag", "pinName: "+tMapMarkerItem.getName()+" ps_name: "+ps_name);
                         if(ps_name.equals(tMapMarkerItem.getName())) {
@@ -219,23 +208,11 @@ public class StoreListActivity extends AppCompatActivity {
 
             JS = building_list.getJSONObject(i);
             if (JS != null) {
-                for (int j = 0; j < jsonName.length; j++) {
-                    if (jsonName[j].equals("UPSO_NM")) {
-                        ps_name = JS.optString("UPSO_NM");
-                    } else if (jsonName[j].equals("TEL_NO")) {
-                        ps_call = JS.optString("TEL_NO");
-                    } else if (jsonName[j].equals("RDN_CODE_NM")) {
-                        ps_address = JS.optString("RDN_CODE_NM");
-                    } else if (jsonName[j].equals("BIZCND_CODE_NM")) {
-                        ps_type = JS.optString("BIZCND_CODE_NM");
-                    }  else if( jsonName[j].equals("X_CNTS")){
-                        store_x = JS.optDouble("X_CNTS");
-                    }
-                    else if(jsonName[j].equals("Y_DNTS")){
-                        store_y = JS.optDouble("Y_DNTS");
-                    }
-                }
+                ps_name = JS.optString("UPSO_NM");
+                store_x = JS.optDouble("X_CNTS");
+                store_y = JS.optDouble("Y_DNTS");
             }
+
 
             if(ps_name != null) {
                 Log.d("LOG", "hi "+ps_name+" "+store_x);

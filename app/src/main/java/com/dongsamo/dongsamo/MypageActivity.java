@@ -109,38 +109,7 @@ public class MypageActivity extends AppCompatActivity {
             }
         });
 
-        databaseReference.child("Users").child(firebaseUser.getUid()).child("Recom_Store").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@androidx.annotation.NonNull DataSnapshot dataSnapshot) {
-                recomlist.clear();
-                try {
-                    pass_ps = dataSnapshot.getValue().toString();
-                }
-                catch (NullPointerException e){
-                    pass_ps = "";
-                }
 
-                Log.d("pass_ps", pass_ps);
-                if(pass_ps != null && !(pass_ps.equals(""))) {
-                    store_list = pass_ps.split("  ");
-                    please_click_like_textView.setVisibility(View.GONE);
-                    for(int i=1; i<store_list.length; i++){
-                        Log.d("pass", store_list[i]);
-                        recomlist.add(new UserLikeListitem(store_list[i]));
-                        recom_ap.notifyDataSetChanged();
-                    }
-                }
-                else {
-                    recomlist.clear();
-                    please_click_like_textView.setVisibility(View.VISIBLE);
-                }
-            }
-            @Override
-            public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
-
-                Log.w("TAGs", "Failed to read value.", databaseError.toException());
-            }
-        });
 
         mypage_name = (TextView) findViewById(R.id.mypage_name);
         mypage_id = (TextView) findViewById(R.id.mypage_id);
@@ -193,6 +162,10 @@ public class MypageActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         postlist.clear();
+        recomlist.clear();
+        list_ap.notifyDataSetChanged();
+        recom_ap.notifyDataSetChanged();
+
         if( firebaseUser == null ){
             Intent intent = new Intent(MypageActivity.this, LoginActivity.class);
             startActivity(intent);
@@ -255,6 +228,39 @@ public class MypageActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 Log.w(TAG, "Failed to read value.", databaseError.toException());
+            }
+        });
+
+        databaseReference.child("Users").child(firebaseUser.getUid()).child("Recom_Store").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@androidx.annotation.NonNull DataSnapshot dataSnapshot) {
+                recomlist.clear();
+                try {
+                    pass_ps = dataSnapshot.getValue().toString();
+                }
+                catch (NullPointerException e){
+                    pass_ps = "";
+                }
+
+                Log.d("pass_ps", pass_ps);
+                if(pass_ps != null && !(pass_ps.equals(""))) {
+                    store_list = pass_ps.split("  ");
+                    please_click_like_textView.setVisibility(View.GONE);
+                    for(int i=1; i<store_list.length; i++){
+                        Log.d("pass", store_list[i]);
+                        recomlist.add(new UserLikeListitem(store_list[i]));
+                        recom_ap.notifyDataSetChanged();
+                    }
+                }
+                else {
+                    recomlist.clear();
+                    please_click_like_textView.setVisibility(View.VISIBLE);
+                }
+            }
+            @Override
+            public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
+
+                Log.w("TAGs", "Failed to read value.", databaseError.toException());
             }
         });
     }

@@ -90,10 +90,10 @@ public class StoreActivity extends AppCompatActivity {
                     try {
                         intent = getIntent();
                         store_name = intent.getExtras().getString("store_name"); //가게명
-                        store_x = intent.getExtras().getFloat("store_x");
-                        store_y = intent.getExtras().getFloat("store_y");
-                        store_addr = intent.getExtras().getString("store_address");
-                        store_call = intent.getExtras().getString("store_call");
+                        store_x = intent.getExtras().getFloat("store_x",0);
+                        store_y = intent.getExtras().getFloat("store_y", 0);
+                        store_addr = intent.getExtras().getString("store_address", "-");
+                        store_call = intent.getExtras().getString("store_call", "-");
                         store_type = intent.getExtras().getString("no_data", "-");
                         store_crtfc_gbn_nm = intent.getExtras().getString("no_data", "-");
                         store_food_menu = intent.getExtras().getString("no_data", "-");
@@ -144,11 +144,8 @@ public class StoreActivity extends AppCompatActivity {
             }
         });
 
-        Log.d("TAG", "Intent: "+store_x+"  "+store_y+"  "+store_name+"  "+store_type+"  "+store_addr+"  "+store_call+"  "+store_unikey);
         //firebaseAnalytics 초기화
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-
-        Log.d("TAG", "x: "+store_x+"  y: "+store_y);
 
         databaseReference.child("Users").child(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -380,6 +377,7 @@ public class StoreActivity extends AppCompatActivity {
                     store_x = (float)ps_store_x;
                     store_y = (float)ps_store_y;
                     store_name = ps_name;
+
                     if(ps_type == null || ps_type.equals(""))
                         store_type = "-";
                     else
