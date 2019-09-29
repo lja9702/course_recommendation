@@ -1108,7 +1108,12 @@ id src_over
 id standard
 id start
 id status_bar_latest_event_content
-id store_info
+id store_info1
+id store_info2
+id store_info3
+id store_info4
+id store_info5
+id store_info6
 id store_list
 id store_list_layout
 id store_list_tmap

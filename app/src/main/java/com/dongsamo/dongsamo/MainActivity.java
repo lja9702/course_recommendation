@@ -216,7 +216,7 @@ public class MainActivity extends AppCompatActivity
         //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
         //RDN_CODE_NM: 도로명주소,
 
-        String ps_name = null, ps_type = null, ps_call= null, ps_address= null, ps_unikey, place_name;
+        String ps_name = null, ps_type = null, ps_call= null, ps_address= null, ps_unikey, place_name, food_menu;
         double store_x = 0, store_y = 0;
         Log.d("TAGS", "bef insert post!");
         Log.d("TAGS", "hi Log   "+building_list.length());
@@ -242,6 +242,7 @@ public class MainActivity extends AppCompatActivity
                             ps_unikey = JS.optString("CRTFC_UPSO_MGT_SNO");
                             store_x = JS.optDouble("X_CNTS");
                             store_y = JS.optDouble("Y_DNTS");
+                            food_menu = JS.optString("FOOD_MENU");
 
                             wintent.putExtra("store_unikey", ps_unikey);
                             wintent.putExtra("store_name", ps_name);
@@ -250,6 +251,7 @@ public class MainActivity extends AppCompatActivity
                             wintent.putExtra("store_type", ps_type);
                             wintent.putExtra("store_call", ps_call);
                             wintent.putExtra("store_address", ps_address);
+                            wintent.putExtra("store_food_menu", food_menu);
 
                             return true;
                         }
@@ -291,8 +293,6 @@ public class MainActivity extends AppCompatActivity
 
                 capture_btn.setEnabled(false);
                 capture_btn.setImageResource(R.drawable.loading_btn);
-
-                imageView.setImageBitmap(bitmap);
 
                 /*tesseract-> ML Kit*/
                 FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);

@@ -79,7 +79,7 @@ public class AIRunningActivity extends AppCompatActivity {
         user_id = intent1.getExtras().getString("user_id");
         st_list = course.split("  ");
         result_list = new String[10];
-        //st_list[1]이 첫 번째. 만약 맛집이 아니면 그냥 두기!
+
         if(eat_count == 0){
             handler.sendEmptyMessageDelayed(0,3000);
         }
@@ -181,19 +181,14 @@ public class AIRunningActivity extends AppCompatActivity {
                         building_list = new JSONArray(row);
 
                         reader.close();
+
+                        insert_post( );
                     } else {
                         Log.i("통신 결과", conn.getResponseCode() + "에러");
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-                try {
-                    insert_post( );
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
                 return result;
             }
         }
@@ -202,7 +197,6 @@ public class AIRunningActivity extends AppCompatActivity {
         private void insert_post() throws Exception {
             //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
             //RDN_CODE_NM: 도로명주소,
-
             String ps_name = null, ps_type = null;
             double store_x = 0, store_y = 0;
             Log.d("LOG", "hi Log   "+building_list.length());

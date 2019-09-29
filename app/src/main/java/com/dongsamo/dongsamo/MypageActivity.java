@@ -111,7 +111,13 @@ public class MypageActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@androidx.annotation.NonNull DataSnapshot dataSnapshot) {
                 recomlist.clear();
-                pass_ps = dataSnapshot.getValue().toString();
+                try {
+                    pass_ps = dataSnapshot.getValue().toString();
+                }
+                catch (NullPointerException e){
+                    pass_ps = "";
+                }
+
                 Log.d("pass_ps", pass_ps);
                 if(pass_ps != null && !(pass_ps.equals(""))) {
                     store_list = pass_ps.split("  ");

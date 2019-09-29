@@ -30,7 +30,6 @@
             android:layout_height="match_parent"
             android:layout_weight="500"
             android:gravity="center|left"
-            android:text="논두렁"
             android:textColor="#000"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -82,16 +81,140 @@
             android:layout_height="0dp"
             android:layout_weight="0.03"/>
 
-        <TextView
-            android:id="@+id/store_info"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.6"
-            android:textColor="#000"
-            android:gravity="top|left"
-            android:padding="15dp"
-            android:textSize="18dp"
-            android:background="#f9f5ec"/>
+            android:layout_weight="0.56"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/store_info1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:textColor="#000"
+                android:paddingLeft="10dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:paddingRight="10dp"
+                android:gravity="center|left"
+                android:textSize="18dp"
+                android:background="#f9f5ec"
+                android:text="가게이름 : "
+                android:maxLines="2"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.03"
+                android:background="#000"/>
+
+            <TextView
+                android:id="@+id/store_info2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:textColor="#000"
+                android:paddingLeft="10dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:paddingRight="10dp"
+                android:gravity="center|left"
+                android:textSize="18dp"
+                android:background="#f9f5ec"
+                android:text="도로명주소 : "
+                android:maxLines="2"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.03"
+                android:background="#000"/>
+
+            <TextView
+                android:id="@+id/store_info3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textColor="#000"
+                android:paddingLeft="10dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:paddingRight="10dp"
+                android:gravity="center|left"
+                android:textSize="18dp"
+                android:background="#f9f5ec"
+                android:text="전화번호 : "
+                android:maxLines="2"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.03"
+                android:background="#000"/>
+
+            <TextView
+                android:id="@+id/store_info4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textColor="#000"
+                android:paddingLeft="10dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:paddingRight="10dp"
+                android:gravity="center|left"
+                android:textSize="18dp"
+                android:background="#f9f5ec"
+                android:text="업태 : "
+                android:maxLines="2"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.03"
+                android:background="#000"/>
+
+            <TextView
+                android:id="@+id/store_info5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textColor="#000"
+                android:paddingLeft="10dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:paddingRight="10dp"
+                android:gravity="center|left"
+                android:textSize="18dp"
+                android:background="#f9f5ec"
+                android:text="식품인증구분 : "
+                android:maxLines="2"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.03"
+                android:background="#000"/>
+
+            <TextView
+                android:id="@+id/store_info6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textColor="#000"
+                android:paddingLeft="10dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:paddingRight="10dp"
+                android:gravity="center|left"
+                android:textSize="18dp"
+                android:background="#f9f5ec"
+                android:text="대표메뉴 : "
+                android:maxLines="2"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
