@@ -61,16 +61,6 @@ public class AIRunningActivity extends AppCompatActivity {
         setContentView(R.layout.activity_airunning);
         mFunctions = FirebaseFunctions.getInstance();
         recommendIsComplete = false;
-        Handler handler = new Handler(){
-            public void handleMessage(Message msg){
-                super.handleMessage(msg);
-                Intent intent = new Intent(AIRunningActivity.this, DecidingActivity.class);
-                intent.putExtra("new_course", course);
-                startActivity(intent);
-                finish();
-            }
-
-        };
 
         Intent intent1 = getIntent();
         office = intent1.getExtras().getString("office");
@@ -82,38 +72,32 @@ public class AIRunningActivity extends AppCompatActivity {
 
         st_list = course.split("  ");
 
-        if(eat_count == 0){
-            handler.sendEmptyMessageDelayed(0,3000);
-        }
+//        if(eat_count == 0){
+//            Intent intent = new Intent(AIRunningActivity.this, DecidingActivity.class);
+//
+//            course = "  "+course;
+//            intent.putExtra("new_course", course);
+//            intent.putExtra("office", office);
+//            intent.putExtra("real_place", real_place);
+//            startActivity(intent);
+//            finish();
+//        }
 
         Log.d("count", course+"  "+eat_count+"  "+user_id);
 
         //function으로 넘기는 user_id (추천을 진행할 id)
         Map<String, Object> data = new HashMap<>();
         data.put("user_id", user_id);
-        //try {
-            AIOnCompleteListener onCompleteListener = new AIOnCompleteListener(AIRunningActivity.this);
-            //recommendation 함수 호출
-            Task<HashMap<String, Object>> recomTask = mFunctions.getHttpsCallable("Recommendation").call(data)
-                    .continueWith(new Continuation<HttpsCallableResult, HashMap<String, Object> >() {
-                        @Override
-                        public HashMap<String, Object> then(@NonNull Task<HttpsCallableResult> task) throws Exception{
-                            HashMap<String, Object> result = (HashMap<String, Object>) task.getResult().getData();
-                            return result;
-                        }
-                    }).addOnCompleteListener(onCompleteListener);
-        //}
-//        catch (NullPointerException e){
-//            e.printStackTrace();
-//            Intent intent = new Intent(AIRunningActivity.this, AIRunningActivity.class);
-//            intent.putExtra("office", office);
-//            intent.putExtra("new_course", ori_course);
-//            intent.putExtra("eat_count", eat_count);
-//            intent.putExtra("user_id", user_id);
-//            finish();
-//
-//            startActivity(intent);
-//        }
+        AIOnCompleteListener onCompleteListener = new AIOnCompleteListener(AIRunningActivity.this);
+        //recommendation 함수 호출
+        Task<HashMap<String, Object>> recomTask = mFunctions.getHttpsCallable("Recommendation").call(data)
+                .continueWith(new Continuation<HttpsCallableResult, HashMap<String, Object> >() {
+                    @Override
+                    public HashMap<String, Object> then(@NonNull Task<HttpsCallableResult> task) throws Exception{
+                        HashMap<String, Object> result = (HashMap<String, Object>) task.getResult().getData();
+                        return result;
+                    }
+                }).addOnCompleteListener(onCompleteListener);
     }
 
     class AIOnCompleteListener implements OnCompleteListener<HashMap<String, Object> >{

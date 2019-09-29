@@ -100,7 +100,7 @@
                 android:gravity="center|left"
                 android:textSize="18dp"
                 android:background="#f9f5ec"
-                android:text="가게이름 : "
+                android:text="이름 : "
                 android:maxLines="2"/>
 
             <LinearLayout

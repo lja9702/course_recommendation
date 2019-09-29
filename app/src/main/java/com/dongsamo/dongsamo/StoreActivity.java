@@ -65,8 +65,8 @@ public class StoreActivity extends AppCompatActivity {
     private Intent intent;
     private long mLastClickTime = 0;
 
-    float store_x, store_y;
-    String store_name, store_food_menu, store_type, store_crtfc_gbn_nm, store_addr, store_call,store_unikey, user_id;
+    float store_x=0, store_y=0;
+    String store_name, store_food_menu, store_type, store_crtfc_gbn_nm, store_addr, store_call,store_unikey=null, user_id;
     JSONArray building_list;
     ProgressDialog progressDialog;
 
@@ -90,8 +90,16 @@ public class StoreActivity extends AppCompatActivity {
                     try {
                         intent = getIntent();
                         store_name = intent.getExtras().getString("store_name"); //가게명
+                        store_x = intent.getExtras().getFloat("store_x");
+                        store_y = intent.getExtras().getFloat("store_y");
+                        store_addr = intent.getExtras().getString("store_address");
+                        store_call = intent.getExtras().getString("store_call");
+                        store_type = intent.getExtras().getString("no_data", "-");
+                        store_crtfc_gbn_nm = intent.getExtras().getString("no_data", "-");
+                        store_food_menu = intent.getExtras().getString("no_data", "-");
 
-                        insert_post();
+                        if(store_x == 0 && store_y == 0)
+                            insert_post();
 
                         store_text = (TextView)findViewById(R.id.store_name_textView);
                         store_info1 = (TextView)findViewById(R.id.store_info1);
@@ -116,7 +124,7 @@ public class StoreActivity extends AppCompatActivity {
 
                         pinpinEE(store_name, store_x ,store_y, "TEST_"+store_name);
 
-                        store_info1.setText("가게이름 : "+store_name);
+                        store_info1.setText("이름 : "+store_name);
                         store_info2.setText("도로명주소 : "+store_addr);
                         store_info3.setText("전화번호 : "+store_call);
                         store_info4.setText("업태 : "+store_type);
@@ -207,6 +215,12 @@ public class StoreActivity extends AppCompatActivity {
         if (SystemClock.elapsedRealtime() - mLastClickTime < 500){
             return;
         }
+
+        if(store_unikey == null || store_unikey.equals("-") || store_unikey.equals("")){
+            Toast.makeText(getApplicationContext(), "공공데이터에 등록된 맛집만 좋아요를 누를 수 있습니다.", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         mLastClickTime = SystemClock.elapsedRealtime();
 
         String contentType = store_type;
@@ -341,7 +355,7 @@ public class StoreActivity extends AppCompatActivity {
     private void insert_post() throws Exception {
         //UPSO_NM: 가게명, CGG_CODE_NM: 자치구명, BIZCND_CODE_NM : 업태명, Y_DNTS : 지도 Y좌표, X_CNTS: 지도 X좌표, TEL_NO: 전화번호
         //RDN_CODE_NM: 도로명주소,
-        String ps_unikey=null, ps_name = null, ps_type = null, ps_call= null, ps_address= null, ps_food_menu, ps_gbn;
+        String ps_unikey=null, ps_name = null, ps_type = null, ps_call= null, ps_address= null, ps_food_menu=null, ps_gbn = null;
         double ps_store_x = 0, ps_store_y = 0;
 
         for (int i = 0; i < building_list.length(); i++) {
@@ -399,5 +413,7 @@ public class StoreActivity extends AppCompatActivity {
                 }
             }
         }
+
+
     }
 }

@@ -81,7 +81,7 @@ public class DecidingActivity extends AppCompatActivity {
     String ID = "6c5474475266627737325756715870";
     String contents = "/json/CrtfcUpsoInfo/1/1000/ / / / /";
     JSONArray building_list;
-    String now_location, office, ps_name = null;
+    String office, ps_name = null;
     boolean isRandom;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
@@ -111,17 +111,15 @@ public class DecidingActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         course = intent.getExtras().getString("new_course","");
-        real_place = intent.getExtras().getString("real_place");
+        real_place = intent.getExtras().getString("real_place", "");
         course = course.substring(2);
-        final String recom_store = intent.getExtras().getString("recom_store");
+        final String recom_store = intent.getExtras().getString("recom_store", "");
 
         office = intent.getExtras().getString("office");
-        office = office.substring(0, office.length()-1);
+        office = office.substring(0, (office.length())-1);
 
         isRandom = intent.getExtras().getBoolean("isRandom", false);
-        if(isRandom){
-            Toast.makeText(getApplicationContext(), "추천을 할 수 있도록 가게를 좋아요를 눌러주세요.", Toast.LENGTH_LONG).show();
-        }
+
         Log.d("Course222", "full:"+office+"  "+course);
 
         databaseReference.child("Users").child(firebaseUser.getUid()).child("Recom_Store").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -158,6 +156,7 @@ public class DecidingActivity extends AppCompatActivity {
                     String now_data_array[] = now_data.split("\"");
                     store_x = Float.parseFloat(now_data_array[3]);
                     store_y = Float.parseFloat(now_data_array[7]);
+
                 }
             }
 
@@ -215,10 +214,6 @@ public class DecidingActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        for(int i=0; i<passList.size(); i++){
-            Log.d("passlist", String.valueOf(((TMapPoint) passList.get(i)).getLatitude()));
-        }
-
         tmapdata.findPathDataWithType(
                 TMapData.TMapPathType.PEDESTRIAN_PATH,
                 tp1, tp2, passList,
@@ -230,6 +225,10 @@ public class DecidingActivity extends AppCompatActivity {
                 tMapView.addTMapPolyLine("Course_line" , polyLine);
             }
         });
+
+        if(isRandom){
+            Toast.makeText(getApplicationContext(), "AI가 추천을 할 수 있도록 맛집 좋아요를 눌러주세요.", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
@@ -311,6 +310,21 @@ public class DecidingActivity extends AppCompatActivity {
                     }
                 }
 
+                if(store_x == 0 && store_y == 0){
+                //todo 네이버API
+                    String api_returns = stringToApi(tMapMarkerItem.getName());
+                    Log.d("Course222", "log:" + api_returns);
+                    String now_data = api_returns.substring(api_returns.indexOf("\"x\""));
+                    String now_data_array[] = now_data.split("\"");
+                    store_x = Float.parseFloat(now_data_array[3]);
+                    store_y = Float.parseFloat(now_data_array[7]);
+
+                    String iwant = api_returns.substring(api_returns.indexOf("\"road_address\""));
+                    String iwant_array[] = iwant.split("\"");
+                    ps_address = iwant_array[3];
+                    ps_call = iwant_array[11];
+                }
+
                 Intent intent = new Intent(DecidingActivity.this, StoreActivity.class);
                 intent.putExtra("store_unikey", ps_unikey);
                 intent.putExtra("store_name", tMapMarkerItem.getName());
@@ -326,8 +340,6 @@ public class DecidingActivity extends AppCompatActivity {
 
         // 핀모양으로 된 마커를 사용할 경우 마커 중심을 하단 핀 끝으로 설정.
         tItem.setPosition((float)0.5, (float)1.0);         // 마커의 중심점을 하단, 중앙으로 설정
-
-        //
 
         tMapView.addMarkerItem(pin_id, tItem);
     }
