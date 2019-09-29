@@ -232,7 +232,7 @@ public class MainActivity extends AppCompatActivity
                     Log.d("Store", "업소: " + ps_name);
                     if (ps_name != null) {
                         Log.d("Store", result + "  " + ps_name);
-                        if (result.contains(ps_name)) {
+                        if (result.contains(ps_name) || ps_name.contains(result)) {
                             Log.d("Success", "HI success");
 
                             ps_name = JS.optString("UPSO_NM");

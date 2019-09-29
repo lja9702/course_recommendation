@@ -59,13 +59,19 @@ public class CustomWidget extends Activity {
         store_addr = intent.getExtras().getString("store_address"); //가게 도로명 주소
         store_call = intent.getExtras().getString("store_call"); //전화번호
         store_unikey = intent.getExtras().getString("store_unikey"); //가게id
-        store_food_menu = intent.getExtras().getString("store_food_menu"); //가게id
+        store_food_menu = intent.getExtras().getString("store_food_menu", "-"); //가게id
         //UI 객체생성
         shop_name = (TextView)findViewById(R.id.shop_name);
         shop_score = (TextView)findViewById(R.id.shop_score);
         heart_btn = (ImageButton)findViewById(R.id.is_heart);
         //데이터 가져오기
         //store = (Store) getIntent().getSerializableExtra("store");
+
+        if(store_type.equals("") || store_type == null)
+            store_type = "-";
+
+        if(store_food_menu.equals("") || store_food_menu == null)
+            store_food_menu = "-";
 
         shop_name.setText(store_name);
         shop_score.setText(String.valueOf(store_type+" / "+store_food_menu));
