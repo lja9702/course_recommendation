@@ -73,17 +73,6 @@ public class AIRunningActivity extends AppCompatActivity {
 
         st_list = course.split("  ");
 
-//        if(eat_count == 0){
-//            Intent intent = new Intent(AIRunningActivity.this, DecidingActivity.class);
-//
-//            course = "  "+course;
-//            intent.putExtra("new_course", course);
-//            intent.putExtra("office", office);
-//            intent.putExtra("real_place", real_place);
-//            startActivity(intent);
-//            finish();
-//        }
-
         Log.d("count", course+"  "+eat_count+"  "+user_id);
 
         //function으로 넘기는 user_id (추천을 진행할 id)

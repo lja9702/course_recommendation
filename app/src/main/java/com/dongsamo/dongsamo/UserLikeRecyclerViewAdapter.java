@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -66,7 +67,11 @@ public class UserLikeRecyclerViewAdapter extends RecyclerView.Adapter<UserLikeRe
                     Intent intent = new Intent(mContext.getApplicationContext(), StoreActivity.class);
                     intent.putExtra("store_name", store_name);
                     mContext.startActivity(intent);
-                } catch (Exception e) {
+                }
+                catch (NullPointerException e){
+                    Toast.makeText(mContext.getApplicationContext(), "이미 삭제된 아이템입니다.",Toast.LENGTH_LONG).show();
+                }
+                catch (Exception e) {
                     e.printStackTrace();
                 }
             }

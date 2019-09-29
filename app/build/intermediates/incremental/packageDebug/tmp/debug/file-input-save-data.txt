@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Sep 30 00:46:40 KST 2019
+#Mon Sep 30 02:16:52 KST 2019
 5.base=/Users/MIPUNG/Desktop/Dongsamo/app/build/intermediates/transforms/stripDebugSymbol/debug/0
 22.path=lib/arm64-v8a/libtess.so
 32.set=NATIVE_RESOURCE

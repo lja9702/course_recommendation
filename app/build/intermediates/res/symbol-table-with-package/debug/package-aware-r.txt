@@ -1059,6 +1059,7 @@ id place_autocomplete_search_button
 id place_autocomplete_search_input
 id place_autocomplete_separator
 id place_data
+id please_click_like_textView
 id program_detail
 id progress_circular
 id progress_horizontal

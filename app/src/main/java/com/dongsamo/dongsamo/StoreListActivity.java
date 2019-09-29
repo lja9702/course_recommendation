@@ -116,7 +116,6 @@ public class StoreListActivity extends AppCompatActivity {
         Log.d("tags", stringToApi());
         try {
             new Task().execute().get();
-
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -170,6 +169,33 @@ public class StoreListActivity extends AppCompatActivity {
         tMapView.setOnCalloutRightButtonClickListener(new TMapView.OnCalloutRightButtonClickCallback() {
             @Override
             public void onCalloutRightButton(TMapMarkerItem tMapMarkerItem) {
+                JSONObject JS = null;
+
+                String ps_unikey=null, ps_name = null, ps_type = null, ps_call= null, ps_address= null;
+                double store_x = 0, store_y = 0;
+
+                for (int i = 0; i < building_list.length(); i++) {
+                    try {
+                        JS = building_list.getJSONObject(i);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    if (JS != null) {
+                        ps_name = JS.optString("UPSO_NM");
+                        ps_call = JS.optString("TEL_NO");
+                        ps_address = JS.optString("RDN_CODE_NM")+JS.optString("RDN_DETAIL_ADDR");
+                        ps_type = JS.optString("BIZCND_CODE_NM");
+                        ps_unikey = JS.optString("CRTFC_UPSO_MGT_SNO");
+                        store_x = JS.optDouble("X_CNTS");
+                        store_y = JS.optDouble("Y_DNTS");
+
+                        Log.d("Tag", "pinName: "+tMapMarkerItem.getName()+" ps_name: "+ps_name);
+                        if(ps_name.equals(tMapMarkerItem.getName())) {
+                            break;
+                        }
+                    }
+                }
+
                 Intent intent = new Intent(StoreListActivity.this, StoreActivity.class);
                 intent.putExtra("store_name", tMapMarkerItem.getName());
                 startActivity(intent);

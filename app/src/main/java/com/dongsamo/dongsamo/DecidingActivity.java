@@ -310,6 +310,8 @@ public class DecidingActivity extends AppCompatActivity {
                     }
                 }
 
+                Intent intent = new Intent(DecidingActivity.this, StoreActivity.class);
+
                 if(store_x == 0 && store_y == 0){
                 //todo 네이버API
                     String api_returns = stringToApi(tMapMarkerItem.getName());
@@ -323,17 +325,14 @@ public class DecidingActivity extends AppCompatActivity {
                     String iwant_array[] = iwant.split("\"");
                     ps_address = iwant_array[3];
                     ps_call = iwant_array[11];
+
+                    intent.putExtra("store_x", (float)store_x);
+                    intent.putExtra("store_y", (float)store_y);
+                    intent.putExtra("store_call", ps_call);
+                    intent.putExtra("store_address", ps_address);
                 }
 
-                Intent intent = new Intent(DecidingActivity.this, StoreActivity.class);
-                intent.putExtra("store_unikey", ps_unikey);
                 intent.putExtra("store_name", tMapMarkerItem.getName());
-                intent.putExtra("store_x", (float)store_x);
-                intent.putExtra("store_y", (float)store_y);
-                intent.putExtra("store_type", ps_type);
-                intent.putExtra("store_call", ps_call);
-                intent.putExtra("store_address", ps_address);
-
                 startActivity(intent);
             }
         });

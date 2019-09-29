@@ -44,7 +44,7 @@ import java.util.concurrent.ExecutionException;
 
 public class MypageActivity extends AppCompatActivity {
 
-    TextView mypage_name, mypage_id, mypage_email;
+    TextView mypage_name, mypage_id, mypage_email, please_click_like_textView;
     ImageButton mypage_logout_btn, mypage_withdraw_btn;
 
     SharedPreferences sub;
@@ -68,6 +68,8 @@ public class MypageActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
+
+        please_click_like_textView = (TextView) findViewById(R.id.please_click_like_textView);
 
         postlist = new ArrayList<>();
         list = (RecyclerView) findViewById(R.id.mypage_like_list);
@@ -121,12 +123,16 @@ public class MypageActivity extends AppCompatActivity {
                 Log.d("pass_ps", pass_ps);
                 if(pass_ps != null && !(pass_ps.equals(""))) {
                     store_list = pass_ps.split("  ");
-
+                    please_click_like_textView.setVisibility(View.GONE);
                     for(int i=1; i<store_list.length; i++){
                         Log.d("pass", store_list[i]);
                         recomlist.add(new UserLikeListitem(store_list[i]));
                         recom_ap.notifyDataSetChanged();
                     }
+                }
+                else {
+                    recomlist.clear();
+                    please_click_like_textView.setVisibility(View.VISIBLE);
                 }
             }
             @Override

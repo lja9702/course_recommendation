@@ -293,11 +293,22 @@
             android:weightSum="670"
             android:background="@drawable/mypage_down_box" >
 
+            <TextView
+                android:id="@+id/please_click_like_textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="맛집 좋아요를 두 개 이상 눌러주세요.\n밥플AI가 맛집을 추천해드릴게요."
+                android:textColor="#000"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:visibility="gone"/>
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/mypage_recom_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="3dp"/>
+                android:padding="3dp"
+                />
         </LinearLayout>
 
     </LinearLayout>
