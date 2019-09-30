@@ -125,18 +125,18 @@ public class MainActivity extends AppCompatActivity
             e.printStackTrace();
         }
 
-        databaseReference.child("Parsing").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@androidx.annotation.NonNull DataSnapshot dataSnapshot) {
-                dataSnapshot.getRef().child("Data").removeValue();
-                dataSnapshot.getRef().child("Data").setValue(pass_ps);
-            }
-            @Override
-            public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
-
-                Log.w("TAGs", "Failed to read value.", databaseError.toException());
-            }
-        });
+//        databaseReference.child("Parsing").addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@androidx.annotation.NonNull DataSnapshot dataSnapshot) {
+//                dataSnapshot.getRef().child("Data").removeValue();
+//                dataSnapshot.getRef().child("Data").setValue(pass_ps);
+//            }
+//            @Override
+//            public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
+//
+//                Log.w("TAGs", "Failed to read value.", databaseError.toException());
+//            }
+//        });
 
         surfaceView = findViewById(R.id.activity_surfaceView);
         capture_btn = (ImageButton)findViewById(R.id.capture_btn);
@@ -474,7 +474,7 @@ public class MainActivity extends AppCompatActivity
             URL url = null;
             String result = null;
             try {
-                url = new URL(""+siteUrl+ID+contents+now_location);
+                url = new URL(""+siteUrl+ID+contents);
 
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
