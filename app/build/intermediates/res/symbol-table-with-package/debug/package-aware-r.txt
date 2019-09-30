@@ -838,6 +838,8 @@ drawable play
 drawable powered_by_google_dark
 drawable powered_by_google_light
 drawable recent_course
+drawable refresh_btn
+drawable refresh_btn_black
 drawable restaurant
 drawable restaurant_btn
 drawable restaurant_btn_black
