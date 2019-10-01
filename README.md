@@ -22,7 +22,7 @@ To use the Android project, the following settings are required.
 --------------------------------------------------------------
 # Real-time store (course) recommendation
 
-This project recommended the store using Real-time **user-based collaborative filtering**. We used the ++firebase function++ to run on the ackend server instead of directly uploading it to Android. See the dataInfo branch for this. 
+This project recommended the store using Real-time **user-based collaborative filtering**. We used the firebase function to run on the ackend server instead of directly uploading it to Android. See the dataInfo branch for this. 
 
 ref) 실시간 추천엔진 머신한대에 구겨넣기 
 https://www.slideshare.net/deview/261-52784785
