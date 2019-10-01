@@ -1,4 +1,4 @@
-## real-time store recommendation and recognized signboard Android App
+# real-time store recommendation and recognized signboard Android App
 
 이 프로젝트는 유저에게 가게에 대한 정보를 제공하고 유저의 취향에 맞춰 가게와 데이트 코스를 추천하는 안드로이드 프로젝트입니다. 우리는 글자 인식 기술을 이용해 간판을 인식하고 해당 가게에 대한 정보를 띄워줍니다. 또 다른 기능은 코스추천입니다. 사용자와 취향이 비슷한 유저의 가게 정보를 이용하여, 해당 사용자에게 가게를 추천해사주고 이 가게들을 포함한 코스를 만들어 줍니다.
 
