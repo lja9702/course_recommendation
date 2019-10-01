@@ -5,6 +5,9 @@
 this project is an Android project that provides users with information about the store and recommends stores and dating courses to their tastes. We use text recognition technology to recognize signboard and show information about the store. Another function is course recommendations. Using the stores infomations tof users with similar tastes, we recommend the store to the user and create a course that includes these stores. 
 
 
+
+
+
 # requirement and setting
 이 프로젝트에서는 firebase의 DB, ML Kits, function을 이용하였습니다. ML Kits의 경우 text recognization을 사용하였고, function의 경우 Real-time store recommendation을 위해 사용하였습니다. 
 
@@ -18,7 +21,10 @@ To use the Android project, the following settings are required.
 * **CMakeList.txt**
   * set(pathPROJECT /home/lja9702/StudioProjects/course_recommendation)... -> 본인 프로젝트 local directory 주소로 변경.
   
-  
+
+
+
+
 # Real-time store (course) recommendation
 
 This project recommended the store using Real-time **user-based collaborative filtering**. We used the firebase function to run on the ackend server instead of directly uploading it to Android. See the dataInfo branch for this. 
@@ -26,6 +32,9 @@ This project recommended the store using Real-time **user-based collaborative fi
 ref) 실시간 추천엔진 머신한대에 구겨넣기 
 https://www.slideshare.net/deview/261-52784785
 https://yeoubi.net/2019/04/07/2019-04-07-50-lines-of-recommendation-engine/
+
+
+
 
 
 # API
