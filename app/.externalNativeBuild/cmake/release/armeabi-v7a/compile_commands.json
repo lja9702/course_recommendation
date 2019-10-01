@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/Users/MIPUNG/Desktop/Dongsamo/app/.externalNativeBuild/cmake/release/armeabi-v7a",
-  "command": "/Users/MIPUNG/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=armv7-none-linux-androideabi23 --gcc-toolchain=/Users/MIPUNG/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/MIPUNG/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dnative_lib_EXPORTS -I/Users/Mipung/Desktop/Dongsamo/opencv/native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mfpu=vfpv3-d16 -fno-addrsig -march=armv7-a -mthumb -mfpu=neon -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++  -std=gnu++11 -Oz -DNDEBUG  -fPIC   -o CMakeFiles/native-lib.dir/native-lib.cpp.o -c /Users/Mipung/Desktop/Dongsamo/app/src/main/cpp/native-lib.cpp",
-  "file": "/Users/Mipung/Desktop/Dongsamo/app/src/main/cpp/native-lib.cpp"
+  "directory": "/home/lja9702/StudioProjects/course_recommendation/app/.externalNativeBuild/cmake/release/armeabi-v7a",
+  "command": "/home/lja9702/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi23 --gcc-toolchain=/home/lja9702/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/lja9702/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dnative_lib_EXPORTS -I/home/lja9702/StudioProjects/course_recommendation/opencv/native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -std=gnu++11 -Oz -DNDEBUG  -fPIC   -o CMakeFiles/native-lib.dir/native-lib.cpp.o -c /home/lja9702/StudioProjects/course_recommendation/app/src/main/cpp/native-lib.cpp",
+  "file": "/home/lja9702/StudioProjects/course_recommendation/app/src/main/cpp/native-lib.cpp"
 }
 ]
