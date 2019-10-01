@@ -6,7 +6,7 @@ this project is an Android project that provides users with information about th
 
 
 
-
+---
 
 # requirement and setting
 이 프로젝트에서는 firebase의 DB, ML Kits, function을 이용하였습니다. ML Kits의 경우 text recognization을 사용하였고, function의 경우 Real-time store recommendation을 위해 사용하였습니다. 
@@ -22,7 +22,7 @@ To use the Android project, the following settings are required.
   * set(pathPROJECT /home/lja9702/StudioProjects/course_recommendation)... -> 본인 프로젝트 local directory 주소로 변경.
   
 
-
+---
 
 
 # Real-time store (course) recommendation
@@ -34,7 +34,7 @@ https://www.slideshare.net/deview/261-52784785
 https://yeoubi.net/2019/04/07/2019-04-07-50-lines-of-recommendation-engine/
 
 
-
+---
 
 
 # API
