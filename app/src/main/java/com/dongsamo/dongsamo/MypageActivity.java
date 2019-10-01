@@ -294,7 +294,6 @@ public class MypageActivity extends AppCompatActivity {
                                                 @Override
                                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                     Member member = dataSnapshot.getValue(Member.class);
-
                                                     databaseReference.child("Email").child(member.getId()).removeValue();
                                                     databaseReference.child("Users").child(uid).removeValue();
                                                     databaseReference.child("favorite").child(member.getId()).removeValue();

@@ -39,6 +39,7 @@ import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
 import com.googlecode.tesseract.android.TessBaseAPI;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
@@ -116,27 +117,21 @@ public class MainActivity extends AppCompatActivity
         firebaseUser = firebaseAuth.getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        //kong
-        try {
-            new FoodTask().execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        databaseReference.child("Parsing").child("Data").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@androidx.annotation.NonNull DataSnapshot dataSnapshot) {
+                try {
+                    building_list = new JSONArray(dataSnapshot.getValue());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            @Override
+            public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
 
-//        databaseReference.child("Parsing").addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@androidx.annotation.NonNull DataSnapshot dataSnapshot) {
-//                dataSnapshot.getRef().child("Data").removeValue();
-//                dataSnapshot.getRef().child("Data").setValue(pass_ps);
-//            }
-//            @Override
-//            public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
-//
-//                Log.w("TAGs", "Failed to read value.", databaseError.toException());
-//            }
-//        });
+                Log.w("TAGs", "Failed to read value.", databaseError.toException());
+            }
+        });
 
         surfaceView = findViewById(R.id.activity_surfaceView);
         capture_btn = (ImageButton)findViewById(R.id.capture_btn);
@@ -416,7 +411,6 @@ public class MainActivity extends AppCompatActivity
         Log.d("TAGS", "result : "+ result);
 
         /*donging-widget*/
-
         try {
             Log.d("TAGS", "FOodTask");
             Log.d("TAGS", "Before insert");
@@ -466,48 +460,5 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
         intent.putExtra("flag", false);
         startActivity(intent);
-    }
-
-    public class FoodTask extends AsyncTask<String, String, String> {
-        @Override
-        protected String doInBackground(String... params) {
-            URL url = null;
-            String result = null;
-            try {
-                url = new URL(""+siteUrl+ID+contents);
-
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-                if (conn.getResponseCode() == conn.HTTP_OK) {
-                    InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
-                    BufferedReader reader = new BufferedReader(tmp);
-                    StringBuffer buffer = new StringBuffer();
-                    String str = null;
-                    while ((str = reader.readLine()) != null) {
-                        buffer.append(str);
-                    }
-                    result = buffer.toString();
-
-                    Log.d("LOG", result);
-                    JSONObject jsonObject1 = new JSONObject(result);
-                    String CrtfcUpsoInfo = jsonObject1.getString("CrtfcUpsoInfo");
-                    Log.d("LOG", "CrtfcUpsoInfo: " + CrtfcUpsoInfo);
-                    JSONObject jsonObject2 = new JSONObject(CrtfcUpsoInfo);
-                    String row = jsonObject2.getString("row");
-                    Log.d("Log", "row: "+row);
-                    building_list = new JSONArray(row);
-                    if(building_list != null)
-                        pass_ps = row;
-
-                    reader.close();
-                } else {
-                    Log.i("통신 결과", conn.getResponseCode() + "에러");
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            return result;
-        }
     }
 }
